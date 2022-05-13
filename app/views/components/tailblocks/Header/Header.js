@@ -1,11 +1,11 @@
 
 const Header = (props) => {
 
-    let { links } = props;
+    let { links, title } = props;
 
 
     return (
-        <header class="text-gray-400 bg-gray-900 body-font">
+        <header class="text-gray-400 bg-gray-400 body-font">
             <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                 <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">

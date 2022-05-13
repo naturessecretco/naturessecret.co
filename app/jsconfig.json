@@ -4,6 +4,7 @@
       "paths": {
         "@views/*": ["views/*"],
         "@layouts/*":["views/layouts/*"],
+        "@tailblocks/*":["views/components/tailblocks/*"],
         "@includes/*":["views/includes/*"],
         "@models/*": ["models/*"],
         "@controllers/*": ["controllers/*"],

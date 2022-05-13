@@ -1,5 +1,6 @@
 import RootLayout from "@layouts/RootLayout"
-
+import Header from "@tailblocks/Header"
+import Footer from "@tailblocks/Footer"
 
 
 const HomeLayout = (props) => {
@@ -8,7 +9,9 @@ const HomeLayout = (props) => {
 
     return (
         <RootLayout>
+            <Header />
             {children}
+            <Footer />
         </RootLayout>
     )
 }
