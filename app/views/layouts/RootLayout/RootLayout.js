@@ -1,4 +1,4 @@
-
+import Meta from "@includes/Meta"
 
 const RootLayout = (props) => {
 
@@ -6,7 +6,8 @@ const RootLayout = (props) => {
 
     return (
         <>
-        
+            <Meta title="Nature's Secret" />
+            {children}
         </>
     )
 }
