@@ -1,9 +1,10 @@
 {
-  "name": "app",
-  "version": "0.1.0",
+  "name": "naturessecret",
+  "version": "11.11.11",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "app:dev":"npm i && npm run dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
