@@ -2,7 +2,7 @@ const Footer = (props) => {
 
     return (
         <footer style={{
-            position: 'fixed',
+            position: 'relative',
             bottom: 0,
             left: 'auto',
             width: '100%'
