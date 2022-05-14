@@ -7,3 +7,55 @@
     font-family: var(--font-primary);
 }
 
+html,
+body {
+    background: rgb(2,255,0);
+    background: radial-gradient(circle, rgba(2,255,0,1) 0%, rgba(254,253,34,1) 2%, rgba(0,128,128,1) 93%);
+    font-weight: 700;
+    color: white !important;
+    -webkit-animation: Secret 11s ease infinite;
+    -moz-animation: Secret 11s ease infinite;
+    animation: Secret 11s ease infinite;
+}
+
+@-webkit-keyframes Secret {
+    0% {
+        background-position: 20% 0%
+    }
+
+    50% {
+        background-position: 81% 100%
+    }
+
+    100% {
+        background-position: 20% 0%
+    }
+}
+
+@-moz-keyframes Secret {
+    0% {
+        background-position: 20% 0%
+    }
+
+    50% {
+        background-position: 81% 100%
+    }
+
+    100% {
+        background-position: 20% 0%
+    }
+}
+
+@keyframes Secret {
+    0% {
+        background-position: 20% 0%
+    }
+
+    50% {
+        background-position: 81% 100%
+    }
+
+    100% {
+        background-position: 20% 0%
+    }
+}
