@@ -1,7 +1,7 @@
-import "@views/libs/tailwind.css";
+import "@views/libs/tailwind.css"
+import "@views/libs/globals.css"
 import React from 'react';
-import { RecoilRoot } from 'recoil';
-
+import { RecoilRoot } from 'recoil'
 
 export default function Application({ Component, pageProps }) {
   return (

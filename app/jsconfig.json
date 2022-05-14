@@ -5,6 +5,7 @@
         "@views/*": ["views/*"],
         "@layouts/*":["views/layouts/*"],
         "@tailblocks/*":["views/components/tailblocks/*"],
+        "@components/*":["views/components/*"],
         "@assets/*":["public/assets/*"],
         "@includes/*":["views/includes/*"],
         "@models/*": ["models/*"],

@@ -1,0 +1,9 @@
+:root {
+    --font-primary: 'Cormorant Garamond', serif;
+}
+
+
+* {
+    font-family: var(--font-primary);
+}
+

@@ -15,7 +15,7 @@ const Footer = (props) => {
                         </svg>
                         <span class="ml-3 text-xl">Nature's Secrets</span>
                     </a>
-                    <p class="mt-2 text-sm text-gray-500">A Home for Nature's Best Kept Secret's</p>
+                    <p class="mt-2 text-sm text-gray-500">Home to the Best of Nature's Secrets.</p>
                 </div>
                 <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
                     <div class="lg:w-1/4 md:w-1/2 w-full px-4">
@@ -90,8 +90,8 @@ const Footer = (props) => {
             </div>
             <div class="bg-gray-100">
                 <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-                    <p class="text-gray-500 text-sm text-center sm:text-left">© 2020 Tailblocks —
-                        <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@knyttneve</a>
+                    <p class="text-gray-500 text-sm text-center sm:text-left">© 2022 Nature's Secret —
+                        <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@naturessecret</a>
                     </p>
                     <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
                         <a class="text-gray-500">
