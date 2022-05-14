@@ -4,7 +4,9 @@ const Header = (props) => {
     let { links, title } = props || {};
 
     let containerSx = {
-      position: 'relative',
+      position: 'sticky',
+      zIndex: 100000,
+      backgroundColor: 'rgba(0,0,0,0.2)',
       top: 0,
       left: 'auto',
       width: '100%'
