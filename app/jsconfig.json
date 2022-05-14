@@ -8,8 +8,8 @@
         "@assets/*":["public/assets/*"],
         "@includes/*":["views/includes/*"],
         "@models/*": ["models/*"],
+        "@configs/*":["models/configs/*"],
         "@controllers/*": ["controllers/*"],
-        "@configs/*": ["configs/*"],
         
       }
     },

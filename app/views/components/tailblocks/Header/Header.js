@@ -1,17 +1,19 @@
 
 const Header = (props) => {
 
-    let { links, title } = props;
+    let { links, title } = props || {};
+
+    let containerSx = {
+      position: 'relative',
+      top: 0,
+      left: 'auto',
+      width: '100%'
+
+  }
 
 
     return (
-        <header style={{
-            position: 'relative',
-            top: 0,
-            left: 'auto',
-            width: '100%'
-    
-        }} class="text-gray-600 body-font">
+        <header style={containerSx} class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
             <a class="mr-5 hover:text-gray-900">First Link</a>

@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "readme:g": "npx @appnest/readme generate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
