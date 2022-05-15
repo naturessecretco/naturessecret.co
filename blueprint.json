@@ -1,0 +1,15 @@
+{
+    "package": "package.json",
+    "blueprint": "DOCUMENTATION.md",
+    "input": "DOCUMENTATION.md",
+    "output": "README.md",
+    "placeholder": [
+      "(",
+      ")"
+    ],
+    "documentationConfig": {
+      "markdown": {
+        "titleLevel": 2
+      }
+    }
+  }
