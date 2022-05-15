@@ -6,12 +6,13 @@ const Header = (props) => {
 
   let containerSx = {
     position: 'sticky',
-    backdropFilter: 'blur(5px) saturate(120%)',
+    backdropFilter: 'blur(7px) saturate(130%)',
     zIndex: 100000,
-    backgroundColor: '#008080AA',
+    backgroundColor: '#00808099',
     top: 0,
     left: 'auto',
-    width: '100%'
+    width: '100%',
+    borderBottom: '1px solid #555555'
 
   }
 

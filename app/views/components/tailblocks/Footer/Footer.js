@@ -13,7 +13,7 @@ const Footer = (props) => {
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                         </svg>
-                        <span class="ml-3 text-xl">Nature's Secrets</span>
+                        <span class="ml-3 text-xl">Nature's Secret</span>
                     </a>
                     <p class="mt-2 text-sm text-gray-500">Home to the Best of Nature's Secrets.</p>
                 </div>
@@ -35,23 +35,7 @@ const Footer = (props) => {
                             </li>
                         </nav>
                     </div>
-                    <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-                        <nav class="list-none mb-10">
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                            </li>
-                            <li>
-                                <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                            </li>
-                        </nav>
-                    </div>
+                
                     <div class="lg:w-1/4 md:w-1/2 w-full px-4">
                         <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
                         <nav class="list-none mb-10">
