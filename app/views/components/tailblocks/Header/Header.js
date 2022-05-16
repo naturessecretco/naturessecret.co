@@ -1,4 +1,4 @@
-import Avatar from "@components/mui/Avatar"
+import Avatar from "@mui/material/Avatar"
 
 const Header = (props) => {
 
@@ -27,7 +27,7 @@ const Header = (props) => {
           <a href="#faqs" class="hover:text-gray-900">Benefits/FAQs</a>
         </nav>
         <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
-
+ <img src="/assets/images/logo.png" height="45em" width="45em"/>
           <span style={{ color: '#FFFFFF' }} class="ml-3 text-xl">Nature's Secret</span>
         </a>
         <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
