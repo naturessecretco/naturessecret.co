@@ -9,6 +9,14 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions",
+    "safari",
+    "Chrome",
+    "Edge"
+  ],
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",

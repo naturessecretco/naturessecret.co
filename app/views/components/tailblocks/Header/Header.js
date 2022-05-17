@@ -1,9 +1,4 @@
-import Avatar from "@mui/material/Avatar"
-import { AnimationWrapper } from 'react-hover-animation'
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-
-
-
+import { AnimationWrapper } from 'react-hover-animation';
 
 const Header = (props) => {
 
@@ -13,12 +8,11 @@ const Header = (props) => {
     position: 'sticky',
     backdropFilter: 'blur(8px) saturate(130%)',
     zIndex: 100000,
-    backgroundColor: '#008080',
-    opacity: 0.89,
+    backgroundColor: '#00808055',
     top: 0,
     left: 'auto',
     width: '100%',
-    borderBottom: '1px solid #555555'
+    borderBottom: '1px solid #333333'
   }
 
   let links = [

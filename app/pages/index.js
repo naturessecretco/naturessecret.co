@@ -3,8 +3,6 @@ import Featured from "@includes/Featured"
 import FAQs from "@includes/FAQs"
 import Store from "@includes/Store"
 import Subscribe from "@includes/Subscribe"
-import FloatingNavigator from "@components/FloatingNavigator"
-
 
 export default function HomePage() {
 
@@ -14,7 +12,6 @@ export default function HomePage() {
       <FAQs />
       <Store />
       <Subscribe/>
-      <FloatingNavigator/>
     </HomeLayout>
   )
 }
