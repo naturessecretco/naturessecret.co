@@ -9,8 +9,9 @@ const HomeLayout = (props) => {
 
     return (
         <RootLayout>
+            <Header />
+
             <Fade>
-                <Header />
                 {children}
                 <Footer />
             </Fade>

@@ -1,12 +1,13 @@
 :root {
     --font-primary: 'Cormorant Garamond', serif;
-
     --white: '#FFFFEE22';
 }
 
 
 * {
     font-family: var(--font-primary);
+    color: white !important;
+
     margin: 0;
     padding: 0;
     user-select: none;
@@ -15,9 +16,25 @@
 html,
 body {
     scroll-behavior: smooth;
-    background: rgb(2,255,0);
-    background: radial-gradient(circle, rgba(2,255,0,1) 0%, rgba(254,253,34,1) 2%, rgba(0,128,128,1) 93%);
+    background: url(/assets/images/background.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     font-weight: 700;
-    color: white !important;
-    animation: Secret 11s ease infinite;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #000000;
+
 }
