@@ -1,4 +1,22 @@
 const meta = {
+    title: 'Natures Secret',
+    name: 'Nature\'s Secret',
+
+    seo: {
+        keywords: ['health', 'wellness', 'healing', 'natures', 'secret']
+    },
+    designer: 'Desirable Solutions',
+    url: 'https://naturessecret.co',
+    descriptions: {
+        short: '',
+        long: '',
+        impressum: ''
+    },
+    type: 'e-commerece website',
+    contact: {
+        email: 'admin@naturessecret.co',
+        phone: '7704267070'
+    },
     icons: {
         basePath: '/assets/icons/',
         relationships: ['icon shortcut apple-touch-icon android-chrome'],
