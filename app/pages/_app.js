@@ -1,5 +1,7 @@
 import "@views/libs/tailwind.css"
+import "@views/libs/dashvars.css"
 import "@views/libs/globals.css"
+
 import React from 'react';
 import { RecoilRoot } from 'recoil'
 

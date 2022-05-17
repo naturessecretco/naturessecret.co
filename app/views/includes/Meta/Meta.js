@@ -37,7 +37,7 @@ const Meta = (props) => {
 
 
             <meta property="og:title" content={meta.title} />
-            <meta property="og:description" content="Add a shopping cart to your site in minutes. Works with any site builder, CMS, and framework. 20 000+ merchants trust our e-commerce solution for their website. Join them!" />
+            <meta property="og:description" content="Home to Nature's Best Kept Secrets." />
             <meta property="og:url" content={meta.url} />
             <meta property="og:type" content="website" />
             <meta name="og:image" content="http://ia.media-imdb.com/rock.jpg" />
@@ -48,7 +48,7 @@ const Meta = (props) => {
             <meta name="og:phone_number" content={meta.contact.phone} />
 
             <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
             <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Libre+Baskerville&display=swap" rel="stylesheet" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />

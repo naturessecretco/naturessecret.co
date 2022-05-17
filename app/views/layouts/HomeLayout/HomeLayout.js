@@ -1,6 +1,7 @@
 import RootLayout from "@layouts/RootLayout"
 import Header from "@tailblocks/Header"
 import Footer from "@tailblocks/Footer"
+import Fade from 'react-reveal/Fade';
 
 const HomeLayout = (props) => {
 
@@ -8,9 +9,12 @@ const HomeLayout = (props) => {
 
     return (
         <RootLayout>
-            <Header />
-            {children}
-            <Footer />
+            <Fade>
+                <Header />
+                {children}
+                <Footer />
+            </Fade>
+
         </RootLayout>
     )
 }
