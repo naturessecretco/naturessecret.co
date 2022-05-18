@@ -72,7 +72,7 @@ const Footer = (props) => {
                                 <a class="text-gray-600 hover:text-gray-800">Store</a>
                             </li>
                             <li>
-                                <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                                <a class="text-gray-600 hover:text-gray-800">Benefits</a>
                             </li>
                         </nav>
                     </div>
@@ -88,10 +88,10 @@ const Footer = (props) => {
                                 <a class="text-gray-600 hover:text-gray-800">Buckwheat Honey</a>
                             </li>
                             <li>
-                                <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                                <a class="text-gray-600 hover:text-gray-800">Information</a>
                             </li>
                             <li>
-                                <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                                <a class="text-gray-600 hover:text-gray-800">Store</a>
                             </li>
                         </nav>
                     </div>

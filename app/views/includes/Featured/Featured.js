@@ -12,7 +12,7 @@ const Featured = (props) => {
             },
             title: title,
             labelInfo: 'Phone or Email',
-            description: 'Made-to-order pure-grade Seamoss wildcrafted',
+            description: 'Made-to-order pure-grade Wildcrafted Seamoss ',
             ctx: 'Pre-order Yours Now'
         }} />
     )
