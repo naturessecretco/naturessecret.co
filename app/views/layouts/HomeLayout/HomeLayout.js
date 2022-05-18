@@ -2,7 +2,6 @@ import RootLayout from "@layouts/RootLayout"
 import NavBar from "@includes/NavBar"
 import Footer from "@tailblocks/Footer"
 import Fade from 'react-reveal/Fade';
-import FloatingNavigator from "@components/FloatingNavigator"
 
 const HomeLayout = (props) => {
 
@@ -11,15 +10,10 @@ const HomeLayout = (props) => {
     return (
         <RootLayout>
             <NavBar />
-
             <Fade>
                 {children}
             </Fade>
             <Footer />
-
-            <FloatingNavigator />
-
-
         </RootLayout>
     )
 }
