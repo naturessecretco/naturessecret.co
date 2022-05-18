@@ -1,7 +1,5 @@
 import Hero from "@tailblocks/Hero"
 
-
-
 const Featured = (props) => {
 
     let { title } = props 
@@ -13,7 +11,8 @@ const Featured = (props) => {
                 src: '/assets/images/seamoss.png'
             },
             title: title,
-            labelInfo: 'Made-to-order pure-grade Seamoss wildcrafted',
+            labelInfo: 'Phone or Email',
+            description: 'Made-to-order pure-grade Seamoss wildcrafted',
             ctx: 'Pre-order Yours Now'
         }} />
     )
