@@ -1,7 +1,6 @@
 const meta = {
-    title: 'Natures Secret',
+    title: 'Nature\'s Secret',
     name: 'Nature\'s Secret',
-
     seo: {
         keywords: ['health', 'wellness', 'healing', 'natures', 'secret']
     },
@@ -10,7 +9,7 @@ const meta = {
     descriptions: {
         short: '',
         long: '',
-        impressum: ''
+        impressum: 'Home to Nature\'s Best Kept Secrets'
     },
     type: 'e-commerece website',
     contact: {

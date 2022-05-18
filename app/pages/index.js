@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <HomeLayout>
       <Featured title="Wildcrafted Seamoss" 
-               status={'live'} />
+                status={'live'} />
     </HomeLayout>
   )
 }
