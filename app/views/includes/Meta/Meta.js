@@ -54,6 +54,10 @@ const Meta = (props) => {
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
             <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet" />
 
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap" rel="stylesheet"/>
+
             {
                 IconTags.sizes.map((tag, index) => (
                     <link rel="android-chrome icon shortcut" sizes={tag}

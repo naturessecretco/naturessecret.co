@@ -8,11 +8,10 @@ const Header = (props) => {
     position: 'sticky',
     backdropFilter: 'blur(8px) saturate(130%)',
     zIndex: 100000,
-    backgroundColor: '#00808055',
+    backgroundColor: '#008080AA',
     top: 0,
     left: 'auto',
     width: '100%',
-    borderBottom: '1px solid #333333'
   }
 
   let links = [
@@ -53,6 +52,7 @@ const Header = (props) => {
         <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
           <img src="/assets/images/logo.png" height="45em" width="45em" />
           <h1 style={{ color: '#FFFFFF', fontSize: '1.8em', fontWeight: 300, textShadow: '0px 0px 8px rgba(0,0,0,0.8)' }} class="ml-3 text-xl">Nature's Secret</h1>
+
         </a>
         <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
           <button class="inline-flex items-center bg-gray-500 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Your Basket</button>

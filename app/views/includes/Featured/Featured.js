@@ -1,9 +1,21 @@
 import Hero from "@tailblocks/Hero"
 
-const Featured = () => {
+
+
+const Featured = (props) => {
+
+    let { title } = props 
 
     return (
-        <Hero />
+        <Hero id="featured" content={{
+            image: {
+                alt: 'Seamoss Product Render',
+                src: '/assets/images/seamoss.png'
+            },
+            title: title,
+            labelInfo: 'Made-to-order pure-grade Seamoss wildcrafted',
+            ctx: 'Pre-order Yours Now'
+        }} />
     )
 }
 

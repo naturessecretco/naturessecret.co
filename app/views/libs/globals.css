@@ -1,11 +1,12 @@
 :root {
     --font-primary: 'Cormorant Garamond', serif;
+    --font-secondary: 'IBM Plex Sans', san-serif, monospace;
     --white: '#FFFFEE22';
 }
 
 
 * {
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     color: white !important;
 
     margin: 0;
