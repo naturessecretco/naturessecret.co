@@ -28,12 +28,15 @@ const Hero = (props) => {
             fontFamily: 'var(--font-primary)'
           }} class={Tailblocks.title}>{title}</h1>
           <p style={{ fontFamily: 'var(--font-primary)', fontSize: '1.2em', fontWeight: 600, letterSpacing: '2px' }} class="mb-8 bg-gray-600 bg-opacity-50 rounded p-2leading-relaxed">{description || ""}</p>
+          <p style={{ fontFamily: 'var(--font-primary)', fontSize: '1.2em', fontWeight: 600, letterSpacing: '2px' }} class="mb-8 bg-gray-600 bg-opacity-50 rounded p-2leading-relaxed">
+            92/102 Vitamins & Nutrients
+          </p>
+
           <div class="flex w-full justify-center items-end">
-            <div class="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
-              <label for="hero-field" class="leading-7 text-sm text-gray-600">{labelInfo}</label>
-              <input type="text" id="hero-field" name="hero-field" class={Tailblocks.input} />
+            <div class="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full">
+            <a class="gumroad-button" href="https://naturessecret.gumroad.com/l/wildcraftedseamoss?wanted=true" data-gumroad-single-product="true">Pre-order on</a>
+
             </div>
-            <button class="inline-flex text-white bg-green-800 border-0 py-2 px-6 focus:outline-none hover:bg-blue-800 rounded text-lg">{ctx}</button>
           </div>
         </div>
       </div>
