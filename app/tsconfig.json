@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl":"./",
+    "baseUrl": "./",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -14,7 +14,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@views/*": ["views/*"],
+      "@layouts/*": ["views/layouts/*"],
+      "@tailblocks/*": ["views/components/tailblocks/*"],
+      "@components/*": ["views/components/*"],
+      "@typings/*":["models/typings/*"],
+      "@assets/*": ["public/assets/*"],
+      "@styles": ["views/styles/*"],
+      "@includes/*": ["views/includes/*"],
+      "@models/*": ["models/*"],
+      "@configs/*": ["models/configs/*"],
+      "@controllers/*": ["controllers/*"],
+    }
+
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
