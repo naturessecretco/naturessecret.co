@@ -21,6 +21,7 @@
       "@tailblocks/*": ["views/components/tailblocks/*"],
       "@components/*": ["views/components/*"],
       "@typings/*":["models/typings/*"],
+      "@libs/*": ["views/libs/*"],
       "@assets/*": ["public/assets/*"],
       "@styles": ["views/styles/*"],
       "@includes/*": ["views/includes/*"],

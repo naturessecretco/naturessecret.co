@@ -8,6 +8,7 @@ const PageLayout = ({ children, metaData }: ILayout) => {
 
     return (
         <RootLayout metaData={metaData}>
+            <Header/>
             {children}
         </RootLayout>
     )
