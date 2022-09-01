@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/desirtech/naturessecret.co/issues"
   },
-  "homepage": "https://github.com/desirtech/naturessecret.co#readme"
+  "homepage": "https://github.com/desirtech/naturessecret.co#readme",
+  "dependencies": {
+    "react-headroom": "^3.2.0"
+  }
 }

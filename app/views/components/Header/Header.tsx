@@ -1,75 +1,348 @@
+import { Avatar } from "@mui/material"
+import Image from "next/image"
+import Headroom from "react-headroom"
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 
-const Header = () => {
+
+export type HeaderProps = {
+    favicon: {
+        src: string,
+        url: string
+    }
+}
+
+const Banner = () => {
 
     return (
-        <section className="overflow-hidden bg-darkBlueGray-50">
-            <div className="bg-blue-500">
-                <div className="px-6 md:px-12">
-                    <nav className="flex justify-between py-6">
-                        <div className="relative flex w-full items-center">
-                            <a
-                                className="hidden md:inline-block mr-12 text-white hover:text-gray-100"
-                                href="#"
-                            >
-                                <svg
-                                    width={25}
-                                    height={16}
-                                    viewBox="0 0 25 16"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <rect width={25} height={2} fill="currentColor" />
-                                    <rect y={14} width={25} height={2} fill="currentColor" />
-                                </svg>
-                            </a>
-                            <div className="hidden md:block flex-shrink-0 w-px h-12 bg-blue-400 opacity-40 mx-12" />
-                            <div className="relative hidden xl:flex items-center px-6 py-4 border-2 border-blue-400 border-opacity-40 rounded-xl">
-                                <span className="inline-block mr-6">
-                                    <svg
-                                        width={17}
-                                        height={17}
-                                        viewBox="0 0 17 17"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M1.0015 15.2219L5.43359 11.21"
-                                            stroke="white"
-                                            strokeWidth={2}
-                                            strokeMiterlimit={10}
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        />
-                                        <path
-                                            d="M9.93063 12.5306C13.1138 12.5306 15.6943 9.94935 15.6943 6.76528C15.6943 3.5812 13.1138 1 9.93063 1C6.74746 1 4.16699 3.5812 4.16699 6.76528C4.16699 9.94935 6.74746 12.5306 9.93063 12.5306Z"
-                                            stroke="white"
-                                            strokeWidth={2}
-                                            strokeMiterlimit={10}
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        />
-                                    </svg>
-                                </span>
-                                <input
-                                    className="rounded-4xl text-sm text-white placeholder-white font-heading font-medium bg-blue-500 outline-none"
-                                    placeholder="SEARCH"
-                                />
-                            </div>
-                            <a
-                                className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2"
-                                href="#"
-                            >
+        <div className="py-1 text-center text-sm border-b border-gray-100 bg-black text-white">
+            <p className="font-medium text-darkBlueGray-300 leading-10">
+                <span>Hello, you are new here.</span>
+                <span className="text-darkBlueGray-900">Get 20% off card!</span>
+            </p>
+        </div>
+    )
+}
+
+const Header = ({ favicon }: HeaderProps) => {
+
+    return (
+
+        <Headroom>
+            <section style={{
+                backdropFilter: "blur(10px)",
+            }}className="relative">
+                <Banner />
+
+                <div className="px-6 lg:px-12">
+                    <nav className="flex justify-between">
+                        <div className="flex w-full items-center py-6">
+                            <a href="#">
                                 <img
                                     className="h-12"
-                                    src="uinel-assets/logos/ecommerce/uistore-white-white.svg"
+                                    src="uinel-assets/logos/ecommerce/uistore-gray-black.svg"
                                     alt=""
                                 />
                             </a>
-                            <div className="hidden md:block flex-shrink-0 w-px h-12 bg-blue-400 opacity-40 ml-auto mr-12" />
+                            <ul className="hidden xl:flex px-4 ml-20 2xl:ml-40 mr-auto">
+                                <li className="mr-16">
+                                    <a className="font-medium hover:text-darkBlueGray-400" href="#">
+                                        Stories
+                                    </a>
+                                </li>
+                                <li className="relative mr-16">
+                                    <a
+                                        className="flex items-center font-medium hover:text-darkBlueGray-400"
+                                        href="#"
+                                    >
+                                        <span className="mr-4">Products</span>
+                                        <svg
+                                            width={8}
+                                            height={5}
+                                            viewBox="0 0 8 5"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M6.97291 0.193232C7.20854 -0.0644107 7.58938 -0.0644107 7.82328 0.193232C8.05804 0.450875 8.05978 0.867141 7.82328 1.12478L4.42529 4.80677C4.19053 5.06441 3.81056 5.06441 3.57406 4.80677L0.176073 1.12478C-0.0586909 0.868102 -0.0586909 0.450875 0.176073 0.193232C0.411706 -0.0644107 0.792544 -0.0644107 1.02644 0.193232L4.00098 3.21284L6.97291 0.193232Z"
+                                                fill="currentColor"
+                                            />
+                                        </svg>
+                                    </a>
+                                    <div className="product-menu hidden absolute top-0 left-0 mt-24 -ml-64 pl-24 pr-16 pt-16 pb-24 bg-white rounded-lg z-50">
+                                        <div className="absolute top-0 left-0 ml-72 w-7 h-7 bg-white transform rotate-45 -translate-y-1/2" />
+                                        <div className="flex flex-wrap min-w-max -mx-4 lg:-mx-10">
+                                            <div className="w-full md:w-1/2 lg:w-1/4 px-4 lg:px-10">
+                                                <div>
+                                                    <h3 className="mb-4 text-xl font-heading font-medium">
+                                                        Smartphone
+                                                    </h3>
+                                                    <ul className="w-full">
+                                                        <li className="mb-4">
+                                                            <a
+                                                                className="text-gray-400 hover:text-gray-500"
+                                                                href="#"
+                                                            >
+                                                                View all
+                                                            </a>
+                                                        </li>
+                                                        <li className="mb-4">
+                                                            <a
+                                                                className="text-gray-400 hover:text-gray-500"
+                                                                href="#"
+                                                            >
+                                                                Premium&nbsp;Phones
+                                                            </a>
+                                                        </li>
+                                                        <li className="mb-4">
+                                                            <a
+                                                                className="text-gray-400 hover:text-gray-500"
+                                                                href="#"
+                                                            >
+                                                                Basic
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a
+                                                                className="text-gray-400 hover:text-gray-500"
+                                                                href="#"
+                                                            >
+                                                                Sale
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div className="w-40 mt-5 mb-7 border-b border-gray-100" />
+                                                <div className="w-full">
+                                                    <h3 className="mb-4 text-xl font-heading font-medium">
+                                                        Tablet
+                                                    </h3>
+                                                    <ul className="w-full">
+                                                        <li className="mb-4">
+                                                            <a
+                                                                className="text-gray-400 hover:text-gray-500"
+                                                                href="#"
+                                                            >
+                                                                View all
+                                                            </a>
+                                                        </li>
+                                                        <li className="mb-4">
+                                                            <a
+                                                                className="text-gray-400 hover:text-gray-500"
+                                                                href="#"
+                                                            >
+                                                                Premium&nbsp;Tablets
+                                                            </a>
+                                                        </li>
+                                                        <li className="mb-4">
+                                                            <a
+                                                                className="text-gray-400 hover:text-gray-500"
+                                                                href="#"
+                                                            >
+                                                                For&nbsp;Designers
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a
+                                                                className="text-gray-400 hover:text-gray-500"
+                                                                href="#"
+                                                            >
+                                                                Sale
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div className="w-40 mt-5 border-b border-gray-100" />
+                                            </div>
+                                            <div className="w-full md:w-1/2 lg:w-1/4 px-4 lg:px-10">
+                                                <h3 className="mb-4 text-xl font-heading font-medium">
+                                                    Brand
+                                                </h3>
+                                                <ul>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Apple iPhone
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Blackberry
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Google
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Huawei
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Nokia
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Oppo
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Samsung
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Sony
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Xiaomi
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div className="w-40 mt-5 mb-7 border-b border-gray-100" />
+                                                <h3 className="mb-4 text-xl font-heading font-medium">
+                                                    System
+                                                </h3>
+                                                <ul>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            iOS
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Android
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            View all
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div className="w-40 mt-5 border-b border-gray-100" />
+                                            </div>
+                                            <div className="w-full md:w-1/2 lg:w-1/4 px-4 lg:px-10">
+                                                <h3 className="mb-4 text-xl font-heading font-medium">
+                                                    Accesories
+                                                </h3>
+                                                <ul>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            View all
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Watches
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div className="w-40 mt-5 mb-7 border-b border-gray-100" />
+                                                <h3 className="mb-4 text-xl font-heading font-medium">
+                                                    Computers
+                                                </h3>
+                                                <ul>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Apple iMac
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Memory
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            PC
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Graphic Cards
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Monitors
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Hard Disk Drivers
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Cables
+                                                        </a>
+                                                    </li>
+                                                    <li className="mb-4">
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Keyboards
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a className="text-gray-400 hover:text-gray-500" href="#">
+                                                            Printers
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div className="w-40 mt-5 border-b border-gray-100" />
+                                            </div>
+                                            <div className="w-full md:w-1/2 lg:w-1/4 px-4 lg:px-10">
+                                                <div
+                                                    className="relative flex items-end h-96 w-full rounded-lg bg-cover bg-no-repeat"
+                                                    style={{
+                                                        backgroundImage:
+                                                            'url("uinel-assets/images/ecommerce-navigations/placehodler-right-banner.png")'
+                                                    }}
+                                                >
+                                                    <div className="mx-2 mb-5 px-2 py-4 bg-white rounded-lg">
+                                                        <h4 className="text-xl font-heading font-medium leading-tight">
+                                                            Connected home
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <div className="w-40 my-8 border-b border-gray-100" />
+                                                <a
+                                                    className="block py-5 px-2 font-heading font-medium tracking-tighter text-xl text-white text-center bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 hover:bg-blue-600 rounded-xl"
+                                                    href="#"
+                                                >
+                                                    New brands
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a className="font-medium hover:text-darkBlueGray-400" href="#">
+                                        Outlet
+                                    </a>
+                                </li>
+                            </ul>
+                            <div className="relative hidden xl:block">
+                                <img
+                                    className="absolute top-1/2 transform -translate-y-2/4 pl-6 mt-px"
+                                    src="uinel-assets/elements/navigations/search-gray-icon.svg"
+                                    alt=""
+                                />
+                                <input
+                                    className="rounded-4xl py-3 pl-12 pr-5 text-gray-300 font-heading font-medium text-base bg-blue-50 border-2 border-blueGray-100 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 outline-none"
+                                    style={{ width: 145 }}
+                                />
+                            </div>
+                            <div className="hidden xl:block flex-shrink-0 w-px h-12 bg-gray-100 ml-12 mr-12" />
                             <div className="hidden xl:flex items-center">
                                 <a
-                                    className="inline-block mr-10 text-white hover:text-gray-100"
+                                    className="inline-block mr-10 text-gray-400 hover:text-gray-500"
                                     href="#"
                                 >
                                     <svg
@@ -89,10 +362,10 @@ const Header = () => {
                                     </svg>
                                 </a>
                                 <a
-                                    className="relative inline-block text-white hover:text-gray-100"
+                                    className="relative inline-block text-gray-400 hover:text-gray-500"
                                     href="#"
                                 >
-                                    <div className="absolute bottom-0 right-0 flex items-center justify-center -mb-4 -mr-4 w-6 h-6 text-sm text-white bg-purple-400 rounded-full">
+                                    <div className="absolute bottom-0 right-0 flex items-center justify-center -mb-4 -mr-4 w-6 h-6 text-sm text-white bg-blue-500 rounded-full">
                                         3
                                     </div>
                                     <svg
@@ -118,9 +391,12 @@ const Header = () => {
                                         />
                                     </svg>
                                 </a>
-                                <div className="flex-shrink-0 w-px h-12 bg-blue-400 opacity-40 ml-10 mr-9" />
-                                <a className="flex items-center text-white" href="#">
-                                    <span className="font-medium text-white">Sona</span>
+                                <div className="flex-shrink-0 w-px h-12 bg-gray-100 ml-9 mr-10" />
+                                <a
+                                    className="flex items-center text-darkBlueGray-400 hover:text-darkBlueGray-500"
+                                    href="#"
+                                >
+                                    <span className="font-medium">Sona</span>
                                     <img
                                         className="ml-5"
                                         src="uinel-assets/elements/navigations/avatar-online.png"
@@ -142,7 +418,7 @@ const Header = () => {
                                 </a>
                             </div>
                         </div>
-                        <button className="navbar-burger py-6 self-center text-white md:hidden">
+                        <button className="navbar-burger self-center xl:hidden">
                             <svg
                                 width={25}
                                 height={16}
@@ -264,143 +540,13 @@ const Header = () => {
                         </nav>
                     </div>
                 </div>
-            </div>
-            <div
-                className="bg-cover bg-right md:bg-center"
-                style={{
-                    backgroundImage:
-                        'url("uinel-assets/images/ecommerce-headers/background-photo.png")'
-                }}
-            >
-                <div className="container px-4 mx-auto">
-                    <div className="w-full md:w-2/3 lg:w-1/2 ml-auto pt-20 md:pt-36">
-                        <span className="inline-block px-5 py-3 mb-10 font-medium tracking-wide text-lg text-blue-500 bg-white border border-blue-500 rounded-full">
-                            New product
-                        </span>
-                        <h1 className="max-w-xl mb-8 font-heading font-medium text-8xl md:text-10xl xl:text-13xl leading-tight">
-                            Headphones for you.
-                        </h1>
-                        <p className="mb-7 font-heading font-medium text-xl">
-                            Up to 23% off everything.
-                        </p>
-                        <p className="mb-14 text-base text-darkBlueGray-400">
-                            From $29.12/mo. for 24 mo. or $699 before trade‑in1.
-                        </p>
-                        <div className="flex flex-wrap items-center justify-center md:justify-start mb-14 md:mb-24">
-                            <a
-                                className="inline-block w-full md:w-auto py-4 px-10 mb-10 md:mb-0 leading-8 font-heading font-medium tracking-tighter text-xl text-white text-center bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 hover:bg-blue-600 rounded-xl"
-                                href="#"
-                            >
-                                Shop now
-                            </a>
-                            <span className="hidden md:inline-block mx-8 text-darkBlueGray-200">
-                                <svg
-                                    width={2}
-                                    height={46}
-                                    viewBox="0 0 2 46"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <rect width={2} height={4} rx={1} fill="currentColor" />
-                                    <rect y={14} width={2} height={4} rx={1} fill="currentColor" />
-                                    <rect y={28} width={2} height={4} rx={1} fill="currentColor" />
-                                    <rect y={42} width={2} height={4} rx={1} fill="currentColor" />
-                                </svg>
-                            </span>
-                            <a
-                                className="inline-flex items-center justify-center w-16 h-14 mr-2 bg-white hover:bg-darkBlueGray-100 rounded-full"
-                                href="#"
-                            >
-                                <svg
-                                    width={8}
-                                    height={12}
-                                    viewBox="0 0 8 12"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M7.21015 10.4594C7.59662 10.8128 7.59662 11.3841 7.21015 11.7349C6.82369 12.0871 6.19929 12.0897 5.81282 11.7349L0.289847 6.63794C-0.096617 6.28579 -0.096617 5.71584 0.289847 5.36108L5.81282 0.264109C6.19785 -0.0880364 6.82369 -0.0880363 7.21015 0.264109C7.59662 0.617558 7.59662 1.18882 7.21015 1.53966L2.68073 6.00147L7.21015 10.4594Z"
-                                        fill="black"
-                                    />
-                                </svg>
-                            </a>
-                            <a
-                                className="inline-flex items-center justify-center w-16 h-14 bg-white hover:bg-darkBlueGray-100 rounded-full"
-                                href="#"
-                            >
-                                <svg
-                                    width={8}
-                                    height={12}
-                                    viewBox="0 0 8 12"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M0.289848 1.54064C-0.0966159 1.18719 -0.0966159 0.615929 0.289848 0.265087C0.676312 -0.0870581 1.30071 -0.0896664 1.68718 0.265087L7.21015 5.36206C7.59662 5.71421 7.59662 6.28416 7.21015 6.63892L1.68718 11.7359C1.30215 12.088 0.676312 12.088 0.289848 11.7359C-0.096616 11.3824 -0.096616 10.8112 0.289848 10.4603L4.81927 5.99853L0.289848 1.54064Z"
-                                        fill="black"
-                                    />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="w-full md:w-2/3 ml-auto">
-                        <div className="flex items-center">
-                            <div className="hidden md:block md:w-1/2 lg:w-1/3">
-                                <div className="h-1 mb-28">
-                                    <div className="h-1/2 mt-20 bg-gray-200 w-full">
-                                        <div className="w-1/3 h-full bg-purple-500" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="relative w-auto md:w-auto md:ml-10 lg:ml-40">
-                                <img
-                                    src="uinel-assets/images/ecommerce-headers/placeholder-photo.png"
-                                    alt=""
-                                />
-                                <div className="absolute bottom-5 sm:bottom-0 left-5 sm:left-0 sm:ml-12 sm:mb-12">
-                                    <a
-                                        className="block text-7xl text-white font-heading font-medium underline"
-                                        href="#"
-                                    >
-                                        Shop tablet
-                                    </a>
-                                    <a
-                                        className="inline-flex items-center text-xl font-medium text-white hover:text-darkBlueGray-100"
-                                        href="#"
-                                    >
-                                        <span className="mr-2">Buy</span>
-                                        <svg
-                                            width={16}
-                                            height={13}
-                                            viewBox="0 0 16 13"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M10.8 1L15 7H1"
-                                                stroke="currentColor"
-                                                strokeWidth={2}
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                            <path
-                                                d="M11 12L15 7"
-                                                stroke="currentColor"
-                                                strokeWidth={2}
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+            </section>
+
+
+        </Headroom>
 
     )
-}
 
+}
 export default Header

@@ -22,6 +22,7 @@
       "@components/*": ["views/components/*"],
       "@typings/*":["models/typings/*"],
       "@libs/*": ["views/libs/*"],
+      "@db/*":["models/data/db/*"],
       "@assets/*": ["public/assets/*"],
       "@styles": ["views/styles/*"],
       "@includes/*": ["views/includes/*"],
