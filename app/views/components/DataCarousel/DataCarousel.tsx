@@ -1,7 +1,7 @@
 const DataCarousel = () => {
 
     return (
-        <section className="bg-white py-24 2xl:py-44 overflow-hidden">
+        <section className="py-24 2xl:py-44 overflow-hidden">
   <div className="container px-4 mx-auto">
     <span className="text-sm text-gray-300 uppercase">
       THE BEST PEOPLE IN THE WORLD

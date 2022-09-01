@@ -17,7 +17,7 @@ const Banner = () => {
     return (
         <div className="py-1 text-center text-sm border-b border-gray-100 bg-black text-white">
             <p className="font-medium text-darkBlueGray-300 leading-10">
-                <span>Hello, you are new here.</span>
+                <span>Wildcrafred Seasmoss.</span>
                 <span className="text-darkBlueGray-900">Get 20% off card!</span>
             </p>
         </div>
@@ -30,7 +30,7 @@ const Header = ({ favicon }: HeaderProps) => {
 
         <Headroom>
             <section style={{
-                backdropFilter: "blur(10px)",
+                backdropFilter: "blur(5px)",
             }}className="relative">
                 <Banner />
 
@@ -39,8 +39,8 @@ const Header = ({ favicon }: HeaderProps) => {
                         <div className="flex w-full items-center py-6">
                             <a href="#">
                                 <img
-                                    className="h-12"
-                                    src="uinel-assets/logos/ecommerce/uistore-gray-black.svg"
+                                    className="h-16"
+                                    src="/assets/images/logo.png"
                                     alt=""
                                 />
                             </a>
@@ -392,30 +392,7 @@ const Header = ({ favicon }: HeaderProps) => {
                                     </svg>
                                 </a>
                                 <div className="flex-shrink-0 w-px h-12 bg-gray-100 ml-9 mr-10" />
-                                <a
-                                    className="flex items-center text-darkBlueGray-400 hover:text-darkBlueGray-500"
-                                    href="#"
-                                >
-                                    <span className="font-medium">Sona</span>
-                                    <img
-                                        className="ml-5"
-                                        src="uinel-assets/elements/navigations/avatar-online.png"
-                                        alt=""
-                                    />
-                                    <svg
-                                        className="ml-4"
-                                        width={8}
-                                        height={5}
-                                        viewBox="0 0 8 5"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M6.97291 0.193232C7.20854 -0.0644107 7.58938 -0.0644107 7.82328 0.193232C8.05804 0.450875 8.05978 0.867141 7.82328 1.12478L4.42529 4.80677C4.19053 5.06441 3.81056 5.06441 3.57406 4.80677L0.176073 1.12478C-0.0586909 0.868102 -0.0586909 0.450875 0.176073 0.193232C0.411706 -0.0644107 0.792544 -0.0644107 1.02644 0.193232L4.00098 3.21284L6.97291 0.193232Z"
-                                            fill="currentColor"
-                                        />
-                                    </svg>
-                                </a>
+                              
                             </div>
                         </div>
                         <button className="navbar-burger self-center xl:hidden">
