@@ -11,21 +11,20 @@ import Hero from "@components/Hero"
 import ContentCarousel from "@views/components/ContentCarousel"
 import type { NextPage } from 'next'
 
+import getDataPage from "@services/getDataPage"
+import { useEffect } from "react"
 
+const HomePage: NextPage = ({ pageData }) => {
 
-const HomePage: NextPage = () => {
+  useEffect(() => {
+
+    console.log(pageData)
+  }, [])
 
   return (
 
-    <PageLayout>
-      <Hero />
-      <SimpleForm />
-      <DataRow />
-      <ContentCarousel />
-      <DataCarousel />
-      <ComplexCarousel />
-      <ContentRow />
-      <Summary />
+    <PageLayout metaData={pageData.metaData}>
+      <Hero {...pageData.hero} />
     </PageLayout>
 
   )
@@ -33,3 +32,29 @@ const HomePage: NextPage = () => {
 }
 
 export default HomePage
+
+
+export async function getStaticProps() {
+
+  let dataQuery = await getDataPage().catch(err => {
+    console.log(err)
+  })
+
+  return {
+    props: {
+      pageData: dataQuery
+    }
+  }
+
+
+}
+
+/*
+     <SimpleForm />
+      <DataRow />
+      <ContentCarousel />
+      <DataCarousel />
+      <ComplexCarousel />
+      <ContentRow />
+      <Summary />
+      */

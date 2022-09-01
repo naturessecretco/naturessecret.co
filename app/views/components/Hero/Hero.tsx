@@ -1,15 +1,58 @@
-const Hero = () => {
+import Image from "next/image"
+
+
+export type CallToAction = {
+    url: string,
+    name: string
+}
+export type Cover = {
+    src: string,
+    alt: string,
+}
+
+export type HeroProps = {
+
+    featured: {
+        first: {
+            title: string,
+            cover: Cover,
+
+        },
+        second: {
+            title: string,
+            cover: Cover,
+        },
+        third: {
+            title: string,
+            cover: Cover,
+        }
+    },
+
+    heading: string,
+    title: string,
+    cta: CallToAction
+}
+
+
+
+
+const Hero = ({ featured:
+    { first, second, third },
+    cta, heading, title }:
+    HeroProps) => {
 
     return (
         <section className="relative bg-black bg-opacity-50">
             <div className="pb-10 xl:pb-20">
                 <div className="flex flex-wrap items-stretch -mx-1">
                     <div className="w-full lg:w-3/5 px-1 mb-2 lg:mb-0">
+
                         <div className="flex items-end relative h-full px-8 md:px-16 py-16 xl:pb-36 xl:pt-80 rounded-5xl overflow-hidden">
-                            <img
+                            <Image
                                 className="absolute top-0 left-0 h-full w-full object-cover"
-                                src="uinel-assets/images/ecommerce-headers/bg-placeholder.png"
-                                alt=""
+                                src={first.cover.src}
+                                alt={first.cover.alt}
+                                layout="fill"
                             />
                             <div className="relative">
                                 <span className="block mb-9 font-medium tracking-widest uppercase text-xs text-gray-200">
@@ -20,19 +63,15 @@ const Hero = () => {
                                 </h1>
                                 <a
                                     className="inline-block py-4 px-10 w-full md:w-auto md:mr-6 mb-2 md:mb-0 leading-8 font-heading font-medium tracking-tighter text-xl text-white text-center bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 hover:bg-blue-600 rounded-xl"
-                                    href="#"
+                                    href={cta.url}
                                 >
-                                    Shop now
+                                    {cta.name}
                                 </a>
-                                <a
-                                    className="inline-block py-4 px-10 w-full md:w-auto leading-8 font-heading font-medium tracking-tighter text-xl text-center bg-white focus:ring-2 focus:ring-gray-100 focus:ring-opacity-50 hover:bg-gray-100 rounded-xl"
-                                    href="#"
-                                >
-                                    More
-                                </a>
+
                             </div>
                         </div>
                     </div>
+
                     <div className="w-full lg:w-2/5 px-1">
                         <div className="relative flex items-end px-8 md:px-16 py-16 xl:pb-16 mb-2 xl:h-1/2 rounded-5xl overflow-hidden">
                             <img
@@ -55,6 +94,7 @@ const Hero = () => {
                                 </a>
                             </div>
                         </div>
+
                         <div className="relative flex items-end px-8 md:px-16 py-16 xl:pb-16 xl:h-1/2 rounded-5xl overflow-hidden">
                             <img
                                 className="absolute top-0 left-0 h-full w-full object-cover transform scale-150"
@@ -77,6 +117,8 @@ const Hero = () => {
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </section>
