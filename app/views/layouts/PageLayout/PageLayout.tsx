@@ -4,7 +4,6 @@ import Footer from "@views/components/Footer"
 import type { ILayout } from "@typings/Layout"
 import header from "@db/header"
 
-
 const PageLayout = ({ children, metaData }: ILayout) => {
 
     return (

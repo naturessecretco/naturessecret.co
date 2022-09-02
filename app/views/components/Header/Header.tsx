@@ -61,7 +61,7 @@ const Header = ({ favicon, navLinks }: HeaderProps) => {
                                             return (
                                                 <li key={index}
                                                     className="mr-16">
-                                                    <a className="font-medium hover:text-darkBlueGray-400"
+                                                    <a className="font-medium hover:text-darkBlueGray-400 uppercase"
                                                         href={link.url}>
                                                         {link.name}
                                                     </a>

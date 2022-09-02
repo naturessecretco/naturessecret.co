@@ -20,8 +20,7 @@ const Hero = ({ subheading, heading, cta, illustration }: HeroProps) => {
         <div className="md:grid md:grid-cols-2 md:items-center md:gap-16">
           <div className="relative mb-10 md:mb-0 text-center md:text-left z-10">
             <span
-              className="inline-block py-3 px-7 mb-10 text-lg font-medium font-heading leading-5 text-indigo-500 border border-indigo-500 rounded-6xl"
-              href="#"
+              className="inline-block py-3 px-7 mb-10 text-lg font-medium font-heading leading-5 text-white shadow-2xl bg-black bg-opacity-75 transition-all hover:bg-gray-400 border border-indigo-500 rounded-6xl"
             >
               {subheading ? subheading : "Subheading"}
             </span>
@@ -38,8 +37,8 @@ const Hero = ({ subheading, heading, cta, illustration }: HeroProps) => {
           <img src="uinel-assets/images/call-to-action/widget.png" alt="" />
         </div>
       </div>
-      <NatureAnimation className="absolute right-0 top-0"/>
 
+      <NatureAnimation className="absolute right-0 top-0" />
     </section>
 
 

@@ -21,7 +21,7 @@ const HomePage = ({ pageData }: IPage) => {
 
   return (
     <PageLayout metaData={pageData.metaData}>
-      <Hero heading={"Home to Natures Best Kept Secrets"}/>
+      <Hero cta={{ name: "Order Now" }} subheading={"Shop Now"} heading={"Home to Natures Best Kept Secrets"} />
       <ContentArray />
       <SimpleForm />
       <DataRow />
