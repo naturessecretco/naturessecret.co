@@ -9,12 +9,15 @@ import Box from "@mui/material/Box"
 const RootLayout = ({ children, metaData }: ILayout) => {
 
     return (
-        <Box>
+    
+            <>
+            
             <CssBaseline />
             <Meta {...metaData} />
             {children}
-        </Box>
+            </>
     )
+    
 }
 
 

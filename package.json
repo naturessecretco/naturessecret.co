@@ -1,6 +1,6 @@
 {
   "name": "naturessecret.co",
-  "version": "11.11.11",
+  "version": "11.0.31",
   "description": "",
   "main": "index.js",
   "directories": {
@@ -19,8 +19,5 @@
   "bugs": {
     "url": "https://github.com/desirtech/naturessecret.co/issues"
   },
-  "homepage": "https://github.com/desirtech/naturessecret.co#readme",
-  "dependencies": {
-    "react-headroom": "^3.2.0"
-  }
+  "homepage": "https://github.com/desirtech/naturessecret.co#readme"
 }
