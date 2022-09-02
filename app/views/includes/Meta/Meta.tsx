@@ -1,6 +1,10 @@
 import Head from "next/head"
 import meta from "@configs/meta"
 
+
+export type Font = {
+    href: string
+}
 export type Preload = {
     name?: string,
     href: string
@@ -12,20 +16,21 @@ export type Stylesheet = {
 }
 
 export type MetaProps = {
-    title: string,
+    title?: string,
     pageTitle: string,
     description: string,
     copyright: string,
+    fonts: Font[],
     preloads: Preload[],
     preconnects: Preconnect[],
     stylesheets: Stylesheet[]
 }
 
 
-const Meta = ({ title, description, copyright, pageTitle, preconnects }: MetaProps) => {
+const Meta = ({ description, copyright, pageTitle, preconnects }: MetaProps) => {
 
 
-    const { title: siteTitle, description: siteDescription, copyright: siteCopyright } = meta
+    const { title , description: siteDescription, copyright: siteCopyright, icons: siteIcons, fonts,  } = meta
 
 
     const PreConnects = (preconnects: Preconnect[]) => {
@@ -40,8 +45,19 @@ const Meta = ({ title, description, copyright, pageTitle, preconnects }: MetaPro
         })
 
     }
+    const Fonts = (fonts: Font[]) => {
 
-    const Icons = () => {
+        return (
+
+            <link
+                href=""
+                rel="stylesheet"
+            />
+
+        )
+    }
+
+    const Icons = (icons) => {
 
         return <>
             <link rel="android-chrome icon shortcut" sizes={"180x180"} href="/assets/icons/180x180.png" />
@@ -50,15 +66,7 @@ const Meta = ({ title, description, copyright, pageTitle, preconnects }: MetaPro
 
     return (
         <Head>
-        
-                <title>{siteTitle} | {pageTitle}</title>
-
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
-                    rel="stylesheet"
-                />
-
-
+            <title>{title} | {pageTitle}</title>
         </Head>
     )
 }
