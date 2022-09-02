@@ -15,42 +15,58 @@ export type HeaderProps = {
         src: string,
         url: string
     },
-    navLinks?: Link[]
+    navLinks?: Link[],
+    banner: BannerProps
 }
 
-const Banner = ({ message = "" }) => {
 
-    return (
-        <div className="py-1 text-center text-sm border-b border-gray-100 bg-black text-white">
-            <p className="font-medium text-darkBlueGray-300 leading-10">
-                <span>Wildcrafred Seasmoss.</span>
-                <span className="text-darkBlueGray-900">Get 20% off card!</span>
-            </p>
-        </div>
-    )
+export type BannerProps = {
+    message: string,
+    show: boolean
 }
 
-const Header = ({ favicon, navLinks }: HeaderProps) => {
+const Banner = ({ message, show }: BannerProps) => {
 
+
+    if (show) {
+        return (
+            <div className="py-1 text-center text-sm border-b border-gray-100 bg-black text-white">
+                <p className="font-medium text-darkBlueGray-300 leading-10">
+                    <span>{message}</span>
+                </p>
+            </div>
+        )
+    }
+
+    else {
+        return (
+            <>
+            </>
+        )
+    }
+}
+
+const Header = ({ favicon, navLinks, banner }: HeaderProps) => {
 
     const ContainerSx = {
-        backdropFilter: "blur(8px)",
+        backdropFilter: "blur(5px)",
         borderBottom: '1px solid black'
     }
 
     return (
         <Headroom>
             <section style={ContainerSx} className="relative">
-                <Banner />
+                <Banner {...banner} />
                 <div className="px-6 lg:px-12">
                     <nav className="flex justify-between">
                         <div className="flex w-full items-center py-6">
-
-                            <a href="#">
-                                <img
-                                    className="h-12"
-                                    src="/assets/images/logo.png"
-                                    alt=""
+                            <a href={`${favicon.url}`}>
+                                <Avatar
+                                    sx={{
+                                        height: "80px",
+                                        width: "80px",
+                                    }}
+                                    src={favicon.src}
                                 />
                             </a>
 
@@ -61,7 +77,7 @@ const Header = ({ favicon, navLinks }: HeaderProps) => {
                                             return (
                                                 <li key={index}
                                                     className="mr-16">
-                                                    <a className="font-medium hover:text-darkBlueGray-400 uppercase"
+                                                    <a className="font-medium hover:text-darkBlueGray-400 text-white uppercase"
                                                         href={link.url}>
                                                         {link.name}
                                                     </a>
@@ -73,22 +89,12 @@ const Header = ({ favicon, navLinks }: HeaderProps) => {
                                 }
                             </ul>
 
-                            <div className="relative hidden xl:block">
-                                <img
-                                    className="absolute top-1/2 transform -translate-y-2/4 pl-6 mt-px"
-                                    src="uinel-assets/elements/navigations/search-gray-icon.svg"
-                                    alt=""
-                                />
-                                <input
-                                    className="rounded-4xl py-3 pl-12 pr-5 bg-transparent text-gray-300 font-heading font-medium text-base  border-2 border-blueGray-100 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 outline-none"
-                                    style={{ width: 145 }}
-                                />
-                            </div>
+
                             <div className="hidden xl:block flex-shrink-0 w-px h-12 bg-gray-100 ml-12 mr-12" />
                             <div className="hidden xl:flex items-center">
 
                                 <a
-                                    className="relative inline-block text-gray-400 hover:text-gray-500"
+                                    className="relative inline-block text-white hover:text-gray-500"
                                     href="#"
                                 >
                                     <div className="absolute bottom-0 right-0 flex items-center justify-center -mb-4 -mr-4 w-6 h-6 text-sm text-white bg-blue-500 rounded-full">
@@ -117,7 +123,7 @@ const Header = ({ favicon, navLinks }: HeaderProps) => {
                                         />
                                     </svg>
                                 </a>
-                                <div className="flex-shrink-0 w-px h-12 bg-gray-100 ml-9 mr-10" />
+                                <div className="flex-shrink-0 w-px h-12 bg-white  ml-9" />
 
                             </div>
                         </div>

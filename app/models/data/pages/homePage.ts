@@ -33,7 +33,7 @@ const homePage: DataPage = {
             pageTitle: 'Home'
         },
 
-        hero: {
+        Hero: {
             cta: {
                 name: 'Get Started',
                 url: '/get-started'
