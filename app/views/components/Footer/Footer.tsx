@@ -1,7 +1,7 @@
 const Footer = () => {
 
   return (
-    <section className="bg-opacity-80">
+    <section className="bg-opacity-80 bg-black text-white">
       <div className="pt-24 2xl:pt-44">
         <div className="container px-4 mx-auto">
           <span className="block mb-7 text-xs leading-4 text-gray-300 uppercase font-medium tracking-widest">
