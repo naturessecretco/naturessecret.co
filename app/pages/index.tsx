@@ -42,6 +42,7 @@ export async function getStaticProps() {
   const dataQuery = await getDataPage().catch(err => {
     console.log(err)
   })
+  
 
   return {
     props: {
