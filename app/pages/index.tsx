@@ -6,11 +6,13 @@ import ContentCarousel from "@views/components/ContentCarousel"
 import ContentRow from "@views/components/ContentRow"
 import DataCarousel from "@views/components/DataCarousel"
 import DataRow from "@views/components/DataRow"
-import type { IPage } from '@typings/Page'
 import Hero from "@components/Hero"
-import getDataPage from "@services/getDataPage"
-import { useEffect } from "react"
 import ContentArray from '@views/components/ContentArray'
+
+import { useEffect } from "react"
+
+import type { IPage } from '@typings/Page'
+import homePage from '@pages/homePage'
 
 
 const HomePage = ({ pageData }: IPage) => {
@@ -21,7 +23,7 @@ const HomePage = ({ pageData }: IPage) => {
 
   return (
     <PageLayout metaData={pageData.metaData}>
-      <Hero cta={{ name: "Order Now" }} subheading={"Shop Now"} heading={"Home to Natures Best Kept Secrets"} />
+      <Hero {...pageData.hero} />
       <ContentArray />
       <SimpleForm />
       <DataRow />
@@ -39,17 +41,11 @@ export default HomePage
 
 export async function getStaticProps() {
 
-  const dataQuery = await getDataPage().catch(err => {
-    console.log(err)
-  })
-  
 
   return {
     props: {
-      pageData: dataQuery,
-      version: Date.now()
+      pageData: homePage.init()
     }
   }
-
 
 }

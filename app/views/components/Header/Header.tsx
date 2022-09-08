@@ -54,8 +54,9 @@ const Header = ({ favicon, navLinks, banner }: HeaderProps) => {
     }
 
     return (
-        <Headroom>
-            <section style={ContainerSx} className="relative">
+
+        <section style={ContainerSx} className="relative">
+            <Headroom>
                 <Banner {...banner} />
                 <div className="px-6 lg:px-12">
                     <nav className="flex justify-between">
@@ -129,8 +130,9 @@ const Header = ({ favicon, navLinks, banner }: HeaderProps) => {
                         </div>
                     </nav>
                 </div>
-            </section>
-        </Headroom>
+            </Headroom>
+
+        </section>
 
     )
 
