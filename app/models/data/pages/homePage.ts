@@ -17,11 +17,11 @@ const homePage: DataPage = {
         },
 
         hero: {
-
             title: 'Home to Natures Best Kept Secrets'
+        },
+        features: [0, 0, 0, 0, 0]
 
-        }
-    }
+    },
 }
 
 export default homePage

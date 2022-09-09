@@ -1,10 +1,15 @@
-import '@libs/globals.css'
 import '@libs/tailwind.css'
+import "@libs/globals.css"
+import type { IApplication } from '@typings/Application'
+import { RecoilRoot } from 'recoil';
 
-import type { AppProps } from 'next/app'
+function Application({ Component, pageProps }: IApplication) {
 
-function Application({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <RecoilRoot>
+      <Component {...pageProps} />
+    </RecoilRoot>
+  )
 }
 
 export default Application

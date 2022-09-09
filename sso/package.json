@@ -1,5 +1,5 @@
 {
-  "name": "sso",
+  "name": "wtfmvmt-facade",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,10 +11,16 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.3",
     "next": "12.2.5",
+    "next-auth": "^4.10.3",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-awesome-reveal": "^4.0.1",
+    "react-countdown": "^2.3.2",
+    "react-dom": "18.2.0",
+    "react-headroom": "^3.2.0",
+    "recoil": "^0.7.5"
   },
   "devDependencies": {
     "@types/node": "18.7.14",

@@ -1,4 +1,4 @@
-export interface ILayout {
-    children?: any,
-    metaData?: object
+export interface ILayout  {
+    children?: React.ReactNode,
+    metaData: any
 }
