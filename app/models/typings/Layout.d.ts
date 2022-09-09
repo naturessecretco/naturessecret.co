@@ -1,6 +1,4 @@
-
 export interface ILayout {
-    children: any;
-    metaData?: object
+    children?: any,
+    metaData?: any
 }
-

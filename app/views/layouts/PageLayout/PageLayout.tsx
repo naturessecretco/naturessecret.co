@@ -1,16 +1,12 @@
 import RootLayout from "@layouts/RootLayout"
-import Header from "@views/components/Header"
-import Footer from "@views/components/Footer"
-import type { ILayout } from "@typings/Layout"
-import header from "@db/header"
+import Header from "@components/Header"
 
-const PageLayout = ({ children, metaData }: ILayout) => {
+const PageLayout = ({ children, metaData }) => {
 
     return (
         <RootLayout metaData={metaData}>
-            <Header {...header}/>
+            <Header/>
             {children}
-            <Footer/>
         </RootLayout>
     )
 }
