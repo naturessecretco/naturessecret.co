@@ -18,6 +18,8 @@ const homePage: DataPage = {
 
         hero: {
 
+            title: 'Home to Natures Best Kept Secrets'
+
         }
     }
 }

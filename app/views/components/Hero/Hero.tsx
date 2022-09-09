@@ -10,8 +10,8 @@ const Hero = ({ title }: HeroProps) => {
             <div className="container mx-auto px-4">
 
 
-                <h2 className="mb-16 md:mb-24 text-4xl md:text-5xl font-bold font-heading">
-                    {title ? title : "Title "}
+                <h2 className="text-white mb-16 md:mb-24 text-6xl md:text-5xl font-thin font-heading">
+                    {title ? title : "Title"}
                 </h2>
 
 
