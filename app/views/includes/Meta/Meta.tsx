@@ -6,8 +6,9 @@ const Meta = ({ pageTitle }) => {
   return (
     <Head>
       <title>{meta.title} | {pageTitle ? pageTitle : "Home"}</title>
-
       <meta name="keywords" content="your, tags" />
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
       <meta name="description" content="150 words" />
       <meta name="subject" content="your website's subject" />
       <meta name="copyright" content="company name" />

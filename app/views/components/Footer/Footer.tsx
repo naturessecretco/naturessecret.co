@@ -142,7 +142,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
 
     return (
 
-        <section style={{ backdropFilter: 'blur(3px)' }} className="py-20 bg-black bg-opacity-40">
+        <section style={{ backdropFilter: 'blur(3px)' }} className="py-20 bg-black bg-opacity-40 w-full">
             <div className="container mx-auto px-4">
                 <div className="text-center pb-20 border-b border-gray-300">
                     <Favicon />

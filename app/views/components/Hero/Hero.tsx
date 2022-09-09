@@ -53,7 +53,7 @@ const Hero = ({ title, cta }: HeroProps) => {
 
     const Title = () => {
         return (
-            <h1 className="mb-16 md:mb-24 text-9xl md:text-7xl font-thin font-heading">
+            <h1 className="mb-16 md:mb-24 text-6xl md:text-4xl font-thin font-heading">
                 {title ? title : "Title"}
             </h1>
 
