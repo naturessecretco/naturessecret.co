@@ -1,7 +1,7 @@
 const Header = () => {
   
   return (
-    <section className="bg-black relative">
+    <section className="relative">
       <div className="py-2 bg-blue-600">
         <div className="flex items-center justify-center">
           <svg
