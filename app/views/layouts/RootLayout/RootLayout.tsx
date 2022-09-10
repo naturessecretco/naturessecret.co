@@ -1,6 +1,6 @@
 
 import type { ILayout } from "@models/typings/Layout"
-import CssBaseLine from "@mui/material/CssBaseLine"
+import CssBaseline from "@mui/material/CssBaseline"
 import Box from "@mui/material/Box"
 import Meta from "@includes/Meta"
 
@@ -8,7 +8,7 @@ const RootLayout = ({ children, metaData }: ILayout) => {
 
     return (
         <Box>
-            <CssBaseLine />
+            <CssBaseline />
             <Meta {...metaData} />
             {children}
         </Box>
