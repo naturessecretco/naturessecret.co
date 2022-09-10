@@ -3,7 +3,7 @@ import { atom, useRecoilState } from "recoil"
 const drawerMenuState = atom({
     key: 'drawerMenuState',
     default: {
-        isOpen: true
+        isOpen: false
     },
 });
 

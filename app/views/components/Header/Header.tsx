@@ -72,7 +72,7 @@ const Header = ({ favicon, navLinks }: HeaderProps) => {
       <section style={{
         backdropFilter: 'blur(8px)',
         borderBottom: '1px solid white'
-      }} className="relative">
+      }} className="relative bg-black bg-opacity-30">
 
 
         <Banner />
