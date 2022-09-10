@@ -19,16 +19,16 @@ const homePage: DataPage = {
         hero: {
             title: 'Home to Natures Best Kept Secrets',
             features: {
-                heading: 'Our Featured Products',
+                heading: 'Natures Secret',
                 links: [
                     {
-                        name: 'Wildcrafted Seamoss'
+                        name: 'Our Missions'
                     },
                     {
                         name: 'Our Products'
                     },
                     {
-                        name: 'About our Company'
+                        name: 'Our Company'
                     }
                 ]
             }

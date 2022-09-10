@@ -79,15 +79,15 @@ const Hero = ({ title, features }: HeroProps) => {
                             <div className="flex flex-wrap h-full">
                                 <div className="w-full md:w-7/12">
                                     <img
-                                        className="h-64 md:h-full w-full object-cover"
-                                        src="yofte-assets/images/placeholder4.png"
+                                        className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
+                                        src="/assets/images/seamoss.png"
                                         alt=""
                                     />
                                 </div>
-                                <div className="w-full md:w-5/12">
+                                <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
                                     <img
                                         className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
-                                        src="yofte-assets/images/placeholder3.png"
+                                        src="/assets/images/seamoss.png"
                                         alt=""
                                     />
                                 </div>

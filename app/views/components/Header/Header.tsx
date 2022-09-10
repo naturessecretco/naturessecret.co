@@ -51,7 +51,7 @@ const Header = ({ favicon, navLinks }: HeaderProps) => {
             return (
               <li key={index}>
                 <a
-                  className="mr-12 font-bold font-heading hover:text-green-300 hover:scale-110 transition-all bg-black rounded bg-opacity-10 p-2 text-white"
+                  className="mr-12 font-bold font-heading hover:text-green-400 hover:rounded hover:bg-black hover:bg-opacity-60 hover:scale-110 transition-all p-2 text-black"
                   href={link.url}
                 >
                   {link.name}
@@ -91,14 +91,14 @@ const Header = ({ favicon, navLinks }: HeaderProps) => {
             <a className="flex items-center" href="#">
 
               <Badge color='primary' badgeContent={1}>
-                <ShoppingBasketIcon className="text-white" />
+                <ShoppingBasketIcon className="text-black" />
               </Badge>
 
             </a>
           </div>
 
           <a onClick={() => toggleDrawer()} className="navbar-burger self-center mr-12" href="#">
-            <MenuOpenIcon className="text-white" />
+            <MenuOpenIcon className="text-black" />
           </a>
         </nav>
 
