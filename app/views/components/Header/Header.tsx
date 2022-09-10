@@ -35,7 +35,7 @@ const Header = () => {
 
         <Banner />
 
-        <nav className="relative flex justify-between bg-opacity-30">
+        <nav className="relative flex justify-between">
           <div className="px-12 py-6 flex w-full items-center">
 
 
