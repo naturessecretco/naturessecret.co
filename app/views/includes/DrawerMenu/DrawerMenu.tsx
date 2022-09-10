@@ -5,13 +5,42 @@ import CloseIcon from '@mui/icons-material/Close';
 
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 
+export type Link = {
+    name: string,
+    url?: string
+}
+
 export type DrawerMenuProps = {
 
+    navLinks?: Link[]
 }
-const DrawerMenu = () => {
+
+
+const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
 
     const { drawer: { isOpen }, toggleDrawer } = useDrawer()
 
+
+    const NavLinks = () => {
+
+        return (
+            navLinks ?
+                <ul className="text-3xl font-bold font-heading">
+                    {
+                        navLinks.map((link, index) => {
+                            return (
+                                <li key={index} className="mb-8">
+                                    <a className="text-white hover:text-green-300 hover:bg-black rounded hover:bg-opacity-50 transition-all p-3" href={link.url}>{link.name}</a>
+                                </li>
+
+                            )
+                        })
+                    }
+
+
+                </ul> : <></>
+        )
+    }
 
     return (
 
@@ -20,14 +49,14 @@ const DrawerMenu = () => {
             unmountOnExit>
 
             <ClickAwayListener onClickAway={() => toggleDrawer()}>
-                <div className={`navbar-menu ${!isOpen ? "swing-out-left-bck" : ""} swing-in-left-fwd fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-50`}>
-                    <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25" />
-                    <nav className="relative flex flex-col py-6 px-6 w-full h-full bg-black bg-opacity-80 border-r overflow-y-auto">
+                <div style={{ backdropFilter: 'blur(10px)' }} className={`navbar-menu ${!isOpen ? "swing-out-left-bck" : ""} swing-in-left-fwd fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-50`}>
+                    <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-50" />
+                    <nav className="relative flex flex-col py-6 px-6 w-full h-full bg-green-800 bg-opacity-50 border-r overflow-y-auto">
                         <div className="flex items-center mb-8">
                             <a className="mr-auto text-3xl font-bold font-heading" href="#">
                                 <img
-                                    className="h-9"
-                                    src="yofte-assets/logos/yofte-logo.svg"
+                                    className="h-20"
+                                    src="/assets/images/logo.png"
                                     alt=""
                                     width="auto"
                                 />
@@ -115,24 +144,18 @@ const DrawerMenu = () => {
                             </div>
                         </div>
                         <input
-                            className="block mb-10 py-5 px-8 bg-gray-100 rounded-md border-transparent focus:ring-blue-300 focus:border-blue-300 focus:outline-none"
+                            className="block mb-10 py-5 px-8  bg-black bg-opacity-50 rounded-md border-transparent focus:ring-blue-300 focus:border-blue-300 focus:outline-none"
                             type="search"
                             placeholder="Search"
                         />
-                        <ul className="text-3xl font-bold font-heading">
-                            <li className="mb-8">
-                                <a href="#">Category</a>
-                            </li>
-                            <li className="mb-8">
-                                <a href="#">Collection</a>
-                            </li>
-                            <li className="mb-8">
-                                <a href="#">Story</a>
-                            </li>
-                            <li>
-                                <a href="#">Brand</a>
-                            </li>
-                        </ul>
+
+
+
+
+                        <NavLinks />
+
+
+
                     </nav>
                 </div>
             </ClickAwayListener>

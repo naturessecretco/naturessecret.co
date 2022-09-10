@@ -14,12 +14,13 @@ export type Link = {
 export type HeaderProps = {
   favicon?: Favicon,
   navLinks?: Link[]
+  bannerProps?: any
 
 }
 
 
 
-const Header = ({ favicon, navLinks }: HeaderProps) => {
+const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
 
   const { drawer: { isOpen }, toggleDrawer } = useDrawer()
 
@@ -49,13 +50,9 @@ const Header = ({ favicon, navLinks }: HeaderProps) => {
         {
           navLinks.map((link, index) => {
             return (
-              <li key={index}>
+              <li className="hover:rounded hover:bg-black hover:bg-opacity-60 hover:scale-90 transition-all" key={index}>
                 <a
-                  className="mr-12 font-bold font-heading hover:text-green-400 hover:rounded hover:bg-black hover:bg-opacity-60 hover:scale-110 transition-all p-2 text-black"
-                  href={link.url}
-                >
-                  {link.name}
-                </a>
+                  className="mr-12 inline-block w-full font-bold font-heading hover:text-green-400  text-white" href={link.url}>{link.name}</a>
               </li>
             )
           })
@@ -75,7 +72,7 @@ const Header = ({ favicon, navLinks }: HeaderProps) => {
       }} className="relative bg-black bg-opacity-30">
 
 
-        <Banner />
+        <Banner {...bannerProps} />
 
         <nav className="relative flex justify-between">
           <div className="px-12 py-6 flex w-full items-center">

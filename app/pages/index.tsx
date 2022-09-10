@@ -6,18 +6,17 @@ import Hero from "@components/Hero"
 import Gallery from "@components/Gallery"
 import MediaRow from "@views/components/MediaRow"
 import Summary from "@views/components/Summary"
+
+
 const HomePage = ({ pageData }) => {
 
   return (
     <PageLayout {...pageData.layout}>
       <Hero {...pageData.hero} />
-      <LogoRow />
-
+      <LogoRow {...pageData.logoRow}/>
       <Featured {...pageData.featured} />
       <MediaRow />
-
       <Summary />
-
       <Gallery />
     </PageLayout>
   )

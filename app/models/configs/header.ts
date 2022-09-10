@@ -9,7 +9,10 @@ const header = {
 
     data: {
         favicon: meta.favicon,
-        navLinks: meta.links
+        navLinks: meta.links,
+        bannerProps: {
+            message: 'Try our Wildcrafted Seamoss Today!'
+        }
     }
 }
 

@@ -33,6 +33,10 @@ const homePage: DataPage = {
                 ]
             }
         },
+
+        logoRow: {
+
+        },
         features: [0, 0, 0, 0, 0]
 
     },

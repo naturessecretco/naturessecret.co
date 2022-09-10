@@ -2,16 +2,28 @@ const meta = {
     title: "Natures Secret",
     links: [
         {
-            name: 'About',
-            url: '/about'
-        },
-        {
-            name: 'Contact',
+            name: 'Contact Us',
             url: '/contact'
         },
         {
-            name: 'Store',
+            name: 'Our Shop',
             url: '/store'
+        },
+        {
+            name: 'Order Status',
+            url: '/'
+        },
+        {
+            name: 'Major Benefits',
+            url: '/benefits'
+        },
+        {
+            name: 'Our Mission',
+            url: '/our-mission'
+        },
+        {
+            name: 'Support Us',
+            url: '/support-us'
         }
     ],
     description: "Home to Natures Best Kept Secrets",

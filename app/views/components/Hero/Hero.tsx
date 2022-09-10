@@ -87,7 +87,7 @@ const Hero = ({ title, features }: HeroProps) => {
                                 <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
                                     <img
                                         className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
-                                        src="/assets/images/seamoss.png"
+                                        src="/assets/images/honey.png"
                                         alt=""
                                     />
                                 </div>
@@ -198,11 +198,11 @@ const Hero = ({ title, features }: HeroProps) => {
                     </a>
                 </div>
                 <div className="max-w-3xl mx-auto py-24 text-center">
-                    <h2 className="mb-8 text-5xl xl:text-6xl font-bold font-heading">
+                    <h2 className="text-6xl xl:text-6xl font-bold font-heading text-gray-100">
                         Home to Natures Best Kept Secrest
                     </h2>
                     <a
-                        className="inline-block bg-orange-300 hover:bg-orange-400 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"
+                        className="inline-block bg-blue-300 hover:bg-green-400 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"
                         href="#"
                     >
                         Shop Now
