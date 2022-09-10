@@ -8,8 +8,8 @@ const RootLayout = ({ children, metaData }: ILayout) => {
 
     return (
         <Box>
-            <Meta {...metaData} />
             <CssBaseLine />
+            <Meta {...metaData} />
             {children}
         </Box>
     )
