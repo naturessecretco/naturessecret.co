@@ -1,3 +1,5 @@
+import meta from "@configs/meta"
+
 const header = {
 
     init: () => {
@@ -6,7 +8,8 @@ const header = {
     },
 
     data: {
-        
+        favicon: meta.favicon,
+        navLinks: meta.links
     }
 }
 

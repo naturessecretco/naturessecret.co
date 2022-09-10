@@ -1,5 +1,5 @@
 import { SocialIcon } from 'react-social-icons';
-
+import { Fade } from 'react-awesome-reveal';
 export type Link = {
     name?: string,
     url?: string,
@@ -26,26 +26,31 @@ const Hero = ({ title, features }: HeroProps) => {
                     <div className="flex flex-wrap -mx-4">
                         <div className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0">
 
-                            <div className="px-4 md:px-8 py-12 ">
+                            <div className="px-4 md:px-8 py-10 bg-black bg-opacity-80  rounded">
                                 <h4 className="pl-8 mb-2 text-sm font-bold font-heading text-gray-200 uppercase">
                                     {features.heading}
                                 </h4>
 
                                 <ul className="mb-5">
 
-                                    {features.links ? features.links.map((link, index) => {
-                                        return (
-                                            <li key={index} className="py-5 px-8">
-                                                <a
-                                                    className="flex items-center text-lg font-bold font-heading hover:text-blue-300"
-                                                    href="#"
-                                                >
-                                            
-                                                    <span>{link.name}</span>
-                                                </a>
-                                            </li>
-                                        )
-                                    }) : <></>}
+                                    <Fade cascade>
+                                        {features.links ? features.links.map((link, index) => {
+                                            return (
+                                                <li key={index} className="py-5 px-8">
+                                                    <a
+                                                        className="flex items-center text-lg text-gray-300 font-bold font-heading hover:text-green-700"
+                                                        href="#"
+                                                    >
+
+                                                        <span>{link.name}</span>
+                                                    </a>
+                                                </li>
+                                            )
+                                        }) : <></>}
+
+                                    </Fade>
+
+
 
                                 </ul>
 
@@ -53,7 +58,7 @@ const Hero = ({ title, features }: HeroProps) => {
 
 
                                 <a className="inline-block w-full" href="#">
-                                    
+
                                     <svg
                                         className="mx-auto"
                                         width={13}
@@ -100,7 +105,7 @@ const Hero = ({ title, features }: HeroProps) => {
         return (
             <div className="relative container mx-auto px-4">
                 <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
-                    
+
                     <a
                         className="inline-flex items-center justify-center w-12 h-12 mr-2 bg-blue-300 rounded-full"
                         href="#"
