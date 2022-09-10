@@ -1,8 +1,6 @@
 import layout from '@configs/layout';
 import productsDB from '@db/products';
 
-
-
 const products = {
 
     init: () => {
@@ -10,7 +8,12 @@ const products = {
     },
 
     data: {
-        layout: { ...layout },
+        layout: {
+            ...layout,
+            metaData: {
+                pageTitle: 'Products',
+            }
+        },
         products: [...productsDB]
     }
 }
