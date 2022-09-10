@@ -30,7 +30,8 @@ const Header = () => {
   return (
 
     <Headroom>
-      <section style={{ backdropFilter: 'blur(3px)' }} className="relative">
+      <section style={{ backdropFilter: 'blur(8px)', 
+                        borderBottom: '1px solid white' }} className="relative">
 
 
         <Banner />
@@ -41,7 +42,7 @@ const Header = () => {
 
             <Favicon />
 
-            <ul style={{ fontFamily: "var(--font-secondary)" }}className="hidden lg:flex absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:items-center lg:w-auto">
+            <ul className="hidden lg:flex absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:items-center lg:w-auto">
               <li>
                 <a
                   className="mr-12 font-bold font-heading hover:text-gray-600"

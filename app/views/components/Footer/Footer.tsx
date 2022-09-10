@@ -34,7 +34,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
                 <h3 className="mb-3 text-xl text-green-300 font-bold font-heading">
                     {TITLE}
                 </h3>
-                <p className="text-white text-2xl md:text-3xl font-bold font-heading">
+                <p className="text-gray-200 text-2xl md:text-3xl font-bold font-heading">
                     {phone}
                 </p>
             </div> : <></>
@@ -51,7 +51,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
                 <h3 className="mb-3 text-xl text-green-300 font-bold font-heading">
                     {TITLE}
                 </h3>
-                <p className="text-white text-2xl md:text-3xl font-bold font-heading">
+                <p className="text-gray-200 text-2xl md:text-3xl font-bold font-heading">
                     {email}
                 </p>
             </div> : <></>
@@ -142,7 +142,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
 
     return (
 
-        <section style={{ backdropFilter: 'blur(3px)' }} className="py-20 bg-black bg-opacity-40 w-full">
+        <section  className="py-20 bg-black bg-opacity-80 w-full">
             <div className="container mx-auto px-4">
                 <div className="text-center pb-20 border-b border-gray-300">
                     <Favicon />

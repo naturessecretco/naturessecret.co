@@ -7,7 +7,7 @@ const Meta = ({ pageTitle }) => {
     <Head>
       <title>{meta.title} | {pageTitle ? pageTitle : "Home"}</title>
       <meta name="keywords" content="your, tags" />
-      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       <meta name="description" content="150 words" />
       <meta name="subject" content="your website's subject" />
@@ -26,13 +26,14 @@ const Meta = ({ pageTitle }) => {
       <meta name="owner" content="" />
       <meta name="url" content="http://www.websiteaddrress.com" />
 
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&display=swap"
-        rel="stylesheet"
-      />
-
+      <>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+    rel="stylesheet"
+  />
+</>
 
 
       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
