@@ -1,6 +1,6 @@
 import layout from "@configs/layout"
 import type { DataPage } from "@typings/DataPage"
-
+import meta from "@configs/meta"
 const homePage: DataPage = {
 
     init: () => {
@@ -18,6 +18,7 @@ const homePage: DataPage = {
 
         hero: {
             title: 'Home to Natures Best Kept Secrets',
+            socials: meta.socials,
             features: {
                 heading: 'Natures Secret',
                 links: [
@@ -37,7 +38,9 @@ const homePage: DataPage = {
         logoRow: {
 
         },
-        features: [0, 0, 0, 0, 0]
+        featured: {
+            title: 'Best Selling'
+        }
 
     },
 }

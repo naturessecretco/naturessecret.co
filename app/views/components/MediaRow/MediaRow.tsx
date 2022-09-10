@@ -1,7 +1,7 @@
 const MediaRow = () => {
 
     return (
-        <section className="py-20 bg-gray-100">
+        <section className="py-20">
             <div className="container mx-auto px-4">
                 <div className="flex flex-wrap -mx-4 pb-20 border-b">
                     <div className="relative w-full md:w-1/2 lg:w-1/4 px-4 mb-16 lg:mb-0">

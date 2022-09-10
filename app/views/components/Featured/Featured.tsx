@@ -28,7 +28,7 @@ const Featured = ({ title, cta }: HeroProps) => {
                         <div className="px-6 pb-16 mt-12">
                             <div className="px-6 mb-2">
                                 <h3 className="mb-3 text-3xl text-white font-bold font-heading">
-                                    LIFE Bottle 2.0
+                                   Wildcrafted Seamoss
                                 </h3>
                                 <p className="mb-4 text-xl font-bold font-heading text-white">
                                     <span>$10.30</span>
@@ -53,7 +53,7 @@ const Featured = ({ title, cta }: HeroProps) => {
 
     const Title = () => {
         return (
-            <h1 className="mb-16 md:mb-24 text-6xl md:text-4xl font-thin font-heading">
+            <h1 className="text-white mb-16 md:mb-24 text-6xl md:text-4xl font-thin font-heading">
                 {title ? title : "Title"}
             </h1>
 
@@ -76,7 +76,7 @@ const Featured = ({ title, cta }: HeroProps) => {
     }
 
     return (
-        <section className="py-20  overflow-x-hidden">
+        <section className="py-20 bg-black bg-opacity-25  overflow-x-hidden">
 
             <div className="container mx-auto px-4">
 

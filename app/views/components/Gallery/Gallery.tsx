@@ -13,7 +13,7 @@ const Gallery = () => {
                 </h2>
                 <div className="relative max-w-4xl mx-auto">
                     <div className="absolute inset-0 border border-gray-500 my-8 -ml-6 -mr-6" />
-                    <div className="relative mx-auto mb-20 py-12 md:py-28 bg-blue-800 border border-white">
+                    <div className="relative mx-auto mb-20 py-12 md:py-28 bg-black border border-white">
                         <img
                             className="w-32 h-32 mb-10 mx-auto rounded-full"
                             src="yofte-assets/images/placeholder-portrait.png"
