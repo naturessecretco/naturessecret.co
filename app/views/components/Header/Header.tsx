@@ -50,7 +50,7 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
         {
           navLinks.map((link, index) => {
             return (
-              <li className="" key={index}>
+              <li style={{ fontFamily: 'var(--font-secondary)' }} className="" key={index}>
                 <a
                   className="mr-8 inline-block w-full  hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-white" href={link.url}>{link.name}</a>
               </li>

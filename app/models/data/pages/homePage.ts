@@ -17,10 +17,10 @@ const homePage: DataPage = {
         },
 
         hero: {
-            title: 'Home to Natures Best Kept Secrets',
+            title: 'Home to Natures Best Kept Secret',
             socials: meta.socials,
             features: {
-                heading: 'Natures Secret',
+                heading: 'Home to Natures Best Kept Secret',
                 links: [
                     {
                         name: 'Our Missions'

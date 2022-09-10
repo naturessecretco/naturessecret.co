@@ -4,11 +4,14 @@
     --color-tertiary: #00f;
     --quicksand: 'Quicksand', sans-serif;
 
-    --montserrat: 'Montserrat', sans-serif;
-    --merriweather: 'Merriweather', serif;
-    --philosopher: 'Philosopher', sans-serif;
-    --font-primary: var(--quicksand);
-    --font-secondary: var(--merriweather);
+    --cambria: 'Cambria', serif;
+    --font-primary: var(--cambria);
+    --font-secondary: var(--quicksand);
+}
+
+@font-face {
+    font-family: Cambria;
+    src: url(/assets/fonts/Cambria.ttf);
 }
 
 
