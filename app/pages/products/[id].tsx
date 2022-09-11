@@ -28,8 +28,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
 
-    const productData = products.init().products.find(product => product.id === params.id)
-    const pageLayout = products.init().layout
+    const dataPage = products.init()
+    const productData = dataPage.products.find((product) => product.id === params.id)
+    const pageLayout = dataPage.layout
 
     return {
         props: {
