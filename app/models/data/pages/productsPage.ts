@@ -1,5 +1,6 @@
 
-import layout from "@configs/layout"
+import footer from "@configs/footer"
+import header from "@configs/header"
 import products from "@db/products"
 
 const productsPage = {
@@ -12,7 +13,8 @@ const productsPage = {
 
     data: {
         layout: {
-            ...layout,
+          header: header.init(),
+          footer: footer.init(),
             metaData: {
                 pageTitle: 'Products'
             }

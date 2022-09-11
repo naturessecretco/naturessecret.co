@@ -202,7 +202,7 @@ const ProductsSearch = ({ title, items, tags}: ProductSearchProps) => {
 
       items ? <div className="w-full lg:w-3/4 px-3">
         {items.map((item, index) => (
-          <div key={index} className="relative mb-6 bg-black bg-opacity-70 rounded hover:scale-90 transition-all">
+          <div key={index} className="relative mb-6 bg-black bg-opacity-70 rounded hover:scale-110 hover:bg-opacity-95 transition-all">
             <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-white border-2 border-red-500 rounded-full text-red-500">
               -15%
             </span>

@@ -1,6 +1,7 @@
 import layout from "@configs/layout"
 import type { DataPage } from "@typings/DataPage"
 import meta from "@configs/meta"
+import productsDB from "@db/products"
 const homePage: DataPage = {
 
     init: () => {
@@ -23,23 +24,29 @@ const homePage: DataPage = {
                 heading: 'Home to Natures Best Kept Secret',
                 links: [
                     {
-                        name: 'Our Missions'
+                        name: 'Check out our new products!',
+                        url: '/products'
                     },
                     {
-                        name: 'Our Products'
+                        name: 'Frequently Asked Questions',
                     },
                     {
-                        name: 'Our Company'
+                        name: 'About our mission'
+                    },
+                    {
+                        name: 'Frequently Asked Questions',
+                    },
+                    {
+                        name: 'About our mission'
                     }
                 ]
             }
         },
 
-        logoRow: {
-
-        },
+       
         featured: {
-            title: 'Best Selling'
+            title: 'Best Selling',
+            features: [...productsDB]
         }
 
     },

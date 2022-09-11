@@ -30,7 +30,7 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
     return (
 
       favicon ?
-        <a className="flex-shrink-0 text-3xl font-bold font-heading" href="#">
+        <a className="flex-shrink-0 text-3xl font-bold font-heading" href="/">
           <img
             className="h-20"
             src={favicon.image.src}
