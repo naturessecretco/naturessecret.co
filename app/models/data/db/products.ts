@@ -1,3 +1,5 @@
+import images from "@db/images"
+
 const productsDB = [
     {
         id: 'wildcrafted-seamoss',
@@ -6,8 +8,8 @@ const productsDB = [
         heading: 'Top Seller',
         tags: ["featured"],
         value: '50.00',
-        price: 10.00,
-        image: 'https://images.unsplash.com/photo-1519680772-8b1b0b2b5b1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+        price: '10.00',
+        cover: images.find(image => image.id === 'wildcrafted-seamoss-1').src,
         category: 'seamoss',
 
     },
@@ -15,8 +17,9 @@ const productsDB = [
         id: 'buckwheat-honey',
         name: 'Buckwheat Honey',
         description: 'Wildcrafted Seamoss',
-        price: 10.00,
-        image: 'https://images.unsplash.com/photo-1519680772-8b1b0b2b5b1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+        price: '10.00',
+        value: '50.00',
+        cover: images.find(image => image.id === 'buckwheat-honey-1').src,
         category: 'seamoss',
 
     }

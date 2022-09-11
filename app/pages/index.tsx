@@ -13,7 +13,6 @@ const HomePage = ({ pageData }) => {
   return (
     <PageLayout {...pageData.layout}>
       <Hero {...pageData.hero} />
-      <LogoRow {...pageData.logoRow}/>
       <Featured {...pageData.featured} />
       <MediaRow />
       <Summary />

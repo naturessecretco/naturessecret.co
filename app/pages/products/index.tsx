@@ -9,7 +9,7 @@ const ProductsPage = ({ pageData }) => {
     return (
 
         <PageLayout {...pageData.layout}>
-            <ProductsSearch />
+            <ProductsSearch {...pageData.productsSearch} />
 
 
         </PageLayout>

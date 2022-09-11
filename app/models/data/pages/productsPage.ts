@@ -1,5 +1,6 @@
 
 import layout from "@configs/layout"
+import products from "@db/products"
 
 const productsPage = {
 
@@ -16,6 +17,13 @@ const productsPage = {
                 pageTitle: 'Products'
             }
         },
+
+        productsSearch: {
+
+            title: 'Explore Our Products',
+            items: products,
+            tags: ["Seamoss", "Honey", "Specials", "Gifts", "Bundles", "All Products"]
+        }
 
     }
 }

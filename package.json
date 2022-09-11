@@ -8,6 +8,7 @@
   },
   "scripts": {
     "readme:g": "npx @appnest/readme generate",
+    "app:dev": "npm i && npm run dev --no-cache",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -35,7 +35,7 @@ const Hero = ({ title, features, socials }: HeroProps) => {
                         <div className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0">
 
                             <div className="px-4 md:px-8 py-10 bg-black bg-opacity-80  rounded">
-                                <h4 className="pl-8 mb-2 text-sm font-bold font-heading text-gray-200 uppercase">
+                                <h4 className="pl-8 mb-2 text-sm font-bold font-heading text-gray-300 uppercase">
                                     {features.heading}
                                 </h4>
 
@@ -126,7 +126,7 @@ const Hero = ({ title, features, socials }: HeroProps) => {
 
                 </div>
                 <div className="max-w-3xl mx-auto py-24 text-center">
-                    <h2 className="text-8xl mb-14 xl:text-6xl font-bold font-heading text-gray-100">
+                    <h2 className="text-8xl mb-14 xl:text-6xl font-bold font-heading text-gray-900">
                         {title ? title : "Title"}
                     </h2>
                     <a

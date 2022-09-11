@@ -52,7 +52,7 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
             return (
               <li style={{ fontFamily: 'var(--font-secondary)' }} className="" key={index}>
                 <a
-                  className="mr-8 inline-block w-full  hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-white" href={link.url}>{link.name}</a>
+                  className="mr-8 inline-block w-full  hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-black" href={link.url}>{link.name}</a>
               </li>
             )
           })
@@ -67,9 +67,9 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
 
     <Headroom>
       <section style={{
-        backdropFilter: 'blur(8px)',
-        borderBottom: '1px solid white'
-      }} className="relative bg-black bg-opacity-30">
+        backdropFilter: 'blur(4px)',
+        borderBottom: '1px solid gray'
+      }} className="relative bg-black bg-opacity-10">
 
 
         <Banner {...bannerProps} />
@@ -88,14 +88,14 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
             <a className="flex items-center" href="#">
 
               <Badge color='error' badgeContent={3}>
-                <ShoppingBasketIcon className="text-gray-200" />
+                <ShoppingBasketIcon className="text-black" />
               </Badge>
 
             </a>
           </div>
 
           <a onClick={() => toggleDrawer()} className="navbar-burger self-center mr-12" href="#">
-            <MenuOpenIcon className="text-gray-200" />
+            <MenuOpenIcon className="text-black h-24" />
           </a>
         </nav>
 

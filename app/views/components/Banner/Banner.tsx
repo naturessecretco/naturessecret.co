@@ -19,7 +19,7 @@ const Banner = ({ message }: BannerProps) => {
       timeout={900}
       unmountOnExit
     >
-      <div className="py-2 bg-black bg-opacity-75">
+      <div className="py-2 bg-black">
         <div className="flex items-center justify-center">
           <p className="text-xs font-bold font-heading text-blue-100">
             {message ? message : "Message"}
