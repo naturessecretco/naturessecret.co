@@ -1,13 +1,16 @@
+import layout from "@configs/layout"
+
 const benefitsPage = {
 
     init: () => {
-
         return { ...benefitsPage.data }
     },
     data: {
         layout: {
-            header: {},
-            footer: {}
+            ...layout,
+            metaData: {
+                pageTitle: 'Benefits'
+            }
         }
     }
 }

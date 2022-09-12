@@ -13,7 +13,7 @@ const meta = {
         },
         {
             name: 'Your Benefits',
-            url: '#benefits'
+            url: '/benefits'
         },
 
         {
@@ -22,7 +22,7 @@ const meta = {
         },
         {
             name: 'Support Us',
-            url: '/support'
+            url: '#support'
         }
     ],
     description: "Home to Natures Best Kept Secrets",

@@ -1,5 +1,4 @@
 import PageLayout from "@layouts/PageLayout"
-
 import benefitsPage from "@pages/benefitsPage"
 
 const BenefitsPage = ({ pageData }) => {

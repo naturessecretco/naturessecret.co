@@ -1,5 +1,6 @@
 import type { Favicon } from "@typings/Favicon"
 import { SocialIcon } from 'react-social-icons';
+import KofiButton from "kofi-button"
 
 
 export type Social = {
@@ -73,7 +74,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
                                 <SocialIcon className="hover:scale-90 transition-all ml-2" bgColor="#000000" fgColor="#fefd21" key={index} url={social.url} />
                             )
                         })}
-                 
+
                     </div>
                 </div>
             </div> : <></>
@@ -142,6 +143,9 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
                         <Email />
                         <SocialIcons />
                     </div>
+                </div>
+                <div id="support">
+                    <KofiButton color="#00f" title="Support Us" kofiID="N4N31JDNX" />
                 </div>
                 <Copyright />
             </div>

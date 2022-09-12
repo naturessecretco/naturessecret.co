@@ -88,14 +88,28 @@ const Hero = ({ title, features, socials }: HeroProps) => {
                                 <div className="w-full md:w-7/12">
                                     <img
                                         className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                        src="/assets/images/seamoss.png"
+                                        src="/assets/images/wildcrafted-seamoss-1.png"
                                         alt=""
                                     />
                                 </div>
                                 <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
                                     <img
                                         className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
-                                        src="/assets/images/honey.png"
+                                        src="/assets/images/buckwheat-honey-1.png"
+                                        alt=""
+                                    />
+                                </div>
+                                <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
+                                    <img
+                                        className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
+                                        src="/assets/images/buckwheat-honey-1.png"
+                                        alt=""
+                                    />
+                                </div>
+                                <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
+                                    <img
+                                        className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
+                                        src="/assets/images/buckwheat-honey-1.png"
                                         alt=""
                                     />
                                 </div>

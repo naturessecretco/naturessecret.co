@@ -7,7 +7,7 @@ const ProductPage = ({ pageData }) => {
     return (
 
         <PageLayout {...pageData.layout}>
-            <Product {...pageData.product}/>
+            <Product {...pageData.product} />
         </PageLayout>
     )
 }
@@ -21,7 +21,7 @@ export async function getStaticPaths() {
 
     return {
         paths: pathData,
-        fallback: true
+        fallback: false
     }
 }
 
@@ -29,16 +29,17 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
 
     const dataPage = products.init()
-    const productData = dataPage.products.find((product) => product.id === params.id)
     const pageLayout = dataPage.layout
+
+    const productData = dataPage.products.find((product) => product.id === params.id)
 
     return {
         props: {
             pageData: {
-                layout: pageLayout,
+                layout: { ...pageLayout },
                 product: productData
             }
         },
-        revalidate: 15
+        revalidate: 5
     }
 }
