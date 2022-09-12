@@ -7,6 +7,7 @@ const meta = {
             url: '/products'
         },
         {
+            id: 'mission',
             name: 'Our Mission',
             url: '/mission'
         },
