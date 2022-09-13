@@ -1,4 +1,5 @@
 export type ActionButton = {
-    iconName: string,
-    url: string
+    name?: string,
+    iconName?: string,
+    url?: string
 }

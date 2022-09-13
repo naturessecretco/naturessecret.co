@@ -5,6 +5,7 @@ const benefitsPage = {
     init: () => {
         return { ...benefitsPage.data }
     },
+    
     data: {
         layout: {
             ...layout,

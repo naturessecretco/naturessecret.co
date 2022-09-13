@@ -1,3 +1,5 @@
+import layout from "@models/configs/layout"
+
 const missionPage = {
 
     init: () => {
@@ -8,8 +10,7 @@ const missionPage = {
     data: {
 
         layout: {
-            header: {},
-            footer: {},
+            ...layout,
             metaData: {
                 'title': 'Mission',
             }
