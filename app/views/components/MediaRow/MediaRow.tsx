@@ -1,3 +1,6 @@
+export type MediaRow  = {
+    
+}
 const MediaRow = () => {
 
     return (
