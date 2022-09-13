@@ -1,3 +1,12 @@
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+
+
+export type Summary = {
+    title?: string
+}
+
 const Summary = () => {
 
     return (

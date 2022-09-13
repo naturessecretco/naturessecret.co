@@ -145,7 +145,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
                     </div>
                 </div>
                 <div className="mt-4" id="support">
-                    <KofiButton color="#000000" title="Support Us" kofiID="N4N31JDNX" />
+                    <KofiButton color="#000000" title="Support Us" kofiID="naturessecret" />
                 </div>
                 <Copyright />
             </div>

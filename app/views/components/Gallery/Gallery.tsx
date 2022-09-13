@@ -1,15 +1,19 @@
+export type Gallery = {
+    title?:string
+}
+
 
 const Gallery = () => {
 
     return (
-        <section className="relative py-20 md:pt-32 overflow-x-hidden">
+        <section className="hover:bg-black transition-all hover:bg-opacity-50 relative py-20 md:pt-32 overflow-x-hidden">
             <img
                 className="absolute h-24 md:h-auto top-0 left-0 right-0"
                 src="yofte-assets/elements/line-top.svg"
                 alt=""
             />
             <div className="relative container px-4 mx-auto">
-                <h2 className="mb-20 text-5xl text-white font-bold font-heading">
+                <h2 className="mb-20 text-5xl text-black font-bold font-heading">
                     What Customers Say
                 </h2>
                 <div className="relative max-w-4xl mx-auto">
