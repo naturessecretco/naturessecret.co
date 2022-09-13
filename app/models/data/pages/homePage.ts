@@ -2,6 +2,9 @@ import layout from "@configs/layout"
 import type { DataPage } from "@typings/DataPage"
 import meta from "@configs/meta"
 import productsDB from "@db/products"
+import benefits from "@db/benefits"
+
+
 const homePage: DataPage = {
 
     init: () => {
@@ -17,6 +20,11 @@ const homePage: DataPage = {
             }
         },
 
+
+        mediaRow: {
+            media: [...benefits]
+
+        },
         hero: {
             title: 'Home to Natures Best Kept Secret',
             socials: meta.socials,

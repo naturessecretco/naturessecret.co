@@ -137,16 +137,17 @@ const Hero = ({ title, features, socials }: HeroProps) => {
                     }
 
                 </div>
+
                 <div className="max-w-3xl mx-auto py-24 text-center">
                     <h2 className="text-8xl mb-14 xl:text-6xl font-bold font-heading text-gray-900">
                     <img className="w-full" src="/assets/images/cover.png"/>
 
                     </h2>
                     <a
-                        className="inline-block bg-black hover:bg-green-400 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"
+                        className="inline-block bg-opacity-70 bg-black hover:bg-green-400 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"
                         href="#"
                     >
-                        Shop Now
+                        Order Natures Best Kept Secrets!
                     </a>
                 </div>
 

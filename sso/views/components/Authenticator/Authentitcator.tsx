@@ -2,9 +2,9 @@ const Authenticator = () => {
     return (
         <section className="py-20  overflow-x-hidden">
             <div className="relative container px-4 mx-auto">
-                <div className="relative max-w-4xl mx-auto">
-                    <div className="absolute inset-0 border border-gray-300 my-24 -ml-4 -mr-4" />
-                    <div className="relative mx-auto py-28 px-4 border border-white text-center">
+                <div className="relative max-w-4xl mx-auto bg-black bg-opacity-30 hover:bg-opacity-80 transition-all">
+                    <div className="absolute inset-0 border border-black-300 my-24 -ml-4 -mr-4" />
+                    <div className="relative mx-auto py-28 px-4 border border-black text-center">
                         <a
                             className="inline-block mb-12 text-3xl font-bold font-heading text-white"
                             href="#"

@@ -23,7 +23,7 @@ html {
     border: 0;
     scroll-behavior: smooth;
     background-color: var(--color-primary) !important;
-    font-family: var(--font-primary) !important;
+    font-family: var(--font-secondary) !important;
     background-attachment: fixed;
 }
 

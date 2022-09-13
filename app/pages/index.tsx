@@ -1,5 +1,4 @@
 import Featured from "@views/components/Featured"
-import LogoRow from "@components/LogoRow"
 import homePage from '@pages/homePage'
 import PageLayout from '@views/layouts/PageLayout'
 import Hero from "@components/Hero"
@@ -10,13 +9,15 @@ import Summary from "@views/components/Summary"
 
 const HomePage = ({ pageData }) => {
 
+  console.log(`[pageData]`, pageData)
+  
   return (
     <PageLayout {...pageData.layout}>
       <Hero {...pageData.hero} />
       <Featured {...pageData.featured} />
-      <MediaRow />
-      <Summary />
-      <Gallery />
+      <MediaRow {...pageData.mediaRow} />
+      <Summary {...pageData.summary} />
+      <Gallery {...pageData.gallery} />
     </PageLayout>
   )
 }

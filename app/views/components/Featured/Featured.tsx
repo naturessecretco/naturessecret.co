@@ -6,7 +6,9 @@ export type Feature = {
     name?: string,
     cover?: string,
     description?: string,
-    price: string
+    price?: string,
+    value?: string
+    discount?: string
 }
 
 
@@ -29,8 +31,8 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                         return (
                             <div key={index} className="w-full lg:w-1/2 md:px-3 mb-6 bg-black rounded bg-opacity-70 hover:scale-90 transition-all">
                                 <a className="relative block" href={`/products/${feature.id}`}>
-                                    <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-white border-2 border-red-500 rounded-full text-red-500">
-                                        -15%
+                                    <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-white border-2 border-green-500 rounded-full text-green-500">
+                                        {feature.discount}
                                     </span>
                                     <img
                                         className="w-full h-64 object-cover"
@@ -43,12 +45,12 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                                 {feature.name}
                                             </h3>
                                             <p className="mb-4 text-xl font-bold font-heading text-white">
-                                                <span>$10.30</span>
+                                                <span>{feature.price}</span>
                                                 <span className="text-xs text-blue-100 font-semibold font-heading line-through">
-                                                    {feature.price}
+                                                    {feature.value}
                                                 </span>
                                             </p>
-                                            <p className="text-blue-100">{feature.description}</p>
+                                            <p className="text-gray-100">{feature.description}</p>
                                         </div>
                                     </div>
                                 </a>
