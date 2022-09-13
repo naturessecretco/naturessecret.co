@@ -1,6 +1,6 @@
 const header = {
     favicon: {
-        src: '/assets/images/logo-transparent.png',
+        src: '/assets/images/logo.png',
         url: "/"
     },
 

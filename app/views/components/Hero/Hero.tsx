@@ -47,7 +47,7 @@ const Hero = ({ title, features, socials }: HeroProps) => {
                                                 <li key={index} className="py-5 px-8">
                                                     <a
                                                         className="flex items-center text-lg text-gray-300 font-bold font-heading hover:text-green-700"
-                                                        href="#"
+                                                        href={link.url}
                                                     >
 
                                                         <span>{link.name}</span>
@@ -57,8 +57,6 @@ const Hero = ({ title, features, socials }: HeroProps) => {
                                         }) : <></>}
 
                                     </Fade>
-
-
 
                                 </ul>
 
@@ -102,14 +100,14 @@ const Hero = ({ title, features, socials }: HeroProps) => {
                                 <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
                                     <img
                                         className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
-                                        src="/assets/images/buckwheat-honey-1.png"
+                                        src="/assets/images/garlic.png"
                                         alt=""
                                     />
                                 </div>
                                 <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
                                     <img
                                         className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
-                                        src="/assets/images/buckwheat-honey-1.png"
+                                        src="/assets/images/herbs.png"
                                         alt=""
                                     />
                                 </div>
@@ -132,7 +130,7 @@ const Hero = ({ title, features, socials }: HeroProps) => {
                     {
                         socials.map((social, index) => {
                             return (
-                                <SocialIcon bgColor="#000000" className="mr-2" fgColor="yellow" key={index}
+                                <SocialIcon bgColor="#000000" className="hover:scale-110 transition-all mr-3" fgColor="yellow" key={index}
                                     url={social.url} />
                             )
                         })
