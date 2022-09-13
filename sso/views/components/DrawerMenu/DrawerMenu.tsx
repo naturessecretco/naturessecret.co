@@ -127,7 +127,6 @@ const DrawerMenu = ({ favicon, navLinks, actionLinks, actionButtons }: DrawerMen
                         Secondary
                     </h3>
                     <ActionLinks />
-                    <ActionButtons />
                 </div>
             </nav>
         </div>
