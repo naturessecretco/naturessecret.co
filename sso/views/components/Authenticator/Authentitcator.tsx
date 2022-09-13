@@ -11,13 +11,13 @@ const Authenticator = () => {
                         >
                             <img
                                 className="h-36"
-                                src="/assets/images/facade.svg"
+                                src="/assets/images/logo.png"
                                 alt=""
                                 width="auto"
                             />
                         </a>
-                        <h2 className="mb-14 text-4xl text-white font-bold font-heading">
-                            Facade | WTFMVMT
+                        <h2 className="mb-14 text-4xl text-black font-bold font-heading">
+                            Natures Secret
                         </h2>
                         <div className="relative max-w-xl mx-auto">
                             <img
