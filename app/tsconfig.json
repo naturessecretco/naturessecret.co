@@ -34,6 +34,6 @@
       "@hooks/*":["controllers/hooks/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/404.tsx", "pages/_app.tsx", ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/404.tsx", "pages/_app.tsx", "../sso/models/configs/authenticator.ts", ],
   "exclude": ["node_modules"]
 }

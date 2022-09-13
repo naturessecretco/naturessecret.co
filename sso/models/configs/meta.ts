@@ -1,9 +1,9 @@
 const meta = {
-    title: 'Facade',
+    title: 'Natures Secret',
     links: [
         {
-            name: 'Notion Dashboard',
-            url: 'https://informandinspire.notion.site/WTFMVMT-ed5f9c3ec4dd4fbb80a3048fc2cc3df6'
+            name: 'Central Dogma',
+            url: ''
         }
     ]
 }

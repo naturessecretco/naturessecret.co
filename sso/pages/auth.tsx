@@ -1,12 +1,13 @@
 import RootLayout from "@layouts/RootLayout"
 import Authenticator from "@views/components/Authenticator"
+import authenticator from "@configs/authenticator"
 
 
 const AuthPage = () => {
 
     return (
-        <RootLayout metaData={{ pageTitle: 'Auth '}}>
-            <Authenticator />
+        <RootLayout metaData={{ pageTitle: 'Auth ' }}>
+            <Authenticator {...authenticator} />
         </RootLayout>
     )
 }
