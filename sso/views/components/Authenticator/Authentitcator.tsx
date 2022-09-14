@@ -36,15 +36,35 @@ const Authenticator = ({ title }: Authenticator) => {
 
                                 <form action="">
 
+                                    <div className="mb-10">
+                                        <label
+                                            className="font-bold font-heading bg-transparent text-gray-200"
+                                        >
+                                            User
+                                        </label>
+                                        <select
+                                            className="block w-full mt-4 py-4 px-8 border text-white bg-transparent border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md bg-black bg-transparent-40"
+                                            name="user-types"
+                                            id="user-types"
+                                        >
+                                            <option className='bg-black text-white' value={3}>{"Frantz Desir"}</option>
+
+                                            <option className='bg-black text-white' value={3}>{"Administrator"}</option>
+
+                            
+
+                                        </select>
+                                    </div>
+
                                     <input
-                                        className="w-full mb-4 px-12 py-6 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
+                                        className="w-full mb-4 px-12 py-6 border bg-transparent placeholder-white border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
                                         type="password"
                                         placeholder="Password"
                                     />
 
 
-                                    <button className="mt-12 md:mt-16 bg-orange-300 hover:bg-orange-400 text-white font-bold font-heading py-5 px-8 rounded-md uppercase">
-                                        JOIN yofte
+                                    <button className="mt-12 md:mt-16 bg-black hover:bg-yellow-400 text-white font-bold font-heading py-5 px-8 rounded-md uppercase">
+                                        Sign In
                                     </button>
                                 </form>
 

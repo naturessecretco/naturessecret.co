@@ -3,7 +3,7 @@ import type { DataPage } from "@typings/DataPage"
 import meta from "@configs/meta"
 import productsDB from "@db/products"
 import benefits from "@db/benefits"
-
+import faqs from "@db/faqs"
 
 const homePage: DataPage = {
 
@@ -24,6 +24,15 @@ const homePage: DataPage = {
         mediaRow: {
             media: [...benefits]
 
+        },
+
+        summary: {
+            title: 'Frequently Asked Questions',
+            content: [...faqs],
+            cta: {
+                name: 'Learn more here',
+                url: '/benefits'
+            }
         },
         hero: {
             title: 'Home to Natures Best Kept Secret',
@@ -51,10 +60,11 @@ const homePage: DataPage = {
             }
         },
 
-       
+
         featured: {
             title: 'Best Selling',
-            features: [...productsDB]
+            features: [...productsDB],
+
         }
 
     },

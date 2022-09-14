@@ -39,7 +39,7 @@ const Hero = ({ title, features, socials }: HeroProps) => {
                                     {features.heading}
                                 </h4>
 
-                                <ul style={{ fontFamily: 'var(--font-secondary)'}} className="mb-5">
+                                <ul style={{ fontFamily: 'var(--font-secondary)' }} className="mb-5">
 
                                     <Fade cascade>
                                         {features.links ? features.links.map((link, index) => {
@@ -123,7 +123,12 @@ const Hero = ({ title, features, socials }: HeroProps) => {
     const Header = () => {
 
         return (
-            <div className="relative container mx-auto px-4">
+            <div style={{
+                background: "url('/assets/images/cover.png')",
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'top center',
+                backgroundSize: 'contain',
+            }} className="relative container mx-auto px-4">
 
                 <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
 
@@ -138,13 +143,12 @@ const Hero = ({ title, features, socials }: HeroProps) => {
 
                 </div>
 
-                <div className="max-w-3xl mx-auto py-24 text-center">
+                <div className=" max-w-3xl mx-auto py-24 text-center">
                     <h2 className="text-8xl mb-14 xl:text-6xl font-bold font-heading text-gray-900">
-                    <img className="w-full" src="/assets/images/cover.png"/>
 
                     </h2>
                     <a
-                        className="inline-block bg-opacity-70 bg-black hover:bg-green-400 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition duration-200"
+                        className="mt-48 inline-block bg-opacity-80 bg-black hover:bg-green-600 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition-all"
                         href="#"
                     >
                         Order Natures Best Kept Secrets!

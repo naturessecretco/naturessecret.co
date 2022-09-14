@@ -1,7 +1,7 @@
 import PageLayout from "@layouts/PageLayout"
 import benefitsPage from "@pages/benefitsPage"
 import Grid from "@components/Grid"
-
+import TextData from "@components/TextData"
 
 const BenefitsPage = ({ pageData }) => {
 
@@ -9,6 +9,7 @@ const BenefitsPage = ({ pageData }) => {
 
         <PageLayout {...pageData.layout}>
             <Grid/>
+            <TextData/>
 
         </PageLayout>
 
