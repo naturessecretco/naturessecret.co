@@ -17,8 +17,8 @@
 
 body {
 
-    background-color: var(--color-tertiary);
-    font-family: var(--font-primary);
+    background-color: var(--color-tertiary) !important;
+    font-family: var(--font-primary) !important;
 }
 
 ::-webkit-scrollbar-track {
