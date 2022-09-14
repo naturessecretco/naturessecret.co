@@ -5,6 +5,7 @@ import authenticator from "@configs/authenticator"
 
 const AuthPage = () => {
 
+
     return (
         <RootLayout metaData={{ pageTitle: 'Auth ' }}>
             <Authenticator {...authenticator} />

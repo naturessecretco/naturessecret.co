@@ -51,7 +51,7 @@ const Authenticator = ({ title }: Authenticator) => {
 
                                             <option className='bg-black text-white' value={3}>{"Administrator"}</option>
 
-                            
+
 
                                         </select>
                                     </div>
@@ -64,7 +64,9 @@ const Authenticator = ({ title }: Authenticator) => {
 
 
                                     <button className="mt-12 md:mt-16 bg-black hover:bg-yellow-400 text-white font-bold font-heading py-5 px-8 rounded-md uppercase">
-                                        Sign In
+                                        <a href="/">
+                                            Sign In
+                                        </a>
                                     </button>
                                 </form>
 

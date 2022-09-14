@@ -4,8 +4,12 @@ import type { NextPage } from 'next'
 import homePage from "@pages/homePage"
 import Notifications from '@views/components/Notifications'
 import { useEffect } from 'react'
+import { useSession, signIn, signOut } from "next-auth/react"
+
 
 const HomePage: NextPage = () => {
+  const { data: session } = useSession()
+
 
   const metaData = {
     pageTitle: 'WTFMVMT'
@@ -13,7 +17,9 @@ const HomePage: NextPage = () => {
 
 
   useEffect(() => {
-    window.location.href = "/auth"
+
+    session ? window.location.href = "/auth" : null
+    console.log(session)
   })
 
 
@@ -22,7 +28,7 @@ const HomePage: NextPage = () => {
 
   return (
 
-    false ?
+    true ?
       <PageLayout metaData={metaData}>
         < Console banner={Banner} />
         <Notifications />

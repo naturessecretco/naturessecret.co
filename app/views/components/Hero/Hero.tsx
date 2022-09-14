@@ -145,13 +145,14 @@ const Hero = ({ title, features, socials }: HeroProps) => {
 
                 <div className=" max-w-3xl mx-auto py-24 text-center">
                     <h2 className="text-8xl mb-14 xl:text-6xl font-bold font-heading text-gray-900">
+                        Welcome to
 
                     </h2>
                     <a
                         className="mt-48 inline-block bg-opacity-80 bg-black hover:bg-green-600 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition-all"
                         href="#"
                     >
-                        Order Natures Best Kept Secrets!
+                        Order Now!
                     </a>
                 </div>
 

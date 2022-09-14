@@ -5,7 +5,7 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 import type { SummaryProps } from '@typings/Summary';
 
 
-const Summary = ({ title, content , cta}: SummaryProps) => {
+const Summary = ({ title, content, cta }: SummaryProps) => {
 
 
     const Title = () => {
@@ -24,7 +24,7 @@ const Summary = ({ title, content , cta}: SummaryProps) => {
                 className="inline-block bg-black  text-white font-bold font-heading py-5 px-8 rounded-md uppercase"
                 href={cta.url}
             >
-               {cta.name}
+                {cta.name}
             </a>
         </div>)
     }
@@ -38,7 +38,7 @@ const Summary = ({ title, content , cta}: SummaryProps) => {
                 {
                     content.map((item, index) => {
                         return (
-                            <Accordion className="bg-black bg-opacity-80" key={index}>
+                            <Accordion key={index} sx={{ backgroundColor: 'black', color: 'white' }}>
                                 <AccordionSummary expandIcon={<KeyboardDoubleArrowUpIcon sx={{ color: 'var(--color-primary)' }} />}>
                                     <h3 className="text-2xl font-bold font-heading text-white">{item.question}</h3>
                                 </AccordionSummary>
