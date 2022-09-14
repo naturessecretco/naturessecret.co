@@ -24,6 +24,10 @@ const faqs = [
         question: 'How long does Seamoss last before spoiling?',
         answer: `Most Sea Moss gel has an average life span of about 2 to 3 weeks from when you receive your order and should be kept refrigerated. 
                  You should always inspect all your food products before consumption`
+    },
+    {
+        question: 'What is your return policy?',
+        answer: 'Returns accepted if product is defective or damaged within 15 days of purchase date for a refund of the purchase price. Ocean salt, ocean smell and ocean taste does not make it defective. Gels are non-refundable.'
     }
 ]
 

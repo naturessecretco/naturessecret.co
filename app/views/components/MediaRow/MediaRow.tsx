@@ -3,7 +3,7 @@ import type { Image } from "@models/typings/Image"
 
 export type Media = {
     key?: any,
-    image?: Image,
+    cover?: Image,
     title?: string,
     description?: string
 }
@@ -18,19 +18,15 @@ export type MediaRow = {
 
 const MediaRow = ({ media }: MediaRow) => {
 
-    const Media = ({ key, title, description, image }: Media) => {
+    const Media = ({ key, title, description, cover }: Media) => {
         return (
-            <div className="relative w-full md:w-1/2 lg:w-1/4 px-4 mb-16 lg:mb-0 hover:scale-110 transition-all hover:bg-black">
-                {
-                    image ? <img
-                        className="hidden md:block absolute top-0 left-1/2 ml-16 lg:ml-8"
-                        src={image.src}
-                        alt={image.alt}
-                    /> : <></>
-                }
+            <div className="relative w-full align-center md:w-1/2 lg:w-1/4 px-4 mb-16 lg:mb-0 hover:scale-110 transition-all hover:bg-black">
                 <div className="relative text-center">
-                    <span className="inline-flex mb-16 items-center justify-center w-20 h-20 bg-white rounded-full">
-
+                    <span className="inline-flex mb-16 items-center justify-center w-20 h-20 bg-gray-200 rounded-full">
+                        <img
+                            className="hidden md:block h-20 absolute top-0 left-1/2 ml-16 lg:ml-8"
+                            src={cover.src}
+                            alt={cover.alt} />
                     </span>
                     <h3 className="mb-4 text-xl font-bold font-heading">{title}</h3>
                     <p>{description}</p>

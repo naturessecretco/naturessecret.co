@@ -39,7 +39,7 @@ const meta = {
         },
         {
             name: 'Twitter',
-            url: 'https://www.twitter.com/naturessecret'
+            url: 'https://twitter.com/naturessecretco'
         },
         {
             name: 'LinkedIn',

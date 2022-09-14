@@ -19,7 +19,9 @@ const homePage: DataPage = {
                 pageTitle: 'Home Page',
             }
         },
-
+        gallery: {
+            items: [...benefits]
+        },
 
         mediaRow: {
             media: [...benefits]

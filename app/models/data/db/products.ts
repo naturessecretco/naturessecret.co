@@ -27,8 +27,8 @@ const productsDB = [
 
     },
     {
-        id: 'buckwheat-honey-1',
-        name: 'Buckwheat Honey',
+        id: 'nutrient-gummies',
+        name: 'Nutrient Gummies',
         description: 'Our organic Buckwheat Honey',
         discount: '20%',
         tags: ["featured"],

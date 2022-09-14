@@ -1,11 +1,13 @@
 import Carousel from "@components/Carousel"
+import CommentBox from "../CommentBox"
 
-export type Gallery = {
-    title?: string
+export type GalleryProps = {
+    title?: string,
+    items: []
 }
 
 
-const Gallery = () => {
+const Gallery = ({ title, items }: GalleryProps) => {
 
     return (
         <section className="transition-all  relative py-20 md:pt-32 overflow-x-hidden">
@@ -17,7 +19,14 @@ const Gallery = () => {
                 <div className="relative max-w-4xl mx-auto">
                     <div className="absolute inset-0 border border-gray-500 my-8 -ml-6 -mr-6" />
                     <div className="relative mx-auto mb-20 py-12 md:py-2 border border-black">
-                        <Carousel />
+                        <Carousel>
+                            {
+                                items.map((item, index) => {
+                                    return (
+                                        <CommentBox key={index} />
+                                    )
+                                })}
+                        </Carousel>
                         <div className="relative max-w-2xl px-4 mx-auto">
                         </div>
                     </div>
