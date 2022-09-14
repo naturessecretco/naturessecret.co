@@ -1,12 +1,8 @@
 import Carousel from "@components/Carousel"
+import RatingsBar from "@components/RatingsBar"
+import type { ProductProps } from "@typings/Product"
 
-export type ProductsProps = {
-    id?: string,
-    name?: string,
-    heading?: string
-}
-
-const Product = ({ id, name, heading }: ProductsProps) => {
+const Product = ({ id, name, heading, price, value, discount, covers, tags, description, }: ProductProps) => {
 
     const Header = () => {
 
@@ -21,33 +17,18 @@ const Product = ({ id, name, heading }: ProductsProps) => {
 
 
                         <div className="mb-8">
-                            <button>
-                                <img src="yofte-assets/elements/star-gold.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="yofte-assets/elements/star-gold.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="yofte-assets/elements/star-gold.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="yofte-assets/elements/star-gold.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="yofte-assets/elements/star-gray.svg" alt="" />
-                            </button>
+                            <RatingsBar />
                         </div>
 
 
                         <p className="inline-block mb-8 text-2xl font-bold font-heading text-blue-300">
-                            <span>$29.99</span>
+                            <span>{price}</span>
                             <span className="font-normal text-base text-gray-400 line-through">
-                                $33.69
+                                {value}
                             </span>
                         </p>
-                        <p className="max-w-md text-gray-500">
-                            Maecenas commodo libero ut molestie dictum. Morbi placerat eros id
-                            porttitor sagittis.
+                        <p className="max-w-md text-gray-200">
+                            {description}
                         </p>
                     </div>
                     <div className="flex mb-12">
@@ -121,11 +102,13 @@ const Product = ({ id, name, heading }: ProductsProps) => {
                     <div className="flex flex-wrap -mx-4 mb-14 items-center">
                         <div className="w-full xl:w-2/3 px-4 mb-4 xl:mb-0">
                             <a
-                                className="block bg-orange-300 hover:bg-orange-400 text-center text-white font-bold font-heading py-5 px-8 rounded-md uppercase transition duration-200"
-                                href="#"
+                                className="gumroad-button"
+                                href="https://naturessecret.gumroad.com/l/wildcraftedseamoss?wanted=true"
+                                data-gumroad-single-product="true"
                             >
-                                Add to cart
+                                Order Now!
                             </a>
+
                         </div>
                         <div className="w-full xl:w-1/3 px-4">
                             <a
@@ -199,12 +182,20 @@ const Product = ({ id, name, heading }: ProductsProps) => {
                     <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
                         <div className="relative mb-10" style={{ height: 564 }}>
 
-                            <Carousel />
+                            <Carousel>
+                                <h1> Test Items</h1>
+                                <h1> Test Items</h1>
+
+                                <h1> Test Items</h1>
+
+                                <h1> Test Items</h1>
+
+                            </Carousel>
 
 
 
                         </div>
-                       
+
                     </div>
 
 

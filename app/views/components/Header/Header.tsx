@@ -83,17 +83,7 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
             <NavLinks />
           </div>
 
-          <div className="hidden xl:flex items-center justify-end mr-12">
-
-            <a className="flex items-center" href="#">
-
-              <Badge color='error' badgeContent={3}>
-                <ShoppingBasketIcon className="text-black" />
-              </Badge>
-
-            </a>
-          </div>
-
+  
           <a onClick={() => toggleDrawer()} className="navbar-burger self-center mr-12" href="#">
             <MenuOpenIcon className="text-black h-24" />
           </a>

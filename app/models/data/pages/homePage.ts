@@ -16,7 +16,7 @@ const homePage: DataPage = {
         layout: {
             ...layout,
             metaData: {
-                pageTitle: 'Home Page',
+                pageTitle: "Home Page",
             }
         },
         gallery: {
@@ -29,42 +29,48 @@ const homePage: DataPage = {
         },
 
         summary: {
-            title: 'Frequently Asked Questions',
+            title: "Frequently Asked Questions",
             content: [...faqs],
             cta: {
-                name: 'Learn more here',
-                url: '/benefits'
+                name: "Learn more here",
+                url: "/benefits"
             }
         },
         hero: {
-            title: 'Home to Natures Best Kept Secret',
+            title: "Natures Secret",
             socials: meta.socials,
+            cta: {
+                name: "Home to natures best kept secrets."
+            },
+            backgroundCover: "/assets/images/cover.png",
             features: {
-                heading: 'Home to Natures Best Kept Secret',
+                heading: "Quick Links to Wellness",
                 links: [
                     {
-                        name: 'Check out our new products!',
-                        url: '/products'
+                        name: "Check out our new products!",
+                        url: "/products"
                     },
                     {
-                        name: 'Frequently Asked Questions',
+                        name: "Frequently Asked Questions",
+                    },
+            
+                    {
+                        name: "Your benefits from SuperFoods",
                     },
                     {
-                        name: 'About our mission'
+                        name: "About Us"
                     },
                     {
-                        name: 'Frequently Asked Questions',
+                        name: 'Our Mission'
                     },
-                    {
-                        name: 'About our mission'
-                    }
+           
                 ]
             }
         },
 
 
         featured: {
-            title: 'Best Selling',
+            title: "Best Selling",
             features: [...productsDB],
 
         }

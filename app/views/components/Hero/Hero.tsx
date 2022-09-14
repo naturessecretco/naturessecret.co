@@ -1,8 +1,9 @@
 import { SocialIcon } from 'react-social-icons';
 import { Fade } from 'react-awesome-reveal';
 import SimpleCarousel from 'simple-react-carousel';
+import { CallToAction } from '@models/typings/CallToAction';
 
-
+import type { Image } from "@typings/Image"
 
 export type Link = {
     name?: string,
@@ -17,6 +18,9 @@ export type Social = {
 export type HeroProps = {
     title?: string,
     socials?: Social[],
+    backgroundCover?: string,
+    covers?: Image[]
+    cta?: CallToAction,
     features?: {
         heading: string,
         links: Link[]
@@ -24,7 +28,57 @@ export type HeroProps = {
 
 }
 
-const Hero = ({ title, features, socials }: HeroProps) => {
+const Hero = ({ title, features, socials, covers, backgroundCover, cta }: HeroProps) => {
+
+
+    const Covers = () => {
+        return (
+            <div className="w-full lg:w-2/3 px-4">
+                <div className="flex flex-wrap h-full">
+                    <div className="w-full md:w-7/12">
+                        <img
+                            className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
+                            src="/assets/images/wildcrafted-seamoss-1.png"
+                            alt=""
+                        />
+                    </div>
+                    <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
+                        <img
+                            className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
+                            src="/assets/images/buckwheat-honey-1.png"
+                            alt=""
+                        />
+                    </div>
+                    <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
+                        <img
+                            className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top "
+                            src="/assets/images/garlic.png"
+                            alt=""
+                        />
+                    </div>
+                    <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
+                        <img
+                            className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
+                            src="/assets/images/herbs.png"
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </div>
+        )
+    }
+    const CallToAction = () => {
+        return (
+            cta ? <div className=" max-w-3xl mx-auto py-24 text-center">
+                <a
+                    className="mt-48 translate-y-11 inline-block bg-opacity-80 bg-black hover:bg-green-600 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition-all"
+                    href={cta.url}
+                >
+                    {cta.name}
+                </a>
+            </div> : <></>
+        )
+    }
 
     const FeatureLinks = () => {
 
@@ -81,38 +135,14 @@ const Hero = ({ title, features, socials }: HeroProps) => {
                                 </a>
                             </div>
                         </div>
-                        <div className="w-full lg:w-2/3 px-4">
-                            <div className="flex flex-wrap h-full">
-                                <div className="w-full md:w-7/12">
-                                    <img
-                                        className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                        src="/assets/images/wildcrafted-seamoss-1.png"
-                                        alt=""
-                                    />
-                                </div>
-                                <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
-                                    <img
-                                        className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
-                                        src="/assets/images/buckwheat-honey-1.png"
-                                        alt=""
-                                    />
-                                </div>
-                                <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
-                                    <img
-                                        className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top "
-                                        src="/assets/images/garlic.png"
-                                        alt=""
-                                    />
-                                </div>
-                                <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
-                                    <img
-                                        className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
-                                        src="/assets/images/herbs.png"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
-                        </div>
+
+
+                        <Covers />
+
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -124,11 +154,11 @@ const Hero = ({ title, features, socials }: HeroProps) => {
 
         return (
             <div style={{
-                background: "url('/assets/images/cover.png')",
+                background: `url(${backgroundCover})`,
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'top center',
+                backgroundPosition: 'center center',
                 backgroundSize: 'contain',
-            }} className="relative container mx-auto px-4">
+            }} className="relative container mx-auto px-2">
 
                 <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
 
@@ -143,14 +173,7 @@ const Hero = ({ title, features, socials }: HeroProps) => {
 
                 </div>
 
-                <div className=" max-w-3xl mx-auto py-24 text-center">
-                    <a
-                        className="mt-48 inline-block bg-opacity-80 bg-black hover:bg-green-600 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition-all"
-                        href="#"
-                    >
-                        Order Now!
-                    </a>
-                </div>
+                <CallToAction />
 
 
             </div>

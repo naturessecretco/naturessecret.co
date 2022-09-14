@@ -11,7 +11,8 @@ const header = {
         favicon: meta.favicon,
         navLinks: meta.links,
         bannerProps: {
-            message: 'Try our Wildcrafted Seamoss Today!'
+            message: 'Try our Wildcrafted Seamoss Today!',
+            url: '/products/wildcrafted-seamoss'
         }
     }
 }
