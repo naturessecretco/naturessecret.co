@@ -8,9 +8,8 @@ const BenefitsPage = ({ pageData }) => {
     return (
 
         <PageLayout {...pageData.layout}>
-            <Grid/>
-            <TextData/>
-
+            <TextData {...pageData.textData} />
+            <Grid {...pageData.grid} />
         </PageLayout>
 
     )

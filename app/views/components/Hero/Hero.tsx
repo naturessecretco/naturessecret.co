@@ -99,7 +99,7 @@ const Hero = ({ title, features, socials }: HeroProps) => {
                                 </div>
                                 <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
                                     <img
-                                        className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
+                                        className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top "
                                         src="/assets/images/garlic.png"
                                         alt=""
                                     />
@@ -144,10 +144,6 @@ const Hero = ({ title, features, socials }: HeroProps) => {
                 </div>
 
                 <div className=" max-w-3xl mx-auto py-24 text-center">
-                    <h2 className="text-8xl mb-14 xl:text-6xl font-bold font-heading text-gray-900">
-                        Welcome to
-
-                    </h2>
                     <a
                         className="mt-48 inline-block bg-opacity-80 bg-black hover:bg-green-600 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition-all"
                         href="#"
@@ -166,7 +162,6 @@ const Hero = ({ title, features, socials }: HeroProps) => {
     return (
         <section>
             <Header />
-
             <FeatureLinks />
         </section>
     )

@@ -31,7 +31,7 @@ const meta = {
     socials: [
         {
             name: 'Facebook',
-            url: 'https://www.facebook.com/naturessecret'
+            url: 'https://www.facebook.com/Natures-Secret-108272722018369'
         },
         {
             name: 'Instagram',
@@ -42,12 +42,13 @@ const meta = {
             url: 'https://www.twitter.com/naturessecret'
         },
         {
-            name: 'Pinterest',
-            url: 'https://www.pinterest.com/naturessecret'
+            name: 'LinkedIn',
+            url: 'https://www.linkedin.com/naturessecret'
         },
         {
-            name: 'Youtube',
-            url: 'https://www.youtube.com/naturessecret'
+            name: 'Ko-fi',
+            id: 'naturessecret',
+            url: 'https://www.ko-fi.com/naturessecret'
         }
     ],
     email: 'info@naturessecret.co',

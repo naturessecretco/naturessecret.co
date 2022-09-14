@@ -13,7 +13,7 @@ const Post = ({ title, cover, content }: PostProps) => {
                 <div className="absolute top-1/2 transform -translate-y-1/2 left-0 right-0 h-80 w-full" />
                 <img
                     className="relative w-full h-96 px-6 object-cover"
-                    src="/assets/images/cover.png"
+                    src="/assets/images/post.png"
                     alt=""
                 />
             </div>

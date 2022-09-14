@@ -1,27 +1,7 @@
-import type { Favicon } from "@typings/Favicon"
 import { SocialIcon } from 'react-social-icons';
-import KofiButton from "kofi-button"
+import KofiSupportButton from '@components/KofiSupportButton';
 
-
-export type Social = {
-    url: string
-}
-
-export type NavLink = {
-    name: string,
-    url: string
-}
-
-
-
-export type FooterProps = {
-    copyright?: string,
-    phone?: string,
-    email?: string
-    socials?: Social[]
-    favicon?: Favicon,
-    navLinks?: NavLink[]
-}
+import type { FooterProps } from "@typings/Footer"
 
 
 const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterProps) => {
@@ -32,7 +12,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
 
         return (
             phone ? <div className="w-full lg:w-auto px-4 mb-10 lg:mb-0">
-                <h3 className="mb-2 text-xl text-yellow-200 font-bold font-heading">
+                <h3 className="mb-2 text-xl text-green-700 font-bold font-heading">
                     {TITLE}
                 </h3>
                 <p className="text-gray-900 text-2xl md:text-3xl font-bold font-heading">
@@ -49,7 +29,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
         return (
 
             email ? <div className="w-full lg:w-auto px-4 mb-10 lg:mb-0">
-                <h3 className="mb-2 text-xl text-yellow-200 font-bold font-heading">
+                <h3 className="mb-2 text-xl text-green-700 font-bold font-heading">
                     {TITLE}
                 </h3>
                 <p className="text-gray-900 text-2xl md:text-3xl font-bold font-heading">
@@ -61,11 +41,14 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
     }
 
     const SocialIcons = () => {
+
+        const TITLE = "Follow Us"
+
         return (
             socials ? <div className="w-auto md:ml-auto px-4">
                 <div className="flex items-center">
-                    <h3 className="mr-10 text-xl text-yellow-200 font-bold font-heading">
-                        Follow Us
+                    <h3 className="mr-10 text-xl text-green-700 font-bold font-heading">
+                        {TITLE}
                     </h3>
                     <div className="flex">
 
@@ -145,7 +128,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
                     </div>
                 </div>
                 <div className="mt-4" id="support">
-                    <KofiButton color="#000000" title="Support Us" kofiID="naturessecret" />
+                    <KofiSupportButton color="#000000" message="Support Us" kofiID="naturessecret" />
                 </div>
                 <Copyright />
             </div>

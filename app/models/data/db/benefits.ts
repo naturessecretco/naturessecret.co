@@ -1,29 +1,29 @@
 const benefits = [
     {
-        title: 'Superfood Nutrients',
-        image: {
-            src: '/assets/images/seamoss-1.png',
+        title: 'Essential Skin Health',
+        cover: {
+            src: '/assets/images/2.png',
             alt: 'Seamoss'
         }
     },
     {
-        title: 'Organincally Sourced',
-        image: {
-            src: '/assets/images/seamoss-1.png',
+        title: 'Sourced Organic, Always.',
+        cover: {
+            src: '/assets/images/1.png',
             alt: 'Seamoss'
         }
     },
     {
-        title: 'Expertly Crafted',
-        image: {
-            src: '/assets/images/seamoss-1.png',
+        title: 'Strong Bones & Teeth',
+        cover: {
+            src: '/assets/images/3.png',
             alt: 'Seamoss'
         }
     },
     {
-        title: 'Expertly Crafted',
-        image: {
-            src: '/assets/images/seamoss-1.png',
+        title: 'Superior Immunne Support',
+        cover: {
+            src: '/assets/images/4.png',
             alt: 'Seamoss'
         }
     }

@@ -21,11 +21,13 @@ const MediaRow = ({ media }: MediaRow) => {
     const Media = ({ key, title, description, image }: Media) => {
         return (
             <div className="relative w-full md:w-1/2 lg:w-1/4 px-4 mb-16 lg:mb-0 hover:scale-110 transition-all hover:bg-black">
-                <img
-                    className="hidden md:block absolute top-0 left-1/2 ml-16 lg:ml-8"
-                    src={image.src}
-                    alt={image.alt}
-                />
+                {
+                    image ? <img
+                        className="hidden md:block absolute top-0 left-1/2 ml-16 lg:ml-8"
+                        src={image.src}
+                        alt={image.alt}
+                    /> : <></>
+                }
                 <div className="relative text-center">
                     <span className="inline-flex mb-16 items-center justify-center w-20 h-20 bg-white rounded-full">
 

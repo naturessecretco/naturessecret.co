@@ -4,7 +4,7 @@ const productsDB = [
     {
         id: 'wildcrafted-seamoss',
         name: 'Wildcrafted Seamoss',
-        description: 'Wildcrafted Seamoss',
+        description: '🌿Our Unique Wildcrafted Seamoss™️ is Rich in Over 92 Essential Vitamins & Nutrients!',
         heading: 'Top Seller',
         tags: ["featured"],
         value: '80.00',
