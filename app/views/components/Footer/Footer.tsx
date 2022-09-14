@@ -32,10 +32,10 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
 
         return (
             phone ? <div className="w-full lg:w-auto px-4 mb-10 lg:mb-0">
-                <h3 className="mb-2 text-xl text-yellow-400 font-bold font-heading">
+                <h3 className="mb-2 text-xl text-yellow-200 font-bold font-heading">
                     {TITLE}
                 </h3>
-                <p className="text-gray-200 text-2xl md:text-3xl font-bold font-heading">
+                <p className="text-gray-900 text-2xl md:text-3xl font-bold font-heading">
                     {phone}
                 </p>
             </div> : <></>
@@ -49,10 +49,10 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
         return (
 
             email ? <div className="w-full lg:w-auto px-4 mb-10 lg:mb-0">
-                <h3 className="mb-2 text-xl text-yellow-400 font-bold font-heading">
+                <h3 className="mb-2 text-xl text-yellow-200 font-bold font-heading">
                     {TITLE}
                 </h3>
-                <p className="text-gray-200 text-2xl md:text-3xl font-bold font-heading">
+                <p className="text-gray-900 text-2xl md:text-3xl font-bold font-heading">
                     {email}
                 </p>
             </div> : <></>
@@ -64,7 +64,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
         return (
             socials ? <div className="w-auto md:ml-auto px-4">
                 <div className="flex items-center">
-                    <h3 className="mr-10 text-xl text-yellow-400 font-bold font-heading">
+                    <h3 className="mr-10 text-xl text-yellow-200 font-bold font-heading">
                         Follow Us
                     </h3>
                     <div className="flex">
@@ -109,7 +109,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
         return (
 
             copyright ? <div id="contact" className="mt-10 text-center">
-                <h3 className="text-white font-bold">{copyright ? copyright : "Copyright"}</h3>
+                <h3 className="text-gray-800 font-bold">{copyright ? copyright : "Copyright"}</h3>
             </div> : <></>
         )
     }

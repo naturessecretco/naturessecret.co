@@ -1,10 +1,11 @@
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
-import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';import type { Summary } from '@typings/Summary';
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import type { SummaryProps } from '@typings/Summary';
 
 
-const Summary = ({ title, content , cta}: Summary) => {
+const Summary = ({ title, content , cta}: SummaryProps) => {
 
 
     const Title = () => {

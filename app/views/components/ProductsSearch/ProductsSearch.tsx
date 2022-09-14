@@ -9,16 +9,17 @@ export type Item = {
   covers?: string[],
   price?: string,
   value?: string
+  discount?: string
 }
 
 
-export type ProductSearchProps = {
+export type ProductSearch = {
   title?: string,
   items?: Item[],
   tags: string[],
 }
 
-const ProductsSearch = ({ title, items, tags }: ProductSearchProps) => {
+const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
 
 
   const QueryBar = () => {
@@ -74,17 +75,6 @@ const ProductsSearch = ({ title, items, tags }: ProductSearchProps) => {
             </li>
           </ul>
         </div>
-     
-   
-      
-        <div className="mb-6 py-10">
-          <h3 className="mb-6 text-2xl font-bold font-heading">Location</h3>
-          <input
-            className="w-full px-8 py-4 bg-white border rounded-md"
-            type="serach"
-            placeholder="City"
-          />
-        </div>
       </div>
     )
   }
@@ -96,9 +86,9 @@ const ProductsSearch = ({ title, items, tags }: ProductSearchProps) => {
       items ? <div className="w-full lg:w-3/4 px-3">
         <Fade cascade>
           {items.map((item, index) => (
-            <div key={index} className="relative mb-6 bg-black bg-opacity-70 rounded hover:scale-110 hover:bg-opacity-95 transition-all">
-              <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-white border-2 border-red-500 rounded-full text-red-500">
-                -15%
+            <div key={index} className="relative mb-6 bg-black bg-opacity-80 rounded hover:scale-110 hover:bg-opacity-95 transition-all">
+              <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-gray-200 border-2 border-green-500 rounded-full text-green-500">
+                {item.discount}
               </span>
               <div className="flex flex-wrap items-center -mx-4 px-8 md:px-20 py-12">
                 <div className="w-full md:w-1/4 px-4 mb-4 md:mb-0">
@@ -127,7 +117,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearchProps) => {
                     </p>
 
 
-                    <p className="max-w-md text-gray-500">
+                    <p className="max-w-md text-gray-200">
                       {item.description}
                     </p>
                   </a>
@@ -136,7 +126,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearchProps) => {
                       className="inline-block w-full md:w-auto mb-4 md:mb-0 md:mr-4 text-center bg-green-800 hover:bg-yellow-300 hover:scale-90 transition-all hover:text-black  text-white font-bold font-heading py-4 px-8 rounded-md uppercase"
                       href={`/products/${item.id}`}
                     >
-                      Order from Gumroad
+                      Add to Cart
                     </a>
                     <div className="ml-auto">
                       <a
@@ -201,7 +191,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearchProps) => {
     return (
 
       <div className="w-full lg:w-auto px-4 mb-12 xl:mb-0">
-        <h2 className="text-5xl font-bold font-heading text-gray-300 mb-6">
+        <h2 className="text-5xl font-bold font-heading text-gray-900 mb-6">
           <span>{title ? title : "Title"}</span>
         </h2>
       </div>
@@ -222,96 +212,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearchProps) => {
             <option value={3}>Sort by most popular</option>
           </select>
         </div>
-        <a
-          className="inline-block mr-3 h-full p-4 bg-white rounded-md border"
-          href="#"
-        >
-          <svg
-            width={20}
-            height={24}
-            viewBox="0 0 20 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width={4} height={4} rx={2} fill="#2B51C6" />
-            <rect x={8} width={4} height={4} rx={2} fill="#2B51C6" />
-            <rect x={16} width={4} height={4} rx={2} fill="#2B51C6" />
-            <rect y={10} width={4} height={4} rx={2} fill="#2B51C6" />
-            <rect x={8} y={10} width={4} height={4} rx={2} fill="#2B51C6" />
-            <rect x={16} y={10} width={4} height={4} rx={2} fill="#2B51C6" />
-            <rect y={20} width={4} height={4} rx={2} fill="#2B51C6" />
-            <rect x={8} y={20} width={4} height={4} rx={2} fill="#2B51C6" />
-            <rect x={16} y={20} width={4} height={4} rx={2} fill="#2B51C6" />
-          </svg>
-        </a>
-        <a
-          className="inline-block h-full p-4 hover:bg-white border rounded-md group"
-          href="#"
-        >
-          <svg
-            className="text-gray-200 group-hover:text-blue-300"
-            width={28}
-            height={24}
-            viewBox="0 0 28 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width={4} height={4} rx={2} fill="currentColor" />
-            <rect x={8} width={4} height={4} rx={2} fill="currentColor" />
-            <rect x={16} width={4} height={4} rx={2} fill="currentColor" />
-            <rect x={24} width={4} height={4} rx={2} fill="currentColor" />
-            <rect y={10} width={4} height={4} rx={2} fill="currentColor" />
-            <rect
-              x={8}
-              y={10}
-              width={4}
-              height={4}
-              rx={2}
-              fill="currentColor"
-            />
-            <rect
-              x={16}
-              y={10}
-              width={4}
-              height={4}
-              rx={2}
-              fill="currentColor"
-            />
-            <rect
-              x={24}
-              y={10}
-              width={4}
-              height={4}
-              rx={2}
-              fill="currentColor"
-            />
-            <rect y={20} width={4} height={4} rx={2} fill="currentColor" />
-            <rect
-              x={8}
-              y={20}
-              width={4}
-              height={4}
-              rx={2}
-              fill="currentColor"
-            />
-            <rect
-              x={16}
-              y={20}
-              width={4}
-              height={4}
-              rx={2}
-              fill="currentColor"
-            />
-            <rect
-              x={24}
-              y={20}
-              width={4}
-              height={4}
-              rx={2}
-              fill="currentColor"
-            />
-          </svg>
-        </a>
+
       </div>
 
     )
@@ -374,7 +275,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearchProps) => {
 
   return (
 
-    <section className="py-20 bg-black bg-opacity-50">
+    <section className="py-20 bg-black bg-opacity-20">
       <div className="container mx-auto px-4">
 
         <div className="flex flex-wrap -mx-4 mb-20 items-center justify-between">
