@@ -4,6 +4,8 @@ import meta from "@configs/meta"
 import productsDB from "@db/products"
 import benefits from "@db/benefits"
 import faqs from "@db/faqs"
+import reviews from "@db/reviews"
+
 
 const homePage: DataPage = {
 
@@ -20,7 +22,12 @@ const homePage: DataPage = {
             }
         },
         gallery: {
-            items: [...benefits]
+            title: 'Testimonials & Reviews',
+            cta: {
+                name: 'Read more',
+                url: 'face'
+            },
+            items: [...reviews]
         },
 
         mediaRow: {

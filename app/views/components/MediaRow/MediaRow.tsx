@@ -22,7 +22,7 @@ const MediaRow = ({ media }: MediaRow) => {
         return (
             <div className="relative w-full align-center md:w-1/2 lg:w-1/4 px-4 mb-16 lg:mb-0 hover:scale-110 transition-all hover:bg-black">
                 <div className="relative text-center bg-black rounded bg-opacity-80">
-                    <span className="inline-flex mb-16 items-center justify-center w-20 h-20 rounded-full">
+                    <span className="inline-flex mb-16 items-center justify-center w-30 h-30 pb-10 rounded-full">
                         <img
                             className="md:block h-20 absolute top-0 lg:ml-8"
                             src={cover.src}

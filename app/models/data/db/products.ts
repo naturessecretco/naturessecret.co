@@ -40,18 +40,6 @@ const productsDB = [
         category: "seamoss",
 
     },
-    {
-        id: "buckwheat-honey-2",
-        name: "Buckwheat Honey",
-        description: "Our organic Buckwheat Honey",
-        discount: "20%",
-        tags: ["featured"],
-        price: "40.00",
-        value: "70.00",
-        cover: images.find(image => image.id === "buckwheat-honey-1").src,
-        category: "seamoss",
-
-    }
 ]
 
 export default productsDB

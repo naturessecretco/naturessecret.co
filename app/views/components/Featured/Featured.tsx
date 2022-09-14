@@ -69,7 +69,7 @@ const Featured = ({ title, cta, features }: HeroProps) => {
 
     const Title = () => {
         return (
-            <h1 className="text-white mb-16 md:mb-24 text-6xl md:text-4xl font-thin font-heading">
+            <h1 className="text-black mb-16 md:mb-24 text-6xl md:text-4xl font-thin font-heading">
                 {title ? title : "Title"}
             </h1>
 

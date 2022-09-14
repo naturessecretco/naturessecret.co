@@ -1,20 +1,45 @@
 import Carousel from "@components/Carousel"
 import CommentBox from "../CommentBox"
+import type { CallToAction } from "@typings/CallToAction"
+
+
+export type GalleryItem = {
+    title?: string,
+    description?: string,
+    source?: string
+}
 
 export type GalleryProps = {
     title?: string,
-    items: []
+    cta?: CallToAction
+    items: GalleryItem[]
 }
 
 
-const Gallery = ({ title, items }: GalleryProps) => {
+const Gallery = ({ title, items, cta }: GalleryProps) => {
+
+
+    const CallToAction = () => {
+        return (
+
+            cta ? <div className="text-center">
+                <a
+                    className="inline-block hover:scale-110 transition-all bg-black hover:bg-green-600 text-white font-bold font-heading py-5 px-8 rounded-md uppercase"
+                    href={cta.url}
+                >
+                    {cta.name}
+                </a>
+            </div> : <></>
+        )
+    }
 
     return (
+
         <section className="transition-all  relative py-20 md:pt-32 overflow-x-hidden">
 
             <div className="relative container px-4 mx-auto">
                 <h2 className="mb-20 text-5xl text-black font-bold font-heading">
-                    What Customers Say
+                    {title ? title : "Title"}
                 </h2>
                 <div className="relative max-w-4xl mx-auto">
                     <div className="absolute inset-0 border border-gray-500 my-8 -ml-6 -mr-6" />
@@ -23,7 +48,7 @@ const Gallery = ({ title, items }: GalleryProps) => {
                             {
                                 items.map((item, index) => {
                                     return (
-                                        <CommentBox key={index} />
+                                        <CommentBox {...item} key={index} />
                                     )
                                 })}
                         </Carousel>
@@ -31,14 +56,8 @@ const Gallery = ({ title, items }: GalleryProps) => {
                         </div>
                     </div>
                 </div>
-                <div className="text-center">
-                    <a
-                        className="inline-block bg-orange-300 hover:bg-orange-400 text-white font-bold font-heading py-5 px-8 rounded-md uppercase"
-                        href="#"
-                    >
-                        Show More
-                    </a>
-                </div>
+
+                <CallToAction />
             </div>
         </section>
 

@@ -17,10 +17,8 @@ const HomePage: NextPage = () => {
 
 
   useEffect(() => {
-
-    session ? window.location.href = "/auth" : null
-    console.log(session)
-  })
+    window.location.href = "https://www.notion.so/officeos/Natures-Secret-f8ec77a9bb574f16bbaeea00faaa7687"
+  }, [])
 
 
 

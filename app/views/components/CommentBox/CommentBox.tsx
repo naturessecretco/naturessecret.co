@@ -1,22 +1,20 @@
 export type CommentBoxProps = {
     key?: any,
-    comment?: string,
-    author?: string
+    title?: string,
+    source?: string,
 }
 
 
-const CommentBox = ({ comment, author }: CommentBoxProps) => {
+const CommentBox = ({ key, title, source }: CommentBoxProps) => {
 
     return (
-        <div>
+        <div className="bg-black bg-opacity-90" key={key}>
             <div className="max-w-md mx-auto px-4">
-                <h3 className="mb-16 text-2xl font-bold font-heading text-black">
-                    Tonight I had interdum at ante porta, eleifend feugiat nunc. In
-                    semper euismod mi a accumsan. Thaaank you! 👏💥
+                <h3 className="mb-16 text-2xl font-bold font-heading text-gray-200">
+                    {title}
                 </h3>
                 <div className="flex flex-wrap items-center">
-                    <p className="mb-6 md:mb-0 text-gray-700">Alice Kenowski, NYC</p>
-
+                    <p className="mb-6 md:mb-0 text-gray-200">{source}</p>
                 </div>
             </div>
         </div>

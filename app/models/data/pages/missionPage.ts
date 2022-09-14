@@ -17,6 +17,7 @@ const missionPage = {
         },
 
         post: {
+            title: 'Mission Statement'
 
         }
     }
