@@ -8,7 +8,7 @@ export type CarouselProps = {
 const Carousel = ({ children, infiniteLoop }: CarouselProps) => {
 
     return (
-        <ReactResponsiveCarousel infiniteLoop={infiniteLoop}>
+        <ReactResponsiveCarousel showThumbs={false} infiniteLoop={infiniteLoop}>
             {children}
         </ReactResponsiveCarousel>
     )

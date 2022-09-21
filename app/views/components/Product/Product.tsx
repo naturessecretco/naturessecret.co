@@ -31,74 +31,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                             {description}
                         </p>
                     </div>
-                    <div className="flex mb-12">
-                        <div className="mr-6">
-                            <span className="block mb-4 font-bold font-heading text-gray-400 uppercase">
-                                QTY
-                            </span>
-                            <div className="inline-flex items-center px-4 font-semibold font-heading text-gray-500 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md">
-                                <button className="py-2 hover:text-gray-700">
-                                    <svg
-                                        width={12}
-                                        height={2}
-                                        viewBox="0 0 12 2"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <g opacity="0.35">
-                                            <rect
-                                                x={12}
-                                                width={2}
-                                                height={12}
-                                                transform="rotate(90 12 0)"
-                                                fill="currentColor"
-                                            />
-                                        </g>
-                                    </svg>
-                                </button>
-                                <input
-                                    className="w-12 m-0 px-2 py-4 text-center md:text-right border-0 focus:ring-transparent focus:outline-none rounded-md"
-                                    type="number"
-                                    placeholder={""}
-                                />
-                                <button className="py-2 hover:text-gray-700">
-                                    <svg
-                                        width={12}
-                                        height={12}
-                                        viewBox="0 0 12 12"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <g opacity="0.35">
-                                            <rect x={5} width={2} height={12} fill="currentColor" />
-                                            <rect
-                                                x={12}
-                                                y={5}
-                                                width={2}
-                                                height={12}
-                                                transform="rotate(90 12 5)"
-                                                fill="currentColor"
-                                            />
-                                        </g>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div>
-                            <span className="block mb-4 font-bold font-heading text-gray-400 uppercase">
-                                Size
-                            </span>
-                            <select
-                                className="pl-6 pr-10 py-4 font-semibold font-heading text-gray-500 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
-                                name=""
-                                id=""
-                            >
-                                <option value={1}>Medium</option>
-                                <option value={2}>Small</option>
-                                <option value={3}>Large</option>
-                            </select>
-                        </div>
-                    </div>
+                 
                     <div className="flex flex-wrap -mx-4 mb-14 items-center">
                         <div className="w-full xl:w-2/3 px-4 mb-4 xl:mb-0">
                             <a
@@ -183,13 +116,32 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                         <div className="relative mb-10" style={{ height: 564 }}>
 
                             <Carousel>
-                                <h1> Test Items</h1>
-                                <h1> Test Items</h1>
 
-                                <h1> Test Items</h1>
+                                <div className="w-full">
+                                    <a href="#">
+                                        <img
+                                            className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
+                                            src="/assets/images/honey-jar-website-only-mockup-5.png"
+                                            alt=""
+                                        />
+                                    </a>
 
-                                <h1> Test Items</h1>
+                                </div>
+                                <div className="w-full">
+                                    <img
+                                        className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
+                                        src="/assets/images/seamoss-gummies-jar-mockup-2.png"
+                                        alt=""
+                                    />
+                                </div>
 
+                                <div className="w-full">
+                                    <img
+                                        className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
+                                        src="/assets/images/sea-moss-jar-website-only-mockup-4.png"
+                                        alt=""
+                                    />
+                                </div>
                             </Carousel>
 
 

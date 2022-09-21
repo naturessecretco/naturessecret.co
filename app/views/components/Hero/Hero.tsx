@@ -2,8 +2,7 @@ import { SocialIcon } from 'react-social-icons';
 import { Fade } from 'react-awesome-reveal';
 import SimpleCarousel from 'simple-react-carousel';
 import { CallToAction } from '@models/typings/CallToAction';
-import { Carousel } from 'react-responsive-carousel';
-
+import Carousel from "@components/Carousel";
 import type { Image } from "@typings/Image"
 
 export type Link = {
@@ -36,42 +35,36 @@ const Hero = ({ title, features, socials, covers, backgroundCover, cta }: HeroPr
         return (
             <div className="w-full lg:w-2/3 px-4">
                 <div className="flex flex-wrap h-full mr-14">
+
+
                     <Carousel>
                         <div className="w-full">
-                            <img
-                                className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                src="/assets/images/wildcrafted-seamoss-1.png"
-                                alt=""
-                            />
+                            <a href="#">
+                                <img
+                                    className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
+                                    src="/assets/images/honey-jar-website-only-mockup-5.png"
+                                    alt=""
+                                />
+                            </a>
+
                         </div>
                         <div className="w-full">
                             <img
                                 className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                src="/assets/images/wildcrafted-seamoss-1.png"
+                                src="/assets/images/seamoss-gummies-jar-mockup-2.png"
                                 alt=""
                             />
                         </div>
+
                         <div className="w-full">
                             <img
                                 className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                src="/assets/images/wildcrafted-seamoss-1.png"
+                                src="/assets/images/sea-moss-jar-website-only-mockup-4.png"
                                 alt=""
                             />
                         </div>
-                        <div className="w-full">
-                            <img
-                                className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                src="/assets/images/wildcrafted-seamoss-1.png"
-                                alt=""
-                            />
-                        </div>
-                        <div className="w-full">
-                            <img
-                                className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                src="/assets/images/wildcrafted-seamoss-1.png"
-                                alt=""
-                            />
-                        </div>
+
+
 
                     </Carousel>
 

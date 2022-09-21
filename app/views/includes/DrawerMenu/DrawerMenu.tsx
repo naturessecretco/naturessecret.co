@@ -50,9 +50,10 @@ const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
         <CSSTransition in={isOpen}
             timeout={900}
             unmountOnExit>
-
             <ClickAwayListener onClickAway={() => toggleDrawer()}>
                 <div style={{ backdropFilter: 'blur(10px)' }} className={`navbar-menu ${!isOpen ? "swing-out-left-bck" : ""} swing-in-left-fwd fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-50`}>
+
+
                     <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-50" />
                     <nav className="relative flex flex-col py-6 px-6 w-full h-full bg-green-800 bg-opacity-50 border-r overflow-y-auto">
                         <div className="flex items-center mb-8">
@@ -68,31 +69,14 @@ const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
                                 <CloseIcon className="text-white" />
                             </button>
                         </div>
-                        <div className="flex mb-8 justify-between">
-
-                            <div className="flex items-center">
-
-                                <input disabled
-                                    className="block mb-10 py-5 px-8  bg-black text-white bg-opacity-50 rounded-md border-transparent focus:ring-blue-300 focus:border-blue-300 focus:outline-none"
-                                    type="search"
-                                    placeholder="Search"
-                                />
-
-
-                            </div>
-                        </div>
-
-
 
                         <NavLinks />
-
-
-
                     </nav>
+
                 </div>
             </ClickAwayListener>
 
-        </CSSTransition>
+        </CSSTransition >
 
     )
 }

@@ -6,20 +6,21 @@ import { Fade } from 'react-awesome-reveal';
 import menu from "@configs/menu"
 import ScrollToTop from "react-scroll-to-top";
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import React from "react"
 
 const PageLayout = ({ children, metaData, header, footer }) => {
 
     return (
         <RootLayout metaData={metaData}>
+            <ScrollToTop smooth component={<KeyboardDoubleArrowUpIcon />} />
             <DrawerMenu {...menu} />
             <Header {...header} />
-            <Fade>
+            <Fade triggerOnce cascade>
                 {children}
             </Fade>
             <Footer {...footer} />
-            <ScrollToTop smooth component={<KeyboardDoubleArrowUpIcon/>} className="translate-x-1/2" />
         </RootLayout>
     )
 }
 
-export default PageLayout
+export default React.memo(PageLayout)

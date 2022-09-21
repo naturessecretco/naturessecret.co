@@ -1,15 +1,19 @@
 import Hero from "@components/Hero"
+import Featured from "@components/Featured"
+import MediaRow from "@components/MediaRow"
+import Summary from "@components/Summary"
+
 import PageService from "@services/pages"
-import Featured from "@views/components/Featured"
-import MediaRow from "@views/components/MediaRow"
-import Summary from "@views/components/Summary"
-import PageLayout from '@views/layouts/PageLayout'
+import PageLayout from '@layouts/PageLayout'
+
 import { useEffect } from "react"
 
 const HomePage = ({ page }) => {
 
+  const version = "1.0.0"
+
   useEffect(() => {
-    console.log(`[Natures Secret@1.0.0]`, page)
+    console.log(`[Naturesecret.co@${version}]`, page)
   }, [page])
 
   return (

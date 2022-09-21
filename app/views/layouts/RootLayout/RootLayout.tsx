@@ -4,6 +4,8 @@ import CssBaseline from "@mui/material/CssBaseline"
 import Box from "@mui/material/Box"
 import Meta from "@includes/Meta"
 
+import React from "react"
+
 const RootLayout = ({ children, metaData }: ILayout) => {
 
     return (
@@ -15,4 +17,4 @@ const RootLayout = ({ children, metaData }: ILayout) => {
     )
 }
 
-export default RootLayout
+export default React.memo(RootLayout)

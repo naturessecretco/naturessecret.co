@@ -11,7 +11,7 @@ const productsDB = [
         value: "80.00",
         discount: "20%",
         price: "30.00",
-        cover: images.find(image => image.id === "mockup").src,
+        cover: "/assets/images/sea-moss-jar-website-only-mockup-4.png",
         category: "seamoss",
 
     },
@@ -36,7 +36,7 @@ const productsDB = [
         tags: ["featured"],
         price: "40.00",
         value: "70.00",
-        cover: images.find(image => image.id === "bwh").src,
+        cover: "/assets/images/seamoss-gummies-jar-mockup-2.png",
         category: "seamoss",
 
     },
