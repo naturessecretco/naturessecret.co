@@ -52,7 +52,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
                     </h3>
                     <div className="flex">
 
-                        {socials.map((social, index) => {
+                        {socials?.map((social, index) => {
                             return (
                                 <SocialIcon className="hover:scale-90 transition-all ml-2" bgColor="#000000" fgColor="#fefd21" key={index} url={social.url} />
                             )

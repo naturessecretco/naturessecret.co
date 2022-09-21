@@ -43,37 +43,7 @@ const homePage: DataPage = {
                 url: "/benefits"
             }
         },
-        hero: {
-            title: "Natures Secret",
-            socials: meta.socials,
-            cta: {
-                name: "Home to natures best kept secrets."
-            },
-            backgroundCover: "/assets/images/cover.png",
-            features: {
-                heading: "Quick Links to Wellness",
-                links: [
-                    {
-                        name: "Check out our new products!",
-                        url: "/products"
-                    },
-                    {
-                        name: "Frequently Asked Questions",
-                    },
-            
-                    {
-                        name: "Your benefits from SuperFoods",
-                    },
-                    {
-                        name: "About Us"
-                    },
-                    {
-                        name: 'Our Mission'
-                    },
-           
-                ]
-            }
-        },
+       
 
 
         featured: {

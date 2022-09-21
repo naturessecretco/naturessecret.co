@@ -1,33 +1,38 @@
-import Featured from "@views/components/Featured"
-import homePage from '@pages/homePage'
-import PageLayout from '@views/layouts/PageLayout'
 import Hero from "@components/Hero"
-import Gallery from "@components/Gallery"
+import PageService from "@services/pages"
+import Featured from "@views/components/Featured"
 import MediaRow from "@views/components/MediaRow"
 import Summary from "@views/components/Summary"
+import PageLayout from '@views/layouts/PageLayout'
+import { useEffect } from "react"
 
+const HomePage = ({ page }) => {
 
-const HomePage = ({ pageData }) => {
+  useEffect(() => {
+    console.log(`[Natures Secret@1.0.0]`, page)
+  }, [page])
 
-  console.log(`[pageData]`, pageData)
-  
   return (
-    <PageLayout {...pageData.layout}>
-      <Hero {...pageData.hero} />
-      <Featured {...pageData.featured} />
-      <MediaRow {...pageData.mediaRow} />
-      <Summary {...pageData.summary} />
+    <PageLayout {...page.layout}>
+      <Hero {...page.data.hero} />
+      <Featured {...page.data.featured} />
+      <MediaRow {...page.data.mediaRow} />
+      <Summary {...page.data.summary} />
     </PageLayout>
   )
 }
 
 export default HomePage
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
+
+  const { getPage } = PageService.methods
+
+  const pageData = await getPage('home')
 
   return {
     props: {
-      pageData: homePage.init()
+      page: pageData
     }
   }
 }

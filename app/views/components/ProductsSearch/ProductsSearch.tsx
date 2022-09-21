@@ -50,9 +50,9 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
     return (
 
       items ? <div className="w-full lg:w-3/4 px-3">
-        <Fade cascade>
+        <Fade triggerOnce cascade>
           {items.map((item, index) => (
-            <div key={index} className="relative mb-6 bg-black bg-opacity-80 rounded hover:scale-110 hover:bg-opacity-95 transition-all">
+            <div key={index} className="relative mb-6 bg-black bg-opacity-80 rounded  hover:bg-opacity-100 transition-all">
               <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-gray-200 border-2 border-green-500 rounded-full text-green-500">
                 {item.discount}
               </span>
@@ -181,7 +181,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
 
   return (
 
-    <section className="py-20 bg-black bg-opacity-20">
+    <section className="py-22">
       <div className="container mx-auto px-4">
 
         <div className="flex flex-wrap -mx-4 mb-20 items-center justify-between">

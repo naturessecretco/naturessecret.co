@@ -33,8 +33,8 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
         <a className="flex-shrink-0 text-3xl font-bold font-heading" href="/">
           <img
             className="h-20"
-            src={favicon.image.src}
-            alt={favicon.image.alt}
+            src={favicon?.image?.src}
+            alt={favicon?.image?.alt}
             width="auto"
           />
         </a> : <></>

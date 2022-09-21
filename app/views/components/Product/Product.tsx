@@ -10,8 +10,8 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
             <div className="w-full md:w-1/2 px-4">
                 <div className="lg:pl-20">
                     <div className="mb-10 pb-10 border-b">
-                        <span className="text-gray-200">{heading ? heading : "Heading"}</span>
-                        <h2 className="text-white mt-2 mb-6 max-w-xl text-5xl md:text-6xl font-bold font-heading">
+                        <span className="text-gray-900">{heading ? heading : "Heading"}</span>
+                        <h2 className="text-gray-900 mt-2 mb-6 max-w-xl text-5xl md:text-6xl font-bold font-heading">
                             {name ? name : "Product Name"}
                         </h2>
 
@@ -27,7 +27,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                                 {value}
                             </span>
                         </p>
-                        <p className="max-w-md text-gray-200">
+                        <p className="max-w-md text-gray-900">
                             {description}
                         </p>
                     </div>
@@ -174,7 +174,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
     }
 
     return (
-        <section className="py-20 bg-black bg-opacity-50">
+        <section className="py-20">
             <div className="container mx-auto px-4">
                 <div className="flex flex-wrap -mx-4 mb-24">
 

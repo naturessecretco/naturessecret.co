@@ -24,7 +24,7 @@ const productsDB = [
         tags: ["featured"],
         price: "40.00",
         value: "70.00",
-        cover: images.find(image => image.id === "buckwheat-honey-1").src,
+        cover: images.find(image => image.id === "bwh").src,
         category: "seamoss",
 
     },
@@ -36,7 +36,7 @@ const productsDB = [
         tags: ["featured"],
         price: "40.00",
         value: "70.00",
-        cover: images.find(image => image.id === "buckwheat-honey-1").src,
+        cover: images.find(image => image.id === "bwh").src,
         category: "seamoss",
 
     },
