@@ -91,7 +91,7 @@ const Featured = ({ title, cta, features }: HeroProps) => {
     }
 
     return (
-        <section className="py-20 bg-black bg-opacity-25  overflow-x-hidden">
+        <section className="py-20 overflow-x-hidden">
 
             <div className="container mx-auto px-4">
 

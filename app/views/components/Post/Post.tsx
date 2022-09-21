@@ -52,33 +52,17 @@ const Post = ({ title, cover, content }: PostProps) => {
                             dignissim accumsan just. Suspendisse vitae ligula convallis, porta
                             tortor et, finibus neque.
                         </h3>
-                        <p className="text-xl text-gray-700 mt-5">
-                            Orci varius natoque penatibus et magnis dis parturient montes,
-                            nascetur ridiculus mus. Aliquam venenatis est quis venenatis
-                            dignissim. Maecenas a sem eros. Quisque hendrerit vitae libero non
-                            porta. Maecenas quis sem et nulla pellentesque accumsan. Proin blandit
-                            bibendum orci, a aliquam augue sagittis sed. Quisque pharetra ut quam
-                            eget varius. Morbi nisi nunc, ultricies id ligula id, feugiat eleifend
-                            est. Etiam metus sem, ornare vitae porta vel, porta a mauris. Fusce
-                            dapibus egestas lorem eu tincidunt. Quisque lobortis placerat
-                            placerat. Donec eget lectus blandit ex pellentesque iaculis. Proin
-                            aliquam vulputate arcu et blandit. Duis sed lobortis mauris, vel
-                            porttitor lectus. Pellentesque vel ultrices odio.
+                        <p className="text-xl text-gray-900 mt-5">
+                        Some potential benefits of consuming our Top Quality nutritious Wildcrafted Seamoss,
+                         Honey, & other foods include:1. A more nutritious diet – Our products are packed with
+                          vitamins, minerals, and antioxidants that can help boost your overall health and well-being.
+                           Increased energy levels – The high levels of nutrients in our products can give you the energy you need to get through your day.
+                           3. Better digestive health –
+                            Our products are loaded with probiotics and other gut-friendly nutrients that can help keep your digestive system functioning optimally.
+                            4. Reduced inflammation – The anti-inflammatory properties of our products can help reduce inflammation throughout your body, leading to better overall health.5.
                         </p>
                  
-                        <p className="text-xl text-gray-700">
-                            Orci varius natoque penatibus et magnis dis parturient montes,
-                            nascetur ridiculus mus. Aliquam venenatis est quis venenatis
-                            dignissim. Maecenas a sem eros. Quisque hendrerit vitae libero non
-                            porta. Maecenas quis sem et nulla pellentesque accumsan. Proin blandit
-                            bibendum orci, a aliquam augue sagittis sed. Quisque pharetra ut quam
-                            eget varius. Morbi nisi nunc, ultricies id ligula id, feugiat eleifend
-                            est. Etiam metus sem, ornare vitae porta vel, porta a mauris. Fusce
-                            dapibus egestas lorem eu tincidunt. Quisque lobortis placerat
-                            placerat. Donec eget lectus blandit ex pellentesque iaculis. Proin
-                            aliquam vulputate arcu et blandit. Duis sed lobortis mauris, vel
-                            porttitor lectus. Pellentesque vel ultrices odio.
-                        </p>
+                 
                     </div>
                 </div>
             </div>

@@ -67,9 +67,9 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
 
     <Headroom>
       <section style={{
-        backdropFilter: 'blur(4px)',
+        backdropFilter: 'blur(10px)',
         borderBottom: '1px solid gray'
-      }} className="relative bg-black bg-opacity-10">
+      }} className="relative">
 
 
         <Banner {...bannerProps} />
@@ -83,7 +83,7 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
             <NavLinks />
           </div>
 
-  
+
           <a onClick={() => toggleDrawer()} className="navbar-burger self-center mr-12" href="#">
             <MenuOpenIcon className="text-black h-24" />
           </a>

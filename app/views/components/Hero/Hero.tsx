@@ -2,6 +2,7 @@ import { SocialIcon } from 'react-social-icons';
 import { Fade } from 'react-awesome-reveal';
 import SimpleCarousel from 'simple-react-carousel';
 import { CallToAction } from '@models/typings/CallToAction';
+import { Carousel } from 'react-responsive-carousel';
 
 import type { Image } from "@typings/Image"
 
@@ -34,35 +35,46 @@ const Hero = ({ title, features, socials, covers, backgroundCover, cta }: HeroPr
     const Covers = () => {
         return (
             <div className="w-full lg:w-2/3 px-4">
-                <div className="flex flex-wrap h-full">
-                    <div className="w-full md:w-7/12">
-                        <img
-                            className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                            src="/assets/images/wildcrafted-seamoss-1.png"
-                            alt=""
-                        />
-                    </div>
-                    <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
-                        <img
-                            className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
-                            src="/assets/images/buckwheat-honey-1.png"
-                            alt=""
-                        />
-                    </div>
-                    <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
-                        <img
-                            className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top "
-                            src="/assets/images/garlic.png"
-                            alt=""
-                        />
-                    </div>
-                    <div className="w-full md:w-5/12 bg-black bg-opacity-40 rounded">
-                        <img
-                            className="md:mt-16 md:-ml-16 w-full h-64 md:h-full object-cover object-top"
-                            src="/assets/images/herbs.png"
-                            alt=""
-                        />
-                    </div>
+                <div className="flex flex-wrap h-full mr-14">
+                    <Carousel>
+                        <div className="w-full">
+                            <img
+                                className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
+                                src="/assets/images/wildcrafted-seamoss-1.png"
+                                alt=""
+                            />
+                        </div>
+                        <div className="w-full">
+                            <img
+                                className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
+                                src="/assets/images/wildcrafted-seamoss-1.png"
+                                alt=""
+                            />
+                        </div>
+                        <div className="w-full">
+                            <img
+                                className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
+                                src="/assets/images/wildcrafted-seamoss-1.png"
+                                alt=""
+                            />
+                        </div>
+                        <div className="w-full">
+                            <img
+                                className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
+                                src="/assets/images/wildcrafted-seamoss-1.png"
+                                alt=""
+                            />
+                        </div>
+                        <div className="w-full">
+                            <img
+                                className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
+                                src="/assets/images/wildcrafted-seamoss-1.png"
+                                alt=""
+                            />
+                        </div>
+
+                    </Carousel>
+
                 </div>
             </div>
         )

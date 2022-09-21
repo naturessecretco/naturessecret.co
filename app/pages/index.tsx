@@ -17,7 +17,6 @@ const HomePage = ({ pageData }) => {
       <Featured {...pageData.featured} />
       <MediaRow {...pageData.mediaRow} />
       <Summary {...pageData.summary} />
-      <Gallery {...pageData.gallery} />
     </PageLayout>
   )
 }

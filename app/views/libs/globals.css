@@ -1,22 +1,25 @@
-:root {
-    --color-primary: #fefd21;
-    --color-secondary: #0f0;
-    --color-tertiary: #00f;
-    --quicksand: 'Quicksand', sans-serif;
-
-    --cambria: 'Cambria', serif;
-    --font-primary: var(--cambria);
-    --font-secondary: var(--quicksand);
-}
-
 @font-face {
     font-family: Cambria;
     src: url(/assets/fonts/Cambria.ttf);
 }
 
+:root {
+    --color-primary: rgb(252,238,49);
+    --color-secondary: rgb(115,241,64);
+    --color-tertiary: rgb(0,128,128);
+
+    --quicksand: 'Quicksand', sans-serif;
+    --cambria: 'Cambria', serif;
+
+    --font-primary: var(--cambria);
+    --font-secondary: var(--quicksand);
+}
+
+
 
 body,
 html {
+    width: 100vw;
     overflow-x: hidden !important;
     margin: 0;
     padding: 0;
@@ -24,7 +27,6 @@ html {
     scroll-behavior: smooth;
     background-color: var(--color-primary) !important;
     font-family: var(--font-secondary) !important;
-    background-attachment: fixed;
 }
 
 * {
