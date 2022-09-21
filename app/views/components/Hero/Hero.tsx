@@ -81,7 +81,7 @@ const Hero = ({ title, features, socials, covers, backgroundCover, cta }: HeroPr
     }
     const CallToAction = () => {
         return (
-            cta ? <div className=" max-w-3xl translate-y-30 mx-auto py-24 text-center">
+            cta ? <div className="max-w-3xl translate-y-0 mx-auto py-24 text-center">
                 <a
                     className="mt-48 inline-block bg-opacity-80 bg-black hover:bg-green-600 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition-all"
                     href={cta.url}

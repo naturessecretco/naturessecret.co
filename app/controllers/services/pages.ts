@@ -10,7 +10,7 @@ const PageService = {
 
     methods: {
 
-        loadPage: (pageKey: string) => {
+        loadPage:  (pageKey: string) => {
             return PageService.data.pages[pageKey]
         },
 
@@ -29,6 +29,10 @@ const PageService = {
         },
 
         resolveQuery: async (query) => {
+
+            const reducer = async ([key, value]: [string, Function]) => {
+                return [key, await value()]
+            }
 
             return Object.fromEntries(
                 await Object.entries(query).map(([key, value]: [string, Function]) => {
