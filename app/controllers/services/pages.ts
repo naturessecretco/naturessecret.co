@@ -21,7 +21,7 @@ const PageService = {
 
         getPage: async (pageKey: string) => {
             const isProduction = process.env.NODE_ENV === "production"
-            return await fetch(`${isProduction ? "https://naturessecret.com/api/pages" : `http://localhost:${process.env.PORT || 3001}/api/pages`}`,
+            return await fetch(`${isProduction ? "https://naturessecret.co/api/pages" : `http://localhost:${process.env.PORT || 3001}/api/pages`}`,
                 {
                     method: 'POST',
                     body: JSON.stringify({ page: `${pageKey ? pageKey : "home"}` }),
