@@ -24,7 +24,7 @@ const HomePage = ({ page }) => {
 
 export default HomePage
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
   const { getPage } = PageService.methods
 
@@ -33,6 +33,7 @@ export async function getServerSideProps() {
   return {
     props: {
       page: pageData
-    }
+    },
+    revalidate: 3
   }
 }
