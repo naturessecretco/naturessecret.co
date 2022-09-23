@@ -10,11 +10,11 @@ const PageService = {
 
     methods: {
 
-        loadPage:  (pageKey: string) => {
-            return PageService.data.pages[pageKey]
+        loadPage: (pageKey?: string) => {
+            return PageService.data.pages.pages[pageKey ? pageKey : "home"]
         },
 
-        getLayout: () => {
+        loadLayout: () => {
             return PageService.data.layout
         },
 
@@ -28,20 +28,56 @@ const PageService = {
                 }).then(res => res.json())
         },
 
-        resolveQuery: async (query) => {
+        resolveQuery: async (query: any, dependencies = []) => {
 
-            const reducer = async ([key, value]: [string, Function]) => {
-                return [key, await value()]
-            }
+            let resultStack = {}
 
-            return Object.fromEntries(
-                await Object.entries(query).map(([key, value]: [string, Function]) => {
-                    return [key, value()]
+            const QueryProcess =  query.map( (data) => {
+
+                const { component, props } =  data
+
+                Object.keys(props).map(async (prop) => {
+                    if (typeof props[prop] === "function") {
+                        props[prop] = await props[prop]()
+                    } else {
+                        if (props[prop].constructor.name === "AsyncFunction" &&
+                            props[prop] !== undefined &&
+                            props[prop] !== null) {
+                            try {
+                                await props[prop]().then(
+                                    (res) => {
+                                        props[prop] = res
+                                    }
+                                )
+                            } catch (error) {
+                                props[prop] = error
+                            }
+                        } else {
+                            props[prop] = await props[prop]
+                        }
+                    }
                 })
+                return component(props)
+            }
             )
+
+            QueryProcess.map( (data) => {
+                resultStack[data.name] = data
+            })
+
+            return resultStack
         }
     }
 }
 
 
 export default PageService
+
+
+const data = {
+    data: {
+        hero: {
+            props: []
+        }
+    }
+}

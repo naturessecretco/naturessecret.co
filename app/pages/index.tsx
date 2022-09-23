@@ -10,7 +10,7 @@ import { useEffect } from "react"
 
 const HomePage = ({ page }) => {
 
-  const version = "1.0.0"
+  const version = "0.0.1"
 
   useEffect(() => {
     console.log(`[Naturesecret.co@${version}]`, page)
@@ -30,13 +30,20 @@ export default HomePage
 
 export async function getServerSideProps() {
 
-  const { getPage } = PageService.methods
+  const { loadLayout, resolveQuery, loadPage } = PageService.methods
 
-  const pageData = await getPage('home')
+  const dataQuery = await resolveQuery(loadPage("home").data)
+
+  const page = {
+    id: 'natures-secret-pages',
+    version: Date.now(),
+    layout: loadLayout(),
+    data: dataQuery
+  }
 
   return {
     props: {
-      page: pageData
+      page: page
     },
   }
 }

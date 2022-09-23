@@ -1,20 +1,20 @@
 import Carousel from "@components/Carousel"
-import CommentBox from "../CommentBox"
-import type { CallToAction } from "@typings/CallToAction"
+import CommentBox from "@components/CommentBox"
+
+import type { GalleryProps } from "@typings/Gallery"
 
 
-export type GalleryItem = {
-    title?: string,
-    description?: string,
-    source?: string
+const $Gallery = ({ title, cta, items }: GalleryProps) => {
+    const PropsObject = {
+        name: "gallery",
+        title: title ? title : 'TITLE_PROPERTY_NOT_FOUND',
+        cta: cta ? cta : 'CTA_PROPERTY_NOT_FOUND',
+        items: items ? items : 'ITEMS_PROPERTY_NOT_FOUND'
+    }
+    return {
+        ...PropsObject
+    }
 }
-
-export type GalleryProps = {
-    title?: string,
-    cta?: CallToAction
-    items: GalleryItem[]
-}
-
 
 const Gallery = ({ title, items, cta }: GalleryProps) => {
 
@@ -64,4 +64,5 @@ const Gallery = ({ title, items, cta }: GalleryProps) => {
     )
 }
 
+export { $Gallery }
 export default Gallery

@@ -155,20 +155,6 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
                   <a className="font-bold text-gray-200 font-heading" href="#">
                     {tag}
                   </a>
-
-                  <ul className="hidden text-left mt-6">
-                    <li className="mb-4">
-                      <a href="#">Seamoss</a>
-                    </li>
-                    <li className="mb-4">
-                      <a href="#">Honey</a>
-                    </li>
-                    <li className="mb-4">
-                      <a href="#">Specials</a>
-                    </li>
-
-
-                  </ul>
                 </div>
               </div>
             ))
@@ -186,7 +172,6 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
 
         <div className="flex flex-wrap -mx-4 mb-20 items-center justify-between">
           <Header />
-          <TagBar />
           <Filters />
         </div>
 

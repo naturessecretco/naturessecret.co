@@ -1,104 +1,57 @@
 import layout from "@configs/layout"
-import meta from "@configs/meta"
-import benefits from "@db/benefits"
-import faqs from "@db/faqs"
-import productsDB from "@db/products"
-import reviews from "@db/reviews"
 
-const pages = {
+import { $Gallery } from "@components/Gallery"
+import { $MediaRow } from "@components/MediaRow"
+import { $Hero } from "@components/Hero"
+import { $Summary } from "@components/Summary"
 
+import type { PagesDBProps } from "@typings/page"
+
+
+const pages: PagesDBProps = {
+    id: 'natures-secret-pages',
+    version: Date.now(),
     layout: layout,
-
-    home: {
-
-        metaData: {
-            pageTitle: 'Home',
-        },
-
-        query: {
-            gallery: () => {
-                
-                return {
-                    title: 'Testimonials & Reviews',
-                    cta: {
-                        name: 'Read more',
-                        url: 'face'
-                    },
-                    items: [...reviews]
+    dependencies: [],
+    pages: {
+        home: {
+            metaData: {
+                version: Date.now(),
+                pageTitle: 'Home'
+            },
+            data: [{
+                component: $Gallery,
+                props: {
+                    items: "",
+                    title: async () => "Is This Actually Working Lord Heavenly Father? Thou Art My God. Thou hast never forsaken me in all my weakness. Thou loves me.",
+                    cta: '',
+                }
+            },
+            {
+                component: $MediaRow,
+                props: {
+                    items: [],
+                    title: () => "Is This Actually Working Lord Heavenly Father? Thou Art My God. Thou hast never forsaken me in all my weakness. Thou loves me.",
+                    description: '',
                 }
             },
 
-            mediaRow: () => {
-                return {
-                    media: [...benefits]
+            {
+                component: $Hero,
+                props: {
+                    title: '',
                 }
             },
-
-            summary: () => {
-
-                return {
-                    title: "Frequently Asked Questions",
-                    content: [...faqs],
-                    cta: {
-                        name: "Learn more here",
-                        url: "/benefits"
-                    }
-                }
-
-            },
-
-            featured: () => {
-
-                return {
-                    title: "Best Selling",
-                    features: [...productsDB]
-                }
-
-
-            },
-
-            hero: () => {
-
-                return {
-
-                    title: "Natures Secret",
-                    socials: meta.socials,
-                    cta: {
-                        name: "Home to natures best kept secrets."
-                    },
-                    backgroundCover: "/assets/images/cover.png",
-                    features: {
-                        heading: "Quick Links to Wellness",
-                        links: [
-                            {
-                                name: "Check out our new products!",
-                                url: "/products"
-                            },
-                            {
-                                name: "Frequently Asked Questions",
-                            },
-
-                            {
-                                name: "Your benefits from SuperFoods",
-                            },
-                            {
-                                name: "About Us"
-                            },
-                            {
-                                name: 'Our Mission'
-                            },
-
-                        ]
-                    }
+            {
+                component: $Summary,
+                props: {
+                    title: '',
                 }
             }
-        },
-    },
-
-    benefits: {},
-    mission: {},
-    products: {},
-    faqs: {},
+            ]
+        }
+    }
 }
+
 
 export default pages

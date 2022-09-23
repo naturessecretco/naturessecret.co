@@ -1,24 +1,20 @@
-import type { Image } from "@models/typings/Image"
+
+import type { MediaRowProps, MediaProps } from "@typings/MediaRow"
 
 
-export type Media = {
-    key?: any,
-    cover?: Image,
-    title?: string,
-    description?: string
+const $MediaRow = ({ media }: MediaRowProps) => {
+
+    const PropsObject = {
+        name: "mediaRow",
+        media: media ? media : 'MEDIA_PROPERTY_NOT_FOUND'
+    }
+
+    return { ...PropsObject }
 }
 
+const MediaRow = ({ media }: MediaRowProps) => {
 
-export type MediaRow = {
-
-    media: Media[]
-
-}
-
-
-const MediaRow = ({ media }: MediaRow) => {
-
-    const Media = ({ key, title, description, cover }: Media) => {
+    const Media = ({ key, title, description, cover }: MediaProps) => {
         return (
             <div className="relative w-full align-center md:w-1/2 lg:w-1/4 px-4 mb-16 lg:mb-0 hover:scale-110 transition-all hover:bg-black">
                 <div className="relative text-center bg-black rounded bg-opacity-80">
@@ -51,4 +47,5 @@ const MediaRow = ({ media }: MediaRow) => {
     )
 }
 
+export { $MediaRow }
 export default MediaRow

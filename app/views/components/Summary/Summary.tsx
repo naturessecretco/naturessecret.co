@@ -5,6 +5,19 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 import type { SummaryProps } from '@typings/Summary';
 
 
+const $Summary = ({ title, content, cta }: SummaryProps) => {
+    const PropsObject = {
+        name: "summary",
+        version: Date.now(),
+        title: title ? title : 'TITLE_PROPERTY_NOT_FOUND',
+        cta: cta ? cta : 'CTA_PROPERTY_NOT_FOUND'
+    }
+
+    return { ...PropsObject }
+
+}
+
+
 const Summary = ({ title, content, cta }: SummaryProps) => {
 
 
@@ -70,4 +83,5 @@ const Summary = ({ title, content, cta }: SummaryProps) => {
     )
 }
 
+export { $Summary }
 export default Summary

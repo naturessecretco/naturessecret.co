@@ -28,6 +28,25 @@ export type HeroProps = {
 
 }
 
+
+const $Hero = ({ title, features, socials, covers, backgroundCover, cta }: HeroProps) => {
+
+    const PropsObject = {
+        name: "hero",
+        version: Date.now(),
+        title: title ? title : 'TITLE_PROPERTY_NOT_FOUND',
+        features: features ? features : 'FEATURES_PROPERTY_NOT_FOUND',
+        socials: socials ? socials : 'SOCIALS_PROPERTY_NOT_FOUND',
+        covers: covers ? covers : 'COVERS_PROPERTY_NOT_FOUND',
+        backgroundCover: backgroundCover ? backgroundCover : 'BACKGROUND_COVER_PROPERTY_NOT_FOUND',
+        cta: cta ? cta : 'CTA_PROPERTY_NOT_FOUND'
+
+    }
+
+
+    return PropsObject
+}
+
 const Hero = ({ title, features, socials, covers, backgroundCover, cta }: HeroProps) => {
 
 
@@ -195,4 +214,5 @@ const Hero = ({ title, features, socials, covers, backgroundCover, cta }: HeroPr
     )
 }
 
+export { $Hero }
 export default Hero
