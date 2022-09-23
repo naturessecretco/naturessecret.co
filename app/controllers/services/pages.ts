@@ -4,13 +4,13 @@ import pages from "@db/pages"
 const PageService = {
 
     data: {
-        layout: { ...pages.layout },
+        layout: pages.layout,
         pages: pages
     },
 
     methods: {
 
-        loadPage: (pageKey?: string) => {
+        loadDataPage: (pageKey?: string) => {
             return PageService.data.pages.pages[pageKey ? pageKey : "home"]
         },
 
@@ -28,7 +28,9 @@ const PageService = {
                 }).then(res => res.json())
         },
 
-        resolveQuery: async (query: any, dependencies = []) => {
+        resolveQuery: async (query: any, dependencies: [] = []) => {
+    
+            var globalData = await Promise.all(dependencies ? dependencies : [])
 
             let resultStack = {}
 
@@ -73,11 +75,3 @@ const PageService = {
 
 export default PageService
 
-
-const data = {
-    data: {
-        hero: {
-            props: []
-        }
-    }
-}

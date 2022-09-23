@@ -7,7 +7,6 @@ import { $Summary } from "@components/Summary"
 
 import type { PagesDBProps } from "@typings/page"
 
-
 const pages: PagesDBProps = {
     id: 'natures-secret-pages',
     version: Date.now(),
@@ -23,7 +22,7 @@ const pages: PagesDBProps = {
                 component: $Gallery,
                 props: {
                     items: "",
-                    title: async () => "Is This Actually Working Lord Heavenly Father? Thou Art My God. Thou hast never forsaken me in all my weakness. Thou loves me.",
+                    title: async () => await fetch('http://localhost:3001/api/pages', { method: 'GET' }).then(res => res.json()),
                     cta: '',
                 }
             },

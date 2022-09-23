@@ -6,11 +6,11 @@ export default async function handler(
   res: NextApiResponse<any>
 ) {
 
-  const { loadLayout, resolveQuery, loadPage } = PageService.methods
+  const { loadLayout, resolveQuery, loadDataPage } = PageService.methods
 
   const pageKey = req.body.pageKey ? JSON.stringify(req.body.pageKey) : "home"
 
-  const dataQuery = await resolveQuery(loadPage(pageKey).data)
+  const dataQuery = await resolveQuery(loadDataPage(pageKey).data)
 
   const pageData = {
     id: 'natures-secret-pages',

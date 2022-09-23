@@ -30,16 +30,9 @@ export default HomePage
 
 export async function getServerSideProps() {
 
-  const { loadLayout, resolveQuery, loadPage } = PageService.methods
-
-  const dataQuery = await resolveQuery(loadPage("home").data)
-
-  const page = {
-    id: 'natures-secret-pages',
-    version: Date.now(),
-    layout: loadLayout(),
-    data: dataQuery
-  }
+  const { getPage } = PageService.methods
+  
+  const page = await getPage("home")
 
   return {
     props: {
