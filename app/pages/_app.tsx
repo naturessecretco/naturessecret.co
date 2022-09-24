@@ -20,10 +20,8 @@ function Application({ Component, pageProps }: AppProps) {
       <PageTransition timeout={700} classNames={"page-transition"}>
         <RecoilRoot>
           <QueryClientProvider client={queryClient}>
-            <Hydrate state={pageProps.dehydratedState}>
-              <Component {...pageProps} />
+            <Component {...pageProps} />
 
-            </Hydrate>
           </QueryClientProvider>
         </RecoilRoot>
       </PageTransition> : <></>
