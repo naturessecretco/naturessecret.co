@@ -1,6 +1,4 @@
-export type Content = {
-    title?: string,
-    description: string,
+export type ContentProps = {
     question?: string,
     answer?: string
 }

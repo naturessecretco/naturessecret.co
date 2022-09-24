@@ -1,12 +1,12 @@
-import type { Image } from "@models/typings/Image"
+import type { ImageProps } from "@models/typings/Image"
 
 export type MediaProps = {
     key?: any,
-    cover?: Image,
+    cover?: ImageProps,
     title?: string,
     description?: string
 }
 
 export type MediaRowProps = {
-    media: Media[]
+    media: MediaProps[]
 }

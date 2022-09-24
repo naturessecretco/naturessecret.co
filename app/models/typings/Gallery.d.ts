@@ -1,4 +1,5 @@
-export type GalleryItem = {
+import type { CallToActionProps } from "@typings/CallToAction"
+export type GalleryItemProps = {
     title?: string,
     description?: string,
     source?: string
@@ -9,6 +10,6 @@ export type GalleryProps = {
     version?: string | number,
     title?: string | any,
     name?: string,
-    cta?: CallToAction
-    items?: GalleryItem[]
+    cta?: CallToActionProps
+    items?: GalleryItemProps[]
 }

@@ -1,8 +1,8 @@
-import type { Content } from "@typings/Content"
-import type { CallToAction } from "@typings/CallToAction"
+import type { ContentProps } from "@typings/Content"
+import type { CallToActionProps } from "@typings/CallToAction"
 
 export type SummaryProps = {
     title?: string,
-    content?: Content[],
-    cta?: CallToAction
+    content?: ContentProps[],
+    cta?: CallToActionProps
 }

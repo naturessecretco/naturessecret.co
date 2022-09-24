@@ -1,6 +1,6 @@
-import type { Image } from "@typings/Image"
+import type { ImageProps } from "@typings/Image"
 
-export type Favicon = {
-    image: Image,
+export type FaviconProps = {
+    image: ImageProps,
     url: string
 }

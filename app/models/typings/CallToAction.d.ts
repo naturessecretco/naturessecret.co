@@ -1,4 +1,4 @@
-export type CallToAction = {
-    name: string,
-    url: string
+export type CallToActionProps = {
+    name?: string,
+    url?: string
 }

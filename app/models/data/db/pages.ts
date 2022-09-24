@@ -8,6 +8,7 @@ import { $Summary } from "@components/Summary"
 import { $Featured } from "@components/Featured"
 
 import imagesDB from "@db/images"
+import faqsDB from "./faqs"
 import productsDB from "./products"
 
 
@@ -45,7 +46,7 @@ const pages = {
                                 id: product.name,
                                 price: product.price,
                                 cover: {
-                                    src: product.cover,
+                                    src: product.advertisement,
                                     alt: product.name
                                 }
                             }
@@ -96,7 +97,13 @@ const pages = {
                 component: $Summary,
                 props: {
                     title: 'Frequently Asked Questions',
+                    cta: {
+                        name: 'Learn More',
+                        url: ''
+                    },
                     content: async () => {
+                        const faqs = await faqsDB.methods.getFAQs()
+                        return faqs
                     }
                 }
             }

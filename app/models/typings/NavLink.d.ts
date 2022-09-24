@@ -1,5 +1,5 @@
 
-export type NavLink = {
-    name: string,
-    url: string
+export type NavLinkProps = {
+    name?: string,
+    url?: string
 }

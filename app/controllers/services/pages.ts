@@ -1,6 +1,6 @@
 import { QueryClient } from '@tanstack/react-query';
 import pages from "@db/pages"
-import {  useQueryClient as QueryClientUse } from '@tanstack/react-query'
+import { useQueryClient as QueryClientUse } from '@tanstack/react-query'
 
 const PageService = {
 
@@ -30,14 +30,14 @@ const PageService = {
         },
 
         resolveQuery: async (query: any, dependencies: [] = []) => {
-    
+
             var globalData = await Promise.all(dependencies ? dependencies : [])
 
             let resultStack = {}
 
-            const QueryProcess =  query.map( (data) => {
+            const ProcessQueries = query.map((data) => {
 
-                const { component, props } =  data
+                const { component, props } = data
 
                 Object.keys(props).map(async (prop) => {
                     if (typeof props[prop] === "function") {
@@ -46,15 +46,17 @@ const PageService = {
                         if (props[prop].constructor.name === "AsyncFunction" &&
                             props[prop] !== undefined &&
                             props[prop] !== null) {
-                            try {
-                                await props[prop]().then(
-                                    (res) => {
-                                        props[prop] = res
-                                    }
-                                )
-                            } catch (error) {
-                                props[prop] = error
-                            }
+                            setTimeout(async () => {
+                                try {
+                                    await props[prop]().then(
+                                        (res) => {
+                                            props[prop] = res
+                                        }
+                                    )
+                                } catch (error) {
+                                    props[prop] = error
+                                }
+                            }, 300)
                         } else {
                             props[prop] = await props[prop]
                         }
@@ -64,11 +66,11 @@ const PageService = {
             }
             )
 
-            QueryProcess.map( (data) => {
+            ProcessQueries.map((data) => {
                 resultStack[data.name] = data
             })
 
-            return resultStack
+            return ProcessQueries.every((q) => q.then !== 'function') ? resultStack : await Promise.race(ProcessQueries)
         }
     }
 }

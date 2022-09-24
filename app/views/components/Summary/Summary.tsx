@@ -33,14 +33,16 @@ const Summary = ({ title, content, cta }: SummaryProps) => {
 
 
     const CallToAction = () => {
-        return (<div className="mt-20 text-center">
+        return (
+            cta ? <div className="mt-20 text-center">
             <a
                 className="inline-block bg-black  text-white font-bold font-heading py-5 px-8 rounded-md uppercase"
                 href={cta.url}
             >
                 {cta.name}
             </a>
-        </div>)
+        </div> : <></>
+        )
     }
 
 
@@ -52,7 +54,7 @@ const Summary = ({ title, content, cta }: SummaryProps) => {
                 {
                     content.map((item, index) => {
                         return (
-                            <Accordion key={index} sx={{ backgroundColor: 'black', color: 'white' }}>
+                            <Accordion key={index} className="transition-all hover:bg-opacity-100 bg-green-700 bg-opacity-80 text-gray-200">
                                 <AccordionSummary expandIcon={<KeyboardDoubleArrowUpIcon sx={{ color: 'var(--color-primary)' }} />}>
                                     <h3 className="text-2xl font-bold font-heading text-white">{item.question}</h3>
                                 </AccordionSummary>
