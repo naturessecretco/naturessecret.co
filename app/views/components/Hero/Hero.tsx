@@ -1,9 +1,9 @@
-import { SocialIcon } from 'react-social-icons';
-import { Fade } from 'react-awesome-reveal';
-import SimpleCarousel from 'simple-react-carousel';
-import { CallToAction } from '@models/typings/CallToAction';
 import Carousel from "@components/Carousel";
-import type { Image } from "@typings/Image"
+import { CallToAction } from '@models/typings/CallToAction';
+import type { Image } from "@typings/Image";
+import { Fade } from 'react-awesome-reveal';
+import Icon from "@components/Icon"
+
 
 export type Link = {
     name?: string,
@@ -16,6 +16,9 @@ export type Social = {
 
 
 export type HeroProps = {
+    key?: string | number,
+    name?: string,
+    version?: string | number,
     title?: string,
     socials?: Social[],
     backgroundCover?: string,
@@ -29,17 +32,19 @@ export type HeroProps = {
 }
 
 
-const $Hero = ({ title, features, socials, covers, backgroundCover, cta }: HeroProps) => {
+const $Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) => {
 
-    const PropsObject = {
+    const PropsObject: HeroProps = {
         name: "hero",
         version: Date.now(),
-        title: title ? title : 'TITLE_PROPERTY_NOT_FOUND',
-        features: features ? features : 'FEATURES_PROPERTY_NOT_FOUND',
-        socials: socials ? socials : 'SOCIALS_PROPERTY_NOT_FOUND',
-        covers: covers ? covers : 'COVERS_PROPERTY_NOT_FOUND',
+        features: features ? features : {
+            heading: "FEATURES_HEADING_PROPERTY_NOT_FOUND",
+            links: [{ name: "Feature 1", url: "#" }, { name: "Feature 2", url: "#" }, { name: "Feature 3", url: "#" }]
+        },
+        socials: socials ? socials : [{ url: 'SOCIALS_PROPERTY_NOT_FOUND' }],
+        covers: covers ? covers : [{ src: 'COVERS_PROPERTY_NOT_FOUND', alt: 'COVERS_PROPERTY_NOT_FOUND' }],
         backgroundCover: backgroundCover ? backgroundCover : 'BACKGROUND_COVER_PROPERTY_NOT_FOUND',
-        cta: cta ? cta : 'CTA_PROPERTY_NOT_FOUND'
+        cta: cta ? cta : { name: 'CTA_PROPERTY_NOT_FOUND', url: 'CTA_PROPERTY_NOT_FOUND' }
 
     }
 
@@ -47,53 +52,38 @@ const $Hero = ({ title, features, socials, covers, backgroundCover, cta }: HeroP
     return PropsObject
 }
 
-const Hero = ({ title, features, socials, covers, backgroundCover, cta }: HeroProps) => {
+const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) => {
 
 
     const Covers = () => {
         return (
-            <div className="w-full lg:w-2/3 px-4">
-                <div className="flex flex-wrap h-full mr-14">
+            covers ? <div className="w-full lg:w-2/3 px-4">
+                <div className="flex flex-wrap h-full mr-14 w-full">
 
 
                     <Carousel>
-                        <div className="w-full">
-                            <a href="#">
-                                <img
-                                    className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                    src="/assets/images/honey-jar-website-only-mockup-5.png"
-                                    alt=""
-                                />
-                            </a>
-
-                        </div>
-                        <div className="w-full">
-                            <img
-                                className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                src="/assets/images/seamoss-gummies-jar-mockup-2.png"
-                                alt=""
-                            />
-                        </div>
-
-                        <div className="w-full">
-                            <img
-                                className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                src="/assets/images/sea-moss-jar-website-only-mockup-4.png"
-                                alt=""
-                            />
-                        </div>
-
-
-
+                        {covers.map((cover, index) => {
+                            return (
+                                <div key={index} className="w-full">
+                                    <img
+                                        className="h-full md:h-full w-full object-fit bg-black bg-opacity-40 rounded"
+                                        src={cover.src}
+                                        alt={cover.alt}
+                                    />
+                                </div>
+                            )
+                        })}
                     </Carousel>
 
                 </div>
-            </div>
+            </div> : <></>
         )
     }
+
+
     const CallToAction = () => {
         return (
-            cta ? <div className="max-w-3xl translate-y-0 mx-auto py-24 text-center">
+            cta ? <div className="max-w-3xl translate-y-0 mx-auto py-24 text-center bg-opacity-0 opacity-0">
                 <a
                     className="mt-48 inline-block bg-opacity-80 bg-black hover:bg-green-600 text-white font-bold font-heading py-6 px-8 rounded-md uppercase transition-all"
                     href={cta.url}
@@ -176,21 +166,22 @@ const Hero = ({ title, features, socials, covers, backgroundCover, cta }: HeroPr
 
     const Header = () => {
 
+        const HeaderSx = {
+            background: `url(${backgroundCover})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            backgroundSize: 'contain',
+        }
+
         return (
-            <div style={{
-                background: `url(${backgroundCover})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center center',
-                backgroundSize: 'contain',
-            }} className="relative container mx-auto px-2">
+            <div style={HeaderSx} className="relative container mx-auto px-2">
 
                 <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
 
                     {
                         socials.map((social, index) => {
                             return (
-                                <SocialIcon bgColor="#000000" className="hover:scale-110 transition-all mr-3" fgColor="yellow" key={index}
-                                    url={social.url} />
+                                <Icon key={index} />
                             )
                         })
                     }

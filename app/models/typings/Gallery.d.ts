@@ -7,7 +7,7 @@ export type GalleryItem = {
 export type GalleryProps = {
     id?: string,
     version?: string | number,
-    title?: string,
+    title?: string | any,
     name?: string,
     cta?: CallToAction
     items?: GalleryItem[]

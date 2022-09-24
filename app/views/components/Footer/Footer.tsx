@@ -1,8 +1,8 @@
 import { SocialIcon } from 'react-social-icons';
 import KofiSupportButton from '@components/KofiSupportButton';
-
+import { Fade } from 'react-awesome-reveal';
 import type { FooterProps } from "@typings/Footer"
-
+import Icon from "@components/Icon"
 
 const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterProps) => {
 
@@ -51,12 +51,15 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
                         {TITLE}
                     </h3>
                     <div className="flex">
+                        <Fade cascade triggerOnce>
+                            {socials?.map((social, index) => {
+                                return (
+                                    <Icon key={index} />
+                                )
+                            })}
+                        </Fade>
 
-                        {socials?.map((social, index) => {
-                            return (
-                                <SocialIcon className="hover:scale-90 transition-all ml-2" bgColor="#000000" fgColor="#fefd21" key={index} url={social.url} />
-                            )
-                        })}
+
 
                     </div>
                 </div>
@@ -117,7 +120,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
 
         <section className="py-20  w-full">
             <div className="container mx-auto px-4">
-                <div className="text-center pb-20 border-b border-white">
+                <div className="text-center pb-20 border-b border-black">
                     <Favicon />
                     <NavLinks />
 

@@ -4,9 +4,9 @@
 }
 
 :root {
-    --color-primary: rgb(252,238,49);
-    --color-secondary: rgb(115,241,64);
-    --color-tertiary: rgb(0,128,128);
+    --color-primary: rgb(252, 238, 49);
+    --color-secondary: rgb(115, 241, 64);
+    --color-tertiary: rgb(0, 128, 128);
 
     --quicksand: 'Quicksand', sans-serif;
     --cambria: 'Cambria', serif;
@@ -15,6 +15,9 @@
     --font-secondary: var(--quicksand);
 }
 
+.react-entry-point {
+    z-index: 9999999999999999 !important;
+}
 
 
 body,

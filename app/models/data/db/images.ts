@@ -1,21 +1,39 @@
-const images = [
-    {
-        id: 'wildcrafted-seamoss-1',
-        src: '/assets/images/wildcrafted-seamoss-1.png',
-    },
-    {
-        id: 'buckwheat-honey-1',
-        src: '/assets/images/buckwheat-honey-1.png',
-    },
-    {
-        id: 'mockup',
-        src: '/assets/images/seamoss-mockup-1.png',
-    },
-    {
-        id: 'bwh',
-        src: '/assets/images/honey-jar-website-only-mockup-4.png',
-    },
- 
-]
+import images from "@db/images"
 
-export default images
+const imagesDB = {
+    id: 'productsDB',
+    version: Date.now(),
+    data: [{
+        id: 'home-hero',
+        version: Date.now(),
+        collection: 'ui',
+        src: '/assets/images/home-hero.png',
+        alt: 'Home Hero for Natures Secret',
+    }],
+
+    apis: {
+        productsAPI: `${process.env.NODE_ENV === "production" ? "https://naturessecret.co/api/media" : `http://localhost:${process.env.PORT || 3000}/api/media`}`
+    },
+
+    methods: {
+
+
+
+        getImages: ({ property, value, limit, type }) => {
+            let results = []
+            const isLocal = type === "local"
+            const isExternal = type === "external"
+
+            isLocal ? (
+                results = imagesDB.data.filter(image => image[property] === value).slice(0, limit ? limit : 1)
+            ) : null
+
+            return results
+        },
+
+
+    }
+}
+
+export default imagesDB
+

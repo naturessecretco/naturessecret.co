@@ -2,6 +2,17 @@ import Carousel from "@components/Carousel"
 import RatingsBar from "@components/RatingsBar"
 import type { ProductProps } from "@typings/Product"
 
+const $Product = ({ name, price, covers, description }: ProductProps) => {
+    const PropsObject = {
+        name: name ? name : "NAME_PROPERTY_NOT_FOUND",
+        price: price ? price : "PRICE_PROPERTY_NOT_FOUND",
+        covers: covers ? covers : [{ src: "IMAGES_PROPERTY_NOT_FOUND", alt: "IMAGES_PROPERTY_NOT_FOUND" }],
+        description: description ? description : "DESCRIPTION_PROPERTY_NOT_FOUND"
+    }
+
+    return PropsObject
+}
+
 const Product = ({ id, name, heading, price, value, discount, covers, tags, description, }: ProductProps) => {
 
     const Header = () => {
@@ -31,7 +42,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                             {description}
                         </p>
                     </div>
-                 
+
                     <div className="flex flex-wrap -mx-4 mb-14 items-center">
                         <div className="w-full xl:w-2/3 px-4 mb-4 xl:mb-0">
                             <a
@@ -210,4 +221,5 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
     )
 }
 
+export { $Product }
 export default Product

@@ -9,7 +9,12 @@ import React from "react"
 const RootLayout = ({ children, metaData }: ILayout) => {
 
     return (
-        <Box>
+        <Box sx={{
+            background: "url('/assets/images/bg.jpg') fixed center center",
+            backgroundSize: "cover",
+            boxShadow: 'inset 0 0 0 1000px rgba(254,245,45,.67)'
+
+        }}>
             <CssBaseline />
             <Meta {...metaData} />
             {children}

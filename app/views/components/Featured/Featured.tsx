@@ -1,10 +1,10 @@
 import type { CallToAction } from "@typings/CallToAction"
 
-
+import type { ImageProps } from "@typings/Image"
 export type Feature = {
     id?: string
     name?: string,
-    cover?: string,
+    cover?: ImageProps,
     description?: string,
     price?: string,
     value?: string
@@ -18,6 +18,16 @@ export type HeroProps = {
     features?: Feature[]
 }
 
+const $Featured = ({ title, cta, features }: HeroProps) => {
+    const PropsObject = {
+        name: "featured",
+        title: title ? title : 'TITLE_PROPERTY_NOT_FOUND',
+        cta: cta ? cta : { url: '', name: 'CTA_PROPERTY_NOT_FOUND' },
+        features: features ? features : [{ id: '1', name: 'FEATURE_PROPERTY_NOT_FOUND', cover: 'NOT_FOUND', description: 'lorem ipsum dolor sandour', price: '0', value: '0', discount: '0' }]
+    }
+
+    return { ...PropsObject }
+}
 const Featured = ({ title, cta, features }: HeroProps) => {
 
     const Features = () => {
@@ -36,8 +46,8 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                     </span>
                                     <img
                                         className="w-full h-64 object-cover"
-                                        src={`${feature.cover}`}
-                                        alt=""
+                                        src={`${feature.cover.src}`}
+                                        alt={`${feature.cover.alt}`}
                                     />
                                     <div className="px-6 pb-16 mt-12">
                                         <div className="px-6 mb-2">
@@ -81,10 +91,10 @@ const Featured = ({ title, cta, features }: HeroProps) => {
 
             cta ? <div className="text-center">
                 <a
-                    className="inline-block bg-white hover:bg-blue-300 text-black font-bold font-heading py-5 px-8 rounded-md uppercase"
-                    href="#"
+                    className="inline-block hover:scale-90 transition-all bg-green-600 hover:bg-gray-900 text-gray-200 font-bold font-heading py-5 px-8 rounded-md uppercase"
+                    href={cta.url}
                 >
-                    All products
+                    {cta.name}
                 </a>
             </div> : <></>
         )
@@ -101,7 +111,7 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                 <div className="flex mb-16">
 
 
-                    <Features /> 
+                    <Features />
 
                 </div>
 
@@ -114,4 +124,5 @@ const Featured = ({ title, cta, features }: HeroProps) => {
     )
 }
 
+export { $Featured }
 export default Featured
