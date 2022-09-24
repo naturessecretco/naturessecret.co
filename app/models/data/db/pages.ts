@@ -10,9 +10,8 @@ import { $Featured } from "@components/Featured"
 import imagesDB from "@db/images"
 import productsDB from "./products"
 
-import type { PagesDBProps } from "@typings/page"
 
-const pages: PagesDBProps = {
+const pages = {
     id: 'natures-secret-pages',
     version: Date.now(),
     layout: layout,
