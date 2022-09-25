@@ -21,7 +21,7 @@ const ProductsIndexPage = ({ page }) => {
 
 export default ProductsIndexPage
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
   const { getPage } = PageService.methods
 

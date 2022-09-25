@@ -21,12 +21,8 @@ const ProductPage = ({ page }) => {
 
 export default ProductPage
 
-export async function getStaticPaths() {
 
-
-}
-
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
     const { getPage } = PageService.methods
 
