@@ -54,9 +54,9 @@ const Summary = ({ title, content, cta }: SummaryProps) => {
                 {
                     content.map((item, index) => {
                         return (
-                            <Accordion key={index} className="transition-all hover:bg-opacity-100 bg-green-700 bg-opacity-80 text-gray-200">
+                            <Accordion key={index} className="transition-all hover:bg-opacity-100 bg-yellow-400 bg-opacity-40 border-black text-gray-900">
                                 <AccordionSummary expandIcon={<KeyboardDoubleArrowUpIcon sx={{ color: 'var(--color-primary)' }} />}>
-                                    <h3 className="text-2xl font-bold font-heading text-white">{item.question}</h3>
+                                    <h3 className="text-2xl font-bold font-heading text-gray-900">{item.question}</h3>
                                 </AccordionSummary>
 
                                 <AccordionDetails>

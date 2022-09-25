@@ -44,10 +44,11 @@ const pages = {
                         return products.map((product: any, index) => {
 
                             return {
-                                id: product.name,
+                                id: product.id,
                                 price: product.price,
+                                description: product.description,
                                 cover: {
-                                    src: product.advertisement,
+                                    src: product.covers[1],
                                     alt: product.name
                                 }
                             }

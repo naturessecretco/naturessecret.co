@@ -39,7 +39,7 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                 {
                     features.map((feature, index) => {
                         return (
-                            <div key={index} className="w-full lg:w-1/2 md:px-3 mb-6 bg-black rounded bg-opacity-50 hover:bg-opacity-90 transition-all">
+                            <div key={index} className="w-3/4 lg:w-1/2 md:px-3 mb-6 bg-black rounded bg-opacity-50 hover:bg-opacity-90 transition-all">
                                 <a className="relative block" href={`/products/${feature.id}`}>
                                     <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-white border-2 border-green-500 rounded-full text-green-500">
                                         {feature.discount}

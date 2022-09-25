@@ -6,14 +6,13 @@ import Product from "@components/Product"
 import PageService from "@services/pages"
 import PageLayout from '@layouts/PageLayout'
 
+import meta from "@models/configs/meta"
 import { useEffect } from "react"
 
 const HomePage = ({ page }) => {
 
-  const version = "0.0.1"
-
   useEffect(() => {
-    console.log(`[Naturesecret.co@${version}]`, page)
+    console.log(`[Naturesecret.co@${meta.version}]`, page)
   }, [page])
 
   return (
@@ -29,7 +28,7 @@ const HomePage = ({ page }) => {
 
 export default HomePage
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
   const { getPage } = PageService.methods
   

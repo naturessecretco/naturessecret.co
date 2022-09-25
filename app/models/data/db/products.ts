@@ -3,20 +3,12 @@ import { join, dirname } from 'path'
 import { Low, JSONFile } from 'lowdb'
 import { fileURLToPath } from 'url'
 
-import Database from "tiny-json-db";
-
-
-const productFile = new Database("products")
-
-
-(async () => {  
-    await productFile.setItem("products", await NotionService.loadCentralDogma())
-})()
+import store from "@assets/data/store.json"
 
 export type DatabaseProps = {
     id?: string,
     version?: number | string,
-    store?: string,
+    store?: any,
     data?: any,
     init?: Function
     methods?: any
@@ -25,6 +17,7 @@ export type DatabaseProps = {
 const productsDB: DatabaseProps = {
     id: 'productsDB',
     version: Date.now(),
+    store: store,
     init: async () => {
 
     },
@@ -38,13 +31,18 @@ const productsDB: DatabaseProps = {
                     method: 'GET',
                 })
 
+                const staticFetch = store.map((storeData) => {
+                    return storeData.properties
+                })
+
                 const productsFetch = (async () => await fetcher()
                     .then(res => res.json())
                     .then(data => data.map(data => data.properties))
                     .then(data => data.filter((data) => data.Type.select.name === '🛍️Product'))
                     .then(data => Array.from(data.map(data => ({
-                        advertismsent: data.Advertisements?.files[0].file.url || null,
+                        advertisement: data.Advertisements?.files[0].file.url || null,
                         price: data.Price.number || '',
+                        id: data.ID.rich_text[0].plain_text || '',
                         covers: data.Covers.files.map((file: any) => file.file.url),
                         name: data.Name.title[0].plain_text || '',
                         description: data.Description.rich_text[0].plain_text || '',
