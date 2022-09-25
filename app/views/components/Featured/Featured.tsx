@@ -1,6 +1,7 @@
-import type { CallToAction } from "@typings/CallToAction"
+import type { CallToActionProps } from "@typings/CallToAction"
 
 import type { ImageProps } from "@typings/Image"
+
 export type Feature = {
     id?: string
     name?: string,
@@ -13,7 +14,7 @@ export type Feature = {
 
 
 export type HeroProps = {
-    cta?: CallToAction
+    cta?: CallToActionProps
     title?: string,
     features?: Feature[]
 }
