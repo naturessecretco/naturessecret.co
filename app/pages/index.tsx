@@ -28,10 +28,10 @@ const HomePage = ({ page }) => {
 
 export default HomePage
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
   const { getPage } = PageService.methods
-  
+
   const page = await getPage("home")
 
   return {
