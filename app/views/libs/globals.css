@@ -17,6 +17,8 @@
     --cambria: 'Cambria', serif;
     --monbaiti: 'Monbaiti', serif;
 
+    --black: #000;
+
     --font-primary: var(--monbaiti);
     --font-secondary: var(--monbaiti);
 }

@@ -9,7 +9,12 @@ const $Summary = ({ title, content, cta }: SummaryProps) => {
     const PropsObject = {
         name: "summary",
         version: Date.now(),
-        content: [{ question: 'QUESTION_PROPERTY_NOT_FOUND', answer: 'ANSWER_PROPERTY_NOT_FOUND' }],
+        content: [{ question: 'QUESTION_PROPERTY_NOT_FOUND', answer: 'ANSWER_PROPERTY_NOT_FOUND' },
+        { question: 'QUESTION_PROPERTY_NOT_FOUND', answer: 'ANSWER_PROPERTY_NOT_FOUND' },
+        { question: 'QUESTION_PROPERTY_NOT_FOUND', answer: 'ANSWER_PROPERTY_NOT_FOUND' },
+        { question: 'QUESTION_PROPERTY_NOT_FOUND', answer: 'ANSWER_PROPERTY_NOT_FOUND' },
+        { question: 'QUESTION_PROPERTY_NOT_FOUND', answer: 'ANSWER_PROPERTY_NOT_FOUND' },
+        { question: 'QUESTION_PROPERTY_NOT_FOUND', answer: 'ANSWER_PROPERTY_NOT_FOUND' }],
         title: title ? title : 'TITLE_PROPERTY_NOT_FOUND',
         cta: cta ? cta : 'CTA_PROPERTY_NOT_FOUND'
     }
@@ -35,13 +40,13 @@ const Summary = ({ title, content, cta }: SummaryProps) => {
     const CallToAction = () => {
         return (
             cta ? <div className="mt-20 text-center">
-            <a
-                className="inline-block bg-black  text-white font-bold font-heading py-5 px-8 rounded-md uppercase"
-                href={cta.url}
-            >
-                {cta.name}
-            </a>
-        </div> : <></>
+                <a
+                    className="inline-block bg-black  text-white font-bold font-heading py-5 px-8 rounded-md uppercase"
+                    href={cta.url}
+                >
+                    {cta.name}
+                </a>
+            </div> : <></>
         )
     }
 

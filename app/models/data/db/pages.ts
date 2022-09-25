@@ -39,40 +39,13 @@ const pages = {
                         name: 'Show Now',
                         url: '/products'
                     },
-                    features: async () => {
-                        const products = await productsDB.methods.private.fetchProducts()
-                        return products.map((product: any, index) => {
-
-                            return {
-                                id: product.id,
-                                price: product.price,
-                                description: product.description,
-                                cover: {
-                                    src: product.covers[1],
-                                    alt: product.name
-                                }
-                            }
-                        })
-                    }
+              
                 }
             },
             {
                 component: $MediaRow,
                 props: {
-                    media: async () => {
-                        const products = await productsDB.methods.private.fetchProducts()
-                        return products.map((product: any, index) => {
-                            return {
-                                title: product.name,
-                                description: product.description,
-                                covers: {
-                                    src: product.cover,
-                                    alt: `Product ${index + 1}`
-                                }
-                            }
-                        })
 
-                    },
                 }
             },
 
@@ -81,14 +54,7 @@ const pages = {
                 props: {
                     title: 'Home to Natures Best Kept Secrets',
                     socials: meta.socials,
-                    covers: async () => {
-                        const products = await productsDB.methods.private.fetchProducts()
-                        return products.map((product: any) => {
-                            return {
-                                src: product?.advertisement,
-                            }
-                        })
-                    },
+
                     backgroundCover: () => {
                         const { getImages } = imagesDB.methods
                         const heroImage = getImages({ property: "id", value: "home-hero", limit: 1, type: "local" })[0].src
@@ -104,10 +70,7 @@ const pages = {
                         name: 'Learn More',
                         url: ''
                     },
-                    content: async () => {
-                        const faqs = await faqsDB.methods.getFAQs()
-                        return faqs
-                    }
+
                 }
             }
             ]

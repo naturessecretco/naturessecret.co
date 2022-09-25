@@ -19,6 +19,10 @@ const PageService = {
             return PageService.data.layout
         },
 
+        newGetPage: async (pageKey?: string) => {
+            
+        },
+
 
         getPage: async (pageKey: string) => {
             const isProduction = process.env.NODE_ENV === "production"
