@@ -1,10 +1,9 @@
-import type { Favicon } from "@typings/Favicon"
-import Banner from "@components/Banner"
-import Headroom from "react-headroom"
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import Banner from "@components/Banner";
+import useDrawer from "@hooks/useDrawer";
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-import Badge from '@mui/material/Badge';
-import useDrawer from "@hooks/useDrawer"
+import type { FaviconProps } from "@typings/Favicon";
+import Headroom from "react-headroom";
+import { Fade } from "react-awesome-reveal"
 
 export type Link = {
   name: string,
@@ -12,7 +11,7 @@ export type Link = {
 }
 
 export type HeaderProps = {
-  favicon?: Favicon,
+  favicon?: FaviconProps,
   navLinks?: Link[]
   bannerProps?: any
 
@@ -47,16 +46,19 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
 
     return (
       navLinks ? <ul className="hidden lg:flex absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:items-center lg:w-auto">
-        {
-          navLinks.map((link, index) => {
-            return (
-              <li style={{ fontFamily: 'var(--font-secondary)' }} className="" key={index}>
-                <a
-                  className="mr-8 inline-block w-full  hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-black" href={link.url}>{link.name}</a>
-              </li>
-            )
-          })
-        }
+        <Fade cascade triggerOnce>
+          {
+            navLinks.map((link, index) => {
+              return (
+                <li style={{ fontFamily: 'var(--font-secondary)' }} className="" key={index}>
+                  <a
+                    className="mr-8 inline-block w-full  hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-black" href={link.url}>{link.name}</a>
+                </li>
+              )
+            })
+          }
+        </Fade>
+
 
       </ul> : <></>
     )

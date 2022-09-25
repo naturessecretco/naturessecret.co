@@ -3,6 +3,11 @@
     src: url(/assets/fonts/Cambria.ttf);
 }
 
+@font-face {
+    font-family: Monbaiti;
+    src: url(/assets/fonts/Monbaiti.ttf);
+}
+
 :root {
     --color-primary: rgb(252, 238, 49);
     --color-secondary: rgb(115, 241, 64);
@@ -10,9 +15,10 @@
 
     --quicksand: 'Quicksand', sans-serif;
     --cambria: 'Cambria', serif;
+    --monbaiti: 'Monbaiti', serif;
 
-    --font-primary: var(--cambria);
-    --font-secondary: var(--quicksand);
+    --font-primary: var(--monbaiti);
+    --font-secondary: var(--monbaiti);
 }
 
 .react-entry-point {

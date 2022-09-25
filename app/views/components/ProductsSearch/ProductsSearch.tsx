@@ -19,6 +19,16 @@ export type ProductSearch = {
   tags: string[],
 }
 
+const $ProductsSearch = ({ title, items, tags }: ProductSearch) => {
+  const PropsObject = {
+    title: title ? title : "PRODUCT_SEARCH_TITLE_PROPERTY_NOT_FOUND",
+    items: items ? items : [{ description: "PRODUCT_SEARCH_ITEMS_PROPERTY_NOT_FOUND", cover: "PRODUCT_SEARCH_ITEMS_PROPERTY_NOT_FOUND" }],
+    tags: tags ? tags : ["PRODUCT_SEARCH_TAGS_PROPERTY_NOT_FOUND"]
+  }
+
+  return PropsObject
+}
+
 const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
 
 
@@ -186,4 +196,5 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
   )
 }
 
+export { $ProductsSearch }
 export default ProductsSearch

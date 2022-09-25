@@ -5,24 +5,20 @@ import Summary from "@components/Summary"
 import Product from "@components/Product"
 import PageService from "@services/pages"
 import PageLayout from '@layouts/PageLayout'
+import meta from "@configs/meta"
 
 import { useEffect } from "react"
 
 const HomePage = ({ page }) => {
 
-  const version = "0.0.1"
 
   useEffect(() => {
-    console.log(`[Naturesecret.co@${version}]`, page)
+    console.log(`[Naturesecret.co@${meta.version}]`, page)
   }, [page])
 
   return (
     <PageLayout {...page.layout}>
-      <Hero {...page.data.hero} />
-      <Featured {...page.data.featured} />
-      <Product {...page.data.product} />
-      <MediaRow {...page.data.mediaRow} />
-      <Summary {...page.data.summary} />
+ 
     </PageLayout>
   )
 }
@@ -33,7 +29,7 @@ export async function getServerSideProps() {
 
   const { getPage } = PageService.methods
   
-  const page = await getPage("home")
+  const page = await getPage("benefits")
 
   return {
     props: {

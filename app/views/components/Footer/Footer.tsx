@@ -54,7 +54,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
                         <Fade cascade triggerOnce>
                             {socials?.map((social, index) => {
                                 return (
-                                    <Icon key={index} />
+                                    <Icon id={social.icon} url={social.url} key={index} />
                                 )
                             })}
                         </Fade>

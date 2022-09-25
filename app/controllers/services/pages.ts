@@ -29,9 +29,7 @@ const PageService = {
                 }).then(res => res.json())
         },
 
-        resolveQuery: async (query: any, dependencies: [] = []) => {
-
-            var globalData = await Promise.all(dependencies ? dependencies : [])
+        resolveQuery: async (query: any,) => {
 
             let resultStack = {}
 
@@ -39,29 +37,34 @@ const PageService = {
 
                 const { component, props } = data
 
-                Object.keys(props).map(async (prop) => {
-                    if (typeof props[prop] === "function") {
+                Promise.all(Object.keys(props).map(async (prop) => {
+
+                    let isAsyncFunction = (props[prop].constructor.name === "AsyncFunction" &&
+                        props[prop] !== undefined &&
+                        props[prop] !== null)
+
+                    let isFunction = typeof props[prop] === "function" && !isAsyncFunction
+
+                    if (isFunction) {
                         props[prop] = await props[prop]()
                     } else {
-                        if (props[prop].constructor.name === "AsyncFunction" &&
-                            props[prop] !== undefined &&
-                            props[prop] !== null) {
-                            setTimeout(async () => {
-                                try {
-                                    await props[prop]().then(
-                                        (res) => {
-                                            props[prop] = res
-                                        }
-                                    )
-                                } catch (error) {
-                                    props[prop] = error
-                                }
-                            }, 300)
+                        if (isAsyncFunction) {
+
+                            try {
+                                await props[prop]().then(
+                                    (res) => {
+                                        props[prop] = res
+                                    }
+                                )
+                            } catch (error) {
+                                props[prop] = error
+                            }
+
                         } else {
                             props[prop] = await props[prop]
                         }
                     }
-                })
+                }))
                 return component(props)
             }
             )
@@ -70,7 +73,7 @@ const PageService = {
                 resultStack[data.name] = data
             })
 
-            return ProcessQueries.every((q) => q.then !== 'function') ? resultStack : await Promise.race(ProcessQueries)
+            return resultStack
         }
     }
 }

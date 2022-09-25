@@ -1,6 +1,6 @@
 import Carousel from "@components/Carousel";
-import { CallToAction } from '@models/typings/CallToAction';
-import type { Image } from "@typings/Image";
+import { CallToActionProps } from '@models/typings/CallToAction';
+import type { ImageProps } from "@typings/Image";
 import { Fade } from 'react-awesome-reveal';
 import Icon from "@components/Icon"
 
@@ -11,6 +11,8 @@ export type Link = {
 
 }
 export type Social = {
+    name?: string,
+    icon?: string,
     url: string
 }
 
@@ -22,8 +24,8 @@ export type HeroProps = {
     title?: string,
     socials?: Social[],
     backgroundCover?: string,
-    covers?: Image[]
-    cta?: CallToAction,
+    covers?: ImageProps[]
+    cta?: CallToActionProps,
     features?: {
         heading: string,
         links: Link[]
@@ -173,24 +175,27 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
             backgroundSize: 'contain',
         }
 
-        return (
-            <div style={HeaderSx} className="relative container mx-auto px-2">
-
-                <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
+        const Socials = () => {
+            return (
+                socials ? <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
 
                     {
                         socials.map((social, index) => {
                             return (
-                                <Icon key={index} />
+                                <Icon url={social.url} key={index} id={social.icon} />
                             )
                         })
                     }
 
-                </div>
+                </div> : <></>
+            )
 
+        }
+
+        return (
+            <div style={HeaderSx} className="relative container mx-auto px-2">
+                <Socials />
                 <CallToAction />
-
-
             </div>
 
         )

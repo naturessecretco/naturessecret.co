@@ -1,5 +1,6 @@
 const meta = {
     title: "Natures Secret",
+    version: Date.now(),
     links: [
 
         {
@@ -31,22 +32,23 @@ const meta = {
     socials: [
         {
             name: 'Facebook',
+            icon: 'FACEBOOK',
             url: 'https://www.facebook.com/Natures-Secret-108272722018369'
         },
-        {
-            name: 'Instagram',
-            url: 'https://www.instagram.com/naturessecret'
-        },
+
         {
             name: 'Twitter',
+            icon: 'TWITTER',
             url: 'https://twitter.com/naturessecretco'
         },
         {
             name: 'LinkedIn',
-            url: 'https://www.linkedin.com/naturessecret'
+            icon: 'LINKEDIN',
+            url: 'https://www.linkedin.com/company/naturessecretco/?viewAsMember=true'
         },
         {
             name: 'Ko-fi',
+            icon: 'COFFEE',
             id: 'naturessecret',
             url: 'https://www.ko-fi.com/naturessecret'
         }

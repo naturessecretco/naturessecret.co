@@ -1,15 +1,16 @@
 import layout from "@configs/layout"
+import meta from "@configs/meta"
 
+import { $ProductsSearch } from "@components/ProductsSearch"
 import { $Gallery } from "@components/Gallery"
 import { $MediaRow } from "@components/MediaRow"
 import { $Hero } from "@components/Hero"
 import { $Summary } from "@components/Summary"
-
 import { $Featured } from "@components/Featured"
 
 import imagesDB from "@db/images"
-import faqsDB from "./faqs"
-import productsDB from "./products"
+import faqsDB from "@db/faqs"
+import productsDB from "@db/products"
 
 
 const pages = {
@@ -39,7 +40,7 @@ const pages = {
                         url: '/products'
                     },
                     features: async () => {
-                        const products = await productsDB.methods.getProducts()
+                        const products = await productsDB.methods.private.fetchProducts()
                         return products.map((product: any, index) => {
 
                             return {
@@ -58,7 +59,7 @@ const pages = {
                 component: $MediaRow,
                 props: {
                     media: async () => {
-                        const products = await productsDB.methods.getProducts()
+                        const products = await productsDB.methods.private.fetchProducts()
                         return products.map((product: any, index) => {
                             return {
                                 title: product.name,
@@ -78,11 +79,12 @@ const pages = {
                 component: $Hero,
                 props: {
                     title: 'Home to Natures Best Kept Secrets',
+                    socials: meta.socials,
                     covers: async () => {
-                        const products = await productsDB.methods.getProducts()
+                        const products = await productsDB.methods.private.fetchProducts()
                         return products.map((product: any) => {
                             return {
-                                src: product?.cover,
+                                src: product?.advertisement,
                             }
                         })
                     },
@@ -112,11 +114,30 @@ const pages = {
 
         products: {
             pages: {},
-            data: []
+            data: [
+                {
+                    component: $ProductsSearch,
+                    props: {}
+                }
+            ]
         },
         faqs: {},
-        benefits: {},
-        mission: {},
+        benefits: {
+            data: [
+                {
+                    component: $Summary,
+                    props: {}
+                }
+            ]
+        },
+        mission: {
+            data: [
+                {
+                    component: $Summary,
+                    props: {}
+                }
+            ]
+        },
         blog: {}
     }
 }

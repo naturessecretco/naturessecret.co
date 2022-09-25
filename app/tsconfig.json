@@ -19,6 +19,7 @@
       "@views/*": ["views/*"],
       "@models/*": ["models/*"],
       "@controllers/*": ["controllers/*"],
+      "@assets/*":["public/assets/*"],
       "@components/*": ["views/components/*"],
       "@includes/*": ["views/includes/*"],
       "@layouts/*": ["views/layouts/*"],
@@ -34,6 +35,6 @@
       "@hooks/*":["controllers/hooks/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/404.tsx", "pages/_app.tsx", "../sso/models/configs/authenticator.ts", ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/404.tsx", "pages/_app.tsx", "../sso/models/configs/authenticator.ts", "pages/products/index.tsc", ],
   "exclude": ["node_modules"]
 }

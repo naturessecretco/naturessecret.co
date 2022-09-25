@@ -8,7 +8,7 @@ import PageLayout from '@layouts/PageLayout'
 
 import { useEffect } from "react"
 
-const HomePage = ({ page }) => {
+const MissionPage = ({ page }) => {
 
   const version = "0.0.1"
 
@@ -18,22 +18,18 @@ const HomePage = ({ page }) => {
 
   return (
     <PageLayout {...page.layout}>
-      <Hero {...page.data.hero} />
-      <Featured {...page.data.featured} />
-      <Product {...page.data.product} />
-      <MediaRow {...page.data.mediaRow} />
-      <Summary {...page.data.summary} />
+
     </PageLayout>
   )
 }
 
-export default HomePage
+export default MissionPage
 
 export async function getServerSideProps() {
 
   const { getPage } = PageService.methods
   
-  const page = await getPage("home")
+  const page = await getPage("mission")
 
   return {
     props: {

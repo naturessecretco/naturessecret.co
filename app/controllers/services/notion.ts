@@ -5,31 +5,18 @@ const NotionService = {
         auth: process.env.FACADE_API_KEY,
     }),
     interface: {
-        products:  `${process.env.NODE_ENV === "production" ? "https://naturessecret.co/api/products" : `http://localhost:${process.env.PORT || 3000}/api/products`}`,
-        faqs:  `${process.env.NODE_ENV === "production" ? "https://naturessecret.co/api/faqs" : `http://localhost:${process.env.PORT || 3000}/api/faqs`}`
-
+        notion: `${process.env.NODE_ENV === "production" ? "https://naturessecret.co/api/central_dogma" : `http://localhost:${process.env.PORT || 3000}/api/central_dogma`}`,
     },
     databases: {
-        products: '025fe278cb0f496fb9d0fbd873df8bf6',
-        faqs: '15b32144605c4697b38de96e8d013bd6'
+        central_dogma: 'b70f6b0e58b14ba59a4618e95898b817',
     },
-
-    loadAllProducts: async () => {
-        const data = await NotionService.api.databases.query({
-            database_id: NotionService.databases.products,
+    loadCentralDogma: async () => {
+        const { central_dogma } = NotionService.databases
+        const response = await NotionService.api.databases.query({
+            database_id: central_dogma
         })
-        return data
+        return response
     },
-
-    loadAllFAQs: async () => {
-        const data = await NotionService.api.databases.query({
-            database_id: NotionService.databases.faqs,
-        })
-        
-        return data
-    },
-    
-
 
 }
 

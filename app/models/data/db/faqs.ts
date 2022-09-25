@@ -26,8 +26,8 @@ const faqsDB = {
                 .then(res => res.json())
                 .then(data => data.map(data => data.properties))
                 .then(data => Array.from(data.map(data => ({
-                    answer: data.Answer?.rich_text || null,
-                    question: data.Name?.rich_text || null,
+                    answer: data.Answer?.rich_text[0].plain_text || null,
+                    question: data.Name?.rich_text[0].plain_text || null,
                 })))))()
 
             return faqsFetch
