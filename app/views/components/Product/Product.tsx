@@ -133,7 +133,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                                         return (
                                             <div key={index} className="w-full">
                                                 <img
-                                                    className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
+                                                    className="h-full md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
                                                     src={cover.src}
                                                     alt=""
                                                 />

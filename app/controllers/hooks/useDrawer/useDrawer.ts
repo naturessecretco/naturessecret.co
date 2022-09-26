@@ -15,7 +15,15 @@ const useDrawer = () => {
         setDrawer({ isOpen: !drawer.isOpen })
     }
 
-    return { drawer, toggleDrawer }
+    const closeDrawer = () => {
+        setDrawer({ isOpen: false })
+    }
+
+    const openDrawer = () => {
+        setDrawer({ isOpen: true })
+    }
+
+    return { drawer, toggleDrawer, closeDrawer, openDrawer }
 }
 
 export default useDrawer
