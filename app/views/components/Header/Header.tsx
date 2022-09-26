@@ -70,9 +70,9 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
 
     <Headroom>
       <section style={{
-        backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid gray'
-      }} className="relative">
+
+        borderBottom: '1px solid black'
+      }} className="relative backdrop-blur-3xl">
 
 
         <Banner {...bannerProps} />

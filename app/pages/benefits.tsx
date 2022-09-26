@@ -18,7 +18,7 @@ const BenefitsPage = ({ page }) => {
 
   return (
     <PageLayout {...page.layout}>
-      <Grid {...page.data.layout}/>
+      <Grid {...page.data.grid} />
     </PageLayout>
   )
 }

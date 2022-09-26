@@ -121,6 +121,9 @@ const pages = (store, pageKey) => {
 
                 post: {
                     title: 'Our Mission',
+                    cover: '/assets/images/mission.png',
+                    content: `We are Nature's Secret and our mission is to provide high-grade natural products to better the world's health! We specialize in producing herbal supplements, vitamins, and minerals, all of which are designed to improve your wellbeing. Whether you're looking for an antioxidant to help protect your cells from aging, or a probiotic to boost your digestive health, we have a product that's perfect for you. We're committed to providing the highest quality ingredients and products possible, and we're confident that you'll love them!`
+
                 }
 
             }
@@ -150,6 +153,9 @@ const pages = (store, pageKey) => {
                         id: product.id,
                         name: product.name,
                         description: product.description,
+                        order: {
+                            url: product.gumroad
+                        },
                         value: product.value,
                         price: product.price,
                         cover: product.covers[0],

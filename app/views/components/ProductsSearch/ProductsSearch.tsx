@@ -7,9 +7,10 @@ export type Item = {
   description: string,
   cover: string,
   covers?: string[],
+  order?: any,
   price?: string,
   value?: string
-  discount?: string
+  discount?: string | number
 }
 
 
@@ -62,9 +63,9 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
       items ? <div className="w-full lg:w-3/4 px-3">
         <Fade triggerOnce cascade>
           {items.map((item, index) => (
-            <div key={index} className="relative mb-6 bg-black bg-opacity-30 rounded  hover:bg-opacity-100 transition-all w-3/4">
-              <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-gray-200 border-2 border-green-500 rounded-full text-green-500">
-                {item.discount}
+            <div key={index} className="relative mb-4 bg-black bg-opacity-30 rounded  hover:bg-opacity-50 transition-all w-3/4">
+              <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-gray-900 border-2 border-green-500 rounded-full text-green-500">
+                {item.discount ? item.discount : "0"}% OFF
               </span>
               <div className="flex flex-wrap items-center -mx-4 px-8 md:px-20 py-12">
                 <div className="w-full md:w-1/4 px-4 mb-4 md:mb-0">
@@ -97,19 +98,26 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
                       {item.description}
                     </p>
                   </a>
+
+
+
+
                   <div className="flex flex-wrap mt-4 justify-items-start">
+
                     <a
-                      className="inline-block w-full md:w-auto mb-4 md:mb-0 md:mr-4 text-center bg-green-800 hover:bg-yellow-300 hover:scale-90 transition-all hover:text-black  text-white font-bold font-heading py-4 px-8 rounded-md uppercase"
-                      href={`/products/${item.id}`}
+                      className="gumroad-button m-1"
+                      href={item.order.url}
+                      data-gumroad-single-product="true"
                     >
-                      Order Now
+                      Order Now!
                     </a>
                     <a
-                      className="inline-block w-full md:w-auto mb-4 md:mb-0 md:mr-4 text-center bg-blue-800 hover:bg-yellow-300 hover:scale-90 transition-all hover:text-black  text-white font-bold font-heading py-4 px-8 rounded-md uppercase"
+                      className="inline-block w-full m-1 md:w-auto mb-4 md:mb-0 md:mr-4 text-center bg-green-800 hover:bg-yellow-300 hover:scale-90 transition-all hover:text-black  text-white font-bold font-heading py-4 px-8 rounded-md uppercase"
                       href={`/products/${item.id}`}
                     >
                       Learn More
                     </a>
+
 
                   </div>
                 </div>
