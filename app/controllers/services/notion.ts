@@ -5,7 +5,7 @@ const NotionService = {
         auth: process.env.FACADE_API_KEY,
     }),
     interface: {
-        notion: `${process.env.NODE_ENV === "production" ? "https://naturessecret.co/api/central_dogma" : `http://localhost:${process.env.PORT || 3002}/api/central_dogma`}`,
+        notion: `${process.env.NODE_ENV === "production" ? "https://naturessecret.co/api/db" : `http://localhost:${process.env.PORT || 3002}/api/db`}`,
     },
     databases: {
         central_dogma: 'b70f6b0e58b14ba59a4618e95898b817',

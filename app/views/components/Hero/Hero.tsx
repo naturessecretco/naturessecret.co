@@ -106,7 +106,7 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
 
                             <div className="px-4 md:px-8 py-10 bg-black bg-opacity-80  rounded">
                                 <h4 className="pl-8 mb-2 text-sm font-bold font-heading text-gray-300 uppercase">
-                                    {features.heading}
+                                    {features?.heading}
                                 </h4>
 
                                 <ul style={{ fontFamily: 'var(--font-secondary)' }} className="mb-5">
@@ -169,7 +169,6 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
     const Header = () => {
 
         const HeaderSx = {
-            background: `url(${backgroundCover})`,
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center center',
             backgroundSize: 'contain',
@@ -194,6 +193,8 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
 
         return (
             <div style={HeaderSx} className="relative container mx-auto px-2">
+                <img src={backgroundCover} alt="background cover" className="" />
+
                 <Socials />
                 <CallToAction />
             </div>

@@ -124,35 +124,24 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
 
 
                     <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-                        <div className="relative mb-10" style={{ height: 564 }}>
+                        <div className="relative mb-10" style={{ height: 560 }}>
 
                             <Carousel>
 
-                                <div className="w-full">
-                                    <a href="#">
-                                        <img
-                                            className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                            src="/assets/images/honey-jar-website-only-mockup-5.png"
-                                            alt=""
-                                        />
-                                    </a>
+                                {
+                                    covers ? covers.map((cover, index) => {
+                                        return (
+                                            <div key={index} className="w-full">
+                                                <img
+                                                    className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
+                                                    src={cover.src}
+                                                    alt=""
+                                                />
+                                            </div>
+                                        )
+                                    }) : <></>
+                                }
 
-                                </div>
-                                <div className="w-full">
-                                    <img
-                                        className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                        src="/assets/images/seamoss-gummies-jar-mockup-2.png"
-                                        alt=""
-                                    />
-                                </div>
-
-                                <div className="w-full">
-                                    <img
-                                        className="h-64 md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                        src="/assets/images/sea-moss-jar-website-only-mockup-4.png"
-                                        alt=""
-                                    />
-                                </div>
                             </Carousel>
 
 

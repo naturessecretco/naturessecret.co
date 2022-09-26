@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   env: {
     PORT: process.env.PORT,
+    FACADE_API_KEY: process.env.FACADE_API_KEY,
   },
 }
 

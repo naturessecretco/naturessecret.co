@@ -1,18 +1,20 @@
-import Hero from "@components/Hero"
 import Featured from "@components/Featured"
+import Hero from "@components/Hero"
 import MediaRow from "@components/MediaRow"
-import Summary from "@components/Summary"
 import Product from "@components/Product"
-import PageService from "@services/pages"
-import PageLayout from '@layouts/PageLayout'
+import Summary from "@components/Summary"
 
-import meta from "@models/configs/meta"
+import PageLayout from '@layouts/PageLayout'
+import PageService from "@services/pages"
+
+import NotionService from '@services/notion'
+
 import { useEffect } from "react"
 
 const HomePage = ({ page }) => {
 
   useEffect(() => {
-    console.log(`[Naturesecret.co@${meta.version}]`, page)
+    console.log(`[Naturesecret.co@${page.version}]`, page)
   }, [page])
 
   return (
@@ -30,13 +32,32 @@ export default HomePage
 
 export async function getServerSideProps() {
 
-  const { getPage } = PageService.methods
+  const { getPage } = PageService
 
-  const page = await getPage("home")
+
+  const { loadDataPage } = PageService
+  const { loadCentralDogma } = NotionService
+
+  const centralDogma = (await loadCentralDogma()).results
+
+  const { layout, data, id, version } = loadDataPage(centralDogma, "home")
+
+
+  const page = {
+    id: 'natures-secret-pages',
+    db: id,
+    version: version,
+    layout: layout,
+    ...data,
+  }
+
+  
 
   return {
     props: {
       page: page
-    }
+    },
+
   }
 }
+
