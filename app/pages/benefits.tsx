@@ -4,6 +4,7 @@ import MediaRow from "@components/MediaRow"
 import Product from "@components/Product"
 import Summary from "@components/Summary"
 
+import Grid from "@components/Grid"
 import PageLayout from '@layouts/PageLayout'
 import PageService from "@services/pages"
 
@@ -17,6 +18,7 @@ const BenefitsPage = ({ page }) => {
 
   return (
     <PageLayout {...page.layout}>
+      <Grid {...page.data.layout}/>
     </PageLayout>
   )
 }

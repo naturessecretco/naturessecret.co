@@ -1,7 +1,6 @@
 import useDrawer from "@hooks/useDrawer"
 import { CSSTransition } from 'react-transition-group';
 import CloseIcon from '@mui/icons-material/Close';
-
 import { Fade } from "react-awesome-reveal"
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 
@@ -31,7 +30,7 @@ const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
                             navLinks.map((link, index) => {
                                 return (
                                     <li key={index} style={{ fontFamily: 'var(--font-secondary)' }} className="mb-8">
-                                        <a className="text-white hover:text-green-300 hover:bg-black rounded hover:bg-opacity-50 transition-all p-3" href={link.url}>{link.name}</a>
+                                        <a className="text-white hover:text-green-300 hover:bg-white rounded hover:bg-opacity-50 transition-all p-3" href={link.url}>{link.name}</a>
                                     </li>
 
                                 )
@@ -54,7 +53,7 @@ const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
                 <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25" />
                 <ClickAwayListener onClickAway={() => toggleDrawer()}>
 
-                    <nav className={`bg-green-900 bg-opacity-80 backdrop-blur-xl relative flex flex-col py-6 px-6 w-full h-full border-r "swing-in-left-bck" overflow-y-auto ${isOpen ? "swing-in-left-fwd" : ""}`}>
+                    <nav className={`bg-yellow-500 bg-opacity-50 backdrop-blur-xl relative flex flex-col py-6 px-6 w-full h-full border-r "swing-in-left-bck" overflow-y-auto ${isOpen ? "swing-in-left-fwd" : ""}`}>
                         <div className="flex items-center mb-8">
                             <a className="mr-auto text-3xl font-bold font-heading" href="/">
                                 <img
@@ -75,7 +74,7 @@ const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
                                 >
                                     <path
                                         d="M9.00002 1L1 9.00002M1.00003 1L9.00005 9.00002"
-                                        stroke="black"
+                                        stroke="white"
                                         strokeWidth="1.5"
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
@@ -162,9 +161,9 @@ const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
                             </div>
                         </div>
                         <input
-                            className="block mb-10 py-5 px-8 bg-gray-100 rounded-md border-transparent focus:ring-blue-300 focus:border-blue-300 focus:outline-none"
+                            className="block mb-10 py-5 px-8 bg-green-900 bg-opacity-70 placeholder-white rounded-md border-transparent focus:ring-blue-300 focus:border-blue-300 focus:outline-none"
                             type="search"
-                            placeholder="Search"
+                            placeholder="Search here"
                         />
                         <NavLinks />
                     </nav>

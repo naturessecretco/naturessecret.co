@@ -8,6 +8,10 @@
     src: url(/assets/fonts/Monbaiti.ttf);
 }
 
+.gumroad-button {
+    background-color:rgb(0, 128, 128) !important;
+    font-family: var(--font-primary) !important;
+}
 :root {
     --color-primary: rgb(252, 238, 49);
     --color-secondary: rgb(115, 241, 64);

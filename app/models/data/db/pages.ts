@@ -127,7 +127,21 @@ const pages = (store, pageKey) => {
         },
         products: {
             metaData: {},
-            pages: {},
+            pages: {
+                paths: productQuery.map((product) => ({
+                    params: {
+                        id: product.id
+                    }
+                })),
+                data: productQuery.map((product) => ({
+                    ...product,
+                    covers: product.covers.map((cover) => ({ src: cover, alt: cover })),
+                    order: {
+
+                        url: product.gumroad,
+                    }
+                }))
+            },
             data: {
 
                 productsSearch: {
@@ -146,7 +160,13 @@ const pages = (store, pageKey) => {
 
             }
         },
-        benefits: {},
+        benefits: {
+            data: {
+                grid: {
+
+                }
+            }
+        },
 
     }
 

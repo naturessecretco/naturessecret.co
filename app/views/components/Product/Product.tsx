@@ -47,7 +47,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                         <div className="w-full xl:w-2/3 px-4 mb-4 xl:mb-0">
                             <a
                                 className="gumroad-button"
-                                href={order.url}
+                                href={order?.url}
                                 data-gumroad-single-product="true"
                             >
                                 Order Now!

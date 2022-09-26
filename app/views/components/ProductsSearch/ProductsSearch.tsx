@@ -62,7 +62,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
       items ? <div className="w-full lg:w-3/4 px-3">
         <Fade triggerOnce cascade>
           {items.map((item, index) => (
-            <div key={index} className="relative mb-6 bg-black bg-opacity-80 rounded  hover:bg-opacity-100 transition-all">
+            <div key={index} className="relative mb-6 bg-black bg-opacity-30 rounded  hover:bg-opacity-100 transition-all w-3/4">
               <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-gray-200 border-2 border-green-500 rounded-full text-green-500">
                 {item.discount}
               </span>
@@ -97,12 +97,18 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
                       {item.description}
                     </p>
                   </a>
-                  <div className="flex flex-wrap items-center justify-between">
+                  <div className="flex flex-wrap mt-4 justify-items-start">
                     <a
                       className="inline-block w-full md:w-auto mb-4 md:mb-0 md:mr-4 text-center bg-green-800 hover:bg-yellow-300 hover:scale-90 transition-all hover:text-black  text-white font-bold font-heading py-4 px-8 rounded-md uppercase"
                       href={`/products/${item.id}`}
                     >
                       Order Now
+                    </a>
+                    <a
+                      className="inline-block w-full md:w-auto mb-4 md:mb-0 md:mr-4 text-center bg-blue-800 hover:bg-yellow-300 hover:scale-90 transition-all hover:text-black  text-white font-bold font-heading py-4 px-8 rounded-md uppercase"
+                      href={`/products/${item.id}`}
+                    >
+                      Learn More
                     </a>
 
                   </div>

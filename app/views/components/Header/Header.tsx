@@ -4,6 +4,7 @@ import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import type { FaviconProps } from "@typings/Favicon";
 import Headroom from "react-headroom";
 import { Fade } from "react-awesome-reveal"
+import EnergySavingsLeafIcon from '@mui/icons-material/EnergySavingsLeaf';
 
 export type Link = {
   name: string,
@@ -86,8 +87,8 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
           </div>
 
 
-          <a onClick={() => toggleDrawer()} className="navbar-burger self-center mr-12" href="#">
-            <MenuOpenIcon className="text-black h-24" />
+          <a onClick={() => toggleDrawer()} className="navbar-burger self-center mr-12 hover:scale-90 transition-all" href="#">
+            <EnergySavingsLeafIcon className="text-black h-32" />
           </a>
         </nav>
 
