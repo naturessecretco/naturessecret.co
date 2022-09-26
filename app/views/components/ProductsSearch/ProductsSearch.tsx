@@ -63,7 +63,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
       items ? <div className="w-full lg:w-3/4 px-3">
         <Fade triggerOnce cascade>
           {items.map((item, index) => (
-            <div key={index} className="relative mb-4 bg-black bg-opacity-30 rounded  hover:bg-opacity-50 transition-all w-3/4">
+            <div key={index} className="relative mb-4 bg-black bg-opacity-30 rounded  hover:bg-opacity-50 transition-all">
               <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-gray-900 border-2 border-green-500 rounded-full text-green-500">
                 {item.discount ? item.discount : "0"}% OFF
               </span>
