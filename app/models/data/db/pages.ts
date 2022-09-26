@@ -3,6 +3,7 @@ import meta from "@configs/meta"
 
 import imagesDB from "@db/images"
 import productsDB from "@db/products"
+import faqsDB from "@db/faqs"
 
 
 
@@ -12,8 +13,10 @@ const { getImages } = imagesDB.methods
 const pages = (store, pageKey) => {
 
     const { getProducts } = productsDB
+    const { getFAQs } = faqsDB
 
     const productQuery = getProducts(store)
+    const faqsQuery = getFAQs(store)
 
     const heroImage = getImages({
         property: "id",
@@ -102,12 +105,10 @@ const pages = (store, pageKey) => {
                 },
                 summary: {
                     title: 'Frequently Asked Questions',
-                    content: [
-                        {
-                            question: 'What is Seamoss?',
-
-                        }
-                    ]
+                    content: faqsQuery.map((faq) => ({
+                        question: faq.question,
+                        answer: faq.answer
+                    }))
                 }
             },
 

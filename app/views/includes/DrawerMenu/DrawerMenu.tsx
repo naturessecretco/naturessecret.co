@@ -48,17 +48,18 @@ const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
     return (
 
         <CSSTransition in={isOpen}
-            timeout={900}
+            timeout={300}
             unmountOnExit>
-            <ClickAwayListener onClickAway={() => toggleDrawer()}>
-                <div className="navbar-menu fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-50">
-                    <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25" />
-                    <nav className="relative flex flex-col py-6 px-6 w-full h-full border-r overflow-y-auto">
+            <div className="navbar-menu fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-50">
+                <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25" />
+                <ClickAwayListener onClickAway={() => toggleDrawer()}>
+
+                    <nav className={`bg-green-900 bg-opacity-80 backdrop-blur-xl relative flex flex-col py-6 px-6 w-full h-full border-r "swing-in-left-bck" overflow-y-auto ${isOpen ? "swing-in-left-fwd" : ""}`}>
                         <div className="flex items-center mb-8">
-                            <a className="mr-auto text-3xl font-bold font-heading" href="#">
+                            <a className="mr-auto text-3xl font-bold font-heading" href="/">
                                 <img
                                     className="h-9"
-                                    src="yofte-assets/logos/yofte-logo.svg"
+                                    src="/assets/images/logo.png"
                                     alt=""
                                     width="auto"
                                 />
@@ -167,9 +168,10 @@ const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
                         />
                         <NavLinks />
                     </nav>
-                </div>
+                </ClickAwayListener>
 
-            </ClickAwayListener>
+            </div>
+
 
         </CSSTransition >
 
