@@ -9,7 +9,7 @@ import PageService from "@services/pages"
 
 import { useEffect } from "react"
 
-const HomePage = ({ page }) => {
+const BenefitsPage = ({ page }) => {
 
   useEffect(() => {
     console.log(`[Naturesecret.co@${page.version}]`, page)
@@ -17,22 +17,17 @@ const HomePage = ({ page }) => {
 
   return (
     <PageLayout {...page.layout}>
-      <Hero {...page.data.hero} />
-      <Featured {...page.data.featured} />
-      <Product {...page.data.product} />
-      <MediaRow {...page.data.mediaRow} />
-      <Summary {...page.data.summary} />
     </PageLayout>
   )
 }
 
-export default HomePage
+export default BenefitsPage
 
 export async function getServerSideProps() {
 
   const { getPage } = PageService
 
-  const page = await getPage("home")
+  const page = await getPage("benefits")
 
   return {
     props: {

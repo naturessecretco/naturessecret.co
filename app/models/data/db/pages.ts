@@ -113,8 +113,21 @@ const pages = (store, pageKey) => {
             },
 
         },
+        mission: {
+            metaData: {
+                pageTitle: 'Mission'
+            },
+            data: {
 
-        products: {},
+            }
+        },
+        products: {
+            metaData: {},
+            pages: {},
+            data: {
+
+            }
+        },
         benefits: {},
 
     }

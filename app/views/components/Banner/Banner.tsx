@@ -27,7 +27,7 @@ const Banner = ({ message, url }: BannerProps) => {
             </a>
           </p>
         </div>
-        <CloseIcon className="text-white absolute right-1 top-1 m-1" onClick={() => toggleBanner()} />
+        <CloseIcon className="text-white hover:text-green-600 transition-all absolute right-1 top-1" onClick={() => toggleBanner()} />
 
       </div>
     </CSSTransition>

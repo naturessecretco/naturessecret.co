@@ -100,6 +100,16 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
         )
     }
 
+    const AgencyTag = () => {
+        return (
+
+            <div id="contact" className="mt-10 text-center mr-4 absolute bottom-4 right-4 ">
+                <h3 className="text-gray-800 font-bold">Site by Desirable Solutions</h3>
+            </div>
+        )
+    }
+
+
     const Favicon = () => {
         return (
             favicon ? <a
@@ -134,6 +144,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
                     <KofiSupportButton color="#000000" message="Support Us" kofiID="naturessecret" />
                 </div>
                 <Copyright />
+                <AgencyTag />
             </div>
         </section>
 

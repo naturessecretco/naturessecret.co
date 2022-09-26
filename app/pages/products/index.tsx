@@ -13,7 +13,6 @@ const ProductsIndexPage = ({ page }) => {
 
   return (
     <PageLayout {...page.layout}>
-      <Hero {...page.data.hero} />
     </PageLayout>
   )
 }
@@ -24,7 +23,7 @@ export async function getServerSideProps() {
 
   const { getPage } = PageService
 
-  const page = await getPage("home")
+  const page = await getPage("products")
 
   return {
     props: {

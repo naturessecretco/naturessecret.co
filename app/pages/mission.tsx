@@ -17,11 +17,6 @@ const HomePage = ({ page }) => {
 
   return (
     <PageLayout {...page.layout}>
-      <Hero {...page.data.hero} />
-      <Featured {...page.data.featured} />
-      <Product {...page.data.product} />
-      <MediaRow {...page.data.mediaRow} />
-      <Summary {...page.data.summary} />
     </PageLayout>
   )
 }
