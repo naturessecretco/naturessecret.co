@@ -7,13 +7,13 @@ export type PostProps = {
 
 const Post = ({ title, cover, content }: PostProps) => {
 
-    const CoverImage = () => {
+    const CoverImage = (cover) => {
         return (
             <div className="relative h-96 -mx-6 mb-20">
                 <div className="absolute top-1/2 transform -translate-y-1/2 left-0 right-0 h-80 w-full" />
                 <img
                     className="relative w-full h-96 px-6 object-cover"
-                    src="/assets/images/post.png"
+                    src={cover ? cover : "/assets/images/logo.png"}
                     alt=""
                 />
             </div>
@@ -25,7 +25,7 @@ const Post = ({ title, cover, content }: PostProps) => {
         <section className="relative pt-20 md:pt-40 pb-20 overflow-x-hidden">
             <div className="container mx-auto px-4">
 
-                <CoverImage />
+                <CoverImage cover={cover} />
 
                 <div className="max-w-3xl mx-auto text-center">
                     <h2 className="text-6xl md:text-7xl font-bold font-heading text-black">
@@ -53,16 +53,16 @@ const Post = ({ title, cover, content }: PostProps) => {
                             tortor et, finibus neque.
                         </h3>
                         <p className="text-xl text-gray-900 mt-5">
-                        Some potential benefits of consuming our Top Quality nutritious Wildcrafted Seamoss,
-                         Honey, & other foods include:1. A more nutritious diet – Our products are packed with
-                          vitamins, minerals, and antioxidants that can help boost your overall health and well-being.
-                           Increased energy levels – The high levels of nutrients in our products can give you the energy you need to get through your day.
-                           3. Better digestive health –
+                            Some potential benefits of consuming our Top Quality nutritious Wildcrafted Seamoss,
+                            Honey, & other foods include:1. A more nutritious diet – Our products are packed with
+                            vitamins, minerals, and antioxidants that can help boost your overall health and well-being.
+                            Increased energy levels – The high levels of nutrients in our products can give you the energy you need to get through your day.
+                            3. Better digestive health –
                             Our products are loaded with probiotics and other gut-friendly nutrients that can help keep your digestive system functioning optimally.
                             4. Reduced inflammation – The anti-inflammatory properties of our products can help reduce inflammation throughout your body, leading to better overall health.5.
                         </p>
-                 
-                 
+
+
                     </div>
                 </div>
             </div>

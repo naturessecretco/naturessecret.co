@@ -119,12 +119,30 @@ const pages = (store, pageKey) => {
             },
             data: {
 
+                post: {
+                    title: 'Our Mission',
+                }
+
             }
         },
         products: {
             metaData: {},
             pages: {},
             data: {
+
+                productsSearch: {
+                    title: 'Our Products',
+                    items: productQuery.map((product) => ({
+                        id: product.id,
+                        name: product.name,
+                        description: product.description,
+                        value: product.value,
+                        price: product.price,
+                        cover: product.covers[0],
+                        discount: product.discount,
+
+                    }))
+                }
 
             }
         },

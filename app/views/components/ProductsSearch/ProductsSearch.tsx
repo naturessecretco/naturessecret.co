@@ -122,7 +122,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
   const Header = () => {
     return (
 
-      <div className="w-full lg:w-auto px-4 mb-12 xl:mb-0">
+      <div className="w-full lg:w-auto px-4 mb-12 xl:mb-0 mt-6">
         <h2 className="text-5xl font-bold font-heading text-gray-900 mb-6">
           <span>{title ? title : "Title"}</span>
         </h2>

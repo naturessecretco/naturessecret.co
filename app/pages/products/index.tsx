@@ -1,5 +1,5 @@
 import Hero from "@components/Hero"
-
+import ProductsSearch from "@views/components/ProductsSearch"
 import PageLayout from '@layouts/PageLayout'
 import PageService from "@services/pages"
 
@@ -13,6 +13,7 @@ const ProductsIndexPage = ({ page }) => {
 
   return (
     <PageLayout {...page.layout}>
+      <ProductsSearch {...page.data.productsSearch} />
     </PageLayout>
   )
 }

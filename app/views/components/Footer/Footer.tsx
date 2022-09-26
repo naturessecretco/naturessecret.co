@@ -1,8 +1,8 @@
-import { SocialIcon } from 'react-social-icons';
+import FadeAnimation from "@components/FadeAnimation"
 import KofiSupportButton from '@components/KofiSupportButton';
-import { Fade } from 'react-awesome-reveal';
-import type { FooterProps } from "@typings/Footer"
 import Icon from "@components/Icon"
+
+import type { FooterProps } from "@typings/Footer"
 
 const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterProps) => {
 
@@ -51,13 +51,13 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
                         {TITLE}
                     </h3>
                     <div className="flex">
-                        <Fade cascade triggerOnce>
+                        <FadeAnimation cascade triggerOnce>
                             {socials?.map((social, index) => {
                                 return (
                                     <Icon id={social.icon} url={social.url} key={index} />
                                 )
                             })}
-                        </Fade>
+                        </FadeAnimation>
 
 
 
@@ -95,7 +95,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
         return (
 
             copyright ? <div id="contact" className="mt-10 text-center shine">
-                <h3 className="text-gray-800 font-bold">{copyright ? copyright : "Copyright"}</h3>
+                <h3 className="text-gray-800 font-bold text-lg">{copyright ? copyright : "Copyright"}</h3>
             </div> : <></>
         )
     }
@@ -103,8 +103,10 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
     const AgencyTag = () => {
         return (
 
-            <div id="contact" className="mt-10 text-center mr-4 absolute bottom-4 right-4 ">
-                <h3 className="text-gray-800 font-bold">Site by Desirable Solutions</h3>
+            <div id="contact" className="mt-10 text-center mr-4">
+                <a href="https://desirable.solutions">
+                    <h4 className="hover:text-green-800 text-sm tranisition-all text-gray-800 font-bold">Site by Désirable Solutions</h4>
+                </a>
             </div>
         )
     }

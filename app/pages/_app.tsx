@@ -2,6 +2,7 @@ import "@libs/animations.css";
 import "@libs/globals.css";
 import "@libs/scrollbar.css";
 import "@libs/tailwind.css";
+import "@libs/reset.css";
 
 import productsDB from "@models/data/db/products";
 import "react-responsive-carousel/lib/styles/carousel.min.css";

@@ -12,10 +12,9 @@ const RootLayout = ({ children, metaData }: ILayout) => {
         <Box sx={{
             background: "url('/assets/images/bg.jpg') fixed center center",
             backgroundSize: "cover",
-            boxShadow: 'inset 0 0 0 1000px rgba(254,245,45,.67)'
+            boxShadow: 'inset 0 0 0 1000px rgba(254,245,45,.60)'
 
         }}>
-            <CssBaseline />
             <Meta {...metaData} />
             {children}
         </Box>
