@@ -87,14 +87,14 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
                       {item.name}
                     </h3>
                     <p className="mb-6 text-lg font-bold font-heading text-green-500">
-                      <span>{`${item.price}`}</span>
+                      <span>{`$${item.price}`}</span>
                       <span className="text-sm text-yellow-500 font-semibold font-heading line-through">
-                        {`${item.value}`}
+                        {`$${item.value}`}
                       </span>
                     </p>
 
 
-                    <p className="max-w-md text-gray-200">
+                    <p className="max-w-full text-lg text-gray-200">
                       {item.description}
                     </p>
                   </a>
@@ -112,7 +112,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
                       Order Now!
                     </a>
                     <a
-                      className="inline-block w-full m-1 md:w-auto mb-4 md:mb-0 md:mr-4 text-center bg-green-800 hover:bg-yellow-300 hover:scale-90 transition-all hover:text-black  text-white font-bold font-heading py-4 px-8 rounded-md uppercase"
+                      className="inline-block w-auto m-1 md:w-auto mb-4 md:mb-0 md:mr-4 text-center bg-green-800 hover:bg-yellow-300 hover:scale-90 transition-all hover:text-black  text-white font-bold font-heading py-4 px-8 rounded-md uppercase"
                       href={`/products/${item.id}`}
                     >
                       Learn More
