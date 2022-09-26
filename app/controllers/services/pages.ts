@@ -1,4 +1,5 @@
 import pages from "@db/pages"
+import NotionService from '@services/notion'
 
 const PageService = {
 
@@ -7,12 +8,25 @@ const PageService = {
     },
 
     getPage: async (pageKey: string) => {
-        const isProduction = process.env.NODE_ENV === "production"
-        return await fetch(`${isProduction ? "https://naturessecret.co/api/pages" : `http://localhost:${process.env.PORT || 3000}/api/pages`}`,
-            {
-                method: 'POST',
-                body: JSON.stringify({ page: `${pageKey ? pageKey : "home"}` }),
-            }).then(res => res.json())
+
+        const { loadDataPage } = PageService
+        const { loadCentralDogma } = NotionService
+
+        const centralDogma = (await loadCentralDogma()).results
+
+        const { layout, data, id, version } = loadDataPage(centralDogma, pageKey ? pageKey : "home")
+
+
+        const page = {
+            id: 'natures-secret-pages',
+            db: id,
+            version: version,
+            layout: layout,
+            ...data,
+        }
+
+        return page
+
     },
 
 }

@@ -7,8 +7,6 @@ import Summary from "@components/Summary"
 import PageLayout from '@layouts/PageLayout'
 import PageService from "@services/pages"
 
-import NotionService from '@services/notion'
-
 import { useEffect } from "react"
 
 const HomePage = ({ page }) => {
@@ -34,24 +32,7 @@ export async function getServerSideProps() {
 
   const { getPage } = PageService
 
-
-  const { loadDataPage } = PageService
-  const { loadCentralDogma } = NotionService
-
-  const centralDogma = (await loadCentralDogma()).results
-
-  const { layout, data, id, version } = loadDataPage(centralDogma, "home")
-
-
-  const page = {
-    id: 'natures-secret-pages',
-    db: id,
-    version: version,
-    layout: layout,
-    ...data,
-  }
-
-  
+  const page = await getPage("home")
 
   return {
     props: {

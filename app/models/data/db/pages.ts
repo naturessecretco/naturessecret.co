@@ -1,13 +1,6 @@
 import layout from "@configs/layout"
 import meta from "@configs/meta"
 
-import { $ProductsSearch } from "@components/ProductsSearch"
-import { $Gallery } from "@components/Gallery"
-import { $MediaRow } from "@components/MediaRow"
-import { $Hero } from "@components/Hero"
-import { $Summary } from "@components/Summary"
-import { $Featured } from "@components/Featured"
-
 import imagesDB from "@db/images"
 import productsDB from "@db/products"
 
@@ -71,14 +64,28 @@ const pages = (store, pageKey) => {
                         id: product.id,
                         name: product.name,
                         description: product.description,
+                        value: product.value,
                         price: product.price,
-                        cover: product.covers[0],
+                        cover: {
+                            src: product.covers[0],
+                            alt: product.covers[0]
+                        },
                         discount: product.discount,
                     })),
                     title: 'Featured Products',
 
                 },
-                product: { ...productQuery[0] },
+                product: {
+                    ...productQuery.map((product) => ({
+                        ...product,
+                        covers: product.covers.map((cover) => ({ src: cover, alt: cover })),
+                        description: product.description,
+                        order: {
+                            url: product.gumroad,
+                        },
+                        heading: 'On Sale!'
+                    }))[0]
+                },
                 mediaRow: {
                     media: [...productQuery.map((product) => {
                         return {
@@ -86,8 +93,8 @@ const pages = (store, pageKey) => {
                             description: product.description,
                             title: product.name,
                             cover: {
-                                src: product.covers[0],
-                                alt: product.covers[0]
+                                src: product.covers[1],
+                                alt: product.covers[1]
                             }
 
                         }

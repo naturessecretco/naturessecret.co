@@ -7,6 +7,9 @@ export type ProductProps = {
     name?: string,
     url?: string,
     gumroadURL: string,
+    order?: {
+        url?: string
+    },
     collections: ["seamoss", "featured"]
     heading?: string,
     description?: string,

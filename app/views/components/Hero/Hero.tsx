@@ -62,7 +62,6 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
             covers ? <div className="w-full lg:w-2/3 px-4">
                 <div className="flex flex-wrap h-full mr-14 w-full">
 
-
                     <Carousel>
                         {covers.map((cover, index) => {
                             return (

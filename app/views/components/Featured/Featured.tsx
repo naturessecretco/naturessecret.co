@@ -9,7 +9,7 @@ export type Feature = {
     description?: string,
     price?: string,
     value?: string
-    discount?: string
+    discount?: number
 }
 
 
@@ -40,10 +40,10 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                 {
                     features.map((feature, index) => {
                         return (
-                            <div key={index} className="w-3/4 lg:w-1/2 md:px-3 mb-6 bg-white rounded bg-opacity-70 hover:bg-opacity-90 transition-all">
+                            <div key={index} className="w-3/4 lg:w-1/2 md:px-3 mb-6 rounded bg-black bg-opacity-30 backdrop-blur-md transition-all">
                                 <a className="relative block" href={`/products/${feature.id}`}>
-                                    <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-white border-2 border-green-500 rounded-full text-green-500">
-                                        {feature.discount}
+                                    <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-black bg-opacity-60 border-2 border-green-500 rounded-full text-green-500">
+                                        {(feature.discount * 100)}%    
                                     </span>
                                     <img
                                         className="w-full h-64 object-cover"
@@ -56,12 +56,12 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                                 {feature.name}
                                             </h3>
                                             <p className="mb-4 text-xl font-bold font-heading text-white">
-                                                <span>{feature.price}</span>
-                                                <span className="text-xs text-blue-800 font-semibold font-heading line-through">
-                                                    {feature.value}
+                                                <span>${feature.price}.00</span>
+                                                <span className="ml-1 text-sm text-blue-700 font-semibold font-heading line-through">
+                                                    ${feature.value}.00
                                                 </span>
                                             </p>
-                                            <p className="text-gray-800">{feature.description}</p>
+                                            <p className="text-gray-300 text-md">{feature.description}</p>
                                         </div>
                                     </div>
                                 </a>

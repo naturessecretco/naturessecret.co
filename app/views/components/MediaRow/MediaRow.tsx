@@ -19,7 +19,7 @@ const MediaRow = ({ media }: MediaRowProps) => {
         return (
             media ? <div className="flex flex-wrap -mx-4 pb-20 border-b">
                 {media.map((item, index) => {
-                    return (<div key={index} className="relative w-full align-center md:w-1/2 lg:w-1/4 px-4 mb-16 lg:mb-0 hover:scale-110 transition-all hover:bg-black">
+                    return (<div key={index} className="relative w-full align-center md:w-1/2 lg:w-1/4 px-4 mb-16 lg:mb-0 transition-all hover:bg-black">
                         <div className="relative text-center bg-black rounded bg-opacity-80">
                             <a href={item.url}>
                                 <span className="inline-flex mb-16 items-center justify-center w-30 h-30 pb-10 rounded-full">

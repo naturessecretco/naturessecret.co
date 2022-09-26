@@ -13,7 +13,7 @@ const $Product = ({ name, price, covers, description }: ProductProps) => {
     return PropsObject
 }
 
-const Product = ({ id, name, heading, price, value, discount, covers, tags, description, }: ProductProps) => {
+const Product = ({ id, name, heading, price, value, discount, covers, tags, description, order }: ProductProps) => {
 
     const Header = () => {
 
@@ -38,7 +38,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                                 {value}
                             </span>
                         </p>
-                        <p className="max-w-md text-gray-900">
+                        <p className="max-w-md text-black">
                             {description}
                         </p>
                     </div>
@@ -47,7 +47,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                         <div className="w-full xl:w-2/3 px-4 mb-4 xl:mb-0">
                             <a
                                 className="gumroad-button"
-                                href="https://naturessecret.gumroad.com/l/wildcraftedseamoss?wanted=true"
+                                href={order.url}
                                 data-gumroad-single-product="true"
                             >
                                 Order Now!
@@ -91,7 +91,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                                     <path
                                         d="M2.01328 18.9877C2.05682 16.7902 2.71436 12.9275 6.3326 9.87096L6.33277 9.87116L6.33979 9.86454L6.3398 9.86452C6.34682 9.85809 8.64847 7.74859 13.4997 7.74859C13.6702 7.74859 13.8443 7.75111 14.0206 7.757L14.0213 7.75702L14.453 7.76978L14.6331 7.77511V7.59486V3.49068L21.5728 10.5736L14.6331 17.6562V13.6558V13.5186L14.4998 13.4859L14.1812 13.4077C14.1807 13.4075 14.1801 13.4074 14.1792 13.4072M2.01328 18.9877L14.1792 13.4072M2.01328 18.9877C7.16281 11.8391 14.012 13.3662 14.1792 13.4072M2.01328 18.9877L14.1792 13.4072M23.125 10.6961L23.245 10.5736L23.125 10.4512L13.7449 0.877527L13.4449 0.571334V1V6.5473C8.22585 6.54663 5.70981 8.81683 5.54923 8.96832C-0.317573 13.927 0.931279 20.8573 0.946581 20.938L0.946636 20.9383L1.15618 22.0329L1.24364 22.4898L1.47901 22.0885L2.041 21.1305L2.04103 21.1305C4.18034 17.4815 6.71668 15.7763 8.8873 15.0074C10.9246 14.2858 12.6517 14.385 13.4449 14.4935V20.1473V20.576L13.7449 20.2698L23.125 10.6961Z"
                                         fill="black"
-                                        stroke="black"
+                                        stroke="white"
                                         strokeWidth="0.35"
                                     />
                                 </svg>
@@ -118,10 +118,10 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
     }
 
     return (
+    
         <section className="py-20">
             <div className="container mx-auto px-4">
                 <div className="flex flex-wrap -mx-4 mb-24">
-
 
                     <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
                         <div className="relative mb-10" style={{ height: 560 }}>
@@ -144,65 +144,13 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
 
                             </Carousel>
 
-
-
                         </div>
 
                     </div>
 
-
-
                     <Header />
 
                 </div>
-
-
-                <div>
-                    <ul className="flex flex-wrap mb-16 border-b-2">
-                        <li className="w-1/2 md:w-auto">
-                            <a
-                                className="inline-block py-6 px-10 bg-white text-gray-500 font-bold font-heading shadow-2xl"
-                                href="#"
-                            >
-                                Description
-                            </a>
-                        </li>
-                        <li className="w-1/2 md:w-auto">
-                            <a
-                                className="inline-block py-6 px-10 text-gray-500 font-bold font-heading"
-                                href="#"
-                            >
-                                Customer reviews
-                            </a>
-                        </li>
-                        <li className="w-1/2 md:w-auto">
-                            <a
-                                className="inline-block py-6 px-10 text-gray-500 font-bold font-heading"
-                                href="#"
-                            >
-                                Shipping &amp; returns
-                            </a>
-                        </li>
-                        <li className="w-1/2 md:w-auto">
-                            <a
-                                className="inline-block py-6 px-10 text-gray-500 font-bold font-heading"
-                                href="#"
-                            >
-                                Brand
-                            </a>
-                        </li>
-                    </ul>
-                    <h3 className="mb-8 text-3xl font-bold font-heading text-blue-300">
-                        Summer collection and laoreet get
-                    </h3>
-                    <p className="max-w-2xl text-gray-500">
-                        I had interdum at ante porta, eleifend feugiat nunc. In semper euismod
-                        mi a accums lorem sad. Morbi at auctor nibh. Aliquam tincidunt placerat
-                        mollis. Lorem euismod dignissim, felis tortor ollis eros, non ultricies
-                        turpis.
-                    </p>
-                </div>
-
 
             </div>
         </section>
