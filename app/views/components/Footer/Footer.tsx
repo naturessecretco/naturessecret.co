@@ -95,7 +95,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
         return (
 
             copyright ? <div id="contact" className="mt-10 text-center shine">
-                <h3 className="text-gray-800 font-bold text-lg">{copyright ? copyright : "Copyright"}</h3>
+                <h3 className="text-green-900 shine font-bold text-lg">{copyright ? copyright : "Copyright"}</h3>
             </div> : <></>
         )
     }

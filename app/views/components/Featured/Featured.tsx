@@ -46,7 +46,7 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                         {(feature.discount * 100)}%    
                                     </span>
                                     <img
-                                        className="w-full h-full object-fill"
+                                        className="w-3/4 h-3/4 m-auto center-self object-fill"
                                         src={`${feature.cover.src}`}
                                         alt={`${feature.cover.alt}`}
                                     />
@@ -61,7 +61,7 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                                     ${feature.value}
                                                 </span>
                                             </p>
-                                            <p className="text-gray-300 text-md">{feature.description}</p>
+                                            <p className="text-gray-300 text-lg">{feature.description}</p>
                                         </div>
                                     </div>
                                 </a>

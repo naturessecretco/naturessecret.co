@@ -30,7 +30,7 @@ const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
                             navLinks.map((link, index) => {
                                 return (
                                     <li key={index} style={{ fontFamily: 'var(--font-secondary)' }} className="mb-8">
-                                        <a className="text-white hover:text-green-300 hover:bg-white rounded hover:bg-opacity-50 transition-all p-3" href={link.url}>{link.name}</a>
+                                        <a className="text-gray-900 hover:text-green-700 hover:bg-gray-200 rounded hover:bg-opacity-50 transition-all p-3" href={link.url}>🍃{link.name}</a>
                                     </li>
 
                                 )

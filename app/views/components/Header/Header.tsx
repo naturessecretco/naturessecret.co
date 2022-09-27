@@ -5,7 +5,7 @@ import type { FaviconProps } from "@typings/Favicon";
 import Headroom from "react-headroom";
 import { Fade } from "react-awesome-reveal"
 import EnergySavingsLeafIcon from '@mui/icons-material/EnergySavingsLeaf';
-
+import Icon from "@components/Icon";
 export type Link = {
   name: string,
   url: string
@@ -51,9 +51,8 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
           {
             navLinks.map((link, index) => {
               return (
-                <li style={{ fontFamily: 'var(--font-secondary)' }} className="" key={index}>
-                  <a
-                    className="mr-8 inline-block w-full  hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-black" href={link.url}>{link.name}</a>
+                <li className="" key={index}>
+                   <a className="mr-8 inline-block w-full  hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-black" href={link.url}>🍃{link.name}</a>
                 </li>
               )
             })
