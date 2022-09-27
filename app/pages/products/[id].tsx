@@ -39,8 +39,6 @@ export async function getServideSideProps({ params }) {
                     product
                 }
             },
-           
-
         },
 
     }
