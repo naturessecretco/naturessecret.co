@@ -140,7 +140,7 @@ const pages = (store, pageKey) => {
                     ...product,
                     covers: product.covers.map((cover) => ({ src: cover, alt: cover })),
                     order: {
-
+                        heading: 'Order Now',
                         url: product.gumroad,
                     }
                 }))
