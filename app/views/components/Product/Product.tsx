@@ -32,13 +32,13 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                         </div>
 
 
-                        <p className="inline-block mb-8 text-2xl font-bold font-heading text-blue-300">
+                        <p className="inline-block mb-8 text-2xl font-bold font-heading text-blue-800">
                             <span>{price}</span>
                             <span className="font-normal text-base text-gray-400 line-through">
                                 {value}
                             </span>
                         </p>
-                        <p className="max-w-md text-black">
+                        <p className="max-w-md text-black text-lg">
                             {description}
                         </p>
                     </div>
