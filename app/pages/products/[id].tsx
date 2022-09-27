@@ -22,16 +22,7 @@ const ProductPage = ({ page }) => {
 
 export default ProductPage
 
-export async function getStaticPaths() {
-    const { getPage } = PageService
-    const staticPaths = (await getPage("products")).pages.paths
 
-    return {
-        paths: staticPaths,
-        fallback: false
-    }
-
-}
 export async function getServideSideProps({ params }) {
 
     const { getPage } = PageService
