@@ -15,7 +15,7 @@ const Banner = ({ message, url }: BannerProps) => {
 
     <CSSTransition
       in={isOpen}
-      timeout={900}
+      timeout={500}
       unmountOnExit
     >
       <div className="py-2 bg-black">
@@ -27,7 +27,7 @@ const Banner = ({ message, url }: BannerProps) => {
             </a>
           </p>
         </div>
-        <CloseIcon className="text-white hover:text-green-600 transition-all absolute right-1 top-1" onClick={() => toggleBanner()} />
+        <CloseIcon className="text-white hover:text-green-600 transition-all absolute right-3 top-1" onClick={() => toggleBanner()} />
 
       </div>
     </CSSTransition>

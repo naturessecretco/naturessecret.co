@@ -26,7 +26,7 @@ const BenefitsPage = ({ page }) => {
 
 export default BenefitsPage
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
   const { getPage } = PageService
 
@@ -36,6 +36,8 @@ export async function getServerSideProps() {
     props: {
       page: page
     },
+    revalidate: 1
+
 
   }
 }

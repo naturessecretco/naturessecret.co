@@ -20,7 +20,7 @@ const ProductsIndexPage = ({ page }) => {
 
 export default ProductsIndexPage
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
   const { getPage } = PageService
 
@@ -30,6 +30,8 @@ export async function getServerSideProps() {
     props: {
       page: page
     },
+    revalidate: 1
+
 
   }
 }
