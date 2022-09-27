@@ -32,7 +32,7 @@ export async function getStaticPaths() {
     }
 
 }
-export async function getStaticProps({ params }) {
+export async function getServideSideProps({ params }) {
 
     const { getPage } = PageService
 
@@ -48,7 +48,7 @@ export async function getStaticProps({ params }) {
                     product
                 }
             },
-            revalidate: 1
+           
 
         },
 
