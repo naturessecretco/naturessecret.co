@@ -1,8 +1,3 @@
-import Featured from "@components/Featured"
-import Hero from "@components/Hero"
-import MediaRow from "@components/MediaRow"
-import Product from "@components/Product"
-import Summary from "@components/Summary"
 
 import Grid from "@components/Grid"
 import PageLayout from '@layouts/PageLayout'
@@ -26,7 +21,7 @@ const BenefitsPage = ({ page }) => {
 
 export default BenefitsPage
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
   const { getPage } = PageService
 
@@ -36,8 +31,6 @@ export async function getStaticProps() {
     props: {
       page: page
     },
-    revalidate: 1
-
 
   }
 }

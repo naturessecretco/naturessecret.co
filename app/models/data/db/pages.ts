@@ -1,29 +1,20 @@
 import layout from "@configs/layout"
 import meta from "@configs/meta"
 
-import imagesDB from "@db/images"
-import productsDB from "@db/products"
-import faqsDB from "@db/faqs"
+import products from "@db/products"
+import images from "@db/images"
+
+import type { DataPage } from "@typings/DataPage"
 
 
+const pages = ({ store, pageKey }: DataPage) => {
 
-const { getImages } = imagesDB.methods
-
-
-const pages = (store, pageKey) => {
-
-    const { getProducts } = productsDB
-    const { getFAQs } = faqsDB
+    const { getImages } = images().methods
+    const { getProducts } = products().methods
 
     const productQuery = getProducts(store)
-    const faqsQuery = getFAQs(store)
 
-    const heroImage = getImages({
-        property: "id",
-        value: "home-hero",
-        limit: 1,
-        type: "local"
-    })[0].src
+    const heroImage = getImages()[0].src
 
 
     const pageData = {
@@ -208,7 +199,6 @@ const pages = (store, pageKey) => {
                 }
             }
         },
-
     }
 
     return {

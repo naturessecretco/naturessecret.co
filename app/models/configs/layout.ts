@@ -1,10 +1,14 @@
 import header from "@configs/header";
 import footer from "@configs/footer"
 
-const layout = {
-    header: { ...header.init() },
-    footer: { ...footer.init() },
-    metaData: { pageTitle: 'Home' }
+const layout = () => {
+
+    const [headerData, footerData] = [header(), footer()]
+
+    return {
+        header: headerData,
+        footer: footerData,
+    }
 }
 
 export default layout 

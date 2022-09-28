@@ -4,7 +4,7 @@ import NotionService from '@services/notion'
 const PageService = {
 
     loadDataPage: (store?: any, pageKey?: string) => {
-        return pages(store, pageKey)
+        return pages({ store, pageKey })
     },
 
     getPage: async (pageKey: string) => {
