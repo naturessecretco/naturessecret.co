@@ -1,21 +1,13 @@
 import layout from "@configs/layout"
-import meta from "@configs/meta"
-
 import products from "@db/products"
-import images from "@db/images"
 
 import type { DataPage } from "@typings/DataPage"
 
-
 const pages = ({ store, pageKey }: DataPage) => {
 
-    const { getImages } = images().methods
     const { getProducts } = products().methods
 
     const productQuery = getProducts(store)
-
-    const heroImage = getImages()[0].src
-
 
     const pageData = {
         home: {
@@ -26,7 +18,7 @@ const pages = ({ store, pageKey }: DataPage) => {
             data: {
                 hero: {
                     title: 'Home to Natures Best Kept Secrets',
-                    socials: meta.socials,
+                    socials: p[],
                     covers: productQuery.map(product => ({ src: product.advertisements[0], alt: product.advertisements[0] })),
                     features: {
                         heading: 'Home to Natures Best Kept Secrets',
@@ -201,12 +193,16 @@ const pages = ({ store, pageKey }: DataPage) => {
         },
     }
 
-    return {
+
+    const pageObject = {
         id: 'natures-secret-pages-db',
         version: Date.now(),
         layout: layout,
         data: pageData[pageKey]
     }
+
+    return pageObject ?? null
+
 }
 
 export default pages
