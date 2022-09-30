@@ -1,6 +1,6 @@
 import pages from "@db/pages"
 import NotionService from '@services/notion'
-
+import meta from "@configs/meta"
 const PageService = {
 
     loadDataPage: (store?: any, pageKey?: string) => {
@@ -8,6 +8,8 @@ const PageService = {
     },
 
     getPage: async (pageKey: string) => {
+
+        const { title: siteTitle } = meta()
 
         const { loadDataPage } = PageService
         const { loadCentralDogma } = NotionService
@@ -18,7 +20,7 @@ const PageService = {
 
 
         const page = {
-            id: 'natures-secret-pages',
+            id: `${siteTitle}-pages`,
             db: id,
             version: version,
             layout: layout,

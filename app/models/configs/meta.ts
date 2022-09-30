@@ -2,11 +2,11 @@ import images from "@configs/images"
 
 const meta = () => {
 
-    return {
+    const metaObject = {
         title: "Natures Secret",
         version: Date.now(),
         links: [
-    
+
             {
                 name: 'Our Products',
                 url: '/products'
@@ -20,7 +20,7 @@ const meta = () => {
                 name: 'Your Benefits',
                 url: '/benefits'
             },
-    
+
             {
                 name: 'Contact Us',
                 url: '/#contact'
@@ -39,7 +39,7 @@ const meta = () => {
                 icon: 'FACEBOOK',
                 url: 'https://www.facebook.com/Natures-Secret-108272722018369'
             },
-    
+
             {
                 name: 'Twitter',
                 icon: 'TWITTER',
@@ -66,6 +66,8 @@ const meta = () => {
             url: '/'
         }
     }
+
+    return { ...metaObject } ?? null
 }
 
 export default meta

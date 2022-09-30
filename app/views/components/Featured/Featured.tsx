@@ -1,5 +1,5 @@
 import type { CallToActionProps } from "@typings/CallToAction"
-
+import GumroadButton from "../GumroadButton/GumroadButton"
 import type { ImageProps } from "@typings/Image"
 
 export type Feature = {
@@ -8,6 +8,7 @@ export type Feature = {
     cover?: ImageProps,
     description?: string,
     price?: string,
+    gumroad: string,
     value?: string
     discount?: number
 }
@@ -40,13 +41,13 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                 {
                     features.map((feature, index) => {
                         return (
-                            <div key={index} className="w-full md:px-3 mb-6 rounded bg-black bg-opacity-30 backdrop-blur-md transition-all">
+                            <div key={index} className="w-1/2 hover:bg-opacity-50 md:px-3 mb-6 rounded bg-black bg-opacity-20 backdrop-blur-xl transition-all">
                                 <a className="relative block" href={`/products/${feature.id}`}>
                                     <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-black bg-opacity-60 border-2 border-green-500 rounded-full text-green-500">
                                         {(feature.discount * 100)}%    
                                     </span>
                                     <img
-                                        className="w-3/4 h-3/4 m-auto center-self object-fill"
+                                        className="w-3/4 h-3/4 m-auto center-self object-fit"
                                         src={`${feature.cover.src}`}
                                         alt={`${feature.cover.alt}`}
                                     />
@@ -61,17 +62,14 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                                     ${feature.value}
                                                 </span>
                                             </p>
-                                            <p className="text-gray-300 text-lg">{feature.description}</p>
+                                            <GumroadButton productLink={feature.gumroad}/>
+                                            <p className="text-gray-200 text-xl">{feature.description}</p>
                                         </div>
                                     </div>
                                 </a>
                             </div>
                         )
                     })}
-
-
-
-
 
             </div> : <></>
 

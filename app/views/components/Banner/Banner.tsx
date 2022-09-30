@@ -1,13 +1,13 @@
 import CloseIcon from '@mui/icons-material/Close';
 import useBanner from "@hooks/useBanner"
 import { CSSTransition } from 'react-transition-group';
+import type { BannerProps } from '@models/typings/Banner';
+import type { IComponent } from '@models/typings/Component';
 
-export type BannerProps = {
-  message?: string,
-  url?: string
-}
 
-const Banner = ({ message, url }: BannerProps) => {
+const Banner: IComponent<BannerProps> = ({ ...props }: BannerProps) => {
+
+  const { message, url } = props ?? {}
 
   const { banner: { isOpen }, toggleBanner } = useBanner()
 
@@ -18,10 +18,10 @@ const Banner = ({ message, url }: BannerProps) => {
       timeout={500}
       unmountOnExit
     >
-      <div className="py-2 bg-black">
+      <div className={`py-2 bg-black ${!isOpen ? "swing-out-top-bck" : ""} bg-opacity-80`}>
         <div className="flex items-center justify-center">
-          <p className="text-sm font-bold font-heading text-gray-100 hover:text-gray-400">
-            <a href={url}>
+          <p className="text-sm font-bold font-heading text-gray-300 hover:text-green-600">
+            <a className="shine " href={url}>
               {message ? message : "Message"}
 
             </a>

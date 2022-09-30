@@ -52,7 +52,7 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
             navLinks.map((link, index) => {
               return (
                 <li className="" key={index}>
-                   <a className="mr-8 inline-block w-full  hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-black" href={link.url}>🍃{link.name}</a>
+                  <a className="mr-8 inline-block w-full  hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-black" href={link.url}> <img className="inline-block h-4 mr-1 hvr-pop" src="/assets/images/leaf.svg" />{link.name}</a>
                 </li>
               )
             })
@@ -87,7 +87,7 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
 
 
           <a onClick={() => toggleDrawer()} className="navbar-burger self-center mr-12 hover:scale-90 transition-all" href="#">
-            <EnergySavingsLeafIcon className="text-black h-32" />
+            <img className="inline-block h-10 mr-1 hvr-pop" src="/assets/images/dark-leaf.svg" />
           </a>
         </nav>
 

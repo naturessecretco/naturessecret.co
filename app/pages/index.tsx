@@ -15,13 +15,16 @@ const HomePage = ({ page }) => {
     console.log(`[Naturesecret.co@${page.version}]`, page)
   }, [page])
 
+
+  const { data: { hero, featured, product, mediaRow, summary }, layout } = page
+
   return (
-    <PageLayout {...page.layout}>
-      <Hero {...page.data.hero} />
-      <Featured {...page.data.featured} />
-      <Product {...page.data.product} />
-      <MediaRow {...page.data.mediaRow} />
-      <Summary {...page.data.summary} />
+    <PageLayout {...layout}>
+      <Hero {...hero} />
+      <Featured {...featured} />
+      <Product {...product} />
+      <MediaRow {...mediaRow} />
+      <Summary {...summary} />
     </PageLayout>
   )
 }

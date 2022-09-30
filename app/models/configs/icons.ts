@@ -5,16 +5,18 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import TwitterIcon from "@mui/icons-material/Twitter"
 
 
-
 const icons = () => {
 
-    return {
+    const iconsObject = {
         "KEYBOARD_DOUBLE_ARROW_UP": KeyboardDoubleArrowUpIcon,
         "FACEBOOK": FacebookIcon,
         "TWITTER": TwitterIcon,
         "COFFEE": CoffeeIcon,
         "LINKEDIN": LinkedInIcon,
     }
+
+    return { ...iconsObject } ?? {}
 }
+
 
 export default icons

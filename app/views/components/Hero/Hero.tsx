@@ -13,7 +13,7 @@ export type Link = {
 export type Social = {
     name?: string,
     icon?: string,
-    url: string
+    url?: string
 }
 
 

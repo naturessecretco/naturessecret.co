@@ -1,4 +1,4 @@
 export type BannerProps = {
-    message?: string,
-    url?: string
-  }
+  message?: string,
+  url?: string
+}

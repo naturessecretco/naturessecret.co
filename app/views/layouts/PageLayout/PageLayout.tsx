@@ -13,7 +13,7 @@ const PageLayout = ({ children, metaData, header, footer }) => {
     return (
         <RootLayout metaData={metaData}>
             <ScrollToTop smooth component={<KeyboardDoubleArrowUpIcon />} />
-            <DrawerMenu {...menu} />
+            <DrawerMenu {...menu()} />
             <Header {...header} />
             <Fade triggerOnce cascade>
                 {children}
