@@ -1,11 +1,8 @@
 import icons from "@configs/icons"
-import Fab from '@mui/material/Fab';
-import type { IComponent } from "@models/typings/Component";
-export type IconProps = {
-    id?: string,
-    url?: string,
-    key?: string | number,
-}
+import Fab from '@mui/material/Fab'
+
+import type { IComponent } from "@typings/Component"
+import type { IconProps } from "@typings/Icon"
 
 const Icon: IComponent<IconProps> = ({ id, key, url }: IconProps) => {
 

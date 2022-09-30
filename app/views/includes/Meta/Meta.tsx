@@ -3,9 +3,11 @@ import meta from "@configs/meta"
 
 const Meta = ({ pageTitle }) => {
 
+  const { title: siteTitle } = meta()
+
   return (
     <Head>
-      <title>{meta.title} | {pageTitle ? pageTitle : "Home"}</title>
+      <title>{siteTitle} | {pageTitle ? pageTitle : "Home"}</title>
       <meta name="keywords" content="your, tags" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 

@@ -1,20 +1,22 @@
 import layout from "@configs/layout"
 import meta from "@configs/meta"
-import products from "@db/products"
 import images from "@configs/images"
+
+import products from "@db/products"
 import faqs from "@db/faqs"
+
 import type { DataPage } from "@typings/DataPage"
 
 const pages = ({ store, pageKey }: DataPage) => {
 
     const { getProducts } = products()
     const { getFAQs } = faqs()
+    
+    const { socials } = meta()
 
 
     const productQuery = getProducts(store)
     const faqsQuery = getFAQs(store)
-
-    const { socials } = meta()
 
     const homeHero = images().find((image) => image.id === "home-hero")
 
@@ -121,7 +123,9 @@ const pages = ({ store, pageKey }: DataPage) => {
             }
         },
         products: {
-            metaData: {},
+            metaData: {
+                pageTitle: 'Products'
+            },
             pages: {
                 paths: productQuery.map((product) => ({
                     params: {
@@ -203,10 +207,12 @@ const pages = ({ store, pageKey }: DataPage) => {
     }
 
 
+    const layoutObject = { ...layout(), ...pageData[pageKey].metaData }
+
     const pageObject = {
         id: 'natures-secret-pages-db',
         version: Date.now(),
-        layout: layout(),
+        layout: layoutObject,
         data: pageData[pageKey]
     }
 
