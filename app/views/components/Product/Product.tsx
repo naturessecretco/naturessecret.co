@@ -13,7 +13,7 @@ const $Product = ({ name, price, covers, description }: ProductProps) => {
     return PropsObject
 }
 
-const Product = ({ id, name, heading, price, value, discount, covers, tags, description }: ProductProps) => {
+const Product = ({ id, name, heading, price, value, discount, covers, tags, description, order }: ProductProps) => {
 
     const Header = () => {
 

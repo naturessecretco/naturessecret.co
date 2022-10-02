@@ -9,6 +9,7 @@ export type ProductProps = {
     gumroadURL: string,
     heading?: string,
     description?: string,
+    order?: any,
     sku?: string,
     tags?: string[],
     value?: string,
