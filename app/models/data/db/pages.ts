@@ -7,7 +7,7 @@ import faqs from "@db/faqs"
 
 import type { DataPage } from "@typings/DataPage"
 
-const pages = ({ store, pageKey }: DataPage) => {
+const pages = (store, pageKey) => {
 
     const { getProducts } = products()
     const { getFAQs } = faqs()
@@ -61,6 +61,7 @@ const pages = ({ store, pageKey }: DataPage) => {
                         name: product.name,
                         description: product.description,
                         value: product.value,
+                        gumroad: product.gumroad,       
                         price: product.price,
                         cover: {
                             src: product.covers[0],

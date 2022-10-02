@@ -3,7 +3,7 @@ import meta from "@configs/meta"
 const products = () => {
 
     return {
-        id: 'productsDataBase',
+        id: 'PRODUCTS_DATABSE',
         version: `[Natures Secrets: Products]: ${Date.now()}`,
         getProducts: (store) => {
             return store.filter((data) => {

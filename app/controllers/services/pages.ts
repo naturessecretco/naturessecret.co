@@ -1,10 +1,13 @@
 import pages from "@db/pages"
 import NotionService from '@services/notion'
 import meta from "@configs/meta"
+
+
+
 const PageService = {
 
     loadDataPage: (store?: any, pageKey?: string) => {
-        return pages({ store, pageKey })
+        return pages(store, pageKey)
     },
 
     getPage: async (pageKey: string) => {
@@ -20,10 +23,10 @@ const PageService = {
 
 
         const page = {
-            id: `${siteTitle}-pages`,
+            id: `${siteTitle}@PagesDatabase`,
             db: id,
-            version: version,
-            layout: layout,
+            version,
+            layout,
             ...data,
         }
 

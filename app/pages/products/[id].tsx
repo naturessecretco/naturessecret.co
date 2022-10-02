@@ -1,57 +1,46 @@
+import Featured from "@components/Featured"
 import Hero from "@components/Hero"
-import ProductsSearch from "@views/components/ProductsSearch"
+import MediaRow from "@components/MediaRow"
+import Product from "@components/Product"
+import Summary from "@components/Summary"
+
 import PageLayout from '@layouts/PageLayout'
 import PageService from "@services/pages"
 
-import productsDB from "@models/data/db/products"
 import { useEffect } from "react"
-import Product from "@views/components/Product"
 
-const ProductPage = ({ page }) => {
+const ProductsPage = ({ page }) => {
 
-    useEffect(() => {
-        console.log(`[Naturesecret.co@${page.version}]`, page)
-    }, [page])
+  useEffect(() => {
+    console.log(`[Naturesecret.co@${page.version}]`, page)
+  }, [page])
 
-    return (
-        <PageLayout {...page.layout}>
-            <Product {...page.data.product} />
-        </PageLayout>
-    )
+
+  const { data: { hero, featured, product, mediaRow, summary }, layout } = page
+
+  return (
+    <PageLayout {...layout}>
+      <Hero {...hero} />
+      <Featured {...featured} />
+      <Product {...product} />
+      <MediaRow {...mediaRow} />
+      <Summary {...summary} />
+    </PageLayout>
+  )
 }
 
-export default ProductPage
+export default ProductsPage
 
-export async function getStaticPaths() {
-    const { getPage } = PageService
-    const staticPaths = (await getPage("products")).pages.paths
+export async function getServerSideProps() {
 
-    return {
-        paths: staticPaths,
-        fallback: false
-    }
+  const { getPage } = PageService
 
-}
-export async function getServideSideProps({ params }) {
+  const page = await getPage("home")
 
-    const { getPage } = PageService
-
-    const { layout, pages: { data } } = (await getPage("products"))
-
-    const product = data.filter((product) => product.id === params.id)[0]
-
-    return {
-        props: {
-            page: {
-                layout,
-                data: {
-                    product
-                }
-            },
-           
-
-        },
-
-    }
+  return {
+    props: {
+      page
+    },
+  }
 }
 

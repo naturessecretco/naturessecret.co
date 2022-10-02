@@ -12,7 +12,7 @@ export default async function handler(
   const { loadCentralDogma } = NotionService
 
 
-  const pageKey = req.body.pageKey ? JSON.stringify(req.body.pageKey) : "home"
+  const pageKey = req.body.pageKey ? JSON.stringify(req.body.pageKey) : "products"
 
   const centralDogma = (await loadCentralDogma()).results
 
