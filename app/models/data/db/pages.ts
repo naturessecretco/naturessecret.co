@@ -11,8 +11,7 @@ const pages = ({ store, pageKey }: DataPage) => {
 
     const { getProducts } = products()
     const { getFAQs } = faqs()
-    
-    const { socials } = meta()
+    const { socials, title: siteTitle } = meta()
 
 
     const productQuery = getProducts(store)
@@ -210,7 +209,7 @@ const pages = ({ store, pageKey }: DataPage) => {
     const layoutObject = { ...layout(), ...pageData[pageKey].metaData }
 
     const pageObject = {
-        id: 'natures-secret-pages-db',
+        id: `${siteTitle}-${pageKey}`,
         version: Date.now(),
         layout: layoutObject,
         data: pageData[pageKey]
