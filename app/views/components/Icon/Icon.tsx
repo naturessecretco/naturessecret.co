@@ -4,7 +4,7 @@ import Fab from '@mui/material/Fab'
 import type { IComponent } from "@typings/Component"
 import type { IconProps } from "@typings/Icon"
 
-const Icon: IComponent<IconProps> = ({ id, key, url }: IconProps) => {
+const Icon = ({ id, key, url }: IconProps) => {
 
     const IconComponent = icons()[id]
 
