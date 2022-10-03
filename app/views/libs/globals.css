@@ -13,7 +13,7 @@
     font-family: var(--font-primary) !important;
 }
 :root {
-    --color-primary: rgb(252, 238, 49);
+    --color-primary: rgb(252, 198, 49);
     --color-secondary: rgb(115, 241, 64);
     --color-tertiary: rgb(0, 128, 128);
 
@@ -41,7 +41,6 @@ html {
     border: 0;
     scroll-behavior: smooth;
     background-color: var(--color-primary) !important;
-    font-family: var(--font-secondary) !important;
 }
 
 * {

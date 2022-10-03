@@ -21,6 +21,7 @@ const pages = (store, pageKey) => {
 
     const pageData = {
         home: {
+ 
             metaData: {
                 version: Date.now(),
                 pageTitle: 'Home'

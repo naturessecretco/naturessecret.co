@@ -1,20 +1,20 @@
 
-import type { ILayout } from "@models/typings/Layout"
-import CssBaseline from "@mui/material/CssBaseline"
 import Box from "@mui/material/Box"
 import Meta from "@includes/Meta"
 
 import React from "react"
 
-const RootLayout = ({ children, metaData }: ILayout) => {
+const RootLayout = ({ children, metaData }) => {
+
+    const ContainerSx = {
+        background: "url('/assets/images/bg.jpg') fixed center center",
+        backgroundSize: "cover",
+        boxShadow: 'inset 0 0 0 1000px rgba(252, 198, 49,.25)'
+    }
+
 
     return (
-        <Box sx={{
-            background: "url('/assets/images/bg.jpg') fixed center center",
-            backgroundSize: "cover",
-            boxShadow: 'inset 0 0 0 1000px rgba(254,245,45,.60)'
-
-        }}>
+        <Box sx={ContainerSx}>
             <Meta {...metaData} />
             {children}
         </Box>
