@@ -7,7 +7,7 @@ const images = () => {
         },
         {
             id: 'home-hero',
-            src: '/assets/images/home-hero.png',
+            src: '/assets/images/banner.png',
             alt: 'natures-secret-home-hero'
         }
     ]

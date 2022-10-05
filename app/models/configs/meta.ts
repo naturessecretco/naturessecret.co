@@ -32,7 +32,7 @@ const meta = () => {
         ],
         description: "Home to Natures Best Kept Secrets",
         copyright: "©️ 2022 Natures Secret. All Rights Reserved.",
-        phone: '770-896-8781',
+        phone: '(404) 491-7058',
         socials: [
             {
                 name: 'Facebook',
