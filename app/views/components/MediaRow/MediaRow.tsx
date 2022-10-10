@@ -17,10 +17,10 @@ const MediaRow = ({ media }: MediaRowProps) => {
     const Media = () => {
 
         return (
-            media ? <div className="flex flex-wrap -mx-4 pb-20 border-b">
+            media ? <div className="flex flex-wrap -mx-4 pb-20 border-b font-sans">
                 {media.map((item, index) => {
-                    return (<div key={index} className="relative w-1/2 rounded-full align-center md:w-1/2 lg:w-1/4 px-4 mb-16 lg:mb-0 transition-all">
-                        <div className="relative text-center bg-black bg-opacity-60 hover:bg-opacity-90 transition-all rounded-full p-2">
+                    return (<div key={index} className="cursor-pointer relative w-1/2 rounded-full align-center md:w-1/2 lg:w-1/4 px-4 mb-16 lg:mb-0 transition-all">
+                        <div className="relative text-center bg-black bg-opacity-60 hover:bg-opacity-90 transition-all rounded p-2">
                             <a href={item.url}>
                                 <span className="inline-flex mb-16 items-center justify-center w-30 h-30 pb-10 rounded-full">
                                     <img
@@ -31,6 +31,7 @@ const MediaRow = ({ media }: MediaRowProps) => {
                             </a>
 
                             <h3 className="mb-4 text-xl text-gray-200 font-bold font-heading">{item.title}</h3>
+                            <p className="mb-4 text-xl text-gray-200 font-bold font-heading truncate transform-gpu">{item.description}</p>
                         </div>
                     </div>
                     )

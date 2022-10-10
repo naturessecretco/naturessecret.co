@@ -31,7 +31,7 @@ const Summary = ({ title, content, cta }: SummaryProps) => {
 
         return (
 
-            <h2 className="mb-16 text-4xl font-bold font-heading">{title ? title : "Title"}</h2>
+            <h2 className="mb-16 text-4xl font-bold font-heading font-sans">{title ? title : "Title"}</h2>
 
         )
     }
@@ -55,7 +55,7 @@ const Summary = ({ title, content, cta }: SummaryProps) => {
 
         return (
 
-            content ? <ul className="space-y-4">
+            content ? <ul className="space-y-4 font-sans">
                 {
                     content.map((item, index) => {
                         return (

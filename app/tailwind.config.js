@@ -11,7 +11,7 @@ module.exports = {
     extend: {
       fontFamily: {
         ...fontFamily,
-        'sans': ['Roboto'],
+        'sans': ['Overpass'],
         'serif': ['Monbaiti'],
       }
     }

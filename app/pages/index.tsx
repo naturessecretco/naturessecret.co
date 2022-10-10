@@ -3,6 +3,7 @@ import Hero from "@components/Hero"
 import MediaRow from "@components/MediaRow"
 import Product from "@components/Product"
 import Summary from "@components/Summary"
+import Grid from "@components/Grid"
 
 import PageLayout from '@layouts/PageLayout'
 import PageService from "@services/pages"
@@ -16,13 +17,14 @@ const HomePage = ({ page }) => {
   }, [page])
 
 
-  const { data: { hero, featured, product, mediaRow, summary }, layout } = page
+  const { data: { hero, featured, product, mediaRow, summary, grid }, layout } = page
 
   return (
     <PageLayout {...layout}>
       <Hero {...hero} />
       <Featured {...featured} />
       <Product {...product} />
+      <Grid {...grid} />
       <MediaRow {...mediaRow} />
       <Summary {...summary} />
     </PageLayout>

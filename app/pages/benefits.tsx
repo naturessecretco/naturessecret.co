@@ -13,7 +13,6 @@ const BenefitsPage = ({ page }) => {
 
   return (
     <PageLayout {...page.layout}>
-      <h1 className="mt-6 text-5xl mb-2 leading-tight font-bold font-heading">Benefits in Eating SuperFoods</h1>
       <Grid {...page.data.grid} />
     </PageLayout>
   )

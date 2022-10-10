@@ -3,7 +3,7 @@ import { CallToActionProps } from '@models/typings/CallToAction';
 import type { ImageProps } from "@typings/Image";
 import { Fade } from 'react-awesome-reveal';
 import Icon from "@components/Icon"
-
+import { SocialIcon } from "react-social-icons";
 
 export type Link = {
     name?: string,
@@ -67,7 +67,7 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
                             return (
                                 <div key={index} className="w-full">
                                     <img
-                                        className="h-full md:h-full w-full object-fit bg-black bg-opacity-40 rounded"
+                                        className="h-3/4 md:h-full w-full object-fit rounded"
                                         src={cover.src}
                                         alt={cover.alt}
                                     />
@@ -98,22 +98,22 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
     const FeatureLinks = () => {
 
         return (
-            <div className="relative py-12 overflow-hidden">
+            <div className="relative py-12 overflow-hidden font-sans">
                 <div className="relative container mx-auto px-4">
                     <div className="flex flex-wrap -mx-4">
-                        <div className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0">
+                        <div className="w-full lg:w-1/3 px-4 mb-8 lg:mb-0 border-2 border-black">
 
-                            <div className="px-4 md:px-8 py-10 bg-black bg-opacity-80  rounded">
-                                <h4 className="pl-8 mb-2 text-sm font-bold font-heading text-gray-300 uppercase">
+                            <div className="px-4 md:px-8 py-10 bg-opacity-80  rounded">
+                                <h4 className="pl-8 mb-2 text-sm font-bold font-heading text-gray-900 uppercase">
                                     {features?.heading}
                                 </h4>
 
-                                <ul style={{ fontFamily: 'var(--font-secondary)' }} className="mb-5">
+                                <ul className="mb-5">
 
-                                    <Fade cascade>
+                                    <Fade triggerOnce duration={600} cascade>
                                         {features.links ? features.links.map((link, index) => {
                                             return (
-                                                <li key={index} className="py-5 px-8">
+                                                <li key={index} className="py-5 px-8 bg-black duration-200  ease-in rounded mt-8 bg-opacity-40 cursor-pointer hover:bg-opacity-90">
                                                     <a
                                                         className="flex items-center text-lg text-gray-300 font-bold font-heading hover:text-green-700"
                                                         href={link.url}
@@ -144,7 +144,7 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
                                     >
                                         <path
                                             d="M6.5 5.09179L11.5558 -6.31273e-08L13 1.4541L6.5 8L-6.35609e-08 1.4541L1.44419 -5.05121e-07L6.5 5.09179Z"
-                                            fill="#9A97A7"
+                                            fill="#FFFFFF"
                                         />
                                     </svg>
                                 </a>
@@ -180,7 +180,8 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
                     {
                         socials.map((social, index) => {
                             return (
-                                <Icon url={social.url} key={index} id={social.icon} />
+                                <SocialIcon url={social.url} key={index} bgColor="#2d6019" 
+                                className="hover:scale-90 transition-all hover:bg-opacity-50 ml-2" />
                             )
                         })
                     }

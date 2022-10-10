@@ -56,6 +56,44 @@ const pages = (store, pageKey) => {
                     },
                     backgroundCover: homeHero.src,
                 },
+                grid: {
+                    items: [
+                        {
+                            title: 'Bodily Healing',
+                            cover: {
+                                src: '/assets/images/bodily-healing.svg',
+                            }
+                        }, {
+                            title: 'Natural Immunity',
+                            cover: {
+                                src: '/assets/images/Immunity.svg',
+                            }
+                        },
+                        {
+                            title: 'Sinus Relief',
+                            cover: {
+                                src: '/assets/images/mucus.svg',
+                            }
+                        },
+                        {
+                            title: 'Skin Health & Youthfulness',
+                            cover: {
+                                src: '/assets/images/skin-health.svg',
+                            }
+                        }, {
+                            title: 'Improved Circulation & Energy',
+                            cover: {
+                                src: '/assets/images/blood-flow.svg',
+                            }
+                        }, {
+                            title: 'Antioxidants',
+                            cover: {
+                                src: '/assets/images/antioxidants.svg',
+                            }
+                        }
+                    ]
+
+                },
                 featured: {
                     features: productQuery.map(product => ({
                         id: product.id,

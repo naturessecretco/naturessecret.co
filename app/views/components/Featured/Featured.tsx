@@ -34,91 +34,70 @@ const Featured = ({ title, cta, features }: HeroProps) => {
 
     const Features = () => {
         return (
+            features ? <div className="flex mb-16">
+                <div className="flex-shrink-0 w-full flex flex-wrap">
 
-            features ? <div className="flex-shrink-0 w-full flex flex-wrap">
-
-
-                {
-                    features.map((feature, index) => {
-                        return (
-                            <div key={index} className="w-1/2 hover:bg-opacity-50 md:px-3 mb-6 rounded bg-black bg-opacity-20 backdrop-blur-xl transition-all">
-                                <a className="relative block" href={`/products/${feature.id}`}>
-                                    <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-black bg-opacity-60 border-2 border-green-500 rounded-full text-green-500">
-                                        {(feature.discount * 100)}%    
-                                    </span>
-                                    <img
-                                        className="w-3/4 h-3/4 m-auto center-self object-fit"
-                                        src={`${feature.cover.src}`}
-                                        alt={`${feature.cover.alt}`}
-                                    />
-                                    <div className="px-8 pb-10 mt-12">
-                                        <div className="px-6 mb-2">
-                                            <h3 className="mb-3 text-3xl text-black font-bold font-heading">
-                                                {feature.name}
-                                            </h3>
-                                            <p className="mb-4 text-xl font-bold font-heading text-white">
-                                                <span>${feature.price}</span>
-                                                <span className="ml-1 text-sm text-blue-700 font-semibold font-heading line-through">
-                                                    ${feature.value}
-                                                </span>
-                                            </p>
-                                            <GumroadButton productLink={feature.gumroad}/>
-                                            <p className="text-gray-200 text-xl">{feature.description}</p>
+                    {
+                        features.map((feature, index) => {
+                            return (
+                                <div key={index} className="w-full lg:w-1/2 md:px-3 mb-6">
+                                    <a className="relative block" href={feature.gumroad}>
+                                        <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-white border-2 border-red-500 rounded-full text-red-500">
+                                            {feature?.discount}
+                                        </span>
+                                        <img
+                                            className="w-full h-68 object-fit"
+                                            src={feature?.cover.src}
+                                            alt={feature?.cover.alt}
+                                        />
+                                        <div className="px-6 pb-16 mt-12">
+                                            <div className="px-6 mb-2">
+                                                <h3 className="mb-3 text-3xl text-white font-bold font-heading">
+                                                    {feature.name}
+                                                </h3>
+                                                <p className="mb-4 text-xl font-bold font-heading text-white">
+                                                    <span>{feature?.price}</span>
+                                                    <span className="text-xs text-blue-100 font-semibold font-heading line-through">
+                                                        {feature?.discount}
+                                                    </span>
+                                                </p>
+                                                <p className="text-green-100 font-md">{feature?.description}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
-                        )
-                    })}
-
-            </div> : <></>
-
-        )
-    }
-
-    const Title = () => {
-        return (
-            <h1 className="text-black mb-16 md:mb-24 text-6xl md:text-4xl font-thin font-heading">
-                {title ? title : "Title"}
-            </h1>
-
-        )
-    }
-
-    const CTA = () => {
-        return (
-
-            cta ? <div className="text-center">
-                <a
-                    className="inline-block hover:scale-90 transition-all bg-green-600 hover:bg-gray-900 text-gray-200 font-bold font-heading py-5 px-8 rounded-md uppercase"
-                    href={cta.url}
-                >
-                    {cta.name}
-                </a>
-            </div> : <></>
-        )
-    }
-
-    return (
-        <section className="py-20 overflow-x-hidden">
-
-            <div className="container mx-auto px-4">
-
-                <Title />
+                                    </a>
+                                </div>
+                            )
+                        })}
 
 
-                <div className="flex mb-16">
-
-
-                    <Features />
 
                 </div>
 
 
-                <CTA />
+            </div> : <>FEATURES_NOT_FOUND</>
+        )
+    }
+    return (
+        <section className="py-20 overflow-x-hidden font-sans">
+            <div className="container mx-auto px-4">
+                <h2 className="mb-16 md:mb-24 text-4xl md:text-5xl font-bold font-heading">
+                    {title ? title : "TITLE_NOT_FOUND"}
+                </h2>
 
+
+                <Features />
+
+                <div className="text-center">
+                    <a
+                        className="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold font-heading py-5 px-8 rounded-md uppercase"
+                        href="#"
+                    >
+                        All products
+                    </a>
+                </div>
             </div>
         </section>
+
 
     )
 }

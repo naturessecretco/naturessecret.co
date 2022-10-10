@@ -7,11 +7,13 @@
     font-family: Monbaiti;
     src: url(/assets/fonts/Monbaiti.ttf);
 }
-
+.cart-button {
+    visibility: hidden !important;
+}
 
 :root {
     --color-primary: rgb(252, 198, 49);
-    --color-secondary: rgb(115, 241, 64);
+    --color-secondary: #2d6019;
     --color-tertiary: rgb(0, 128, 128);
 
     --quicksand: 'Quicksand', sans-serif;

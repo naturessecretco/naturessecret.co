@@ -15,7 +15,7 @@ const PageLayout = ({ children, metaData, header, footer }) => {
             <ScrollToTop smooth component={<KeyboardDoubleArrowUpIcon />} />
             <DrawerMenu {...menu()} />
             <Header {...header} />
-            <Fade triggerOnce cascade>
+            <Fade triggerOnce duration={200} cascade>
                 {children}
             </Fade>
             <Footer {...footer} />

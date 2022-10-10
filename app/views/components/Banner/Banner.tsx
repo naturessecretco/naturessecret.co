@@ -15,10 +15,10 @@ const Banner: IComponent<BannerProps> = ({ ...props }: BannerProps) => {
 
     <CSSTransition
       in={isOpen}
-      timeout={500}
+      timeout={200}
       unmountOnExit
     >
-      <div className={`py-2 bg-black ${!isOpen ? "swing-out-top-bck" : ""} bg-opacity-80`}>
+      <div className={`py-2 bg-black ${!isOpen ? "swing-out-top-bck" : ""} bg-opacity-90 font-sans`}>
         <div className="flex items-center justify-center">
           <p className="text-sm font-bold font-heading text-gray-300 hover:text-green-600">
             <a className="shine " href={url}>

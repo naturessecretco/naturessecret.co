@@ -1,7 +1,7 @@
 import FadeAnimation from "@components/FadeAnimation"
 import KofiSupportButton from '@components/KofiSupportButton';
 import Icon from "@components/Icon"
-
+import { SocialIcon } from "react-social-icons";
 import type { FooterProps } from "@typings/Footer"
 
 const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterProps) => {
@@ -54,7 +54,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
                         <FadeAnimation cascade triggerOnce>
                             {socials?.map((social, index) => {
                                 return (
-                                    <Icon id={social.icon} url={social.url} key={index} />
+                                    <SocialIcon  className="ml-2" bgColor="#2d6019" url={social.url} key={index} />
                                 )
                             })}
                         </FadeAnimation>
@@ -95,7 +95,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
         return (
 
             copyright ? <div id="contact" className="mt-10 text-center shine">
-                <h3 className="text-green-200 shine font-bold text-lg">{copyright ? copyright : "Copyright"}</h3>
+                <h3 className="shine font-bold text-lg text-black">{copyright ? copyright : "Copyright"}</h3>
             </div> : <></>
         )
     }
@@ -105,7 +105,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
 
             <div id="contact" className="mt-10 text-center mr-4">
                 <a href="https://desirable.solutions">
-                    <h4 className="hover:text-green-500 text-sm tranisition-all text-gray-200 font-bold">Site by Désirable Solutions</h4>
+                    <h4 className="hover:text-green-700 text-sm tranisition-all text-black bg-opacity-50 font-bold">Site by Désirable Solutions</h4>
                 </a>
             </div>
         )
@@ -130,7 +130,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
 
     return (
 
-        <section className="py-20  w-full">
+        <section className="py-20 w-full font-sans">
             <div className="container mx-auto px-4">
                 <div className="text-center pb-20 border-b border-black">
                     <Favicon />
