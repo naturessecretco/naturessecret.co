@@ -5,10 +5,7 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<any>
 ) {
-
-    const { loadCentralDogma } = NotionService
-
-    const centralDogma = (await loadCentralDogma()).results
-
+    const { getCentralDogma } = NotionService()
+    const centralDogma = (await getCentralDogma()).results
     res.status(200).json(centralDogma)
 }

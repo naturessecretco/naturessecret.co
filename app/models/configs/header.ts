@@ -1,15 +1,33 @@
-import meta from "@configs/meta"
 
-const header = () => {
+import type { HeaderProps } from "@typings/Header"
+import images from "@configs/images"
 
-    return {
-        favicon: meta().favicon,
-        navLinks: meta().links,
-        bannerProps: {
-            message: 'Try our Wildcrafted Seamoss Today!',
-            url: '/products/wildcrafted-seamoss'
+const header = ({ favicon, navLinks, banner }: HeaderProps) => {
+
+    const logoImage = images().find((image) => image.id === "logo")
+    
+    const defaultObject: HeaderProps = {
+        favicon: {
+            image: logoImage,
+            url: "/"
+        },
+
+        navLinks: [],
+        banner: {
+            message: '',
+            url: '',
         }
+
     }
+
+    const headerObject: HeaderProps = {
+        favicon: favicon ?? defaultObject?.favicon,
+        navLinks: navLinks ?? defaultObject?.navLinks,
+        banner: banner ?? defaultObject?.banner
+    }
+
+    return { ...headerObject } as HeaderProps
 }
+
 
 export default header

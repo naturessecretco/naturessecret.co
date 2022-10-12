@@ -1,27 +1,18 @@
-import layout from "@configs/layout"
-import meta from "@configs/meta"
-import images from "@configs/images"
+import { meta, layout, images } from "@configs/index"
+import { faqs, products } from "@db/index"
 
-import products from "@db/products"
-import faqs from "@db/faqs"
-
-import type { DataPage } from "@typings/DataPage"
 
 const pages = (store, pageKey) => {
 
-    const { getProducts } = products()
-    const { getFAQs } = faqs()
-    const { socials, title: siteTitle } = meta()
+    const { socials, title } = meta({})
 
-
-    const productQuery = getProducts(store)
-    const faqsQuery = getFAQs(store)
+    const { getProducts } = products(store)
 
     const homeHero = images().find((image) => image.id === "home-hero")
 
     const pageData = {
         home: {
- 
+
             metaData: {
                 version: Date.now(),
                 pageTitle: 'Home'
@@ -30,7 +21,7 @@ const pages = (store, pageKey) => {
                 hero: {
                     title: 'Home to Natures Best Kept Secrets',
                     socials,
-                    covers: productQuery.map(product => ({ src: product.advertisements[0], alt: product.advertisements[0] })),
+                    covers: getProducts().map(product => ({ src: product.advertisements[0], alt: product.advertisements[0] })),
                     features: {
                         heading: 'Home to Natures Best Kept Secrets',
                         links: [
@@ -95,12 +86,12 @@ const pages = (store, pageKey) => {
 
                 },
                 featured: {
-                    features: productQuery.map(product => ({
+                    features: getProducts().map(product => ({
                         id: product.id,
                         name: product.name,
                         description: product.description,
                         value: product.value,
-                        gumroad: product.gumroad,       
+                        gumroad: product.gumroad,
                         price: product.price,
                         cover: {
                             src: product.covers[0],
@@ -112,7 +103,7 @@ const pages = (store, pageKey) => {
 
                 },
                 product: {
-                    ...productQuery.map((product) => ({
+                    ...getProducts().map((product) => ({
                         ...product,
                         covers: product.covers.map((cover) => ({ src: cover, alt: cover })),
                         description: product.description,
@@ -123,14 +114,14 @@ const pages = (store, pageKey) => {
                     }))[0]
                 },
                 mediaRow: {
-                    media: [...productQuery.map((product) => {
+                    media: [...getProducts().map((product) => {
                         return {
                             url: `/products/${product.id}`,
                             description: product.description,
                             title: product.name,
                             cover: {
-                                src: product.covers[1],
-                                alt: product.covers[1]
+                                src: product?.covers[0],
+                                alt: product?.covers[0]
                             }
 
                         }
@@ -166,12 +157,12 @@ const pages = (store, pageKey) => {
                 pageTitle: 'Products'
             },
             pages: {
-                paths: productQuery.map((product) => ({
+                paths: getProducts().map((product) => ({
                     params: {
                         id: product.id
                     }
                 })),
-                data: productQuery.map((product) => ({
+                data: getProducts().map((product) => ({
                     ...product,
                     covers: product.covers.map((cover) => ({ src: cover, alt: cover })),
                     order: {
@@ -184,7 +175,7 @@ const pages = (store, pageKey) => {
 
                 productsSearch: {
                     title: 'Our Products',
-                    items: productQuery.map((product) => ({
+                    items: getProducts().map((product) => ({
                         id: product.id,
                         name: product.name,
                         description: product.description,
@@ -246,12 +237,10 @@ const pages = (store, pageKey) => {
     }
 
 
-    const layoutObject = { ...layout(), ...pageData[pageKey].metaData }
-
     const pageObject = {
-        id: `${siteTitle}-${pageKey}`,
+        id: `${title}-${pageKey}`,
         version: Date.now(),
-        layout: layoutObject,
+        layout: { ...layout({}), ...pageData[pageKey].metaData },
         data: pageData[pageKey]
     }
 

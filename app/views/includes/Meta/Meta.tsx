@@ -3,31 +3,37 @@ import meta from "@configs/meta"
 
 const Meta = ({ pageTitle }) => {
 
-  const { title: siteTitle } = meta()
+  const { title: siteTitle } = meta({})
+
+  const Icons = () => {
+    return (
+      <>
+
+      </>
+    )
+  }
 
   return (
     <Head>
       <title>{siteTitle} | {pageTitle ? pageTitle : "Home"}</title>
       <meta name="keywords" content="your, tags" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="description" content="Home to natures best kept secrets." />
       <meta name="subject" content="your website's subject" />
-      <meta name="copyright" content="company name" />
-      <meta name="language" content="ES" />
+      <meta name="copyright" content="Nature's Secret" />
+      <meta name="language" content="EN" />
       <meta name="robots" content="index,follow" />
       <meta name="revised" content="Sunday, July 18th, 2010, 5:15 pm" />
       <meta name="abstract" content="" />
       <meta name="topic" content="" />
       <meta name="summary" content="" />
-      <meta name="Classification" content="Business" />
+      <meta name="Classification" content="Health Food Store" />
       <meta name="author" content="name, email@hotmail.com" />
       <meta name="designer" content="" />
       <meta name="copyright" content="" />
       <meta name="reply-to" content="email@hotmail.com" />
       <meta name="owner" content="" />
-      <meta name="url" content="http://www.websiteaddrress.com" />
-
+      <meta name="url" content="http://www.naturessecret.co" />
       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <link
@@ -70,8 +76,6 @@ const Meta = ({ pageTitle }) => {
         sizes="180x180"
         href="/assets/icons/180x180.png"
       />
-
-
 
 
     </Head>

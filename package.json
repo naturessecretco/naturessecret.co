@@ -1,24 +1,26 @@
 {
   "name": "naturessecret.co",
-  "version": "11.0.31",
-  "description": "",
+  "version": "0.0.9",
+  "description": "Home to Natures Best Kept Secrets.",
   "main": "index.js",
   "directories": {
-    "doc": "docs"
+    "doc": "docs",
+    "app": "app",
+    "sso": "sso",
   },
   "scripts": {
     "readme:g": "npx @appnest/readme generate",
-    "app:dev": "cd app && npm i && npm run dev --no-cache",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "app:dev": "cd app && npm i && npm run dev",
+    "test": "cd app && npm i && npm run build",
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/desirtech/naturessecret.co.git"
+    "url": "git+https://github.com/naturessecret/naturessecret.co.git"
   },
   "author": "Jeffrey Desir",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/desirtech/naturessecret.co/issues"
+    "url": "https://github.com/naturessescret/naturessecret.co/issues"
   },
-  "homepage": "https://github.com/desirtech/naturessecret.co#readme"
+  "homepage": "https://github.com/naturessescret/naturessecret.co#readme"
 }

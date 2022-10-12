@@ -1,14 +1,21 @@
-import header from "@configs/header";
-import footer from "@configs/footer"
+import { default as headerConfig } from "@configs/header";
+import { default as footerConfig } from "@configs/footer"
 
-const layout = () => {
+import type { LayoutProps } from "@typings/Layout"
 
-    const [headerData, footerData] = [header(), footer()]
+const layout = ({ header, footer }: LayoutProps) => {
 
-    return {
-        header: headerData,
-        footer: footerData,
+    const defaultObject: LayoutProps = {
+        header: headerConfig({}),
+        footer: footerConfig({}),
     }
+
+    const layoutObject: LayoutProps = {
+        header: header ?? defaultObject?.header,
+        footer: footer ?? defaultObject?.footer
+    }
+
+    return { ...layoutObject } as LayoutProps
 }
 
 export default layout 

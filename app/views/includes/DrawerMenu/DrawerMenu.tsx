@@ -1,23 +1,16 @@
-import useDrawer from "@hooks/useDrawer"
-import { CSSTransition } from 'react-transition-group';
 import CloseIcon from '@mui/icons-material/Close';
-import { Fade } from "react-awesome-reveal"
+
+import FadeAnimation from "@components/FadeAnimation";
+import useDrawer from "@hooks/useDrawer";
 import ClickAwayListener from '@mui/material/ClickAwayListener';
+import { CSSTransition } from 'react-transition-group';
 
-export type Link = {
-    name: string,
-    url?: string
-}
+import type { IComponent } from "@models/typings/Component";
+import type { MenuProps } from "@typings/Menu";
 
-export type DrawerMenuProps = {
+const DrawerMenu: IComponent<MenuProps> = ({ navLinks }: MenuProps) => {
 
-    navLinks?: Link[]
-}
-
-
-const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
-
-    const { drawer: { isOpen }, toggleDrawer, closeDrawer } = useDrawer()
+    const { drawer: { isOpen }, closeDrawer } = useDrawer()
 
 
     const NavLinks = () => {
@@ -25,7 +18,7 @@ const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
         return (
             navLinks ?
                 <ul className="text-2xl font-thin font-heading">
-                    <Fade cascade>
+                    <FadeAnimation triggerOnce cascade>
                         {
                             navLinks.map((link, index) => {
                                 return (
@@ -36,7 +29,7 @@ const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
                                 )
                             })
                         }
-                    </Fade>
+                    </FadeAnimation>
 
 
 
@@ -45,9 +38,8 @@ const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
     }
 
     return (
-
         <CSSTransition in={isOpen}
-            timeout={500}
+            timeout={250}
             unmountOnExit>
             <div className="navbar-menu fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-50">
                 <ClickAwayListener onClickAway={() => closeDrawer()}>
@@ -82,7 +74,6 @@ const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
 
 
         </CSSTransition >
-
     )
 }
 

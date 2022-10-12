@@ -1,5 +1,6 @@
 const images = () => {
-    const data = [
+    
+    const imageData = [
         {
             id: 'logo',
             src: '/assets/images/logo.png',
@@ -12,7 +13,7 @@ const images = () => {
         }
     ]
 
-    return data
+    return imageData
 }
 
 export default images

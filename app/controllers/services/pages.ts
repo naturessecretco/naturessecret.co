@@ -1,38 +1,35 @@
-import pages from "@db/pages"
+import pages from "@models/data/pages"
 import NotionService from '@services/notion'
 import meta from "@configs/meta"
 
+const PageService = () => {
 
+    const serviceObject = {
+        getPage: async (pageKey: string) => {
 
-const PageService = {
+            const { title: siteTitle } = meta({})
 
-    loadDataPage: (store?: any, pageKey?: string) => {
-        return pages(store, pageKey)
-    },
+            const { getCentralDogma } = NotionService()
 
-    getPage: async (pageKey: string) => {
+            const centralDogma = (await getCentralDogma()).results
 
-        const { title: siteTitle } = meta()
+            const { layout, data, id, version } = pages(centralDogma, pageKey ? pageKey : "home")
 
-        const { loadDataPage } = PageService
-        const { loadCentralDogma } = NotionService
+            const page = {
+                id: `${siteTitle}@PagesDatabase`,
+                db: id,
+                version,
+                layout,
+                ...data,
+            }
 
-        const centralDogma = (await loadCentralDogma()).results
+            return page
 
-        const { layout, data, id, version } = loadDataPage(centralDogma, pageKey ? pageKey : "home")
+        },
 
+    }
 
-        const page = {
-            id: `${siteTitle}@PagesDatabase`,
-            db: id,
-            version,
-            layout,
-            ...data,
-        }
-
-        return page
-
-    },
+    return { ...serviceObject }
 
 }
 

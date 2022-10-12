@@ -1,30 +1,29 @@
-import meta from "@configs/meta"
+import FacadeService from "@controllers/services/facade"
 
-const products = () => {
 
-    return {
-        id: 'PRODUCTS_DATABSE',
-        version: `[Natures Secrets: Products]: ${Date.now()}`,
-        getProducts: (store) => {
+const products = (store: any[]) => {
+
+    const { products } = FacadeService().types
+
+    const databaseObject = {
+        id: 'PRODUCTS_DATABASE_ID',
+        version: Date.now(),
+        getProducts: () => {
             return store.filter((data) => {
-                return data?.properties?.Type?.select?.name === "🛍️Product"
+                return (
+                    products.predicate(data)
+                )
             }).map((data) => {
-                return {
-                    id: data?.properties?.ID?.rich_text[0]?.plain_text || "",
-                    name: data?.properties?.Name?.title[0]?.plain_text,
-                    description: data?.properties?.Description?.rich_text[0].text.content,
-                    gumroad: data?.properties?.Gumroad?.url,
-                    value: data?.properties?.Value?.number,
-                    price: data?.properties?.Price?.formula.number,
-                    advertisements: data?.properties?.Advertisements?.files.map(f => f.file.url),
-                    covers: data?.properties?.Covers?.files.map(f => f.file.url),
-                    discount: data?.properties?.Discount?.number,
-                }
+                return (
+                    products.shape(data)
+                )
             })
 
         }
 
     }
+
+    return { ...databaseObject }
 }
 
 export default products

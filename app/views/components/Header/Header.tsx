@@ -1,28 +1,12 @@
 import Banner from "@components/Banner";
 import useDrawer from "@hooks/useDrawer";
-import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-import type { FaviconProps } from "@typings/Favicon";
+import { Fade } from "react-awesome-reveal";
 import Headroom from "react-headroom";
-import { Fade } from "react-awesome-reveal"
-import EnergySavingsLeafIcon from '@mui/icons-material/EnergySavingsLeaf';
-import Icon from "@components/Icon";
-export type Link = {
-  name: string,
-  url: string
-}
+import type { HeaderProps } from "@typings/Header";
 
-export type HeaderProps = {
-  favicon?: FaviconProps,
-  navLinks?: Link[]
-  bannerProps?: any
+const Header = ({ favicon, links, banner }: HeaderProps) => {
 
-}
-
-
-
-const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
-
-  const { drawer: { isOpen }, toggleDrawer } = useDrawer()
+  const { drawer, toggleDrawer } = useDrawer()
 
 
   const Favicon = () => {
@@ -46,10 +30,10 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
   const NavLinks = () => {
 
     return (
-      navLinks ? <ul className="hidden lg:flex absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:items-center lg:w-auto">
-        <Fade cascade triggerOnce>
+      links ? <ul className="hidden lg:flex absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:items-center lg:w-auto">
+        <Fade duration={333} cascade triggerOnce>
           {
-            navLinks.map((link, index) => {
+            links.map((link, index) => {
               return (
                 <li className="" key={index}>
                   <a className="mr-8 font-sans inline-block w-full  hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-black" href={link.url}> <img className="inline-block h-4 mr-1 hvr-pop" src="/assets/images/leaf.svg" />{link.name}</a>
@@ -69,25 +53,16 @@ const Header = ({ favicon, navLinks, bannerProps }: HeaderProps) => {
 
     <Headroom>
       <section className="relative backdrop-blur-3xl">
-
-
-        <Banner {...bannerProps} />
-
+        <Banner {...banner} />
         <nav className="relative flex justify-between">
           <div className="px-12 py-6 flex w-full items-center">
-
-
             <Favicon />
-
             <NavLinks />
           </div>
-
-
-          <a onClick={() => toggleDrawer()} className="navbar-burger self-center mr-12 hover:scale-90 transition-all" href="#">
+          <a onClick={() => toggleDrawer()} className="navbar-burger self-center mr-12 hover:scale-90 transition-all">
             <img className="inline-block h-10 mr-1 hvr-pop" src="/assets/images/dark-leaf.svg" />
           </a>
         </nav>
-
       </section>
     </Headroom>
 

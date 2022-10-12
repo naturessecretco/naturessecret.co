@@ -1,13 +1,10 @@
-import CloseIcon from '@mui/icons-material/Close';
-import useBanner from "@hooks/useBanner"
-import { CSSTransition } from 'react-transition-group';
+import useBanner from "@hooks/useBanner";
 import type { BannerProps } from '@models/typings/Banner';
-import type { IComponent } from '@models/typings/Component';
+import CloseIcon from '@mui/icons-material/Close';
+import { CSSTransition } from 'react-transition-group';
 
 
-const Banner: IComponent<BannerProps> = ({ ...props }: BannerProps) => {
-
-  const { message, url } = props ?? {}
+const Banner = ({ message, url }: BannerProps) => {
 
   const { banner: { isOpen }, toggleBanner } = useBanner()
 

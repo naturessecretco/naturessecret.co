@@ -1,8 +1,8 @@
-import images from "@configs/images"
+import type { MetaProps } from "@typings/Meta"
 
-const meta = () => {
+const meta = ({ title, links, socials, phone, copyright, description, email, favicon }: MetaProps) => {
 
-    const metaObject = {
+    const defaultObject: MetaProps = {
         title: "Natures Secret",
         version: Date.now(),
         links: [
@@ -67,7 +67,19 @@ const meta = () => {
         }
     }
 
-    return { ...metaObject } ?? null
+    const metaObject: MetaProps = {
+        title: title || defaultObject.title,
+        version: Date.now(),
+        links: links || defaultObject.links,
+        description: description || defaultObject.description,
+        socials: socials || defaultObject.socials,
+        phone: phone || defaultObject.phone,
+        email: email || defaultObject.email,
+        favicon: favicon || defaultObject.favicon,
+        copyright: copyright || defaultObject.copyright
+    }
+
+    return { ...metaObject } as MetaProps
 }
 
 export default meta
