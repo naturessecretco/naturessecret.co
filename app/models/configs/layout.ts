@@ -3,16 +3,18 @@ import { default as footerConfig } from "@configs/footer"
 
 import type { LayoutProps } from "@typings/Layout"
 
-const layout = ({ header, footer }: LayoutProps) => {
+const layout = ({ header, footer, metaData }: LayoutProps) => {
 
     const defaultObject: LayoutProps = {
         header: headerConfig({}),
         footer: footerConfig({}),
+        metaData: {}
     }
 
     const layoutObject: LayoutProps = {
         header: header ?? defaultObject?.header,
-        footer: footer ?? defaultObject?.footer
+        footer: footer ?? defaultObject?.footer,
+        metaData: metaData ?? defaultObject?.metaData
     }
 
     return { ...layoutObject } as LayoutProps

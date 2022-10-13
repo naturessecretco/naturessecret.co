@@ -1,4 +1,3 @@
-import meta from "@configs/meta"
 
 import type { MenuProps } from "@models/typings/Menu"
 

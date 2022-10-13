@@ -68,15 +68,15 @@ const meta = ({ title, links, socials, phone, copyright, description, email, fav
     }
 
     const metaObject: MetaProps = {
-        title: title || defaultObject.title,
+        title: title ?? defaultObject.title,
         version: Date.now(),
-        links: links || defaultObject.links,
-        description: description || defaultObject.description,
-        socials: socials || defaultObject.socials,
-        phone: phone || defaultObject.phone,
-        email: email || defaultObject.email,
-        favicon: favicon || defaultObject.favicon,
-        copyright: copyright || defaultObject.copyright
+        links: links ?? defaultObject.links,
+        description: description ?? defaultObject.description,
+        socials: socials ?? defaultObject.socials,
+        phone: phone ?? defaultObject.phone,
+        email: email ?? defaultObject.email,
+        favicon: favicon ?? defaultObject.favicon,
+        copyright: copyright ?? defaultObject.copyright
     }
 
     return { ...metaObject } as MetaProps

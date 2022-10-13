@@ -1,4 +1,4 @@
 export type ImageProps = { 
-    src?: string,
+    url?: string,
     alt?: string
 }

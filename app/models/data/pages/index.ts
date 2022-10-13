@@ -1,18 +1,17 @@
-import { meta, layout, images } from "@configs/index"
-import { faqs, products } from "@db/index"
+import { images, layout, meta as metaConfig } from "@configs/index"
+import { products, meta } from "@db/index"
 
+const pages = ({ store, pageKey }) => {
 
-const pages = (store, pageKey) => {
-
-    const { socials, title } = meta({})
+    const { socials, title } = metaConfig({})
 
     const { getProducts } = products(store)
+    const { getMeta } = meta(store)
 
     const homeHero = images().find((image) => image.id === "home-hero")
 
     const pageData = {
         home: {
-
             metaData: {
                 version: Date.now(),
                 pageTitle: 'Home'
@@ -21,7 +20,8 @@ const pages = (store, pageKey) => {
                 hero: {
                     title: 'Home to Natures Best Kept Secrets',
                     socials,
-                    covers: getProducts().map(product => ({ src: product.advertisements[0], alt: product.advertisements[0] })),
+                    test: getMeta(),
+                    covers: getMeta(),
                     features: {
                         heading: 'Home to Natures Best Kept Secrets',
                         links: [
@@ -91,7 +91,6 @@ const pages = (store, pageKey) => {
                         name: product.name,
                         description: product.description,
                         value: product.value,
-                        gumroad: product.gumroad,
                         price: product.price,
                         cover: {
                             src: product.covers[0],
@@ -107,9 +106,7 @@ const pages = (store, pageKey) => {
                         ...product,
                         covers: product.covers.map((cover) => ({ src: cover, alt: cover })),
                         description: product.description,
-                        order: {
-                            url: product.gumroad,
-                        },
+
                         heading: 'On Sale!'
                     }))[0]
                 },
@@ -129,10 +126,7 @@ const pages = (store, pageKey) => {
                 },
                 summary: {
                     title: 'Frequently Asked Questions',
-                    content: faqsQuery.map((faq) => ({
-                        question: faq.question,
-                        answer: faq.answer
-                    }))
+                    content: []
                 }
             },
 
@@ -167,7 +161,6 @@ const pages = (store, pageKey) => {
                     covers: product.covers.map((cover) => ({ src: cover, alt: cover })),
                     order: {
                         heading: 'Order Now',
-                        url: product.gumroad,
                     }
                 }))
             },
@@ -179,9 +172,7 @@ const pages = (store, pageKey) => {
                         id: product.id,
                         name: product.name,
                         description: product.description,
-                        order: {
-                            url: product.gumroad
-                        },
+
                         value: product.value,
                         price: product.price,
                         cover: product.covers[0],
@@ -240,11 +231,15 @@ const pages = (store, pageKey) => {
     const pageObject = {
         id: `${title}-${pageKey}`,
         version: Date.now(),
-        layout: { ...layout({}), ...pageData[pageKey].metaData },
-        data: pageData[pageKey]
+        layout: layout({
+
+            metaData: pageData[pageKey].metaData,
+        }),
+
+        data: pageData[pageKey].data
     }
 
-    return pageObject ?? null
+    return { ...pageObject }
 
 }
 

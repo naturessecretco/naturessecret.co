@@ -1,5 +1,5 @@
-import FacadeService from "@controllers/services/facade"
-
+import FacadeService from "@services/facade"
+import type { ProductProps } from "@models/typings/Product"
 
 const products = (store: any[]) => {
 
@@ -8,7 +8,7 @@ const products = (store: any[]) => {
     const databaseObject = {
         id: 'PRODUCTS_DATABASE_ID',
         version: Date.now(),
-        getProducts: () => {
+        getProducts:  () => {
             return store.filter((data) => {
                 return (
                     products.predicate(data)

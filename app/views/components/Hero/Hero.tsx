@@ -4,7 +4,7 @@ import type { ImageProps } from "@typings/Image";
 import { Fade } from 'react-awesome-reveal';
 import Icon from "@components/Icon"
 import { SocialIcon } from "react-social-icons";
-
+import DistortionCarousel from "../DistortionCarousel";
 export type Link = {
     name?: string,
     url?: string,
@@ -33,27 +33,6 @@ export type HeroProps = {
 
 }
 
-
-const $Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) => {
-
-    const PropsObject: HeroProps = {
-        name: "hero",
-        version: Date.now(),
-        features: features ? features : {
-            heading: "FEATURES_HEADING_PROPERTY_NOT_FOUND",
-            links: [{ name: "Feature 1", url: "#" }, { name: "Feature 2", url: "#" }, { name: "Feature 3", url: "#" }]
-        },
-        socials: socials ? socials : [{ url: 'SOCIALS_PROPERTY_NOT_FOUND' }],
-        covers: covers ? covers : [{ src: 'COVERS_PROPERTY_NOT_FOUND', alt: 'COVERS_PROPERTY_NOT_FOUND' }],
-        backgroundCover: backgroundCover ? backgroundCover : 'BACKGROUND_COVER_PROPERTY_NOT_FOUND',
-        cta: cta ? cta : { name: 'CTA_PROPERTY_NOT_FOUND', url: 'CTA_PROPERTY_NOT_FOUND' }
-
-    }
-
-
-    return PropsObject
-}
-
 const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) => {
 
 
@@ -61,15 +40,14 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
         return (
             covers ? <div className="w-full lg:w-2/3 px-4">
                 <div className="flex flex-wrap h-full mr-14 w-full">
-
                     <Carousel>
                         {covers.map((cover, index) => {
                             return (
                                 <div key={index} className="w-full">
                                     <img
                                         className="h-3/4 md:h-full w-full object-fit rounded"
-                                        src={cover.src}
-                                        alt={cover.alt}
+                                        src={cover?.url}
+                                        alt={cover?.alt}
                                     />
                                 </div>
                             )
@@ -180,8 +158,8 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
                     {
                         socials.map((social, index) => {
                             return (
-                                <SocialIcon url={social.url} key={index} bgColor="#2d6019" 
-                                className="hover:scale-90 transition-all hover:bg-opacity-50 ml-2" />
+                                <SocialIcon url={social.url} key={index} bgColor="#2d6019"
+                                    className="hover:scale-90 transition-all hover:bg-opacity-50 ml-2" />
                             )
                         })
                     }
@@ -211,5 +189,4 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
     )
 }
 
-export { $Hero }
 export default Hero

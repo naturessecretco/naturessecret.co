@@ -1,32 +1,32 @@
 import utils from "@utils/index"
 
-const FacadeService = () => {
 
-    const { files, url, rich_text, multi_select, isDatabase } = utils().notion
+const { files, url, rich_text, multi_select, number, isDatabase, getProperties } = utils().notion
+
+const FacadeService = () => {
 
     const serviceObject = {
         version: Date.now(),
         types: {
             products: {
-                name: "products",
+                name: "🛍️Product",
                 shape: (data: any) => {
 
-                    const { Covers, Discount, Name, Price, Value, Tags, SKU, Gumroad, URL } = data.properties
+                    const { Covers, Discount, Name, Price, Value, Tags, SKU, Gumroad, URL, Description } = getProperties(data)
 
                     return {
-                        id: data.properties.id.rich_text[0].plain_text,
+                        id: rich_text(Name),
                         name: rich_text(Name),
-                        url: data.properties.url.rich_text[0].plain_text,
-                        gumroadURL: data.properties.Gumroad.rich_text[0].plain_text,
-                        heading: data.properties.heading.rich_text[0].plain_text,
-                        description: data.properties.description.rich_text[0].plain_text,
-                        sku: data.properties.SKU.rich_text[0].plain_text,
-                        tags: data.properties.tags.rich_text[0].plain_text.split(","),
-                        value: data.properties.Value.rich_text[0].plain_text,
-                        price: data.properties.Price.rich_text[0].plain_text,
+                        url: url(URL),
+                        gumroadURL: url(Gumroad),
+                        heading: rich_text(Name),
+                        description: rich_text(Description),
+                        sku: rich_text(SKU),
+                        value: number(Value),
+                        price: number(Price),
+                        tags: multi_select(Tags),
                         discount: rich_text(Discount),
                         covers: files(Covers),
-
                     }
                 },
                 predicate: (data: any) => {
@@ -35,14 +35,29 @@ const FacadeService = () => {
                 }
             },
 
-            meta: {},
+            meta: {
+                name: "📐Meta",
+                shape: (data: any) => {
+
+                    const { URL, Title, Types } = data.properties
+
+                    return {
+                        url: url(URL),
+                        title: rich_text(Title) ?? null,
+                        types: multi_select(Types),
+                    }
+                },
+                predicate: (data: any) => {
+                    const { name } = serviceObject.types.meta
+                    return isDatabase(name, data) ?? null
+                }
+            },
             faqs: {},
             links: {},
             social_media: {},
         },
 
     }
-
 
     return { ...serviceObject }
 }

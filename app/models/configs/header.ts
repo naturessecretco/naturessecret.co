@@ -2,17 +2,17 @@
 import type { HeaderProps } from "@typings/Header"
 import images from "@configs/images"
 
-const header = ({ favicon, navLinks, banner }: HeaderProps) => {
+const header = ({ favicon, links, banner }: HeaderProps) => {
 
     const logoImage = images().find((image) => image.id === "logo")
-    
+
     const defaultObject: HeaderProps = {
         favicon: {
             image: logoImage,
             url: "/"
         },
 
-        navLinks: [],
+        links: [],
         banner: {
             message: '',
             url: '',
@@ -22,7 +22,7 @@ const header = ({ favicon, navLinks, banner }: HeaderProps) => {
 
     const headerObject: HeaderProps = {
         favicon: favicon ?? defaultObject?.favicon,
-        navLinks: navLinks ?? defaultObject?.navLinks,
+        links: links ?? defaultObject?.links,
         banner: banner ?? defaultObject?.banner
     }
 
