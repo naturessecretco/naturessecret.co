@@ -47,7 +47,7 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                         </span>
                                         <img
                                             className="w-full h-68 object-fit"
-                                            src={feature?.cover.src}
+                                            src={feature?.cover.url}
                                             alt={feature?.cover.alt}
                                         />
                                         <div className="px-6 pb-16 mt-12">

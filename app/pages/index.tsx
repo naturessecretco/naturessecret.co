@@ -4,7 +4,7 @@ import MediaRow from "@components/MediaRow"
 import Product from "@components/Product"
 import Summary from "@components/Summary"
 import Grid from "@components/Grid"
-
+import CommentBox from "@components/CommentBox"
 import PageLayout from '@layouts/PageLayout'
 import PageService from "@services/pages"
 
@@ -27,6 +27,7 @@ const HomePage = ({ page }) => {
       <Grid {...grid} />
       <MediaRow {...mediaRow} />
       <Summary {...summary} />
+      <CommentBox />
     </PageLayout>
   )
 }

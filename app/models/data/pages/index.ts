@@ -4,7 +4,7 @@ import { products, meta, links, faqs, social_media } from "@db/index"
 const pages = ({ store, pageKey }) => {
 
     const { getProducts } = products(store)
-    const { getBanner, getDisclaimer, getCopyrights, getTag } = meta(store)
+    const { getBanner, getPhoneNumber, getBenefits, getEmailAddress, getDisclaimer, getCopyrights, getTag } = meta(store)
     const { getLinks } = links(store)
     const { getFAQs } = faqs(store)
     const { getSocialMedia } = social_media(store)
@@ -16,31 +16,35 @@ const pages = ({ store, pageKey }) => {
     const pageData = {
         home: {
             metaData: {
-                version: Date.now(),
                 pageTitle: 'Home'
             },
             data: {
                 hero: {
-                    title: 'Welcome to our store',
                     socials: getSocialMedia(),
-                    covers: getProducts(),
+                    covers: getProducts().map((product) => ({
+                        ...product.advertisements[0],
+                    })),
                     features: {
-                        heading: 'Home to Natures Best Kept Secrets',
+                        heading: 'Check out these quick links to wellness!',
                         links: getLinks()
                     },
                     backgroundCover: homeHero.url,
                 },
                 grid: {
-                    items: [
-
-                    ]
+                    title: 'Your Benefits from SuperFoods',
+                    items: getBenefits().map((benefit) => ({
+                        cover: {
+                            url: benefit?.covers[0]?.url ?? null,
+                        },
+                        title: benefit?.name,
+                    })),
 
                 },
                 featured: {
                     features: getProducts().map((product) => ({
                         ...product,
                         cover: {
-                            src: product.covers[0].url,
+                            url: product.covers[0].url,
                             alt: product.covers[0].name
                         }
                     })),
@@ -49,18 +53,14 @@ const pages = ({ store, pageKey }) => {
                 },
                 product: getProducts()[0],
                 mediaRow: {
-                    media: [...getProducts().map((product) => {
-                        return {
-                            url: `/products/${product.id}`,
-                            description: product.description,
-                            title: product.name,
-                            cover: {
-                                url: product?.covers[0],
-                                alt: product?.covers[0]
-                            }
-
-                        }
-                    })]
+                    media: getProducts().map((product) => ({
+                        cover: {
+                            url: product.covers[0].url,
+                            alt: product.covers[0].name
+                        },
+                        title: product?.name,
+                        description: product?.description,
+                    }))
                 },
                 summary: {
                     title: 'Frequently Asked Questions',
@@ -124,41 +124,12 @@ const pages = ({ store, pageKey }) => {
         benefits: {
             data: {
                 grid: {
-                    items: [
-                        {
-                            title: 'Bodily Healing',
-                            cover: {
-                                url: '/assets/images/bodily-healing.svg',
-                            }
-                        }, {
-                            title: 'Natural Immunity',
-                            cover: {
-                                url: '/assets/images/Immunity.svg',
-                            }
+                    items: getBenefits().map((benefit) => ({
+                        cover: {
+                            url: benefit?.covers[0]?.url ?? null,
                         },
-                        {
-                            title: 'Sinus Relief',
-                            cover: {
-                                url: '/assets/images/mucus.svg',
-                            }
-                        },
-                        {
-                            title: 'Skin Health & Youthfulness',
-                            cover: {
-                                url: '/assets/images/skin-health.svg',
-                            }
-                        }, {
-                            title: 'Improved Circulation & Energy',
-                            cover: {
-                                url: '/assets/images/blood-flow.svg',
-                            }
-                        }, {
-                            title: 'Antioxidants',
-                            cover: {
-                                url: '/assets/images/antioxidants.svg',
-                            }
-                        }
-                    ]
+                        title: benefit?.title,
+                    })),
 
                 }
             }
@@ -171,6 +142,10 @@ const pages = ({ store, pageKey }) => {
         version: Date.now(),
 
         layout: layout({
+
+            menu: {
+                navLinks: getLinks()
+            },
 
             footer: {
                 socials: getSocialMedia().map((social) => ({
@@ -195,8 +170,8 @@ const pages = ({ store, pageKey }) => {
                     url: getDisclaimer().url,
                 },
 
-                phone: '800800800',
-                email: 'info',
+                phone: getPhoneNumber().phone,
+                email: getEmailAddress().email,
 
                 favicon: {
                     image: {

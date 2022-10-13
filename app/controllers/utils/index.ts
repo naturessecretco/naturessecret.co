@@ -16,9 +16,17 @@ const utils = () => {
                     return data?.status?.map((status) => (status.name)) ?? null
                 } else {
                     return null
-                }            },
+                }
+            },
             multi_select: (data) => {
                 return data?.multi_select?.map((item) => item?.name ? item?.name : null) ?? null
+            },
+            email: (data) => {
+                return data?.email ?? null
+            },
+
+            phone: (data) => {
+                return data?.phone_number ?? null
             },
             select: (data) => {
                 return data?.select?.name ?? "SELECT_NOT_FOUND"

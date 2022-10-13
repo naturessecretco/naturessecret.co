@@ -1,23 +1,22 @@
-import RootLayout from "@layouts/RootLayout"
-import Header from "@components/Header"
-import Footer from "@components/Footer"
-import DrawerMenu from "@views/includes/DrawerMenu"
-import { Fade } from 'react-awesome-reveal';
-import menu from "@configs/menu"
-import ScrollToTop from "react-scroll-to-top";
+import FadeAnimation from '@components/FadeAnimation';
+import Footer from "@components/Footer";
+import Header from "@components/Header";
+import DrawerMenu from "@includes/DrawerMenu";
+import RootLayout from "@layouts/RootLayout";
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
-import React from "react"
+import React from "react";
+import ScrollToTop from "react-scroll-to-top";
 
-const PageLayout = ({ children, metaData, header, footer }) => {
+const PageLayout = ({ children, metaData, header, footer, menu }) => {
 
     return (
         <RootLayout metaData={metaData}>
             <ScrollToTop smooth component={<KeyboardDoubleArrowUpIcon />} />
-            <DrawerMenu {...menu({})} />
+            <DrawerMenu {...menu} />
             <Header {...header} />
-            <Fade triggerOnce duration={200} cascade>
+            <FadeAnimation triggerOnce duration={200} cascade>
                 {children}
-            </Fade>
+            </FadeAnimation>
             <Footer {...footer} />
         </RootLayout>
     )

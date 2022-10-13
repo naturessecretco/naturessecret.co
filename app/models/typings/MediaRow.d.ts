@@ -10,5 +10,6 @@ export type MediaProps = {
 }
 
 export type MediaRowProps = {
-    media: MediaProps[]
+    media?: MediaProps[],
+    title?: string
 }

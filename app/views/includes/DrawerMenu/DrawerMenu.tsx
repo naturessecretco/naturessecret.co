@@ -8,7 +8,7 @@ import { CSSTransition } from 'react-transition-group';
 import type { IComponent } from "@models/typings/Component";
 import type { MenuProps } from "@typings/Menu";
 
-const DrawerMenu: IComponent<MenuProps> = ({ navLinks }: MenuProps) => {
+const DrawerMenu = ({ navLinks }: MenuProps) => {
 
     const { drawer: { isOpen }, closeDrawer } = useDrawer()
 
@@ -22,8 +22,8 @@ const DrawerMenu: IComponent<MenuProps> = ({ navLinks }: MenuProps) => {
                         {
                             navLinks.map((link, index) => {
                                 return (
-                                    <li key={index} style={{ fontFamily: 'var(--font-secondary)' }} className="mb-8">
-                                        <a className="text-gray-900 hover:text-green-700 hover:bg-gray-200 rounded hover:bg-opacity-50 transition-all p-3" href={link.url}>🍃{link.name}</a>
+                                    <li key={index} className="mb-14 font-sans font-leading">
+                                        <a className="text-gray-900 hover:text-green-400 hover:bg-gray-700 rounded-full -ml-4 hover:bg-opacity-50 transition-all p-3" href={link.url}><img className="inline-block h-4 ml-4  hvr-pop no-wrap" src="/assets/images/leaf.svg" />{link.name}</a>
                                     </li>
 
                                 )
@@ -53,7 +53,7 @@ const DrawerMenu: IComponent<MenuProps> = ({ navLinks }: MenuProps) => {
                                     width="auto"
                                 />
                             </a>
-                            <button onClick={() => closeDrawer()} className="navbar-close">
+                            <button onClick={() => closeDrawer()} className="navbar-close hover:scale-90 hover:bg-green-600 transition-all duration-500 rounded-full">
                                 <CloseIcon sx={{ color: 'white' }} />
                             </button>
                         </div>
@@ -62,7 +62,7 @@ const DrawerMenu: IComponent<MenuProps> = ({ navLinks }: MenuProps) => {
 
                         </div>
                         <input
-                            className="block mb-10 py-5 px-8 bg-green-900 bg-opacity-30 text-white placeholder-white rounded-md border-transparent focus:ring-blue-300 focus:border-blue-300 focus:outline-none"
+                            className="block mb-10 py-5 px-8 bg-green-900 font-sans bg-opacity-30 text-white placeholder-black rounded-md border-transparent focus:ring-blue-300 focus:border-blue-300 focus:outline-none"
                             type="search"
                             placeholder="Search here"
                         />

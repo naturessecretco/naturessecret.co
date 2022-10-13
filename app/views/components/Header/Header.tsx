@@ -30,13 +30,13 @@ const Header = ({ favicon, links, banner }: HeaderProps) => {
   const NavLinks = () => {
 
     return (
-      links ? <ul className="hidden space-between lg:flex absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:items-center lg:w-auto">
+      links ? <ul className="hidden flex-no-wrap space-between lg:flex absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:items-center lg:w-auto">
         <Fade duration={500} cascade triggerOnce>
           {
             links.map((link, index) => {
               return (
-                <li className="inline-block" key={index}>
-                  <a className="font-sans inline-block w-full  hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-black" href={link?.url}> <img className="inline-block h-4 ml-4  hvr-pop" src="/assets/images/leaf.svg" />{link?.name}</a>
+                <li className="inline-block no-wrap" key={index}>
+                  <a className="font-sans inline-block w-full  hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-black" href={link?.url}> <img className="inline-block h-4 ml-4  hvr-pop no-wrap" src="/assets/images/leaf.svg" />{link?.name}</a>
                 </li>
               )
             })

@@ -1,7 +1,7 @@
 import utils from "@utils/index"
 
 
-const { files, url, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = utils().notion
+const { files, url, email, phone, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = utils().notion
 
 const FacadeService = () => {
 
@@ -13,12 +13,13 @@ const FacadeService = () => {
                 name: "🛍️Product",
                 shape: (data: any) => {
 
-                    const { Covers, Discount, Name, Price, Value, Tags, SKU, Gumroad, URL, Description } = getProperties(data) ?? null
+                    const { Covers, Advertisements, Discount, Name, Price, Value, Tags, SKU, Gumroad, URL, Description } = getProperties(data) ?? null
 
                     return {
                         id: rich_text(Name),
-                        name: rich_text(Name),
+                        name: title(Name),
                         url: url(URL),
+                        advertisements: files(Advertisements),
                         gumroadURL: url(Gumroad),
                         heading: rich_text(Name),
                         description: rich_text(Description),
@@ -40,13 +41,17 @@ const FacadeService = () => {
                 name: "📐Meta",
                 shape: (data: any) => {
 
-                    const { URL, Title, Types, Values, Description, Status } = data.properties
+                    const { URL, Title, Name, Covers, Types, Values, Description, Status, Phone, Email } = data.properties
 
                     return {
                         url: url(URL),
                         title: select(Title),
+                        name: title(Name),
                         description: rich_text(Description),
                         status: status(Status),
+                        covers: files(Covers),
+                        phone: phone(Phone),
+                        email: email(Email),
                         types: multi_select(Types),
                         values: multi_select(Values),
                     }
