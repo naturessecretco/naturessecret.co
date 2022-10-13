@@ -26,9 +26,10 @@ const HomePage = ({ page }) => {
       <Product {...product} />
       <Grid {...grid} />
       <MediaRow {...mediaRow} />
+      <CommentBox />
       <LogoCloud/>
       <Summary {...summary} />
-      <CommentBox />
+
     </PageLayout>
   )
 }

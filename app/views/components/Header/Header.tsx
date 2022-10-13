@@ -17,7 +17,7 @@ const Header = ({ favicon, links, banner }: HeaderProps) => {
         <a className="flex-shrink-0 text-3xl font-bold font-heading" href="/">
           <img
             className="h-20"
-            src={ "/assets/images/logo.png"}
+            src={"/assets/images/logo.png"}
             alt={favicon?.image?.alt}
             width="auto"
           />
@@ -30,13 +30,20 @@ const Header = ({ favicon, links, banner }: HeaderProps) => {
   const NavLinks = () => {
 
     return (
-      links ? <ul className="hidden flex-no-wrap space-between lg:flex absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:items-center lg:w-auto">
+      links ? <ul className="hidden lg:flex lg:items-center lg:justify-center lg:w-full lg:m-auto ">
         <Fade duration={500} cascade triggerOnce>
           {
             links.map((link, index) => {
               return (
-                <li className="inline-block no-wrap" key={index}>
-                  <a className="font-sans inline-block w-full  hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-black" href={link?.url}> <img className="inline-block h-4 ml-4  hvr-pop no-wrap" src="/assets/images/leaf.svg" />{link?.name}</a>
+                <li className="ml-10 mr-10" key={index}>
+
+                  <a className="font-sans w-full hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-black" href={link?.url}>
+                    <span>
+                      <img className="h-4 hvr-pop inline-block" src="/assets/images/dark-leaf.svg" />
+                      {link?.name}
+                    </span>
+
+                  </a>
                 </li>
               )
             })
