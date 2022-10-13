@@ -5,8 +5,15 @@ const links = (store: any[]) => {
     const { links } = FacadeService().types
 
     const databaseObject = {
-        id: 'PRODUCTS_DATABASE_ID',
+        id: 'LINKS_DATABASE_ID',
         version: Date.now(),
+        getFeatured: () => {
+            return databaseObject.getLinks().filter((link: any) => link.types.includes('⭐Featured'))
+        },
+        getPageLinks: () => {
+            return databaseObject.getLinks().filter((link: any) => link.types.includes('📄Page'))
+        },
+
         getLinks:  () => {
             return store.filter((data) => {
                 return (
@@ -16,7 +23,7 @@ const links = (store: any[]) => {
                 return (
                     links.shape(data)
                 )
-            })
+            }).sort()
 
         }
 

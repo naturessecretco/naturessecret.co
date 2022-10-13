@@ -35,9 +35,9 @@ const Header = ({ favicon, links, banner }: HeaderProps) => {
           {
             links.map((link, index) => {
               return (
-                <li className="ml-10 mr-10" key={index}>
+                <li className="ml-10 mr-10 hover:scale-90 duration-200 ease-in" key={index}>
 
-                  <a className="font-sans w-full hover:scale-90 transition-all font-bold font-heading hover:text-green-500  text-black" href={link?.url}>
+                  <a className="font-sans transition-all font-bold font-heading hover:text-green-500  text-black hover:bg-black hover:bg-opacity-40 py-2 px-2 hover:scale-100 hover:rounded-full" href={link?.url}>
                     <span>
                       <img className="h-4 hvr-pop inline-block" src="/assets/images/dark-leaf.svg" />
                       {link?.name}

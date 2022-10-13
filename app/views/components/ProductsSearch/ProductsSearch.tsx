@@ -1,12 +1,11 @@
 import { Fade } from 'react-awesome-reveal';
-
+import type { ImageProps } from "@typings/Image"
 
 export type Item = {
   id?: string,
   name?: string,
   description: string,
-  cover: string,
-  covers?: string[],
+  cover?: ImageProps,
   order?: any,
   price?: string,
   value?: string
@@ -20,15 +19,6 @@ export type ProductSearch = {
   tags: string[],
 }
 
-const $ProductsSearch = ({ title, items, tags }: ProductSearch) => {
-  const PropsObject = {
-    title: title ? title : "PRODUCT_SEARCH_TITLE_PROPERTY_NOT_FOUND",
-    items: items ? items : [{ description: "PRODUCT_SEARCH_ITEMS_PROPERTY_NOT_FOUND", cover: "PRODUCT_SEARCH_ITEMS_PROPERTY_NOT_FOUND" }],
-    tags: tags ? tags : ["PRODUCT_SEARCH_TAGS_PROPERTY_NOT_FOUND"]
-  }
-
-  return PropsObject
-}
 
 const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
 
@@ -63,7 +53,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
       items ? <div className="w-full lg:w-3/4 px-3">
         <Fade triggerOnce cascade>
           {items.map((item, index) => (
-            <div key={index} className="relative mb-4 bg-black bg-opacity-30 rounded  hover:bg-opacity-50 transition-all">
+            <div key={index} className="relative mb-4 bg-black bg-opacity-10 rounded  hover:shadow-2xl hover:bg-opacity-25 transition-all">
               <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-gray-900 border-2 border-green-500 rounded-full text-green-500">
                 {item.discount ? item.discount : "0"}% OFF
               </span>
@@ -71,15 +61,15 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
                 <div className="w-full md:w-1/4 px-4 mb-4 md:mb-0">
                   <a href={`/products/${item.id}`}>
                     <img
-                      className="mx-auto md:mx-0 w-40 h-52 object-contain"
-                      src={`${item.cover}`}
-                      alt=""
+                      className="mx-auto md:mx-0 w-52 h-52 object-contain"
+                      src={`${item?.cover?.url}`}
+                      alt={`${item?.cover?.alt}`}
                     />
                   </a>
                 </div>
 
 
-                <div className="w-full md:w-3/4 px-4">
+                <div className="w-full md:w-3/4 px-4 font-sans">
 
 
                   <a className="block mb-8" href={`/products/${item.id}`}>
@@ -136,7 +126,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
   const Header = () => {
     return (
 
-      <div className="w-full lg:w-auto px-4 mb-12 xl:mb-0 mt-6">
+      <div className="w-full lg:w-auto px-4 mb-12 xl:mb-0 mt-6 font-sans">
         <h2 className="text-5xl font-bold font-heading text-gray-900 mb-6">
           <span>{title ? title : "Title"}</span>
         </h2>
@@ -210,5 +200,4 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
   )
 }
 
-export { $ProductsSearch }
 export default ProductsSearch

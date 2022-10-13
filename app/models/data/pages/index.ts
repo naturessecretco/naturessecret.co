@@ -5,7 +5,7 @@ const pages = ({ store, pageKey }) => {
 
     const { getProducts } = products(store)
     const { getBanner, getPhoneNumber, getBenefits, getEmailAddress, getDisclaimer, getCopyrights, getTag } = meta(store)
-    const { getLinks } = links(store)
+    const { getPageLinks, getFeatured } = links(store)
     const { getFAQs } = faqs(store)
     const { getSocialMedia } = social_media(store)
 
@@ -26,7 +26,7 @@ const pages = ({ store, pageKey }) => {
                     })),
                     features: {
                         heading: 'Check out these quick links to wellness!',
-                        links: getLinks()
+                        links: getFeatured()
                     },
                     backgroundCover: homeHero.url,
                 },
@@ -110,9 +110,11 @@ const pages = ({ store, pageKey }) => {
                         id: product.id,
                         name: product.name,
                         description: product.description,
-
                         value: product.value,
                         price: product.price,
+                        order: {
+                            url: product.gumroadURL
+                        },
                         cover: product.covers[0],
                         discount: product.discount,
 
@@ -144,7 +146,7 @@ const pages = ({ store, pageKey }) => {
         layout: layout({
 
             menu: {
-                navLinks: getLinks()
+                navLinks: getPageLinks()
             },
 
             footer: {
@@ -152,7 +154,7 @@ const pages = ({ store, pageKey }) => {
                     url: social?.url
                 })),
 
-                navLinks: getLinks().map((link) => ({
+                navLinks: getPageLinks().map((link) => ({
                     url: link?.url,
                     name: link?.name
                 })),
@@ -187,7 +189,7 @@ const pages = ({ store, pageKey }) => {
                     message: getBanner().title,
                     url: getBanner().url,
                 },
-                links: getLinks(),
+                links: getPageLinks(),
                 favicon: {
                     image: {
                         url: '/assets/images/logo.png',

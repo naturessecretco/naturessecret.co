@@ -2,19 +2,25 @@
 import PageLayout from '@layouts/PageLayout'
 import PageService from "@services/pages"
 
+import ProductsSearch from '@views/components/ProductsSearch'
 import { useEffect } from "react"
 
 const ProductsPage = ({ page }) => {
+
+
+  const { layout, data: {
+    productsSearch
+  } } = page
+
 
   useEffect(() => {
     console.log(`[Naturesecret.co@${page.version}]`, page)
   }, [page])
 
 
-  const { layout } = page
-
   return (
     <PageLayout {...layout}>
+      <ProductsSearch {...productsSearch} />
 
     </PageLayout>
   )

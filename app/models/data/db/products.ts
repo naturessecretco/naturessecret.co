@@ -17,7 +17,7 @@ const products = (store: any[]) => {
                 return (
                     products.shape(data)
                 )
-            })
+            }).sort()
 
         }
 

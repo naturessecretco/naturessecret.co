@@ -38,7 +38,7 @@ const meta = (store: any[]) => {
                 return (
                     meta.shape(data)
                 )
-            })
+            }).sort()
 
         }
 

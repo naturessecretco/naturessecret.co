@@ -16,7 +16,7 @@ const faqs = (store: any[]) => {
                 return (
                     faqs.shape(data)
                 )
-            })
+            }).sort()
 
         }
 

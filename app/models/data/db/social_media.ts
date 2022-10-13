@@ -16,7 +16,7 @@ const social_media = (store: any[]) => {
                 return (
                     social_media.shape(data)
                 )
-            })
+            }).sort()
         }
     }
     return { ...databaseObject }
