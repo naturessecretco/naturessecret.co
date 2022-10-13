@@ -124,17 +124,16 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                 <div className="flex flex-wrap -mx-4 mb-24">
 
                     <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-                        <div className="relative mb-10" style={{ height: 560 }}>
+                        <div className="relative mb-10" style={{ height: 500 }}>
 
                             <Carousel>
-
                                 {
                                     covers ? covers.map((cover, index) => {
                                         return (
                                             <div key={index} className="w-full">
                                                 <img
                                                     className="h-full md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                                    src={cover.src}
+                                                    src={cover.url}
                                                     alt=""
                                                 />
                                             </div>

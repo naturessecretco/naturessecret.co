@@ -1,37 +1,9 @@
 import Carousel from "@components/Carousel";
-import { CallToActionProps } from '@models/typings/CallToAction';
-import type { ImageProps } from "@typings/Image";
+import type { HeroProps } from "@typings/Hero";
 import { Fade } from 'react-awesome-reveal';
-import Icon from "@components/Icon"
 import { SocialIcon } from "react-social-icons";
-import DistortionCarousel from "../DistortionCarousel";
-export type Link = {
-    name?: string,
-    url?: string,
-
-}
-export type Social = {
-    name?: string,
-    icon?: string,
-    url?: string
-}
 
 
-export type HeroProps = {
-    key?: string | number,
-    name?: string,
-    version?: string | number,
-    title?: string,
-    socials?: Social[],
-    backgroundCover?: string,
-    covers?: ImageProps[]
-    cta?: CallToActionProps,
-    features?: {
-        heading: string,
-        links: Link[]
-    }
-
-}
 
 const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) => {
 
