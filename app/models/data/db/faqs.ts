@@ -1,22 +1,28 @@
+import FacadeService from "@services/facade"
 
-const faqs = () => {
+const faqs = (store: any[]) => {
 
-    return {
-        id: 'faqsDataBase',
+    const { faqs } = FacadeService().types
+
+    const databaseObject = {
+        id: 'FAQS_DATABASE_ID',
         version: Date.now(),
-        getFAQs: (store) => {
-            return store.filter((data) => {
-                return data?.properties?.Type?.select?.name === "❓FAQ"
-            }).map((data) => {
-                return {
-                    answer: data?.properties?.Answer?.rich_text[0]?.plain_text || "",
-                    question: data?.properties?.Name?.title[0]?.plain_text,
-
-                }
+        getFAQs: () => {
+            return (store.filter((data) => {
+                return (
+                    faqs.predicate(data)
+                )
+            })).map((data) => {
+                return (
+                    faqs.shape(data)
+                )
             })
 
         }
+
     }
+
+    return { ...databaseObject }
 }
 
 export default faqs

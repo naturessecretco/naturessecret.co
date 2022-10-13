@@ -60,7 +60,7 @@ const meta = ({ title, links, socials, phone, copyright, description, email, fav
         email: 'info@naturessecret.co',
         favicon: {
             image: {
-                src: '/assets/images/logo.png',
+                url: '/assets/images/logo.png',
                 alt: 'natures-secret-logo'
             },
             url: '/'

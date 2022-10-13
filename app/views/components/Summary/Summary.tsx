@@ -5,25 +5,6 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 import type { SummaryProps } from '@typings/Summary';
 
 
-const $Summary = ({ title, content, cta }: SummaryProps) => {
-    const PropsObject = {
-        name: "summary",
-        version: Date.now(),
-        content: [{ question: 'QUESTION_PROPERTY_NOT_FOUND', answer: 'ANSWER_PROPERTY_NOT_FOUND' },
-        { question: 'QUESTION_PROPERTY_NOT_FOUND', answer: 'ANSWER_PROPERTY_NOT_FOUND' },
-        { question: 'QUESTION_PROPERTY_NOT_FOUND', answer: 'ANSWER_PROPERTY_NOT_FOUND' },
-        { question: 'QUESTION_PROPERTY_NOT_FOUND', answer: 'ANSWER_PROPERTY_NOT_FOUND' },
-        { question: 'QUESTION_PROPERTY_NOT_FOUND', answer: 'ANSWER_PROPERTY_NOT_FOUND' },
-        { question: 'QUESTION_PROPERTY_NOT_FOUND', answer: 'ANSWER_PROPERTY_NOT_FOUND' }],
-        title: title ? title : 'TITLE_PROPERTY_NOT_FOUND',
-        cta: cta ? cta : 'CTA_PROPERTY_NOT_FOUND'
-    }
-
-    return { ...PropsObject }
-
-}
-
-
 const Summary = ({ title, content, cta }: SummaryProps) => {
 
 
@@ -61,10 +42,11 @@ const Summary = ({ title, content, cta }: SummaryProps) => {
                         return (
                             <Accordion key={index} sx={{
                                 backgroundColor: 'var(--yellow-450)',
-                            
+
                             }}>
                                 <AccordionSummary expandIcon={<KeyboardDoubleArrowUpIcon sx={{ color: 'var(--black)' }} />}>
-                                    <h3 className="text-2xl font-bold font-heading text-gray-900">{item.question}</h3>
+                                    <h3 className="text-2xl font-bold font-heading text-gray-900">                                <img className="inline-block h-4 mr-1 hvr-pop" src="/assets/images/dark-leaf.svg" />
+                                        {item.question}</h3>
                                 </AccordionSummary>
 
                                 <AccordionDetails>
@@ -94,5 +76,5 @@ const Summary = ({ title, content, cta }: SummaryProps) => {
     )
 }
 
-export { $Summary }
+
 export default Summary

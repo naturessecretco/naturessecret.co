@@ -1,13 +1,16 @@
 import { images, layout, meta as metaConfig } from "@configs/index"
-import { products, meta } from "@db/index"
+import { products, meta, links, faqs, social_media } from "@db/index"
 
 const pages = ({ store, pageKey }) => {
 
-    const { socials, title } = metaConfig({})
-
     const { getProducts } = products(store)
-    const { getMeta } = meta(store)
+    const { getBanner, getDisclaimer, getCopyrights, getTag } = meta(store)
+    const { getLinks } = links(store)
+    const { getFAQs } = faqs(store)
+    const { getSocialMedia } = social_media(store)
 
+
+    const { title } = metaConfig({})
     const homeHero = images().find((image) => image.id === "home-hero")
 
     const pageData = {
@@ -18,98 +21,33 @@ const pages = ({ store, pageKey }) => {
             },
             data: {
                 hero: {
-                    title: 'Home to Natures Best Kept Secrets',
-                    socials,
-                    test: getMeta(),
-                    covers: getMeta(),
+                    title: 'Welcome to our store',
+                    socials: getSocialMedia(),
+                    covers: getProducts(),
                     features: {
                         heading: 'Home to Natures Best Kept Secrets',
-                        links: [
-                            {
-                                name: 'Try our Wildcrafted Seamoss',
-                                url: '/products'
-                            },
-                            {
-                                name: 'Learn about our Products',
-                                url: '/products'
-                            },
-                            {
-                                name: 'Understand the Benefits',
-                                url: '/benefits'
-                            },
-                            {
-                                name: 'Learn about our Company',
-                                url: '/about'
-                            }
-                        ]
-
-
+                        links: getLinks()
                     },
-                    backgroundCover: homeHero.src,
+                    backgroundCover: homeHero.url,
                 },
                 grid: {
                     items: [
-                        {
-                            title: 'Bodily Healing',
-                            cover: {
-                                src: '/assets/images/bodily-healing.svg',
-                            }
-                        }, {
-                            title: 'Natural Immunity',
-                            cover: {
-                                src: '/assets/images/Immunity.svg',
-                            }
-                        },
-                        {
-                            title: 'Sinus Relief',
-                            cover: {
-                                src: '/assets/images/mucus.svg',
-                            }
-                        },
-                        {
-                            title: 'Skin Health & Youthfulness',
-                            cover: {
-                                src: '/assets/images/skin-health.svg',
-                            }
-                        }, {
-                            title: 'Improved Circulation & Energy',
-                            cover: {
-                                src: '/assets/images/blood-flow.svg',
-                            }
-                        }, {
-                            title: 'Antioxidants',
-                            cover: {
-                                src: '/assets/images/antioxidants.svg',
-                            }
-                        }
+
                     ]
 
                 },
                 featured: {
-                    features: getProducts().map(product => ({
-                        id: product.id,
-                        name: product.name,
-                        description: product.description,
-                        value: product.value,
-                        price: product.price,
+                    features: getProducts().map((product) => ({
+                        ...product,
                         cover: {
-                            src: product.covers[0],
-                            alt: product.covers[0]
-                        },
-                        discount: product.discount,
+                            src: product.covers[0].url,
+                            alt: product.covers[0].name
+                        }
                     })),
                     title: 'Featured Products',
 
                 },
-                product: {
-                    ...getProducts().map((product) => ({
-                        ...product,
-                        covers: product.covers.map((cover) => ({ src: cover, alt: cover })),
-                        description: product.description,
-
-                        heading: 'On Sale!'
-                    }))[0]
-                },
+                product: getProducts()[0],
                 mediaRow: {
                     media: [...getProducts().map((product) => {
                         return {
@@ -117,7 +55,7 @@ const pages = ({ store, pageKey }) => {
                             description: product.description,
                             title: product.name,
                             cover: {
-                                src: product?.covers[0],
+                                url: product?.covers[0],
                                 alt: product?.covers[0]
                             }
 
@@ -126,7 +64,7 @@ const pages = ({ store, pageKey }) => {
                 },
                 summary: {
                     title: 'Frequently Asked Questions',
-                    content: []
+                    content: getFAQs()
                 }
             },
 
@@ -158,7 +96,7 @@ const pages = ({ store, pageKey }) => {
                 })),
                 data: getProducts().map((product) => ({
                     ...product,
-                    covers: product.covers.map((cover) => ({ src: cover, alt: cover })),
+                    covers: product.covers.map((cover) => ({ url: cover.url, alt: cover.name })),
                     order: {
                         heading: 'Order Now',
                     }
@@ -190,34 +128,34 @@ const pages = ({ store, pageKey }) => {
                         {
                             title: 'Bodily Healing',
                             cover: {
-                                src: '/assets/images/bodily-healing.svg',
+                                url: '/assets/images/bodily-healing.svg',
                             }
                         }, {
                             title: 'Natural Immunity',
                             cover: {
-                                src: '/assets/images/Immunity.svg',
+                                url: '/assets/images/Immunity.svg',
                             }
                         },
                         {
                             title: 'Sinus Relief',
                             cover: {
-                                src: '/assets/images/mucus.svg',
+                                url: '/assets/images/mucus.svg',
                             }
                         },
                         {
                             title: 'Skin Health & Youthfulness',
                             cover: {
-                                src: '/assets/images/skin-health.svg',
+                                url: '/assets/images/skin-health.svg',
                             }
                         }, {
                             title: 'Improved Circulation & Energy',
                             cover: {
-                                src: '/assets/images/blood-flow.svg',
+                                url: '/assets/images/blood-flow.svg',
                             }
                         }, {
                             title: 'Antioxidants',
                             cover: {
-                                src: '/assets/images/antioxidants.svg',
+                                url: '/assets/images/antioxidants.svg',
                             }
                         }
                     ]
@@ -231,12 +169,62 @@ const pages = ({ store, pageKey }) => {
     const pageObject = {
         id: `${title}-${pageKey}`,
         version: Date.now(),
+
         layout: layout({
+
+            footer: {
+                socials: getSocialMedia().map((social) => ({
+                    url: social?.url
+                })),
+
+                navLinks: getLinks().map((link) => ({
+                    url: link?.url,
+                    name: link?.name
+                })),
+
+                copyrights: getCopyrights().values.map((copyright) => ({
+                    text: copyright,
+                })),
+
+                tag: {
+                    message: getTag()?.values[0],
+                    url: getTag()?.url
+                },
+                message: {
+                    text: getDisclaimer().description,
+                    url: getDisclaimer().url,
+                },
+
+                phone: '800800800',
+                email: 'info',
+
+                favicon: {
+                    image: {
+                        url: '/assets/images/logo.png',
+                        alt: 'natures-secret-logo'
+                    },
+                    url: '/'
+                }
+            },
+
+            header: {
+                banner: {
+                    message: getBanner().title,
+                    url: getBanner().url,
+                },
+                links: getLinks(),
+                favicon: {
+                    image: {
+                        url: '/assets/images/logo.png',
+                    },
+                    url: ''
+                }
+            },
 
             metaData: pageData[pageKey].metaData,
         }),
 
-        data: pageData[pageKey].data
+        data: pageData[pageKey ? pageKey : "home"].data
     }
 
     return { ...pageObject }

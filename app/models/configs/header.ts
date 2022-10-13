@@ -12,7 +12,11 @@ const header = ({ favicon, links, banner }: HeaderProps) => {
             url: "/"
         },
 
-        links: [],
+        links: [
+            {
+                name: 'Home',
+            }
+        ],
         banner: {
             message: '',
             url: '',

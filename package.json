@@ -6,12 +6,12 @@
   "directories": {
     "doc": "docs",
     "app": "app",
-    "sso": "sso",
+    "sso": "sso"
   },
   "scripts": {
     "readme:g": "npx @appnest/readme generate",
     "app:dev": "cd app && npm i && npm run dev",
-    "test": "cd app && npm i && npm run build",
+    "test": "cd app && npm i && npm run build"
   },
   "repository": {
     "type": "git",

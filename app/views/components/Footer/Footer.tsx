@@ -1,10 +1,11 @@
-import FadeAnimation from "@components/FadeAnimation"
+import FadeAnimation from "@components/FadeAnimation";
 import KofiSupportButton from '@components/KofiSupportButton';
-import Icon from "@components/Icon"
+import type { FooterProps } from "@typings/Footer";
 import { SocialIcon } from "react-social-icons";
-import type { FooterProps } from "@typings/Footer"
 
-const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterProps) => {
+
+
+const Footer = ({ copyrights, phone, tag, email, favicon, navLinks, socials, message }: FooterProps) => {
 
     const Phone = () => {
 
@@ -54,7 +55,7 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
                         <FadeAnimation cascade triggerOnce>
                             {socials?.map((social, index) => {
                                 return (
-                                    <SocialIcon  className="ml-2" bgColor="#2d6019" url={social.url} key={index} />
+                                    <SocialIcon className="ml-2" bgColor="#2d6019" url={social?.url} key={index} />
                                 )
                             })}
                         </FadeAnimation>
@@ -73,14 +74,15 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
 
         return (
             navLinks ? <ul className="flex flex-wrap -mb-4 -mx-3 items-center justify-center">
-                {navLinks.map((navLink, index) => {
+                {navLinks?.map((navLink, index) => {
                     return (
                         <li key={index} className="w-1/2 md:w-1/3 lg:w-auto px-3 mb-4">
                             <a
-                                className="hover:scale-90 hover:text-yellow-400 inline-block w-38 py-2 px-6 rounded-full  bg-black text-gray-200  hover:bg-gray-900 font-semibold font-heading transition-all"
-                                href={navLink.url}
+                                className="hover:scale-90 hover:text-yellow-400 inline-block w-38 py-2 px-6 rounded-full  bg-black bg-opacity-80 text-gray-200  hover:bg-gray-900 font-semibold font-heading transition-all"
+                                href={navLink?.url}
                             >
-                                {navLink.name}
+                                <img className="inline-block h-4 mr-1 hvr-pop" src="/assets/images/dark-leaf.svg" />
+                                {navLink?.name}
                             </a>
                         </li>
                     )
@@ -90,24 +92,41 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
         )
     }
 
-    const Copyright = () => {
+    const Copyrights = () => {
 
         return (
 
-            copyright ? <div id="contact" className="mt-10 text-center shine">
-                <h3 className="shine font-bold text-lg text-black">{copyright ? copyright : "Copyright"}</h3>
-            </div> : <></>
+            copyrights ? <>
+                {
+                    copyrights.map((copyright, index) => {
+                        return (
+                            <div key={index} id={copyright?.text ? copyright.text : "COPYRIGHT_NOTFOUND"} className="mt-10 text-center shine">
+                                <h3 className="shine font-bold text-lg text-black">{copyright?.text ? copyright.text : "Copyright"}</h3>
+                            </div>)
+                    })
+                }
+            </> : <></>
         )
     }
 
-    const AgencyTag = () => {
+    const Tag = () => {
         return (
-
-            <div id="contact" className="mt-10 text-center mr-4">
-                <a href="https://desirable.solutions">
-                    <h4 className="hover:text-green-700 text-sm tranisition-all text-black bg-opacity-50 font-bold">Site by Désirable Solutions</h4>
+            tag ? <div id={tag?.id ? tag.id : "tag-nature-secret"} className="mt-10 text-center mr-4">
+                <a href={tag?.url ? tag?.url : "#"}>
+                    <h4 className="hover:text-green-700 text-sm tranisition-all text-black bg-opacity-50 font-bold">{tag ? tag?.message : "TAG_NOT_FOUND"}</h4>
                 </a>
-            </div>
+            </div> : <>TAG_NOT_FOUND</>
+        )
+    }
+
+
+    const Message = () => {
+        return (
+            message ? <div id={message?.id ? message?.id : "MESSAGE_NOT_FOUND"} className="mt-10 text-center mr-4">
+                <a href={message?.url ? message?.url : "#"}>
+                    <p className="text-xs tranisition-all text-gray-800 bg-opacity-50">{message.text ? message?.text : "MESSAGE_NOT_FOUND"}</p>
+                </a>
+            </div> : <>MESSAGE_NOT_FOUND</>
         )
     }
 
@@ -120,8 +139,8 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
             >
                 <img
                     className="h-24"
-                    src={favicon.image.src}
-                    alt=""
+                    src={favicon?.image?.url ?? "FAVICON_NOT_FOUND"}
+                    alt={favicon?.image?.alt ?? "FAVICON_NOT_FOUND"}
                     width="auto"
                 />
             </a> : <></>
@@ -142,11 +161,16 @@ const Footer = ({ copyright, phone, email, favicon, navLinks, socials }: FooterP
                         <SocialIcons />
                     </div>
                 </div>
+
                 <div className="mt-4" id="support">
                     <KofiSupportButton color="#000000" message="Support Us" kofiID="naturessecret" />
                 </div>
-                <Copyright />
-                <AgencyTag />
+
+                <div className="flex-col align-center justify-center text-center m-auto col w-3/4">
+                    <Copyrights />
+                    <Tag />
+                    <Message />
+                </div>
             </div>
         </section>
 

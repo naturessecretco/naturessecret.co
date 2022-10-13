@@ -76,10 +76,17 @@ For support, email fake@fake.com or join our Slack channel.
 
 ---
 
-
 ## Changelog
-* **Version 1.0.0**
-* 
+**Version 1.0.0**
+* Facade Service (v0.0.1) Integrated. Allowing future-proof extensions.
+* API Maintanence 
+
+
+**Version 0.0.9**
+* Views 'Simply-Typed', parametermized as needed for cms data transformations. 
+* Animations optimized. 
+* App Layout polyfilled. 
+
 
 ## Optimizations
 

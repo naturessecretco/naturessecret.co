@@ -24,7 +24,7 @@ export default ProductsPage
 
 export async function getServerSideProps() {
 
-  const { getPage } = PageService
+  const { getPage } = PageService()
 
   const page = await getPage("products")
 
