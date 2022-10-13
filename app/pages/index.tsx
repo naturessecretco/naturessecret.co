@@ -7,7 +7,7 @@ import Grid from "@components/Grid"
 import CommentBox from "@components/CommentBox"
 import PageLayout from '@layouts/PageLayout'
 import PageService from "@services/pages"
-
+import LogoCloud from "@views/components/LogoCloud"
 import { useEffect } from "react"
 
 const HomePage = ({ page }) => {
@@ -26,6 +26,7 @@ const HomePage = ({ page }) => {
       <Product {...product} />
       <Grid {...grid} />
       <MediaRow {...mediaRow} />
+      <LogoCloud/>
       <Summary {...summary} />
       <CommentBox />
     </PageLayout>
