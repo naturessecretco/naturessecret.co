@@ -1,4 +1,3 @@
-import FadeAnimation from '@components/FadeAnimation';
 import Footer from "@components/Footer";
 import Header from "@components/Header";
 import DrawerMenu from "@includes/DrawerMenu";
@@ -7,16 +6,23 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 import React from "react";
 import ScrollToTop from "react-scroll-to-top";
 
-const PageLayout = ({ children, metaData, header, footer, menu }) => {
+
+export type LayoutProps = {
+    children?: any,
+    metaData?: any,
+    header?: any,
+    footer?: any,
+    menu?: any
+}
+
+const PageLayout = ({ children, metaData, header, footer, menu }: LayoutProps) => {
 
     return (
         <RootLayout metaData={metaData}>
             <ScrollToTop smooth component={<KeyboardDoubleArrowUpIcon />} />
             <DrawerMenu {...menu} />
             <Header {...header} />
-            <FadeAnimation triggerOnce duration={200} cascade>
-                {children}
-            </FadeAnimation>
+            {children}
             <Footer {...footer} />
         </RootLayout>
     )

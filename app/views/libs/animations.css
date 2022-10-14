@@ -38,12 +38,12 @@
 }
 
 .page-transition-enter {
-        opacity: 0;
+        opacity: 0.25;
 }
 
 .page-transition-enter-active {
         opacity: 1;
-        transition: opacity 300ms;
+        transition: opacity 200ms;
 }
 
 .page-transition-exit {

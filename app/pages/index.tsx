@@ -1,40 +1,33 @@
+import CommentBox from "@components/CommentBox"
 import Featured from "@components/Featured"
+import Grid from "@components/Grid"
 import Hero from "@components/Hero"
 import MediaRow from "@components/MediaRow"
 import Product from "@components/Product"
 import Summary from "@components/Summary"
-import Grid from "@components/Grid"
-import CommentBox from "@components/CommentBox"
-import PageLayout from '@layouts/PageLayout'
 import PageService from "@services/pages"
 import LogoCloud from "@views/components/LogoCloud"
-import { useEffect } from "react"
 
-const HomePage = ({ page }) => {
+const HomePage = ({ page: { data } }) => {
 
-  useEffect(() => {
-    console.log(`[Naturesecret.co@${page.version}]`, page)
-  }, [page])
-
-
-  const { data: { hero, featured, product, mediaRow, summary, grid }, layout } = page
+  const { hero, featured, product, mediaRow, summary, grid } = data ?? null
 
   return (
-    <PageLayout {...layout}>
-      <Hero {...hero} />
-      <Featured {...featured} />
-      <Product {...product} />
-      <Grid {...grid} />
-      <MediaRow {...mediaRow} />
-      <CommentBox />
-      <LogoCloud/>
+    <>
+      <Hero {...hero} />,
+      <Featured {...featured} />,
+      <Product {...product} />,
+      <Grid {...grid} />,
+      <MediaRow {...mediaRow} />,
+      <CommentBox />,
+      <LogoCloud />,
       <Summary {...summary} />
-
-    </PageLayout>
+    </>
   )
 }
 
 export default HomePage
+
 
 export async function getServerSideProps() {
 

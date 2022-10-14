@@ -19,10 +19,10 @@ const ProductsPage = ({ page }) => {
 
 
   return (
-    <PageLayout {...layout}>
+    <>
       <ProductsSearch {...productsSearch} />
 
-    </PageLayout>
+    </>
   )
 }
 
