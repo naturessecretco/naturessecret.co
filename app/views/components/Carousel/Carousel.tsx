@@ -7,7 +7,7 @@ export type CarouselProps = {
 const Carousel = ({ children }: CarouselProps) => {
 
     return (
-        <ReactResponsiveCarousel autoPlay showIndicators={false} interval={2000} showThumbs={false} infiniteLoop={true}>
+        <ReactResponsiveCarousel animationHandler="fade" axis="vertical" autoPlay showIndicators={false} interval={3000} showArrows={false} showThumbs={false} infiniteLoop={true}>
             {children}
         </ReactResponsiveCarousel>
     )

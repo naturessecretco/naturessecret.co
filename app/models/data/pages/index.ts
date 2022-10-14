@@ -8,8 +8,6 @@ const pages = ({ store, pageKey }) => {
     const { getPageLinks, getFeatured } = links(store)
     const { getFAQs } = faqs(store)
     const { getSocialMedia } = social_media(store)
-
-
     const { title } = metaConfig({})
     const homeHero = images().find((image) => image.id === "home-hero")
 
@@ -142,7 +140,6 @@ const pages = ({ store, pageKey }) => {
     const pageObject = {
         id: `${title}-${pageKey}`,
         version: Date.now(),
-
         layout: layout({
 
             menu: {
@@ -200,7 +197,6 @@ const pages = ({ store, pageKey }) => {
 
             metaData: pageData[pageKey].metaData,
         }),
-
         data: pageData[pageKey ? pageKey : "home"].data
     }
 
