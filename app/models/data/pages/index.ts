@@ -94,9 +94,9 @@ const pages = ({ store, pageKey }) => {
                     }
                 })),
                 data: getProducts().map((product) => ({
-                    id: product.id ?? null,
-                    name: product.name ?? null,
-                    covers: product.covers.map((cover) => ({ url: cover.url, alt: cover.name })),
+                    id: product?.id ?? null,
+                    name: product?.name ?? null,
+                    covers: product?.covers?.map((cover) => ({ url: cover?.url, alt: cover?.name })),
                     order: {
                         heading: 'Order Now',
                     },

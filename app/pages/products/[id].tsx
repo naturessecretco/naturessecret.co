@@ -1,16 +1,16 @@
 import Product from "@components/Product"
 import PageService from "@services/pages"
-
+import Grid from "@components/Grid"
 import { useEffect } from "react"
 
-const ProductsPage = ({ page: { data } }) => {
+const ProductsPage = ({ product }) => {
 
 
   return (
 
     <>
-      <Product {...data[0]} />
-
+      <Product {...product} />
+      <Grid />
     </>
 
   )
@@ -24,9 +24,11 @@ export async function getServerSideProps({ params }) {
 
   const page = await (await getPage("products")).pages
 
+  const product = page.data.find((product) => product.id === params.id) ?? null
+
   return {
     props: {
-      page
+      product
     },
   }
 }

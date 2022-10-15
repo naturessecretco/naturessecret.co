@@ -40,7 +40,7 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                     {
                         features.map((feature, index) => {
                             return (
-                                <div key={index} className="w-full lg:w-1/2 md:px-3 mb-6 cursor-pointer hover:shadow-3xl border-black border-t shadow-lg transition-all hover:bg-black hover:bg-opacity-10">
+                                <div key={index} className="w-full lg:w-1/2 md:px-3 mb-6 cursor-pointer hover:shadow-2xl border-black border-t shadow-lg transition-all hover:bg-yellow-600 hover:bg-opacity-30">
                                     <a className="relative block" href={feature.gumroad}>
                                         <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-white border-2 border-red-500 rounded-full text-red-500">
                                             {feature?.discount}

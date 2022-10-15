@@ -16,7 +16,7 @@ const FacadeService = () => {
                     const { Covers, Advertisements, Discount, Name, Price, Value, Tags, SKU, Gumroad, URL, Description } = getProperties(data) ?? null
 
                     return {
-                        id: rich_text(Name),
+                        id: rich_text(Name).replace(/\s/g, '-').toLowerCase(),
                         name: title(Name),
                         url: url(URL),
                         advertisements: files(Advertisements),

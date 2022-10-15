@@ -14,7 +14,7 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
                 <div className="flex flex-wrap h-full mr-14 w-full">
 
 
-                    <div className="w-full cursor-pointer">
+                    <div className="w-full cursor-pointer duration-500 hover:opacity-70 hover:shadow-2xl ease-in transition-all">
                         <img
                             className="h-1/2 md:h-full w-full object-fit rounded"
                             src={covers[0]?.url}
