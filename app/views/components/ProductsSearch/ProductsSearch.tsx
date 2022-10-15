@@ -8,6 +8,8 @@ export type Item = {
   cover?: ImageProps,
   order?: any,
   price?: string,
+  url?: string,
+  gumroad?: string,
   value?: string
   discount?: string | number
 }
@@ -25,7 +27,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
 
   const QueryBar = () => {
     return (
-      <div className="hidden lg:block w-1/4 pl-8 pr-3">
+      <div className="hidden lg:block w-1/4 pl-8 pr-3 font-sans">
         <div className="mb-6 py-10 border-b border-gray-900">
           <h3 className="mb-8 text-2xl font-bold font-heading">Category</h3>
           <ul>
@@ -36,6 +38,11 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
             <li className="mb-4">
               <a className="text-lg" href="#">
                 Honey
+              </a>
+            </li>
+            <li className="mb-4">
+              <a className="text-lg" href="#">
+                Gummies
               </a>
             </li>
 
@@ -59,9 +66,10 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
               </span>
               <div className="flex flex-wrap items-center -mx-4 px-8 md:px-20 py-12">
                 <div className="w-full md:w-1/4 px-4 mb-4 md:mb-0">
-                  <a href={`/products/${item.id}`}>
+                  <a href={`${item?.url}`}>
                     <img
                       className="mx-auto md:mx-0 w-52 h-52 object-contain"
+                      loading="lazy"
                       src={`${item?.cover?.url}`}
                       alt={`${item?.cover?.alt}`}
                     />
@@ -72,7 +80,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
                 <div className="w-full md:w-3/4 px-4 font-sans">
 
 
-                  <a className="block mb-8" href={`/products/${item.id}`}>
+                  <a className="block mb-8" href={`${item?.url}`}>
                     <h3 className="mb-2 text-xl font-bold text-gray-200 font-heading">
                       {item.name}
                     </h3>
@@ -96,14 +104,14 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
 
                     <a
                       className="gumroad-button m-1"
-                      href={item.order.url}
+                      href={item.gumroad}
                       data-gumroad-single-product="true"
                     >
                       Order Now!
                     </a>
                     <a
                       className="inline-block w-auto m-1 md:w-auto mb-4 md:mb-0 md:mr-4 text-center bg-green-800 hover:bg-yellow-300 hover:scale-90 transition-all hover:text-black  text-white font-bold font-heading py-4 px-8 rounded-md uppercase"
-                      href={`/products/${item.id}`}
+                      href={`${item.url}`}
                     >
                       Learn More
                     </a>

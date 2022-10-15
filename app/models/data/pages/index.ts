@@ -118,6 +118,7 @@ const pages = ({ store, pageKey }) => {
                         },
                         cover: product.covers[0],
                         discount: product.discount,
+                        ...product
 
                     }))
                 }
@@ -127,11 +128,13 @@ const pages = ({ store, pageKey }) => {
         benefits: {
             data: {
                 grid: {
+                    title: 'Your Benefits from SuperFoods',
                     items: getBenefits().map((benefit) => ({
+                        ...benefit,
                         cover: {
                             url: benefit?.covers[0]?.url ?? null,
                         },
-                        title: benefit?.title,
+                        title: benefit?.name,
                     })),
 
                 }

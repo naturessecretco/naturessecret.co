@@ -4,7 +4,6 @@ import MediaRow from "@components/MediaRow"
 import Product from "@components/Product"
 import Summary from "@components/Summary"
 
-import PageLayout from '@layouts/PageLayout'
 import PageService from "@services/pages"
 
 import { useEffect } from "react"
@@ -19,13 +18,15 @@ const ProductsPage = ({ page }) => {
   const { data: { hero, featured, product, mediaRow, summary }, layout } = page
 
   return (
-    <PageLayout {...layout}>
+
+    <>
       <Hero {...hero} />
       <Featured {...featured} />
       <Product {...product} />
       <MediaRow {...mediaRow} />
       <Summary {...summary} />
-    </PageLayout>
+    </>
+
   )
 }
 

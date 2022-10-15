@@ -61,7 +61,7 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                                         {feature?.discount}
                                                     </span>
                                                 </p>
-                                                <p className="text-green-100 font-md">{feature?.description}</p>
+                                                <p className="text-gray-900 leading-7 font-lg">{feature?.description}</p>
                                             </div>
                                         </div>
                                     </a>
