@@ -27,7 +27,7 @@ const FacadeService = () => {
                         value: number(Value),
                         price: formula(Price),
                         tags: multi_select(Tags),
-                        discount: rich_text(Discount),
+                        discount: number(Discount),
                         covers: files(Covers),
                     }
                 },

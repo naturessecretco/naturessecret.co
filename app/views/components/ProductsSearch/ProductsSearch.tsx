@@ -1,6 +1,6 @@
 import { Fade } from 'react-awesome-reveal';
 import type { ImageProps } from "@typings/Image"
-
+import utils from "@utils/index"
 export type Item = {
   id?: string,
   name?: string,
@@ -55,12 +55,13 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
 
   const Items = () => {
 
+    const moneyFormatter = utils().formatters.currency
     return (
 
       items ? <div className="w-full lg:w-3/4 px-3">
         <Fade triggerOnce cascade>
           {items.map((item, index) => (
-            <div key={index} className="relative mb-4 bg-black bg-opacity-10 rounded  hover:shadow-2xl hover:bg-opacity-25 transition-all">
+            <div key={index} className="relative mb-4 bg-yellow-500 bg-opacity-30 shadow-xl rounded cursor-pointer hover:shadow-2xl hover:bg-opacity-50 transition-all">
               <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-gray-900 border-2 border-green-500 rounded-full text-green-500">
                 {item.discount ? item.discount : "0"}% OFF
               </span>
@@ -68,7 +69,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
                 <div className="w-full md:w-1/4 px-4 mb-4 md:mb-0">
                   <a href={`${item?.url}`}>
                     <img
-                      className="mx-auto md:mx-0 w-52 h-52 object-contain"
+                      className="mx-auto md:mx-0 w-60 h-60 object-contain"
                       loading="lazy"
                       src={`${item?.cover?.url}`}
                       alt={`${item?.cover?.alt}`}
@@ -81,13 +82,13 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
 
 
                   <a className="block mb-8" href={`${item?.url}`}>
-                    <h3 className="mb-2 text-xl font-bold text-gray-200 font-heading">
+                    <h3 className="mb-2 text-2xl font-bold text-gray-200 font-heading">
                       {item.name}
                     </h3>
-                    <p className="mb-6 text-lg font-bold font-heading text-green-500">
-                      <span>{`$${item?.price}`}</span>
-                      <span className="text-sm text-yellow-500 font-semibold font-heading line-through">
-                        {`${item.value}`}
+                    <p className="mb-6 text-xl font-bold font-heading text-green-700">
+                      <span>{`${moneyFormatter(item?.price)}`}</span>
+                      <span className="ml-4 text-md text-yellow-700 font-bold font-heading line-through">
+                        {`${moneyFormatter(item.value)}`}
                       </span>
                     </p>
 

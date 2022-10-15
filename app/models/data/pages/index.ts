@@ -23,7 +23,7 @@ const pages = ({ store, pageKey }) => {
                         heading: 'Check out these quick links to wellness!',
                         links: getFeatured()
                     },
-                    backgroundCover: getHero()?.covers[0].url 
+                    backgroundCover: getHero()?.covers[0].url ?? null
                 },
                 grid: {
                     title: 'Your Benefits from SuperFoods',
@@ -40,8 +40,8 @@ const pages = ({ store, pageKey }) => {
                     features: getProducts().map((product) => ({
                         ...product,
                         cover: {
-                            url: product.covers[0].url,
-                            alt: product.covers[0].name
+                            url: product.covers[0]?.url,
+                            alt: product.covers[0]?.name
                         }
                     })),
                     title: 'Featured Products',
@@ -52,8 +52,8 @@ const pages = ({ store, pageKey }) => {
                     title: 'Best Sellers',
                     media: getProducts().map((product) => ({
                         cover: {
-                            url: product.covers[0].url,
-                            alt: product.covers[0].name
+                            url: product.covers[0]?.url,
+                            alt: product.covers[0]?.name
                         },
                         url: product?.url,
                         title: product?.name,

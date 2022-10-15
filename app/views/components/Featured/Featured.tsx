@@ -1,7 +1,7 @@
 import type { CallToActionProps } from "@typings/CallToAction"
 import GumroadButton from "../GumroadButton/GumroadButton"
 import type { ImageProps } from "@typings/Image"
-
+import utils from "@utils/index"
 export type Feature = {
     id?: string
     name?: string,
@@ -33,6 +33,8 @@ const $Featured = ({ title, cta, features }: HeroProps) => {
 const Featured = ({ title, cta, features }: HeroProps) => {
 
     const Features = () => {
+
+        const moneyFormatter = utils().formatters.currency
         return (
             features ? <div className="flex mb-16">
                 <div className="flex-shrink-0 w-full flex flex-wrap">
@@ -41,9 +43,9 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                         features.map((feature, index) => {
                             return (
                                 <div key={index} className="w-full lg:w-1/2 md:px-3 mb-6 cursor-pointer hover:shadow-2xl border-black border-t shadow-lg transition-all hover:bg-yellow-600 hover:bg-opacity-30">
-                                    <a className="relative block" href={feature.gumroad}>
-                                        <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-white border-2 border-red-500 rounded-full text-red-500">
-                                            {feature?.discount}
+                                    <a className="relative block" href={feature?.gumroad}>
+                                        <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-black border-2 border-blue-500 rounded-full text-green-400">
+                                            {feature?.discount * 100}% Better Value
                                         </span>
                                         <img
                                             className="w-full h-68 object-fit"
@@ -55,10 +57,10 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                                 <h3 className="mb-3 text-3xl text-white font-bold font-heading">
                                                     {feature.name}
                                                 </h3>
-                                                <p className="mb-4 text-xl font-bold font-heading text-white">
-                                                    <span>{feature?.price}</span>
-                                                    <span className="text-xs text-blue-100 font-semibold font-heading line-through">
-                                                        {feature?.discount}
+                                                <p className="mb-4 text-xl font-bold font-heading text-green-700">
+                                                    <span>{moneyFormatter(feature?.price)}</span>
+                                                    <span className="text-md text-red-600 opacity-80 font-semibold font-heading line-through">
+                                                        {moneyFormatter(feature?.value)}
                                                     </span>
                                                 </p>
                                                 <p className="text-gray-200 font-bold leading-8 font-xl">{feature?.description}</p>

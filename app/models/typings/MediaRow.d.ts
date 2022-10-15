@@ -5,6 +5,7 @@ export type MediaProps = {
     url?: string,
     version?: string,
     cover?: ImageProps,
+    price?: string,
     title?: string,
     description?: string
 }
