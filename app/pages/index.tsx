@@ -15,12 +15,11 @@ const HomePage = ({ page: { data } }) => {
   return (
     <>
       <Hero {...hero} />,
-      <Featured {...featured} />,
-      <Product {...product} />,
-      <Grid {...grid} />,
-      <MediaRow {...mediaRow} />,
-      <CommentBox />,
-      <LogoCloud />,
+      <Featured {...featured} />
+      <Product {...product} />
+      <Grid {...grid} />
+      <MediaRow {...mediaRow} />
+      <LogoCloud />
       <Summary {...summary} />
     </>
   )

@@ -11,9 +11,9 @@ const HomePage = ({ page }) => {
   }, [page])
 
   return (
-    <PageLayout {...page.layout}>
+
       <Post {...page.data.post} />
-    </PageLayout>
+
   )
 }
 

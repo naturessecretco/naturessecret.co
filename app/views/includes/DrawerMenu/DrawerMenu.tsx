@@ -43,7 +43,7 @@ const DrawerMenu = ({ navLinks }: MenuProps) => {
             unmountOnExit>
             <div className="navbar-menu fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-50">
                 <ClickAwayListener onClickAway={() => closeDrawer()}>
-                    <nav className={`bg-yellow-400 bg-opacity-30 backdrop-blur-lg relative flex flex-col py-6 px-6 w-full h-full border-r "swing-in-left-bck" overflow-y-auto ${isOpen ? "swing-in-left-fwd" : "swing-out-left-bck"}`}>
+                    <nav className={`bg-yellow-400 bg-opacity-50 backdrop-blur-lg relative flex flex-col py-6 px-6 w-full h-full border-r "swing-in-left-bck" overflow-y-auto ${isOpen ? "swing-in-left-fwd" : "swing-out-left-bck"}`}>
                         <div className="flex items-center mb-8">
                             <a className="mr-auto text-3xl font-bold font-heading" href="/">
                                 <img

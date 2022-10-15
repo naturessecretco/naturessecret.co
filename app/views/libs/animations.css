@@ -38,12 +38,12 @@
 }
 
 .page-transition-enter {
-        opacity: 0.25;
+        opacity: 0.33 !important;
 }
 
 .page-transition-enter-active {
         opacity: 1;
-        transition: opacity 200ms;
+        transition: opacity ease-in-out 100ms;
 }
 
 .page-transition-exit {
@@ -51,8 +51,8 @@
 }
 
 .page-transition-exit-active {
-        opacity: 0;
-        transition: opacity 300ms;
+        opacity: 0.33;
+        transition: opacity ease-in 100ms;
 }
 
 /* ----------------------------------------------

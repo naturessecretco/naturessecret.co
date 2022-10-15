@@ -17,18 +17,19 @@ const Grid = ({ items, title }) => {
 
                         {
                             items?.map((item, index) => (
-                                <div key={index} className="w-full md:w-1/2 px-3 mb-6 font-sans">
-                                    <div className="text-center p-8 md:p-16 bg-blue-900 cursor-pointer hover:-translate-y-4 duration-300 bg-opacity-80 rounded">
-                                        <span className="inline-flex mb-8 md:mb-16 items-center justify-center w-20 h-20 bg-green-900 rounded-full">
-                                            <img src={item.cover.url} />
+                                <div key={index} className="w-full md:w-1/2 px-3 mb-6 font-sans rounded-full group">
+                                    <div className="text-center p-8  md:p-16 rounded-full shadow-2xl cursor-pointer hover:-translate-y-4 duration-300 bg-yellow-500 bg-opacity-20 hover:bg-opacity-80">
+                                        <span className="inline-flex mb-8 md:mb-16 items-center justify-center w-40 h-40 transition-all duration-500 ease-in-out group-hover:h-12 group-hover:w-12 group-hover:-translate-y-11">
+                                            <img loading="lazy" src={item?.cover?.url} />
                                         </span>
+                                        <p className="text-lg transition-all duration-500 ease-in text-gray-200 opacity-0 group-hover:opacity-100 align-center">
+                                            {item?.description ?? "DESCRIPTION_NOT_FOUND"}
+                                        </p>
                                         <h3 className="mb-4 text-xl text-gray-200 font-bold font-heading">
                                             {item?.title}
                                         </h3>
-                                        <p className="mb-6">{item?.heading}</p>
-                                        <p className="text-lg text-gray-500">
-                                            {item?.description}
-                                        </p>
+                                        <p className="mb-6">{item?.heading ?? "HEADING_NOT_FOUND"}</p>
+                   
                                     </div>
                                 </div>
 

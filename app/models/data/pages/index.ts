@@ -31,6 +31,7 @@ const pages = ({ store, pageKey }) => {
                 grid: {
                     title: 'Your Benefits from SuperFoods',
                     items: getBenefits().map((benefit) => ({
+                        ...benefit,
                         cover: {
                             url: benefit?.covers[0]?.url ?? null,
                         },
@@ -51,11 +52,13 @@ const pages = ({ store, pageKey }) => {
                 },
                 product: getProducts()[0],
                 mediaRow: {
+                    title: 'Best Sellers',
                     media: getProducts().map((product) => ({
                         cover: {
                             url: product.covers[0].url,
                             alt: product.covers[0].name
                         },
+                        url: product?.url,
                         title: product?.name,
                         description: product?.description,
                     }))
