@@ -10,7 +10,6 @@ const ProductsPage = ({ product }) => {
 
     <>
       <Product {...product} />
-      <Grid />
     </>
 
   )
