@@ -10,8 +10,11 @@ const meta = (store: any[]) => {
         getTag: () => {
             return databaseObject.getMeta().find((meta) => meta.types.includes('🏷️Tag')) ?? null
         },
+        getHero: () => {
+            return databaseObject.getMeta()?.find((meta) => meta?.types?.includes('🖼️Hero')) ?? null
+        },
         getBenefits: () => {
-             return databaseObject.getMeta().filter((meta) => meta?.types?.includes('🙏🏿Benefit')) ?? null
+            return databaseObject.getMeta().filter((meta) => meta?.types?.includes('🙏🏿Benefit')) ?? null
         },
         getPhoneNumber: () => {
             return databaseObject.getMeta().find((meta) => meta.types.includes('☎️Phone Number')) ?? null

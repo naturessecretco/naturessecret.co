@@ -55,7 +55,7 @@ const Footer = ({ copyrights, phone, tag, email, favicon, navLinks, socials, mes
                         <FadeAnimation cascade triggerOnce>
                             {socials?.map((social, index) => {
                                 return (
-                                    <SocialIcon className="ml-2" bgColor="#2d6019" url={social?.url} key={index} />
+                                    <SocialIcon className="m-1 flex-wrap ml-2" bgColor="#2d6019" url={social?.url} key={index} />
                                 )
                             })}
                         </FadeAnimation>

@@ -85,9 +85,9 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
                       {item.name}
                     </h3>
                     <p className="mb-6 text-lg font-bold font-heading text-green-500">
-                      <span>{`$${item.price}`}</span>
+                      <span>{`$${item?.price}`}</span>
                       <span className="text-sm text-yellow-500 font-semibold font-heading line-through">
-                        {`$${item.value}`}
+                        {`${item.value}`}
                       </span>
                     </p>
 

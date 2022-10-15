@@ -1,7 +1,7 @@
 import utils from "@utils/index"
 
 
-const { files, url, email, phone, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = utils().notion
+const { files, url, email, phone, formula, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = utils().notion
 
 const FacadeService = () => {
 
@@ -25,7 +25,7 @@ const FacadeService = () => {
                         description: rich_text(Description),
                         sku: rich_text(SKU),
                         value: number(Value),
-                        price: number(Price),
+                        price: formula(Price),
                         tags: multi_select(Tags),
                         discount: rich_text(Discount),
                         covers: files(Covers),

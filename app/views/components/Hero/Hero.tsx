@@ -16,7 +16,8 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
 
                     <div className="w-full cursor-pointer duration-500 hover:opacity-70 hover:shadow-2xl ease-in transition-all">
                         <img
-                            className="h-1/2 md:h-full w-full object-fit rounded"
+                            className="object-fit rounded"
+                            loading="lazy"
                             src={covers[0]?.url}
                             alt={covers[0]?.alt}
                         />
@@ -115,18 +116,18 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
         const HeaderSx = {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center center',
-            backgroundSize: 'contain',
+            backgroundSize: 'fill',
         }
 
         const Socials = () => {
             return (
-                socials ? <div className="text-center mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
+                socials ? <div className="text-center ml-0 mt-16 xl:mt-24 xl:mr-8 xl:absolute top-0 right-0 xl:transform xl:-translate-y-1/2">
 
                     {
                         socials.map((social, index) => {
                             return (
                                 <SocialIcon url={social.url} key={index} bgColor="#2d6019"
-                                    className="hover:scale-90 transition-all hover:bg-opacity-50 ml-2" />
+                                    className="hover:scale-90 m-1 transition-all hover:bg-opacity-50 ml-2" />
                             )
                         })
                     }
@@ -137,8 +138,8 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
         }
 
         return (
-            <div style={HeaderSx} className="relative container mx-auto px-2">
-                <img src={backgroundCover} alt="background cover" className="" />
+            <div style={HeaderSx} className="relative container mx-auto px-2 align-center m-auto">
+                <img src={backgroundCover} alt="background cover" className="m-auto" />
 
                 <Socials />
                 <CallToAction />

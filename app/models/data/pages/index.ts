@@ -1,15 +1,14 @@
-import { images, layout, meta as metaConfig } from "@configs/index"
-import { products, meta, links, faqs, social_media } from "@db/index"
+import { layout, meta as metaConfig } from "@configs/index"
+import { faqs, links, meta, products, social_media } from "@db/index"
 
 const pages = ({ store, pageKey }) => {
 
     const { getProducts } = products(store)
-    const { getBanner, getPhoneNumber, getBenefits, getEmailAddress, getDisclaimer, getCopyrights, getTag } = meta(store)
+    const { getBanner, getHero,  getPhoneNumber, getBenefits, getEmailAddress, getDisclaimer, getCopyrights, getTag } = meta(store)
     const { getPageLinks, getFeatured } = links(store)
     const { getFAQs } = faqs(store)
     const { getSocialMedia } = social_media(store)
     const { title } = metaConfig({})
-    const homeHero = images().find((image) => image.id === "home-hero")
 
     const pageData = {
         home: {
@@ -24,7 +23,7 @@ const pages = ({ store, pageKey }) => {
                         heading: 'Check out these quick links to wellness!',
                         links: getFeatured()
                     },
-                    backgroundCover: homeHero.url,
+                    backgroundCover: getHero()?.covers[0].url 
                 },
                 grid: {
                     title: 'Your Benefits from SuperFoods',
