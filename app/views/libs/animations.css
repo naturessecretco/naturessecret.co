@@ -38,21 +38,28 @@
 }
 
 .page-transition-enter {
-        opacity: 0.33 !important;
+        opacity: 0.50;
+        backdrop-filter: blur(10px);
 }
 
 .page-transition-enter-active {
         opacity: 1;
-        transition: opacity ease-in-out 100ms;
+        backdrop-filter: blur(0px);
+
+        transition: opacity  ease-in-out 500ms;
 }
 
 .page-transition-exit {
         opacity: 1;
+        backdrop-filter: blur(1000px);
+
 }
 
 .page-transition-exit-active {
-        opacity: 0.33;
-        transition: opacity ease-in 100ms;
+        opacity: 0.50;
+        backdrop-filter: blur(1000px);
+
+        transition: opacity  ease-in-out 500ms;
 }
 
 /* ----------------------------------------------
