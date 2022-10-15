@@ -15,7 +15,7 @@ const HomePage = ({ page: { data } }) => {
 
   return (
     <>
-      <Confetti height={1000} width={1500} recycle={false} numberOfPieces={50}
+      <Confetti height={1000} width={1500} recycle={false} numberOfPieces={120}
 
       />
       <Hero {...hero} />,
