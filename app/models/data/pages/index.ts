@@ -4,7 +4,7 @@ import { faqs, links, meta, products, social_media } from "@db/index"
 const pages = ({ store, pageKey }) => {
 
     const { getProducts } = products(store)
-    const { getBanner, getHero,  getPhoneNumber, getBenefits, getEmailAddress, getDisclaimer, getCopyrights, getTag } = meta(store)
+    const { getBanner, getHero, getPhoneNumber, getBenefits, getEmailAddress, getDisclaimer, getCopyrights, getTag, getCertifications } = meta(store)
     const { getPageLinks, getFeatured } = links(store)
     const { getFAQs } = faqs(store)
     const { getSocialMedia } = social_media(store)
@@ -37,6 +37,7 @@ const pages = ({ store, pageKey }) => {
 
                 },
                 featured: {
+                    title: 'Featured Products.',
                     features: getProducts().map((product) => ({
                         ...product,
                         cover: {
@@ -44,8 +45,17 @@ const pages = ({ store, pageKey }) => {
                             alt: product.covers[0]?.name
                         }
                     })),
-                    title: 'Featured Products',
 
+                },
+                logoCloud: {
+                    title: 'Certified Quality for Wellness.',
+                    logos: getCertifications().map((certification) => ({
+                        image: {
+                            url: certification?.covers[0]?.url ?? null,
+                            alt: certification?.covers[0]?.name ?? null
+                        },
+                        url: '#'
+                    }))
                 },
                 product: getProducts()[0],
                 mediaRow: {

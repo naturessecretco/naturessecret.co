@@ -7,8 +7,11 @@ const meta = (store: any[]) => {
     const databaseObject = {
         id: 'META_DATABASE_ID',
         version: Date.now(),
+        getCertifications: () => {
+            return databaseObject.getMeta().filter((meta) => meta?.types?.includes('🏷Certification'))
+        },
         getTag: () => {
-            return databaseObject.getMeta().find((meta) => meta.types.includes('🏷️Tag')) ?? null
+            return databaseObject.getMeta().find((meta) => meta?.types?.includes('🏷️Tag')) ?? null
         },
         getHero: () => {
             return databaseObject.getMeta()?.find((meta) => meta?.types?.includes('🖼️Hero')) ?? null
@@ -17,20 +20,19 @@ const meta = (store: any[]) => {
             return databaseObject.getMeta().filter((meta) => meta?.types?.includes('🙏🏿Benefit')) ?? null
         },
         getPhoneNumber: () => {
-            return databaseObject.getMeta().find((meta) => meta.types.includes('☎️Phone Number')) ?? null
+            return databaseObject.getMeta().find((meta) => meta?.types?.includes('☎️Phone Number')) ?? null
         },
         getEmailAddress: () => {
-            return databaseObject.getMeta().find((meta) => meta.types.includes('✉️Email Address')) ?? null
+            return databaseObject.getMeta().find((meta) => meta?.types?.includes('✉️Email Address')) ?? null
         },
         getCopyrights: () => {
-            return databaseObject.getMeta().find((meta) => meta.types.includes('©️Copyright')) ?? null
-
+            return databaseObject.getMeta().find((meta) => meta?.types?.includes('©️Copyright')) ?? null
         },
         getDisclaimer: () => {
-            return databaseObject.getMeta().find((meta) => meta.types.includes('⚠️Disclaimer')) ?? null
+            return databaseObject.getMeta().find((meta) => meta?.types?.includes('⚠️Disclaimer')) ?? null
         },
         getBanner: () => {
-            return databaseObject.getMeta().find((meta) => meta.types.includes('🪧Banner')) ?? null
+            return databaseObject.getMeta().find((meta) => meta?.types?.includes('🪧Banner')) ?? null
         },
         getMeta: () => {
             return (store.filter((data) => {

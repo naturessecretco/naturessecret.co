@@ -127,7 +127,7 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
                         socials.map((social, index) => {
                             return (
                                 <SocialIcon url={social.url} key={index} bgColor="#2d6019"
-                                    className="hover:scale-90 m-1 transition-all hover:bg-opacity-50 ml-2" />
+                                    className="hover:scale-90 m-1 transition-all hover:bg-opacity-50 ml-1" />
                             )
                         })
                     }
@@ -139,7 +139,7 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
 
         return (
             <div style={HeaderSx} className="relative container mx-auto px-2 align-center m-auto">
-                <img src={backgroundCover} alt="background cover" className="m-auto" />
+                <img src={backgroundCover} alt="background cover" className="m-auto lg:-translate-y-16" />
 
                 <Socials />
                 <CallToAction />

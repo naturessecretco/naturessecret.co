@@ -7,19 +7,23 @@ import Product from "@components/Product"
 import Summary from "@components/Summary"
 import PageService from "@services/pages"
 import LogoCloud from "@views/components/LogoCloud"
+import Confetti from 'react-confetti'
 
 const HomePage = ({ page: { data } }) => {
 
-  const { hero, featured, product, mediaRow, summary, grid } = data ?? null
+  const { hero, featured, product, mediaRow, summary, grid, logoCloud } = data ?? null
 
   return (
     <>
+    <Confetti numberOfPieces={50}
+  
+    />
       <Hero {...hero} />,
       <Featured {...featured} />
       <Product {...product} />
       <Grid {...grid} />
       <MediaRow {...mediaRow} />
-      <LogoCloud />
+      <LogoCloud {...logoCloud} />
       <Summary {...summary} />
     </>
   )
