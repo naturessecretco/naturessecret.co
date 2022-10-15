@@ -3,7 +3,7 @@ import type { HeroProps } from "@typings/Hero";
 import { Fade } from 'react-awesome-reveal';
 import { SocialIcon } from "react-social-icons";
 
-
+import DistortionCarousel from "../DistortionCarousel";
 
 const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) => {
 
@@ -12,19 +12,9 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
         return (
             covers ? <div className="w-full lg:w-2/3 px-4">
                 <div className="flex flex-wrap h-full mr-14 w-full">
-                    <Carousel>
-                        {covers.map((cover, index) => {
-                            return (
-                                <div key={index} className="w-full">
-                                    <img
-                                        className="h-3/4 md:h-full w-full object-fit rounded"
-                                        src={cover?.url}
-                                        alt={cover?.alt}
-                                    />
-                                </div>
-                            )
-                        })}
-                    </Carousel>
+
+                    <DistortionCarousel images={covers.map((cover) => cover?.url ?? "#")} />
+             
 
                 </div>
             </div> : <></>

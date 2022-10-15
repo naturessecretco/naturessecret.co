@@ -19,9 +19,7 @@ const pages = ({ store, pageKey }) => {
             data: {
                 hero: {
                     socials: getSocialMedia(),
-                    covers: getProducts().map((product) => ({
-                        ...product.advertisements[0],
-                    })),
+                    covers: getProducts().map((product) => (product?.covers?.map(cover => cover?.url ?? null) ?? null)).flat(),
                     features: {
                         heading: 'Check out these quick links to wellness!',
                         links: getFeatured()
