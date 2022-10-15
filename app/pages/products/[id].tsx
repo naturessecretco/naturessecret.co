@@ -1,30 +1,16 @@
-import Featured from "@components/Featured"
-import Hero from "@components/Hero"
-import MediaRow from "@components/MediaRow"
 import Product from "@components/Product"
-import Summary from "@components/Summary"
-
 import PageService from "@services/pages"
 
 import { useEffect } from "react"
 
-const ProductsPage = ({ page }) => {
+const ProductsPage = ({ page: { data } }) => {
 
-  useEffect(() => {
-    console.log(`[Naturesecret.co@${page.version}]`, page)
-  }, [page])
-
-
-  const { data: { hero, featured, product, mediaRow, summary }, layout } = page
 
   return (
 
     <>
-      <Hero {...hero} />
-      <Featured {...featured} />
-      <Product {...product} />
-      <MediaRow {...mediaRow} />
-      <Summary {...summary} />
+      <Product {...data[0]} />
+
     </>
 
   )
@@ -32,11 +18,11 @@ const ProductsPage = ({ page }) => {
 
 export default ProductsPage
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ params }) {
 
   const { getPage } = PageService()
 
-  const page = await getPage("home")
+  const page = await (await getPage("products")).pages
 
   return {
     props: {

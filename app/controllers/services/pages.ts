@@ -5,19 +5,28 @@ const PageService = () => {
 
     const serviceObject = {
 
+        getLayout: () => {
+
+        },
+
+        findPage:(data) => {
+            
+        },
+
         getPage: async (pageKey: string) => {
 
             const { getCentralDogma } = NotionService()
 
             const CentralDogma = (await getCentralDogma())
 
-            const { layout, data, id, version } = pages({ store: CentralDogma, pageKey })
+            const { layout, data, id, version, pages: dataPages } = pages({ store: CentralDogma, pageKey })
 
             const pageObject = {
                 id,
                 version,
                 layout,
                 data,
+                pages: dataPages
             }
 
             return { ...pageObject }

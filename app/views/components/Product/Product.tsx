@@ -1,66 +1,151 @@
-import Carousel from "@components/Carousel"
-import RatingsBar from "@components/RatingsBar"
+import React from "react"
 import type { ProductProps } from "@typings/Product"
 
-const $Product = ({ name, price, covers, description }: ProductProps) => {
-    const PropsObject = {
-        name: name ? name : "NAME_PROPERTY_NOT_FOUND",
-        price: price ? price : "PRICE_PROPERTY_NOT_FOUND",
-        covers: covers ? covers : [{ src: "IMAGES_PROPERTY_NOT_FOUND", alt: "IMAGES_PROPERTY_NOT_FOUND" }],
-        description: description ? description : "DESCRIPTION_PROPERTY_NOT_FOUND"
-    }
 
-    return PropsObject
-}
 
 const Product = ({ id, name, heading, price, value, discount, covers, tags, description, order }: ProductProps) => {
 
-    const Header = () => {
 
+    const Main = () => {
         return (
             <div className="w-full md:w-1/2 px-4">
-                <div className="lg:pl-20">
+                <div>
                     <div className="mb-10 pb-10 border-b">
-                        <span className="text-gray-900">{heading ? heading : "Heading"}</span>
-                        <h2 className="text-gray-900 mt-2 mb-6 max-w-xl text-5xl md:text-6xl font-bold font-heading">
-                            {name ? name : "Product Name"}
+                        <span className="text-gray-500">Brille</span>
+                        <h2 className="mt-2 mb-6 max-w-full text-5xl md:text-6xl font-bold font-heading">
+                            {name ?? "NAME_NOT_FOUND"}
                         </h2>
-
-
                         <div className="mb-8">
-                            <RatingsBar />
+                            <button>
+                                <img
+                                    className="h-6"
+                                    src="yofte-assets/elements/star-gold.svg"
+                                    alt=""
+                                />
+                            </button>
+                            <button>
+                                <img
+                                    className="h-6"
+                                    src="yofte-assets/elements/star-gold.svg"
+                                    alt=""
+                                />
+                            </button>
+                            <button>
+                                <img
+                                    className="h-6"
+                                    src="yofte-assets/elements/star-gold.svg"
+                                    alt=""
+                                />
+                            </button>
+                            <button>
+                                <img
+                                    className="h-6"
+                                    src="yofte-assets/elements/star-gold.svg"
+                                    alt=""
+                                />
+                            </button>
+                            <button>
+                                <img
+                                    className="h-6"
+                                    src="yofte-assets/elements/star-gray.svg"
+                                    alt=""
+                                />
+                            </button>
                         </div>
-
-
-                        <p className="inline-block mb-8 text-2xl font-bold font-heading text-blue-800">
-                            <span>{price}</span>
+                        <p className="inline-block mb-8 text-2xl font-bold font-heading text-green-600">
+                            <span>{price ?? "PRICE_NOT_FOUND"}</span>
                             <span className="font-normal text-base text-gray-400 line-through">
-                                {value}
+                                $33.69
                             </span>
                         </p>
-                        <p className="max-w-md text-black text-lg">
-                            {description}
+                        <p className="max-w-md text-gray-500">
+                            Maecenas commodo libero ut molestie dictum. Morbi placerat eros id
+                            porttitor sagittis.
                         </p>
                     </div>
-
-                    <div className="flex flex-wrap -mx-4 mb-14 items-center">
-                        <div className="w-full xl:w-2/3 px-4 mb-4 xl:mb-0">
-                            <a
-                                className="gumroad-button"
-                                href={order?.url}
-                                data-gumroad-single-product="true"
-                            >
-                                Order Now!
-                            </a>
-
+                    <div className="flex mb-12">
+                        <div className="mr-6">
+                            <span className="block mb-4 font-bold font-heading text-gray-400 uppercase">
+                                QTY
+                            </span>
+                            <div className="inline-flex items-center px-4 font-semibold font-heading text-gray-500 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md">
+                                <button className="py-2 hover:text-gray-700">
+                                    <svg
+                                        width={12}
+                                        height={2}
+                                        viewBox="0 0 12 2"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <g opacity="0.35">
+                                            <rect
+                                                x={12}
+                                                width={2}
+                                                height={12}
+                                                transform="rotate(90 12 0)"
+                                                fill="currentColor"
+                                            />
+                                        </g>
+                                    </svg>
+                                </button>
+                                <input
+                                    className="w-12 m-0 px-2 py-4 text-center md:text-right border-0 focus:ring-transparent focus:outline-none rounded-md"
+                                    type="number"
+                                />
+                                <button className="py-2 hover:text-gray-700">
+                                    <svg
+                                        width={12}
+                                        height={12}
+                                        viewBox="0 0 12 12"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <g opacity="0.35">
+                                            <rect x={5} width={2} height={12} fill="currentColor" />
+                                            <rect
+                                                x={12}
+                                                y={5}
+                                                width={2}
+                                                height={12}
+                                                transform="rotate(90 12 5)"
+                                                fill="currentColor"
+                                            />
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
-                        <div className="w-full xl:w-1/3 px-4">
+                        <div>
+                            <span className="block mb-4 font-bold font-heading text-gray-400 uppercase">
+                                Size
+                            </span>
+                            <select
+                                className="pl-6 pr-10 py-4 font-semibold font-heading text-gray-500 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
+                                name=""
+                                id=""
+                            >
+                                <option value={1}>Medium</option>
+                                <option value={2}>Small</option>
+                                <option value={3}>Large</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="flex flex-wrap mb-14 items-center">
+                        <div className="w-full lg:w-1/2">
                             <a
-                                className="ml-auto sm:ml-0 flex-shrink-0 inline-flex mr-4 items-center justify-center w-16 h-16 rounded-md border hover:border-gray-500"
+                                className="block mb-4 lg:mb-0 lg:mr-6 bg-orange-300 hover:bg-orange-400 text-center text-white font-bold font-heading py-5 px-8 rounded-md uppercase transition duration-200"
+                                href="#"
+                            >
+                                Add to cart
+                            </a>
+                        </div>
+                        <div className="w-full lg:w-1/2">
+                            <a
+                                className="flex-shrink-0 flex w-full flex-wrap items-center justify-center w-16 h-16 rounded-md border hover:border-gray-500"
                                 href="#"
                             >
                                 <svg
-                                    className="w-6 h-6"
+                                    className="-mt-1 mr-2"
                                     width={27}
                                     height={27}
                                     viewBox="0 0 27 27"
@@ -75,41 +160,87 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                                         strokeLinejoin="round"
                                     />
                                 </svg>
-                            </a>
-                            <a
-                                className="flex-shrink-0 inline-flex items-center justify-center w-16 h-16 rounded-md border hover:border-gray-500"
-                                href="#"
-                            >
-                                <svg
-                                    className="w-6 h-6"
-                                    width={24}
-                                    height={23}
-                                    viewBox="0 0 24 23"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M2.01328 18.9877C2.05682 16.7902 2.71436 12.9275 6.3326 9.87096L6.33277 9.87116L6.33979 9.86454L6.3398 9.86452C6.34682 9.85809 8.64847 7.74859 13.4997 7.74859C13.6702 7.74859 13.8443 7.75111 14.0206 7.757L14.0213 7.75702L14.453 7.76978L14.6331 7.77511V7.59486V3.49068L21.5728 10.5736L14.6331 17.6562V13.6558V13.5186L14.4998 13.4859L14.1812 13.4077C14.1807 13.4075 14.1801 13.4074 14.1792 13.4072M2.01328 18.9877L14.1792 13.4072M2.01328 18.9877C7.16281 11.8391 14.012 13.3662 14.1792 13.4072M2.01328 18.9877L14.1792 13.4072M23.125 10.6961L23.245 10.5736L23.125 10.4512L13.7449 0.877527L13.4449 0.571334V1V6.5473C8.22585 6.54663 5.70981 8.81683 5.54923 8.96832C-0.317573 13.927 0.931279 20.8573 0.946581 20.938L0.946636 20.9383L1.15618 22.0329L1.24364 22.4898L1.47901 22.0885L2.041 21.1305L2.04103 21.1305C4.18034 17.4815 6.71668 15.7763 8.8873 15.0074C10.9246 14.2858 12.6517 14.385 13.4449 14.4935V20.1473V20.576L13.7449 20.2698L23.125 10.6961Z"
-                                        fill="black"
-                                        stroke="white"
-                                        strokeWidth="0.35"
-                                    />
-                                </svg>
+                                <span className="font-bold font-heading uppercase">
+                                    Add to wishlist
+                                </span>
                             </a>
                         </div>
                     </div>
-                    <div className="flex items-center">
-                        <span className="mr-8 text-gray-500 font-bold font-heading uppercase">
-                            SHARE IT
-                        </span>
-                        <a className="mr-1 w-8 h-8" href="#">
-                            <img src="yofte-assets/buttons/facebook-circle.svg" alt="" />
+                    <div className="flex items-center justify-between py-6 border-b">
+                        <h4 className="text-xl font-bold font-heading">Description</h4>
+                        <a
+                            className="inline-flex items-center justify-center w-12 h-12 border hover:border-gray-500 rounded-md"
+                            href="#"
+                        >
+                            <svg
+                                width={12}
+                                height={12}
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <rect x={5} width={2} height={12} fill="#161616" />
+                                <rect
+                                    x={12}
+                                    y={5}
+                                    width={2}
+                                    height={12}
+                                    transform="rotate(90 12 5)"
+                                    fill="#161616"
+                                />
+                            </svg>
                         </a>
-                        <a className="mr-1 w-8 h-8" href="#">
-                            <img src="yofte-assets/buttons/instagram-circle.svg" alt="" />
+                    </div>
+                    <div className="flex items-center justify-between py-6 border-b">
+                        <h4 className="text-xl font-bold font-heading">Customer reviews</h4>
+                        <a
+                            className="inline-flex items-center justify-center w-12 h-12 border hover:border-gray-500 rounded-md"
+                            href="#"
+                        >
+                            <svg
+                                width={12}
+                                height={12}
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <rect x={5} width={2} height={12} fill="#161616" />
+                                <rect
+                                    x={12}
+                                    y={5}
+                                    width={2}
+                                    height={12}
+                                    transform="rotate(90 12 5)"
+                                    fill="#161616"
+                                />
+                            </svg>
                         </a>
-                        <a className="w-8 h-8" href="#">
-                            <img src="yofte-assets/buttons/twitter-circle.svg" alt="" />
+                    </div>
+                    <div className="flex items-center justify-between py-6 border-b">
+                        <h4 className="text-xl font-bold font-heading">
+                            Shipping &amp; returns
+                        </h4>
+                        <a
+                            className="inline-flex items-center justify-center w-12 h-12 border hover:border-gray-500 rounded-md"
+                            href="#"
+                        >
+                            <svg
+                                width={12}
+                                height={12}
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <rect x={5} width={2} height={12} fill="#161616" />
+                                <rect
+                                    x={12}
+                                    y={5}
+                                    width={2}
+                                    height={12}
+                                    transform="rotate(90 12 5)"
+                                    fill="#161616"
+                                />
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -118,44 +249,187 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
     }
 
     return (
-    
-        <section className="py-20">
+
+        <section className="py-20 font-sans">
             <div className="container mx-auto px-4">
-                <div className="flex flex-wrap -mx-4 mb-24">
+                <div className="flex flex-wrap -mx-4">
 
-                    <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
-                        <div className="relative mb-10" style={{ height: 500 }}>
 
-                            <Carousel>
-                                {
-                                    covers ? covers.map((cover, index) => {
-                                        return (
-                                            <div key={index} className="w-full">
-                                                <img
-                                                    className="h-full md:h-full w-full object-cover bg-black bg-opacity-40 rounded"
-                                                    src={cover.url}
-                                                    alt=""
-                                                />
-                                            </div>
-                                        )
-                                    }) : <></>
-                                }
-
-                            </Carousel>
-
-                        </div>
-
+                    <div className="w-full px-4">
+                        <ul className="flex flex-wrap mb-8 items-center">
+                            <li className="mr-5">
+                                <a
+                                    className="inline-block mr-5 text-xs font-bold font-heading uppercase text-gray-300"
+                                    href="#"
+                                >
+                                    HOME
+                                </a>
+                                <span className="inline-block">
+                                    <svg
+                                        width={6}
+                                        height={11}
+                                        viewBox="0 0 6 11"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M0.131073 0.755835C-0.0436907 0.581885 -0.0436907 0.302414 0.131073 0.129744C0.305837 -0.0429273 0.588197 -0.0435662 0.76296 0.129744L5.86893 5.18707C6.04369 5.35975 6.04369 5.63922 5.86893 5.81317L0.762959 10.8705C0.588196 11.0432 0.305836 11.0432 0.131072 10.8705C-0.0436916 10.6972 -0.0436916 10.4171 0.131072 10.2444L4.78774 5.4998L0.131073 0.755835Z"
+                                            fill="#151515"
+                                        />
+                                    </svg>
+                                </span>
+                            </li>
+                            <li className="mr-5">
+                                <a
+                                    className="inline-block mr-5 text-xs font-bold font-heading uppercase text-gray-300"
+                                    href="#"
+                                >
+                                    WATER FILTERS
+                                </a>
+                                <span className="inline-block">
+                                    <svg
+                                        width={6}
+                                        height={11}
+                                        viewBox="0 0 6 11"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M0.131073 0.755835C-0.0436907 0.581885 -0.0436907 0.302414 0.131073 0.129744C0.305837 -0.0429273 0.588197 -0.0435662 0.76296 0.129744L5.86893 5.18707C6.04369 5.35975 6.04369 5.63922 5.86893 5.81317L0.762959 10.8705C0.588196 11.0432 0.305836 11.0432 0.131072 10.8705C-0.0436916 10.6972 -0.0436916 10.4171 0.131072 10.2444L4.78774 5.4998L0.131073 0.755835Z"
+                                            fill="#151515"
+                                        />
+                                    </svg>
+                                </span>
+                            </li>
+                            <li>
+                                <a
+                                    className="inline-block text-xs font-bold font-heading uppercase text-gray-300"
+                                    href="#"
+                                >
+                                    BRILE WATER FILTER CARAFE
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
-                    <Header />
+                    <div className="w-full md:w-1/2 px-4 mb-8 md:mb-0">
+                        <div className="flex flex-wrap -mx-1">
+                            <div className="md:w-full lg:w-1/4 px-1 mb-2 lg:mb-0">
+                                <div className="flex lg:flex-col lg:h-full justify-between">
+                                    <a className="block md:w-32 h-32 border border-blue-300" href="#">
+                                        <img
+                                            className="w-full h-full p-1 lg:p-0 mr-2 lg:mr-0 object-cover"
+                                            src="yofte-assets/images/product-bottle.png"
+                                            alt=""
+                                        />
+                                    </a>
+                                    <a
+                                        className="block md:w-32 h-32 border border-transparent hover:border-gray-400"
+                                        href="#"
+                                    >
+                                        <img
+                                            className="w-full h-full p-1 lg:p-0 mr-2 lg:mr-0 object-cover"
+                                            src="yofte-assets/images/product-bottle2.png"
+                                            alt=""
+                                        />
+                                    </a>
+                                    <a
+                                        className="block md:w-32 h-32 border border-transparent hover:border-gray-400"
+                                        href="#"
+                                    >
+                                        <img
+                                            className="w-full h-full p-1 lg:p-0 mr-2 lg:mr-0 object-cover"
+                                            src="yofte-assets/images/product-bottle3.png"
+                                            alt=""
+                                        />
+                                    </a>
+                                    <a
+                                        className="block md:w-32 h-32 border border-transparent hover:border-gray-400"
+                                        href="#"
+                                    >
+                                        <img
+                                            className="w-full h-full p-1 lg:p-0 mr-2 lg:mr-0 object-cover"
+                                            src="yofte-assets/images/product-bottle4.png"
+                                            alt=""
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="md:w-full lg:w-3/4 px-1">
+                                <div className="relative" style={{ height: 564 }}>
+                                    <a
+                                        className="absolute top-1/2 left-0 ml-8 transform translate-1/2"
+                                        href="#"
+                                    >
+                                        <svg
+                                            width={10}
+                                            height={18}
+                                            viewBox="0 0 10 18"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M9 16.0185C9.268 16.2905 9.268 16.7275 9 16.9975C8.732 17.2675 8.299 17.2685 8.031 16.9975L0.201 9.0895C-0.067 8.8195 -0.067 8.3825 0.201 8.1105L8.031 0.2025C8.299 -0.0675 8.732 -0.0675 9 0.2025C9.268 0.4735 9.268 0.9115 9 1.1815L1.859 8.6005L9 16.0185Z"
+                                                fill="#1F40FF"
+                                            />
+                                        </svg>
+                                    </a>
+                                    <img
+                                        className="object-cover w-full h-full"
+                                        src="yofte-assets/images/product-bottle.png"
+                                        alt=""
+                                    />
+                                    <a
+                                        className="absolute top-1/2 right-0 mr-8 transform translate-1/2"
+                                        href="#"
+                                    >
+                                        <svg
+                                            width={10}
+                                            height={18}
+                                            viewBox="0 0 10 18"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M0.19922 1.1817C-0.0687795 0.909696 -0.0687794 0.472695 0.19922 0.202695C0.46722 -0.0673054 0.90022 -0.0683048 1.16822 0.202695L8.99822 8.11069C9.26622 8.3807 9.26622 8.81769 8.99822 9.08969L1.16822 16.9977C0.900219 17.2677 0.467218 17.2677 0.199219 16.9977C-0.0687809 16.7267 -0.0687808 16.2887 0.199219 16.0187L7.34022 8.5997L0.19922 1.1817Z"
+                                                fill="#1F40FF"
+                                            />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="w-full lg:w-3/4 mt-12 ml-auto">
+                                <div className="flex items-center">
+                                    <span className="mr-8 text-gray-500 font-bold font-heading uppercase">
+                                        SHARE IT
+                                    </span>
+                                    <a className="mr-1 w-8 h-8" href="#">
+                                        <img src="yofte-assets/buttons/facebook-circle.svg" alt="" />
+                                    </a>
+                                    <a className="mr-1 w-8 h-8" href="#">
+                                        <img src="yofte-assets/buttons/instagram-circle.svg" alt="" />
+                                    </a>
+                                    <a className="w-8 h-8" href="#">
+                                        <img src="yofte-assets/buttons/twitter-circle.svg" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <Main />
+
+
+
+
 
                 </div>
-
             </div>
         </section>
+
 
     )
 }
 
-export { $Product }
-export default Product
+export default React.memo(Product)

@@ -19,7 +19,7 @@ const pages = ({ store, pageKey }) => {
             data: {
                 hero: {
                     socials: getSocialMedia(),
-                    covers: getProducts().map((product) => (product?.covers?.map(cover => cover?.url ?? null) ?? null)).flat(),
+                    covers: getProducts().map((product) => (product?.advertisements)).flat(),
                     features: {
                         heading: 'Check out these quick links to wellness!',
                         links: getFeatured()
@@ -94,11 +94,13 @@ const pages = ({ store, pageKey }) => {
                     }
                 })),
                 data: getProducts().map((product) => ({
-                    ...product,
+                    id: product.id ?? null,
+                    name: product.name ?? null,
                     covers: product.covers.map((cover) => ({ url: cover.url, alt: cover.name })),
                     order: {
                         heading: 'Order Now',
-                    }
+                    },
+                    ...product
                 }))
             },
             data: {
@@ -201,7 +203,8 @@ const pages = ({ store, pageKey }) => {
 
             metaData: pageData[pageKey].metaData,
         }),
-        data: pageData[pageKey ? pageKey : "home"].data
+        data: pageData[pageKey ? pageKey : "home"].data,
+        pages: pageData[pageKey ? pageKey : "home"]?.pages ?? null,
     }
 
     return { ...pageObject }

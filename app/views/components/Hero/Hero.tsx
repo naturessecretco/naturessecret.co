@@ -13,9 +13,14 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
             covers ? <div className="w-full lg:w-2/3 px-4">
                 <div className="flex flex-wrap h-full mr-14 w-full">
 
-                    <DistortionCarousel images={covers.map((cover) => cover?.url ?? "#")} />
-             
 
+                    <div className="w-full cursor-pointer">
+                        <img
+                            className="h-1/2 md:h-full w-full object-fit rounded"
+                            src={covers[0]?.url}
+                            alt={covers[0]?.alt}
+                        />
+                    </div>
                 </div>
             </div> : <></>
         )

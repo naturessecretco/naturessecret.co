@@ -11,7 +11,7 @@ const RootLayout = ({ children, metaData }) => {
 
         background: "url('/assets/images/bg.jpg') fixed center center",
         backgroundSize: "cover",
-        boxShadow: 'inset 0 0 0 1000px rgba(252, 198, 49,.75)'
+        boxShadow: 'inset 0 0 0 10000px rgba(252, 198, 49,.70)'
     }
 
 
