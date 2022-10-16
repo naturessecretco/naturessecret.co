@@ -59,7 +59,7 @@ const Header = ({ favicon, links, banner }: HeaderProps) => {
   return (
 
     <Headroom>
-      <section className="relative backdrop-blur-2xl w-full">
+      <section className="relative backdrop-blur-xl w-full bg-transparent outline-none">
         <Banner {...banner} />
         <nav className="relative flex justify-between">
           <div className="px-12 py-6 flex w-full items-center">
