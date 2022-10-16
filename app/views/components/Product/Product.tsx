@@ -12,9 +12,13 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                 <div>
                     <div className="mb-10 pb-10 border-b">
                         <span className="text-gray-500">Brille</span>
+
+
                         <h2 className="mt-2 mb-6 max-w-full text-5xl md:text-6xl font-bold font-heading">
                             {name ?? "NAME_NOT_FOUND"}
                         </h2>
+
+
                         <div className="mb-8">
                             <button>
                                 <img
@@ -52,12 +56,13 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                                 />
                             </button>
                         </div>
-                        <p className="inline-block mb-8 text-2xl font-bold font-heading text-green-600">
+                        <p className="inline-block mb-8 text-2xl font-bold font-heading text-green-800">
                             <span>{price ?? "PRICE_NOT_FOUND"}</span>
                             <span className="font-normal text-base text-gray-400 line-through">
                                 $33.69
                             </span>
                         </p>
+
                         <p className="max-w-md text-gray-500">
                             Maecenas commodo libero ut molestie dictum. Morbi placerat eros id
                             porttitor sagittis.
@@ -88,10 +93,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                                         </g>
                                     </svg>
                                 </button>
-                                <input
-                                    className="w-12 m-0 px-2 py-4 text-center md:text-right border-0 focus:ring-transparent focus:outline-none rounded-md"
-                                    type="number"
-                                />
+
                                 <button className="py-2 hover:text-gray-700">
                                     <svg
                                         width={12}
@@ -115,20 +117,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                                 </button>
                             </div>
                         </div>
-                        <div>
-                            <span className="block mb-4 font-bold font-heading text-gray-400 uppercase">
-                                Size
-                            </span>
-                            <select
-                                className="pl-6 pr-10 py-4 font-semibold font-heading text-gray-500 border border-gray-200 focus:ring-blue-300 focus:border-blue-300 rounded-md"
-                                name=""
-                                id=""
-                            >
-                                <option value={1}>Medium</option>
-                                <option value={2}>Small</option>
-                                <option value={3}>Large</option>
-                            </select>
-                        </div>
+
                     </div>
                     <div className="flex flex-wrap mb-14 items-center">
                         <div className="w-full lg:w-1/2">
@@ -141,28 +130,11 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                         </div>
                         <div className="w-full lg:w-1/2">
                             <a
-                                className="flex-shrink-0 flex w-full flex-wrap items-center justify-center w-16 h-16 rounded-md border hover:border-gray-500"
-                                href="#"
+                                className="gumroad-button ml-8"
+                                href="https://naturessecret.gumroad.com/l/seamossgummies"
+                                data-gumroad-overlay-checkout="true"
                             >
-                                <svg
-                                    className="-mt-1 mr-2"
-                                    width={27}
-                                    height={27}
-                                    viewBox="0 0 27 27"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M13.4993 26.2061L4.70067 16.9253C3.9281 16.1443 3.41815 15.1374 3.24307 14.0471C3.06798 12.9568 3.23664 11.8385 3.72514 10.8505V10.8505C4.09415 10.1046 4.63318 9.45803 5.29779 8.96406C5.96241 8.47008 6.73359 8.14284 7.54782 8.00931C8.36204 7.87578 9.19599 7.93978 9.98095 8.19603C10.7659 8.45228 11.4794 8.89345 12.0627 9.48319L13.4993 10.9358L14.9359 9.48319C15.5192 8.89345 16.2327 8.45228 17.0177 8.19603C17.8026 7.93978 18.6366 7.87578 19.4508 8.00931C20.265 8.14284 21.0362 8.47008 21.7008 8.96406C22.3654 9.45803 22.9045 10.1046 23.2735 10.8505V10.8505C23.762 11.8385 23.9306 12.9568 23.7556 14.0471C23.5805 15.1374 23.0705 16.1443 22.298 16.9253L13.4993 26.2061Z"
-                                        stroke="black"
-                                        strokeWidth="1.5"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    />
-                                </svg>
-                                <span className="font-bold font-heading uppercase">
-                                    Add to wishlist
-                                </span>
+                                Buy on
                             </a>
                         </div>
                     </div>
@@ -349,7 +321,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                                     >
                                         <img
                                             className="w-full h-full p-1 lg:p-0 mr-2 lg:mr-0 object-cover"
-                                            src="yofte-assets/images/product-bottle4.png"
+                                            src={covers[0].url}
                                             alt=""
                                         />
                                     </a>
@@ -376,7 +348,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                                     </a>
                                     <img
                                         className="object-cover w-full h-full"
-                                        src="yofte-assets/images/product-bottle.png"
+                                        src={covers[0].url}
                                         alt=""
                                     />
                                     <a

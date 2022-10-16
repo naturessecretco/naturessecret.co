@@ -58,12 +58,29 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                                     {feature.name}
                                                 </h3>
                                                 <p className="mb-4 text-xl font-bold font-heading text-green-700">
+
                                                     <span>{moneyFormatter(feature?.price)}</span>
                                                     <span className="text-md text-red-600 opacity-80 font-semibold font-heading line-through">
                                                         {moneyFormatter(feature?.value)}
                                                     </span>
+                                                    <a
+                                                        className="gumroad-button ml-8"
+                                                        href="https://naturessecret.gumroad.com/l/seamossgummies"
+                                                        data-gumroad-overlay-checkout="true"
+                                                    >
+                                                        Buy on
+                                                    </a>
+                                                    <a
+                                                        className="ml-8 rounded hover:bg-black hover:bg-opacity-30 transition-all text-white  duration-200 shadow-2xl px-8 py-4 bg-opacity-30"
+                                                        href="https://naturessecret.gumroad.com/l/seamossgummies"
+                                                        data-gumroad-overlay-checkout="true"
+                                                    >
+                                                        Learn More
+                                                    </a>
                                                 </p>
                                                 <p className="text-gray-200 font-bold leading-8 font-xl">{feature?.description}</p>
+
+
                                             </div>
                                         </div>
                                     </a>
@@ -91,8 +108,8 @@ const Featured = ({ title, cta, features }: HeroProps) => {
 
                 <div className="text-center">
                     <a
-                        className="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold font-heading py-5 px-8 rounded-md uppercase"
-                        href="#"
+                        className="inline-block bg-blue-900 hover:bg-black duration-200 ease-in  transition-all text-white font-bold font-heading py-5 px-8 rounded-md uppercase"
+                        href="/products"
                     >
                         All products
                     </a>

@@ -8,14 +8,16 @@ import Summary from "@components/Summary"
 import PageService from "@services/pages"
 import LogoCloud from "@views/components/LogoCloud"
 import Confetti from 'react-confetti'
+import { useWindowSize } from 'react-use';
 
 const HomePage = ({ page: { data } }) => {
 
   const { hero, featured, product, mediaRow, summary, grid, logoCloud } = data ?? null
+  const { height, width } = useWindowSize()
 
   return (
     <>
-      <Confetti height={1000} width={1500} recycle={false} numberOfPieces={120}
+      <Confetti height={height} width={width} recycle={false} numberOfPieces={120}
 
       />
       <Hero {...hero} />,
