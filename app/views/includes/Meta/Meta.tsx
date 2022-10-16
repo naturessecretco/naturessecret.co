@@ -23,6 +23,8 @@ const Meta = ({ pageTitle }) => {
       <meta name="copyright" content="Nature's Secret" />
       <meta name="language" content="EN" />
       <meta name="robots" content="index,follow" />
+      <meta name="theme-color" content="#CEA11A"/>
+
       <meta name="revised" content="Sunday, July 18th, 2010, 5:15 pm" />
       <meta name="abstract" content="" />
       <meta name="topic" content="" />
