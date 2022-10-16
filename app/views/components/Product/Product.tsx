@@ -321,7 +321,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                                     >
                                         <img
                                             className="w-full h-full p-1 lg:p-0 mr-2 lg:mr-0 object-cover"
-                                            src={covers[0].url}
+
                                             alt=""
                                         />
                                     </a>
@@ -348,7 +348,7 @@ const Product = ({ id, name, heading, price, value, discount, covers, tags, desc
                                     </a>
                                     <img
                                         className="object-cover w-full h-full"
-                                        src={covers[0].url}
+                                        src={covers[0]?.url ?? "#"}
                                         alt=""
                                     />
                                     <a

@@ -58,12 +58,12 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
     const moneyFormatter = utils().formatters.currency
     return (
 
-      items ? <div className="w-full lg:w-3/4 px-3">
+      items ? <div className="w-full lg:w-3/4 px-3 font-sans">
         <Fade triggerOnce cascade>
           {items.map((item, index) => (
             <div key={index} className="relative mb-4 bg-yellow-500 bg-opacity-30 shadow-xl rounded cursor-pointer hover:shadow-2xl hover:bg-opacity-50 transition-all">
               <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-gray-900 border-2 border-green-500 rounded-full text-green-500">
-                {item.discount ? item.discount * 100 : "0"}% OFF
+                {item.discount ? item.discount * 100 : "0"}% Savings
               </span>
               <div className="flex flex-wrap items-center -mx-4 px-8 md:px-20 py-12">
                 <div className="w-full md:w-1/4 px-4 mb-4 md:mb-0">
@@ -103,10 +103,11 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
 
                   <div className="flex flex-wrap mt-4 justify-items-start">
 
-                    <a className="gumroad-button" href="https://naturessecret.gumroad.com/l/seamossgummies">Buy on</a>
+                    <a className="gumroad-button" href="https://naturessecret.gumroad.com/l/seamossgummies">Order on</a>
+
                     <a
-                      className="inline-block w-auto m-1 md:w-auto mb-4 md:mb-0 md:mr-4 text-center bg-green-800 hover:bg-yellow-300 hover:scale-90 transition-all hover:text-black  text-white font-bold font-heading py-4 px-8 rounded-md uppercase"
                       href={`${item.url}`}
+                      className="ml-8 mt-4 rounded bg-blue-900 text-yellow-200 hover:bg-black transition-all px-6 py-2 pt-4 pb-4 bg-opacity-90"
                     >
                       Learn More
                     </a>

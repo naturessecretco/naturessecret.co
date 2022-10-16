@@ -45,12 +45,12 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                 <div key={index} className="w-full lg:w-1/2 md:px-3 mb-6 cursor-pointer hover:shadow-2xl border-black border-t shadow-lg transition-all hover:bg-yellow-600 hover:bg-opacity-30">
                                     <a className="relative block" href={feature?.gumroad}>
                                         <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-black border-2 border-blue-500 rounded-full text-green-400">
-                                            {feature?.discount * 100}% Better Value
+                                           {feature?.discount * 100}% Savings
                                         </span>
                                         <img
                                             className="w-full h-68 object-fit"
-                                            src={feature?.cover.url}
-                                            alt={feature?.cover.alt}
+                                            src={feature?.cover?.url}
+                                            alt={feature?.cover?.alt}
                                         />
                                         <div className="px-6 pb-16 mt-12">
                                             <div className="px-6 mb-2">
@@ -64,19 +64,11 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                                         {moneyFormatter(feature?.value)}
                                                     </span>
                                                     <a
-                                                        className="gumroad-button ml-8"
-                                                        href="https://naturessecret.gumroad.com/l/seamossgummies"
-                                                        data-gumroad-overlay-checkout="true"
-                                                    >
-                                                        Buy on
-                                                    </a>
-                                                    <a
-                                                        className="ml-8 rounded hover:bg-black hover:bg-opacity-30 transition-all text-white  duration-200 shadow-2xl px-8 py-4 bg-opacity-30"
-                                                        href="https://naturessecret.gumroad.com/l/seamossgummies"
-                                                        data-gumroad-overlay-checkout="true"
+                                                        className="ml-8 mt-4 rounded bg-blue-900 text-yellow-200 hover:bg-black transition-all px-6 py-2 pt-4 pb-4 bg-opacity-90"
                                                     >
                                                         Learn More
                                                     </a>
+                                                    <a className="gumroad-button ml-4" href="https://naturessecret.gumroad.com/l/wildcrafted-seamoss">Order on</a>
                                                 </p>
                                                 <p className="text-gray-200 font-bold leading-8 font-xl">{feature?.description}</p>
 
