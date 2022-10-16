@@ -5,7 +5,7 @@ const pages = ({ store, pageKey }) => {
 
     const { getProducts } = products(store)
     const { getBanner, getHero, getPhoneNumber, getBenefits, getEmailAddress, getDisclaimer, getCopyrights, getTag, getCertifications } = meta(store)
-    const { getPageLinks, getFeatured } = links(store)
+    const { getPageLinks, getFeatured, getHeaderLinks } = links(store)
     const { getFAQs } = faqs(store)
     const { getSocialMedia } = social_media(store)
     const { title } = metaConfig({})
@@ -202,7 +202,7 @@ const pages = ({ store, pageKey }) => {
                     message: getBanner().title,
                     url: getBanner().url,
                 },
-                links: getPageLinks(),
+                links: getHeaderLinks(),
                 favicon: {
                     image: {
                         url: '/assets/images/logo.png',

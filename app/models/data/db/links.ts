@@ -7,6 +7,9 @@ const links = (store: any[]) => {
     const databaseObject = {
         id: 'LINKS_DATABASE_ID',
         version: Date.now(),
+        getHeaderLinks: () => {
+            return databaseObject.getLinks().filter((link: any) => link.types.includes('🧕🏿Header'))
+        },
         getFeatured: () => {
             return databaseObject.getLinks().filter((link: any) => link.types.includes('⭐Featured'))
         },
@@ -14,7 +17,7 @@ const links = (store: any[]) => {
             return databaseObject.getLinks().filter((link: any) => link.types.includes('📄Page'))
         },
 
-        getLinks:  () => {
+        getLinks: () => {
             return store.filter((data) => {
                 return (
                     links.predicate(data)
