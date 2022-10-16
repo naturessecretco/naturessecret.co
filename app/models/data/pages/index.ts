@@ -54,7 +54,8 @@ const pages = ({ store, pageKey }) => {
                             url: certification?.covers[0]?.url ?? null,
                             alt: certification?.covers[0]?.name ?? null
                         },
-                        url: '#'
+                        url: '#',
+                        name: certification?.name ?? null
                     }))
                 },
                 product: getProducts()[0],
