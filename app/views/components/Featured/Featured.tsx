@@ -63,11 +63,7 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                                     <span className="text-md text-red-600 opacity-80 font-semibold font-heading line-through">
                                                         {moneyFormatter(feature?.value)}
                                                     </span>
-                                                    <a
-                                                        className="ml-8 mt-4 rounded bg-blue-900 text-yellow-200 hover:bg-black transition-all px-6 py-2 pt-4 pb-4 bg-opacity-90"
-                                                    >
-                                                        Learn More
-                                                    </a>
+                                                
                                                     <a className="gumroad-button ml-4" href="https://naturessecret.gumroad.com/l/wildcrafted-seamoss">Order on</a>
                                                 </p>
                                                 <p className="text-gray-200 font-bold leading-8 font-xl">{feature?.description}</p>
