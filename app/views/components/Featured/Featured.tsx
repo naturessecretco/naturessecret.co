@@ -96,7 +96,7 @@ const Featured = ({ title, cta, features }: HeroProps) => {
 
                 <div className="text-center">
                     <a
-                        className="inline-block bg-blue-900 hover:bg-black duration-200 ease-in  transition-all text-white font-bold font-heading py-5 px-8 rounded-md uppercase"
+                        className="inline-block bg-green-700 hover:bg-black duration-200 ease-in  transition-all text-white font-bold font-heading py-5 px-8 rounded-md uppercase"
                         href="/products"
                     >
                         All products

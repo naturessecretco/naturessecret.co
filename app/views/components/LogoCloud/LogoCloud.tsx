@@ -6,7 +6,7 @@ const LogoCloud = ({ title, logos }: LogoCloudProps) => {
   const Title = () => {
 
     return (
-      <h1 className="mb-8 text-3xl font-heading font-bold text-black font-sans">
+      <h1 className="mb-8 text-4xl font-heading font-bold text-black font-sans">
         {title ? title : "TITLE_NOT_FOUND"}
       </h1>
     )
@@ -16,13 +16,13 @@ const LogoCloud = ({ title, logos }: LogoCloudProps) => {
   const Logos = () => {
     return (
       logos ?
-        <div className="flex flex-wrap transition-all items-center justify-center">
+        <div className="flex transition-all m-auto justify-center items-baseline">
 
           {
             logos.map((logo, index) => {
               return (
-                <a key={index} className="h-1/4 w-1/4 mr-12 bg-yellow-500 hover:bg-opacity-50 transition-all rounded-full bg-opacity-10 group drop-shadow shadow-2xl">
-                  <div className="w-full px-4 mb-4 h-full rounded-full">
+                <a key={index} className="m-0 h-full w-full cursor-pointer group items-baseline">
+                  <div className="w-full px-4 mb-4 h-full rounded-full group-hover:bg-opacity-30 group-hover:bg-yellow-400 transition-all ease-in-out delay-200">
                     <img className="h-full rounded-full w-full group-hover:-translate-y-10 m-auto self-center snap-center duration-700 ease-in-out transition-all  group-hover:h-1/2 group-hover:w-1/2"src={logo?.image?.url ?? "IMAGE_NOT_FOUND"} alt={logo?.image?.alt ?? "IMAGE_NOT_FOUND"} />
                     <p className="text-center font-sans text-white bold text-lg duration-500 text-wrap -translate-y-14 opacity-0 group-hover:opacity-100 delay-300">{logo?.name ?? "Non-Genetically Modifed"}</p>
 

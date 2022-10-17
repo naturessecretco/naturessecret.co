@@ -124,7 +124,7 @@ const pages = ({ store, pageKey }) => {
                         value: product.value,
                         price: product.price,
                         order: {
-                            url: product.gumroadURL
+                            url: product.gumroad
                         },
                         cover: product.covers[0],
                         discount: product.discount,
