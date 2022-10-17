@@ -17,12 +17,9 @@ const HomePage = ({ page: { data } }) => {
 
   return (
     <>
-      <Confetti height={height} width={width} recycle={false} numberOfPieces={120}
-
-      />
+      <Confetti height={height} width={width} recycle={false} numberOfPieces={100}/>
       <Hero {...hero} />,
       <Featured {...featured} />
-      <Product {...product} />
       <Grid {...grid} />
       <MediaRow {...mediaRow} />
       <LogoCloud {...logoCloud} />

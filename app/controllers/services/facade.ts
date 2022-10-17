@@ -20,7 +20,7 @@ const FacadeService = () => {
                         name: title(Name),
                         url: url(URL),
                         advertisements: files(Advertisements),
-                        gumroadURL: url(Gumroad),
+                        gumroad: url(Gumroad),
                         heading: rich_text(Name),
                         description: rich_text(Description),
                         sku: rich_text(SKU),

@@ -45,7 +45,7 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                 <div key={index} className="w-full lg:w-1/2 md:px-3 mb-6 cursor-pointer hover:shadow-2xl border-black border-t shadow-lg transition-all hover:bg-yellow-600 hover:bg-opacity-30">
                                     <a className="relative block" href={feature?.gumroad}>
                                         <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-black border-2 border-blue-500 rounded-full text-green-400">
-                                           {feature?.discount * 100}% Savings
+                                            {feature?.discount * 100}% Savings
                                         </span>
                                         <img
                                             className="w-full h-68 object-fit"
@@ -63,8 +63,8 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                                                     <span className="text-md text-red-600 opacity-80 font-semibold font-heading line-through">
                                                         {moneyFormatter(feature?.value)}
                                                     </span>
-                                                
-                                                    <a className="gumroad-button ml-4" href="https://naturessecret.gumroad.com/l/wildcrafted-seamoss">Order on</a>
+
+                                                    <GumroadButton gumroad={feature?.gumroad} />
                                                 </p>
                                                 <p className="text-gray-200 font-bold leading-8 font-xl">{feature?.description}</p>
 
