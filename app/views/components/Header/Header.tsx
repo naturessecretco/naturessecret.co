@@ -31,24 +31,22 @@ const Header = ({ favicon, links, banner }: HeaderProps) => {
 
     return (
       links ? <ul className="hidden lg:flex lg:items-center lg:justify-center lg:w-full lg:m-auto ">
-        <Fade duration={500} cascade triggerOnce>
-          {
-            links.map((link, index) => {
-              return (
-                <li className="ml-5 mr-5 hover:scale-90 duration-200 ease-in" key={index}>
+        {
+          links.map((link, index) => {
+            return (
+              <li className="ml-5 mr-5 hover:scale-90 duration-200 ease-in" key={index}>
 
-                  <a className="font-sans transition-all font-bold font-heading hover:text-green-500  text-black hover:bg-black hover:bg-opacity-70 hover:shadow-xl py-2 px-2 hover:rounded-full" href={link?.url}>
-                    <span>
-                      <img className="h-4 hvr-pop inline-block" loading="eager" src="/assets/images/dark-leaf.svg" />
-                      {link?.name}
-                    </span>
+                <a className="font-sans transition-all font-bold font-heading hover:text-green-500  text-black hover:bg-black hover:bg-opacity-70 hover:shadow-xl py-2 px-2 hover:rounded-full" href={link?.url}>
+                  <span>
+                    <img className="h-4 hvr-pop inline-block" loading="eager" src="/assets/images/dark-leaf.svg" />
+                    {link?.name}
+                  </span>
 
-                  </a>
-                </li>
-              )
-            })
-          }
-        </Fade>
+                </a>
+              </li>
+            )
+          })
+        }
 
 
       </ul> : <></>

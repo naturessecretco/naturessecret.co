@@ -1,6 +1,8 @@
 import { Fade } from 'react-awesome-reveal';
 import type { ImageProps } from "@typings/Image"
 import utils from "@utils/index"
+import KofiSupportButton from '../KofiSupportButton';
+import GumroadButton from '../GumroadButton';
 export type Item = {
   id?: string,
   name?: string,
@@ -59,7 +61,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
     return (
 
       items ? <div className="w-full lg:w-3/4 px-3 font-sans">
-        <Fade triggerOnce cascade>
+        <Fade duration={500} triggerOnce cascade>
           {items.map((item, index) => (
             <div key={index} className="relative mb-4 bg-yellow-500 bg-opacity-30 shadow-xl rounded cursor-pointer hover:shadow-2xl hover:bg-opacity-50 transition-all">
               <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-gray-900 border-2 border-green-500 rounded-full text-green-500">
@@ -103,8 +105,7 @@ const ProductsSearch = ({ title, items, tags }: ProductSearch) => {
 
                   <div className="flex flex-wrap mt-4 justify-items-start">
 
-                    <a className="gumroad-button" href="https://naturessecret.gumroad.com/l/seamossgummies">Order on</a>
-
+                    <GumroadButton gumroad={item?.url} />
                     <a
                       href={`${item.url}`}
                       className="ml-8 mt-4 rounded bg-blue-900 text-yellow-200 hover:bg-black transition-all px-6 py-2 pt-4 pb-4 bg-opacity-90"
