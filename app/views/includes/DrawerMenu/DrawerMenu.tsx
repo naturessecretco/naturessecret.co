@@ -17,21 +17,17 @@ const DrawerMenu = ({ navLinks }: MenuProps) => {
 
         return (
             navLinks ?
-                <ul className="text-2xl font-thin font-heading">
-                    <FadeAnimation duration={300} triggerOnce cascade>
-                        {
-                            navLinks.map((link, index) => {
-                                return (
-                                    <li key={index} className="mb-14 font-sans font-bold group">
-                                        <a className="text-gray-900 hover:text-green-400 hover:bg-black rounded-full hover:bg-opacity-70 transition-all py-2 px-2 ease-in-out" href={link.url}><img className="inline-block h-4 no-wrap" src="/assets/images/leaf.svg" />{link.name}</a>
-                                    </li>
+                <ul className="text-2xl font-thin font-heading group">
+                    {
+                        navLinks.map((link, index) => {
+                            return (
+                                <li key={index} className="mb-14 font-sans font-bold delay">
+                                    <a className="text-gray-900 hover:text-green-400 hover:bg-black rounded-full hover:bg-opacity-70 transition-all py-2 px-2 ease-in-out" href={link.url}><img className="inline-block h-4 no-wrap" src="/assets/images/leaf.svg" />{link.name}</a>
+                                </li>
 
-                                )
-                            })
-                        }
-                    </FadeAnimation>
-
-
+                            )
+                        })
+                    }
 
                 </ul> : <></>
         )
@@ -62,7 +58,7 @@ const DrawerMenu = ({ navLinks }: MenuProps) => {
 
 
                         </div>
-                     
+
                         <NavLinks />
                     </nav>
                 </ClickAwayListener>
