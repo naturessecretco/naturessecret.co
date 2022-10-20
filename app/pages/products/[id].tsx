@@ -9,7 +9,7 @@ const ProductsPage = ({ product }) => {
   return (
 
     <>
-      <Product {...product} />
+
     </>
 
   )

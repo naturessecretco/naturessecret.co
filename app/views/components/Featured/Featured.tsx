@@ -9,6 +9,7 @@ export type Feature = {
     description?: string,
     price?: string,
     gumroad: string,
+    url?: string,
     value?: string
     discount?: number
 }
@@ -43,7 +44,7 @@ const Featured = ({ title, cta, features }: HeroProps) => {
                         features.map((feature, index) => {
                             return (
                                 <div key={index} className="w-full lg:w-1/2 md:px-3 mb-6 cursor-pointer hover:shadow-2xl border-black border-t shadow-lg transition-all hover:bg-yellow-600 hover:bg-opacity-30">
-                                    <a className="relative block" href={feature?.gumroad}>
+                                    <a className="relative block" href={feature?.url}>
                                         <span className="absolute top-0 left-0 ml-6 mt-6 px-2 py-1 text-xs font-bold font-heading bg-black border-2 border-blue-500 rounded-full text-green-400">
                                             {feature?.discount * 100}% Savings
                                         </span>
