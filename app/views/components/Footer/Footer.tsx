@@ -33,7 +33,7 @@ const Footer = ({ copyrights, phone, tag, email, favicon, navLinks, socials, mes
                 <h3 className="mb-2 text-xl text-green-700 font-bold font-heading">
                     {TITLE}
                 </h3>
-                <p className="text-gray-900 text-2xl md:text-3xl font-bold font-heading">
+                <p className="text-gray-900 text-2xl md:text-3xl font-bold font-heading flex-wrap whitespace-pre-wrap">
                     {email}
                 </p>
             </div> : <></>
@@ -51,7 +51,7 @@ const Footer = ({ copyrights, phone, tag, email, favicon, navLinks, socials, mes
                     <h3 className="mr-10 text-xl text-green-700 font-bold font-heading">
                         {TITLE}
                     </h3>
-                    <div className="flex">
+                    <div className="flex flex-wrap">
                         <FadeAnimation cascade triggerOnce>
                             {socials?.map((social, index) => {
                                 return (

@@ -11,6 +11,7 @@ class Document extends NextDocument<any> {
             <Html>
                 <Head>
                     <Script strategy='beforeInteractive' src="https://gumroad.com/js/gumroad.js" />
+                    <Script strategy='beforeInteractive' src="/assets/scripts/ringblaze.js" />
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
                     <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet" />
