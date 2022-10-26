@@ -1,6 +1,7 @@
 import FadeAnimation from "@components/FadeAnimation";
 import KofiSupportButton from '@components/KofiSupportButton';
 import type { FooterProps } from "@typings/Footer";
+import ButtonsSx from "@views/styles/Buttons";
 import { SocialIcon } from "react-social-icons";
 
 
@@ -72,13 +73,15 @@ const Footer = ({ copyrights, phone, tag, email, favicon, navLinks, socials, mes
 
     const NavLinks = () => {
 
+        const buttonStyles = ButtonsSx().tw()
+
         return (
             navLinks ? <ul className="flex flex-wrap -mb-4 -mx-3 items-center justify-center">
                 {navLinks?.map((navLink, index) => {
                     return (
                         <li key={index} className="w-1/2 md:w-1/3 lg:w-auto px-3 mb-4">
                             <a
-                                className="hover:scale-90 hover:text-yellow-400 inline-block w-38 py-2 px-6 rounded-full  bg-black bg-opacity-80 text-gray-200  hover:bg-gray-900 font-semibold font-heading transition-all"
+                                className={buttonStyles}
                                 href={navLink?.url}
                             >
                                 <img className="inline-block h-4 mr-1 hvr-pop" src="/assets/images/dark-leaf.svg" />

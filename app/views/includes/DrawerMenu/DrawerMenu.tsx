@@ -7,6 +7,7 @@ import { CSSTransition } from 'react-transition-group';
 
 import type { IComponent } from "@models/typings/Component";
 import type { MenuProps } from "@typings/Menu";
+import ButtonsSx from '@views/styles/Buttons';
 
 const DrawerMenu = ({ navLinks }: MenuProps) => {
 
@@ -15,6 +16,8 @@ const DrawerMenu = ({ navLinks }: MenuProps) => {
 
     const NavLinks = () => {
 
+        const buttonStyles = ButtonsSx().tw()
+
         return (
             navLinks ?
                 <ul className="text-2xl font-thin font-heading group">
@@ -22,7 +25,7 @@ const DrawerMenu = ({ navLinks }: MenuProps) => {
                         navLinks.map((link, index) => {
                             return (
                                 <li key={index} className="mb-14 font-sans font-bold delay">
-                                    <a className="text-gray-900 hover:text-green-400 hover:bg-black rounded-full hover:bg-opacity-70 transition-all py-2 px-2 ease-in-out" href={link.url}><img className="inline-block h-4 no-wrap" src="/assets/images/leaf.svg" />{link.name}</a>
+                                    <a className={buttonStyles} href={link.url}><img className="inline-block h-4 no-wrap" src="/assets/images/leaf.svg" />{link.name}</a>
                                 </li>
 
                             )

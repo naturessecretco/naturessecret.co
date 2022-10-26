@@ -3,6 +3,7 @@ import useDrawer from "@hooks/useDrawer";
 import { Fade } from "react-awesome-reveal";
 import Headroom from "react-headroom";
 import type { HeaderProps } from "@typings/Header";
+import ButtonsSx from "@views/styles/Buttons";
 
 const Header = ({ favicon, links, banner }: HeaderProps) => {
 
@@ -29,6 +30,8 @@ const Header = ({ favicon, links, banner }: HeaderProps) => {
 
   const NavLinks = () => {
 
+    const buttonStyle = ButtonsSx().tw()
+
     return (
       links ? <ul className="hidden lg:flex lg:items-center lg:justify-center lg:w-full lg:m-auto ">
         {
@@ -36,7 +39,7 @@ const Header = ({ favicon, links, banner }: HeaderProps) => {
             return (
               <li className="ml-5 mr-5 hover:scale-90 duration-200 ease-in" key={index}>
 
-                <a className="font-sans transition-all font-bold font-heading hover:text-green-500  text-black hover:bg-black hover:bg-opacity-70 hover:shadow-xl py-2 px-2 hover:rounded-full" href={link?.url}>
+                <a className={buttonStyle} href={link?.url}>
                   <span>
                     <img className="h-4 hvr-pop inline-block" loading="eager" src="/assets/images/dark-leaf.svg" />
                     {link?.name}

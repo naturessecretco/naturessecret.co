@@ -139,7 +139,7 @@ const Hero = ({ features, socials, covers, backgroundCover, cta }: HeroProps) =>
 
         return (
             <div style={HeaderSx} className="relative container mx-auto px-2 align-center m-auto">
-                <img src={backgroundCover} alt="background cover" className="m-auto lg:-translate-y-16" />
+                <img src={backgroundCover} alt="background cover" className="lg:h-1/2 lg:w-1/2 m-auto object-contain mt-0 lg:-translate-y-4" />
 
                 <Socials />
                 <CallToAction />
