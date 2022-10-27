@@ -1,10 +1,14 @@
 import { atom, useRecoilState } from "recoil"
+import { recoilPersist } from 'recoil-persist'
+
+const { persistAtom } = recoilPersist()
 
 const bannerState = atom({
     key: 'bannerState',
     default: {
         isOpen: true
     },
+    effects_UNSTABLE: [persistAtom]
 });
 
 const useBanner = () => {
