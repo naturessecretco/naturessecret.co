@@ -11,16 +11,14 @@
 
 ## 📷Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./docs/screenshot.png)
 
 ---
 
 ## ✨Features
 
-* Light/dark mode toggle
-* Live previews
-* Fullscreen mode
-* Cross platform
+* Gumroad API Integration
+* Notion CMS
 
 ---
 

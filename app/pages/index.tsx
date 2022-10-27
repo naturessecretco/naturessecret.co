@@ -1,23 +1,17 @@
-import CommentBox from "@components/CommentBox"
 import Featured from "@components/Featured"
 import Grid from "@components/Grid"
 import Hero from "@components/Hero"
 import MediaRow from "@components/MediaRow"
-import Product from "@components/Product"
 import Summary from "@components/Summary"
 import PageService from "@services/pages"
 import LogoCloud from "@views/components/LogoCloud"
-import Confetti from 'react-confetti'
-import { useWindowSize } from 'react-use';
 
 const HomePage = ({ page: { data } }) => {
 
-  const { hero, featured, product, mediaRow, summary, grid, logoCloud } = data ?? null
-  const { height, width } = useWindowSize()
+  const { hero, featured, mediaRow, summary, grid, logoCloud } = data
 
   return (
     <>
-      <Confetti height={height} width={width} recycle={false} numberOfPieces={100}/>
       <Hero {...hero} />,
       <Featured {...featured} />
       <Grid {...grid} />

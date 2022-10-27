@@ -20,12 +20,12 @@ const DrawerMenu = ({ navLinks }: MenuProps) => {
 
         return (
             navLinks ?
-                <ul className="text-2xl font-thin font-heading group">
+                <ul className="text-2xl font-heading group">
                     {
                         navLinks.map((link, index) => {
                             return (
-                                <li key={index} className="mb-14 font-sans font-bold delay">
-                                    <a className={buttonStyles} href={link.url}><img className="inline-block h-4 no-wrap" src="/assets/images/leaf.svg" />{link.name}</a>
+                                <li key={index} className="mb-14 font-sans font-bold">
+                                    <a className={buttonStyles} href={link.url}><img className="inline-block h-4 no-wrap" src="/assets/images/dark-leaf.svg" />{link.name}</a>
                                 </li>
 
                             )
@@ -54,7 +54,7 @@ const DrawerMenu = ({ navLinks }: MenuProps) => {
                                 />
                             </a>
                             <button onClick={() => closeDrawer()} className="navbar-close hover:scale-90 hover:bg-green-600 transition-all duration-500 rounded-full">
-                                <CloseIcon sx={{ color: 'white' }} />
+                                <CloseIcon/>
                             </button>
                         </div>
                         <div className="flex mb-8 justify-between">
