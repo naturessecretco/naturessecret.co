@@ -18,7 +18,12 @@
 ## ✨Features
 
 * Gumroad API Integration
-* Notion CMS
+* Notion API Integration
+* Progressive Web App Mode
+* Social Media Share
+* Blog
+* Search Engine Optimization
+* 
 
 ---
 
@@ -62,17 +67,18 @@ For support, email info@naturessecret.co
 
 ## ➰Feedback
 
-If you have any feedback, please reach out to us at fake@fake.com
+If you have any feedback, please reach out to us at help@desirable.solutions
 
 ---
 
 ## ⚙️Tech Stack
 
 * React
+* Blackprint UI
 * Recoil
 * TailwindCSS
-* NextJs
-* Notion
+* NextJS
+* Notion API
 * Facade 
   
 ---
@@ -106,16 +112,13 @@ If you have any feedback, please reach out to us at fake@fake.com
 
  > To God Be All the Glory. 
 
-
-
-
 ---
 
 ## ✒️Authors
 
-- [@desirtech](https://www.github.com/octokatherine)
-- [@desirdesigns](https://www.github.com/octokatherine)
-- [@desirablesolutions](https://www.github.com/octokatherine)
+- [@desirtech](https://www.github.com/desir-tech)
+- [@desirdesigns](https://www.github.com/desir-designs)
+- [@desirablesolutions](https://www.github.com/desirablesolutions)
 
 
 ---
