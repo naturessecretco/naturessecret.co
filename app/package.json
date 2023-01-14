@@ -32,7 +32,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-headroom": "^3.2.1",
-    "react-snipcart": "^0.1.6",
     "react-social-icons": "^5.15.0",
     "react-transition-group": "^4.4.5",
     "tailwindcss": "^3.2.4"
