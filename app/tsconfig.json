@@ -1,40 +1,55 @@
 {
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "baseUrl": "./",
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": false,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "baseUrl": "./src/",
     "paths": {
-      "@views/*": ["views/*"],
-      "@models/*": ["models/*"],
-      "@controllers/*": ["controllers/*"],
-      "@assets/*":["public/assets/*"],
-      "@components/*": ["views/components/*"],
-      "@includes/*": ["views/includes/*"],
-      "@layouts/*": ["views/layouts/*"],
-      "@styles/*": ["views/styles/*"],
-      "@libs/*": ["views/libs/*"],
-      "@services/*":["controllers/services/*"],
-      "@utils/*":["controllers/utils/*"],
-      "@pages/*":["models/data/pages/*"],
-      "@typings/*":["models/typings/*"],
-      "@db/*":["models/data/db/*"],
-      "@store/*":["models/data/store/*"],
-      "@configs/*":["models/configs/*"],
-      "@hooks/*":["controllers/hooks/*"],
+      "@views/*": [
+        "views/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@controllers/*": [
+        "controllers/*"
+      ],
+      "@layouts/*": [
+        "views/layouts/*"
+      ],
+      "@includes/*": [
+        "views/includes/*"
+      ],
+      "@hooks/*": [
+        "controllers/hooks/*"
+      ],
+      "@components/*": [
+        "views/components/*"
+      ],
+      "@db/*": [
+        "models/data/db/*"
+      ],
+      "@pages/*": [
+        "models/data/pages/*"
+      ],
+      "@services/*": [
+        "controllers/services/*"
+      ],
+      "@styles/*": [
+        "views/styles/*"
+      ],
+      "@libs/*": [
+        "views/libs/*"
+      ],
+      "@configs/*": [
+        "models/configs/*"
+      ],
+      "@typings/*": [
+        "models/typings/*"
+      ],
+      "@utils/*": [
+        "controllers/utils/*"
+      ]
     }
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/404.tsx", "pages/_app.tsx", "../sso/models/configs/authenticator.ts", "pages/products/index.tsc", ],
-  "exclude": ["node_modules"]
+  }
 }

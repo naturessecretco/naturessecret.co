@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/naturessescret/naturessecret.co/issues"
   },
-  "homepage": "https://github.com/naturessescret/naturessecret.co#readme"
+  "homepage": "https://github.com/naturessescret/naturessecret.co#readme",
+  "dependencies": {
+    "react-social-icons": "^5.15.0"
+  }
 }
