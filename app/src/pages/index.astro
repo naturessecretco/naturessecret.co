@@ -7,12 +7,10 @@ import Hero from "@components/static/Hero.astro";
 import ProductsRow from "@components/static/ProductsRow.astro";
 import ContentGrid from "@components/static/ContentGrid.astro";
 
-const { getPage } = PageService();
 
-const { layout, data } = await getPage("home");
 ---
 
-<Application {...layout}>
+<Application>
   <Hero />
   <ProductsRow />
   <ContentGrid />
