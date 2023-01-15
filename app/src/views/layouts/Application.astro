@@ -3,9 +3,8 @@ import "@libs/globals.css";
 
 import { SEO } from "astro-seo";
 
-import Header from "@includes/Header";
-import Footer from "@includes/Footer";
-
+import Header from "@includes/static/Header.astro";
+import Footer from "@includes/static/Footer.astro";
 import ContactRow from "@includes/static/ContactRow.astro";
 
 export interface Props {
@@ -35,9 +34,9 @@ const { title, pageTitle, description, twitter } = Astro.props;
   </head>
 
   <body>
-    <Header client:visible />
+    <Header />
     <slot />
     <ContactRow />
-    <Footer client:visible />
+    <Footer />
   </body>
 </html>

@@ -1,3 +1,4 @@
+@import url("./reset.module.css");
 @import url("./scrollbar.module.css");
 
 
@@ -23,6 +24,7 @@
 
 body,
 html {
+    transition: all 0.2s ease-in-out;
     width: 100vw;
     overflow-x: hidden !important;
     margin: 0;
@@ -34,12 +36,13 @@ html {
     background-color: var(--color-primary) !important;
 }
 
-*,
-*::selection,
-*::-moz-selection,
-*::-webkit-selection,
-*::before,
-*::after {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
-    -webkit-tap-highlight-color: transparent !important;
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
 }
