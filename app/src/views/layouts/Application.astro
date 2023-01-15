@@ -5,6 +5,7 @@ import { SEO } from "astro-seo";
 
 import Header from "@includes/Header";
 import Footer from "@includes/Footer";
+
 import ContactRow from "@includes/static/ContactRow.astro"
 
 export interface Props {
@@ -30,18 +31,7 @@ const { title, pageTitle, description, twitter } = Astro.props;
       twitter={{
         creator: "@jonasmerlins1",
       }}
-      extend={{
-        link: [{ rel: "icon", href: "/favicon.ico" }],
-        meta: [
-          {
-            name: "twitter:image",
-            content:
-              "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
-          },
-          { name: "twitter:title", content: "Tinker Tailor Soldier Spy" },
-          { name: "twitter:description", content: "Agent" },
-        ],
-      }}
+    
     />
   </head>
 
