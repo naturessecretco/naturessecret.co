@@ -6,7 +6,7 @@ import { SEO } from "astro-seo";
 import Header from "@includes/Header";
 import Footer from "@includes/Footer";
 
-import ContactRow from "@includes/static/ContactRow.astro"
+import ContactRow from "@includes/static/ContactRow.astro";
 
 export interface Props {
   title?: string;
@@ -31,14 +31,13 @@ const { title, pageTitle, description, twitter } = Astro.props;
       twitter={{
         creator: "@jonasmerlins1",
       }}
-    
     />
   </head>
 
   <body>
-    <Header />
+    <Header client:visible />
     <slot />
-    <ContactRow/>
-    <Footer />
+    <ContactRow />
+    <Footer client:visible />
   </body>
 </html>
