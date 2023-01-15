@@ -11,8 +11,11 @@ import vercel from "@astrojs/vercel/serverless";
 import preact from "@astrojs/preact";
 
 // https://astro.build/config
+import svelte from "@astrojs/svelte";
+
+// https://astro.build/config
 export default defineConfig({
   output: "server",
-  integrations: [tailwind(), react(), preact()],
+  integrations: [tailwind(), react(), preact(), svelte()],
   adapter: vercel()
 });

@@ -2,6 +2,7 @@
 import "@libs/globals.css";
 
 import { SEO } from "astro-seo";
+import { Font } from 'astro-fonts'
 
 import Header from "@includes/static/Header.astro";
 import Footer from "@includes/static/Footer.astro";
@@ -32,6 +33,8 @@ const { title, pageTitle, description, twitter } = Astro.props;
       }}
     />
     <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="30" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   </head>
