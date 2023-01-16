@@ -4,10 +4,10 @@
 
 ::-webkit-scrollbar {
     width: 10px;
-    background-color: var(--black);
+    background-color: var(--color-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--color-primary);
+    background-color: var(--black);
     border-radius: 2px;
 }

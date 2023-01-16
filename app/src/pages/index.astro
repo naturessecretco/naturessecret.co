@@ -8,6 +8,7 @@ import Product from "@components/static/Product.astro";
 import LogoCloud from "@components/static/LogoCloud.astro";
 import FeaturedItem from "@components/static/FeaturedItem.astro";
 import FeaturedMedia from "@components/static/FeaturedMedia.astro";
+import SubscribeForm from "@components/static/SubscribeForm.astro";
 
 const contentGrid = {
   benefits: {
@@ -45,15 +46,21 @@ const contentGrid = {
     ],
   },
 };
+
+const layout = {
+  pageTitle: "Home",
+  title: "Nature's Secret",
+};
 ---
 
-<Application>
+<Application {...layout}>
   <Hero />
   <ProductsRow />
   <ProductsRow />
   <Product />
   <ContentGrid {...contentGrid.benefits} />
   <ContentGrid {...contentGrid.ingridients} />
+  <SubscribeForm />
   <LogoCloud />
   <FeaturedMedia />
   <FeaturedItem />
