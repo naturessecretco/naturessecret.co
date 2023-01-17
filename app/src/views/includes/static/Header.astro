@@ -6,13 +6,6 @@ export interface Props {
 const { links } = Astro.props;
 ---
 
-<script>
-  import Headroom from "headroom.js";
-  var myElement = document.querySelector("#header");
-  var headroom = new Headroom(myElement, {});
-  headroom.init();
-</script>
-
 <div
   id="header"
   class="container sticky w-full mx-auto overflow-hidden backdrop-blur-md"

@@ -2,7 +2,7 @@
 import "@libs/globals.css";
 
 import { SEO } from "astro-seo";
-import { Font } from "astro-fonts";
+import { PageTransition } from "astro-page-transition";
 
 import Header from "@includes/static/Header.astro";
 import Footer from "@includes/static/Footer.astro";
@@ -16,9 +16,6 @@ export interface Props {
     creator?: string;
   };
 }
-
-const PUBLIC_SNIPCART_API_KEY = import.meta.env.PUBLIC_SNIPCART_API_KEY;
-
 const { title, pageTitle, description, twitter } = Astro.props;
 ---
 
@@ -42,18 +39,9 @@ const { title, pageTitle, description, twitter } = Astro.props;
   </head>
 
   <body>
-    <Header client:visible />
+    <PageTransition speed={800} color="#000000" zIndex={9999} />
+    <Header />
     <slot />
-    <button
-      class="snipcart-add-item"
-      data-item-id="starry-night"
-      data-item-price="79.99"
-      data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
-      data-item-image="/assets/images/starry-night.jpg"
-      data-item-name="The Starry Night"
-    >
-      Add to cart
-    </button>
     <ContactRow />
     <Footer />
     <PostScripts />
