@@ -1,0 +1,19 @@
+---
+import type { ImageProps } from "@typings/Image";
+export interface Props {
+  image?: ImageProps;
+  url?: string;
+}
+
+const { image, url } = Astro.props;
+---
+
+<div class="w-auto">
+  <div class="flex flex-wrap items-center">
+    <div class="w-auto mr-14">
+      <a href={url ?? "/"}>
+        <img src={image?.src ?? "#"} alt={image?.alt ?? "#"} />
+      </a>
+    </div>
+  </div>
+</div>

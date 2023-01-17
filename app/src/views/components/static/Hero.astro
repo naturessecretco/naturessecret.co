@@ -4,14 +4,19 @@ export type ImageProps = {
   alt?: string;
 };
 
+import ForwardArrowSVG from "@components/static/ForwardArrowSVG.astro";
 export interface Props {
+  title?: string;
+  heading?: string;
+  description?: string;
+  subHeading?: string;
   banner?: ImageProps;
 }
 
-const { banner } = Astro.props;
+const { title, banner, heading, subHeading, description } = Astro.props;
 ---
 
-<section class="pt-16 mt-10 overflow-hidden">
+<section class="pt-16 overflow-hidden">
   <div class="container px-4 mx-auto">
     <div class="flex flex-wrap -m-8">
       <div class="w-full p-8 md:w-1/2">
@@ -20,36 +25,20 @@ const { banner } = Astro.props;
         >
           <div class="flex flex-wrap items-center -m-1">
             <div class="w-auto p-1">
-              <a class="text-sm" href=""
-                >&#x1F44B; We are hiring! View open roles</a
-              >
+              <a class="text-sm" href="">{heading ?? "HEADING_NOT_FOUND"}</a>
             </div>
-            <div class="w-auto p-1">
-              <svg
-                width="15"
-                height="15"
-                viewbox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.66667 3.41675L12.75 7.50008M12.75 7.50008L8.66667 11.5834M12.75 7.50008L2.25 7.50008"
-                  stroke="black"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"></path>
-              </svg>
-            </div>
+            <ForwardArrowSVG />
           </div>
         </div>
         <h1
-          class="mb-6 text-6xl font-bold leading-none md:text-8xl lg:text-10xl font-heading md:max-w-xl"
+          class:list={[
+            "mb-6 font-serif text-6xl font-bold leading-none md:text-8xl lg:text-10xl font-heading md:max-w-xl",
+          ]}
         >
-          Discover Nature's Secrets
+          {title ?? "TITLE_NOT_FOUND"}
         </h1>
         <p class="text-lg font-medium text-gray-900 mb-11 md:max-w-md">
-          Get the best-in-class group mentoring plans and professional benefits
-          for your team
+          {subHeading ?? "SUB_HEADING_NOT_FOUND"}
         </p>
         <div class="flex flex-wrap -m-2.5 mb-20">
           <div class="w-full md:w-auto p-2.5">
@@ -71,7 +60,7 @@ const { banner } = Astro.props;
                     <svg
                       width="19"
                       height="18"
-                      viewbox="0 0 19 18"
+                      viewBox="0 0 19 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -92,25 +81,28 @@ const { banner } = Astro.props;
           </div>
         </div>
         <p class="mb-6 text-sm font-semibold text-gray-500 uppercase">
-          Trusted and loved by 100+ tech first teams
+          {description ?? "DESCRIPTION_NOT_FOUND"}
         </p>
+
         <div class="flex flex-wrap -m-3">
           <div class="w-auto p-3">
-            <img src="flaro-assets/logos/brands/brand.png" alt="" />
+            <img src="https://picsum.photos/100" alt="" />
           </div>
           <div class="w-auto p-3">
-            <img src="flaro-assets/logos/brands/brand2.png" alt="" />
+            <img src="https://picsum.photos/100" alt="" />
           </div>
           <div class="w-auto p-3">
-            <img src="flaro-assets/logos/brands/brand3.png" alt="" />
+            <img src="https://picsum.photos/100" alt="" />
           </div>
         </div>
       </div>
+
+      <!--God I Miss HTML Comments -->
       <div class="w-full p-8 md:w-1/2">
         <img
           class="transition duration-1000 ease-in-out transform hover:-translate-y-16"
-          src="flaro-assets/images/headers/header.png"
-          alt=""
+          src={banner?.src ?? "https://picsum.photos/500"}
+          alt={banner?.alt ?? "NO_IMAGE_FOUND"}
         />
       </div>
     </div>

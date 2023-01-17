@@ -122,11 +122,3 @@ If you have any feedback, please reach out to us at help@desirable.solutions
 
 
 ---
-
-## 📜License
-
-> This project is under the MIT License☂️. 
-
-**All data & metadata property of Nature's Secret, LLC**<br/>
-**©️ 2022 Nature's Secret. All Rights Reserved.**
-

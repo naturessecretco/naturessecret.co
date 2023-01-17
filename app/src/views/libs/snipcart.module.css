@@ -1,13 +1,13 @@
 #snipcart {
 
-    --color-default: hsl(0, 0%, 90%);
-    --color-alt: hsl(0, 0%, 50%);
+    --color-default: rgba(255, 255, 255, 0.81);
+    --color-alt: hsl(0, 0%, 100%);
     --color-icon: hsl(200, 90%, 40%);
     --color-success: hsl(144, 50%, 55%);
     --color-error: hsl(6, 55%, 60%);
 
     --color-link: hsl(220, 70%, 55%);
-    --color-link-hover: hsl(220, 70%, 65%);
+    --color-link-hover: hsl(109, 64%, 50%);
     --color-link-active: var(--color-link);
     --color-link-focus: var(--color-link);
 
@@ -94,13 +94,13 @@
     /* ----------------- 
         Background colors
     ----------------- */
-    --bgColor-default: hsl(210, 10%, 11%);
+    --bgColor-default: var(--color-primary);
     --bgColor-alt: hsl(210, 10%, 9%);
-    --bgColor-success: hsl(144, 70%, 15%);
-    --bgColor-error: hsl(6, 50%, 15%);
+    --bgColor-success: hsl(144, 76%, 43%);
+    --bgColor-error: hsl(6, 91%, 44%);
     --bgColor-info: hsl(210, 55%, 15%);
 
-    --bgColor-modal: hsl(210, 10%, 7%);
+    --bgColor-modal: hsl(142, 56%, 26%);
     --bgColor-modalVeil: hsla(210, 10%, 7%, .75);
 
     --bgColor-link: none;
@@ -148,7 +148,7 @@
         Shadows
     ----------------- */
 
-    --shadow-default: 0px 20px 24px -20px hsla(0, 0%, 0%, .5);
+    --shadow-default: 0px 20px 24px -20px rgba(45, 6, 6, 0.905);
     --shadow-tooltip: 0px 8px 16px hsla(220, 70%, 22%, .5);
 
     --shadow-link-focus: 0px 6px 4px -3px hsla(200, 90%, 40%, .5);

@@ -1,8 +1,8 @@
-export type ImageProps = { 
-    url?: string,
+export type ImageProps = {
+    src?: string,
     height?: string,
     width?: string,
-    className?: string,
+    class?: string,
     alt?: string,
-    
-} & React.HTMLAttributes<HTMLImageElement> 
+
+} & HTMLImageElement

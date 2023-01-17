@@ -1,7 +1,6 @@
 ---
 import { SEO } from "astro-seo";
 
-
 export interface Props {
   title?: string;
   pageTitle?: string;
@@ -13,19 +12,25 @@ export interface Props {
 
 const { title, pageTitle, description, twitter } = Astro.props;
 ---
-<head>
-    <SEO
-      title={`${pageTitle ?? "PAGE_TITLE_NOT_FOUND"} | ${
-        title ?? "TITLE_NOT_FOUND"
-      }`}
-      description={`${description ?? "DESCRIPTION_NOT_FOUND"}`}
-      twitter={{
-        creator: "@jonasmerlins1",
-      }}
-    />
-    <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="30" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  </head>
+<head>
+  <SEO
+    title={`${pageTitle ?? "PAGE_TITLE_NOT_FOUND"} | ${
+      title ?? "TITLE_NOT_FOUND"
+    }`}
+    description={`${description ?? "DESCRIPTION_NOT_FOUND"}`}
+    twitter={{
+      creator: "@jonasmerlins1",
+    }}
+  />
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="30" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Overpass&display=swap"
+    rel="stylesheet"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+</head>

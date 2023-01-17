@@ -10,56 +10,18 @@ import FeaturedItem from "@components/static/FeaturedItem.astro";
 import FeaturedMedia from "@components/static/FeaturedMedia.astro";
 import SubscribeForm from "@components/static/SubscribeForm.astro";
 
-const contentGrid = {
-  benefits: {
-    title: "Our Benefits",
-    items: [
-      {
-        title: "Benefit",
-      },
-      {
-        title: "Benefit",
-      },
-      {
-        title: "Benefit",
-      },
-      {
-        title: "Benefit",
-      },
-    ],
-  },
-  ingridients: {
-    title: "Our Benefits",
-    items: [
-      {
-        title: "Benefit",
-      },
-      {
-        title: "Benefit",
-      },
-      {
-        title: "Benefit",
-      },
-      {
-        title: "Benefit",
-      },
-    ],
-  },
-};
+import PageService from "@services/pages";
 
-const layout = {
-  pageTitle: "Home",
-  title: "Nature's Secret",
-};
+const { getPage } = PageService();
 ---
 
-<Application {...layout}>
+<Application>
   <Hero />
   <ProductsRow />
   <ProductsRow />
   <Product />
-  <ContentGrid {...contentGrid.benefits} />
-  <ContentGrid {...contentGrid.ingridients} />
+  <ContentGrid />
+  <ContentGrid />
   <SubscribeForm />
   <LogoCloud />
   <FeaturedMedia />

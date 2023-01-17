@@ -1,54 +1,29 @@
 ---
 import "@libs/globals.css";
-
-import { SEO } from "astro-seo";
+import AstroGap from "astro-gap";
 import { PageTransition } from "astro-page-transition";
-
+import { Spa } from "astro-spa";
+import Meta, { Props as MetaProps } from "@includes/static/Meta.astro";
 import Header from "@includes/static/Header.astro";
 import Footer from "@includes/static/Footer.astro";
 import ContactRow from "@includes/static/ContactRow.astro";
 import PostScripts from "@views/includes/dynamic/PostScripts.astro";
 export interface Props {
-  title?: string;
-  pageTitle?: string;
-  description?: string;
-  twitter?: {
-    creator?: string;
-  };
+  meta?: MetaProps;
 }
-const { title, pageTitle, description, twitter } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <SEO
-      title={`${pageTitle ?? "PAGE_TITLE_NOT_FOUND"} | ${
-        title ?? "TITLE_NOT_FOUND"
-      }`}
-      description={`${description ?? "DESCRIPTION_NOT_FOUND"}`}
-      twitter={{
-        creator: "@jonasmerlins1",
-      }}
-    />
-    <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="30" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Overpass&display=swap"
-      rel="stylesheet"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  </head>
-
-  <body class="font-sans_serif">
-    <PageTransition speed={800} color="black" zIndex={9999} />
+  <Meta />
+  <body>
+    <PageTransition speed={500} zIndex={99999} />
     <Header />
+    <AstroGap spaces={5} />
     <slot />
     <ContactRow />
     <Footer />
     <PostScripts />
+    <Spa />
   </body>
 </html>
