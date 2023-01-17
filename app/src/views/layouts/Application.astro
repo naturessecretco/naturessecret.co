@@ -33,13 +33,18 @@ const { title, pageTitle, description, twitter } = Astro.props;
     />
     <meta charset="UTF-8" />
     <meta http-equiv="refresh" content="30" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   </head>
 
-  <body>
-    <PageTransition speed={800} color="#000000" zIndex={9999} />
+  <body class="font-sans_serif">
+    <PageTransition speed={800} color="black" zIndex={9999} />
     <Header />
     <slot />
     <ContactRow />

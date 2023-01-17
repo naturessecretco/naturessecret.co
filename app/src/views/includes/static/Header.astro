@@ -8,7 +8,7 @@ const { links } = Astro.props;
 
 <div
   id="header"
-  class="container sticky w-full mx-auto overflow-hidden backdrop-blur-md"
+  class="container fixed z-50 w-full mx-auto overflow-hidden backdrop-blur-md"
 >
   <div class="flex items-center justify-between px-4 py-5">
     <div class="w-auto">
@@ -25,10 +25,10 @@ const { links } = Astro.props;
         <div class="hidden w-auto lg:block">
           <ul class="flex items-center mr-16">
             <li class="font-medium mr-9 hover:text-gray-700">
-              <a href="#">Features</a>
+              <a href="/products">Products</a>
             </li>
             <li class="font-medium mr-9 hover:text-gray-700">
-              <a href="#">Solutions</a>
+              <a href="/about">About</a>
             </li>
             <li class="font-medium mr-9 hover:text-gray-700">
               <a href="#">Resources</a>
@@ -49,10 +49,10 @@ const { links } = Astro.props;
         <div class="w-auto lg:hidden">
           <a href="#">
             <svg
-              class="text-indigo-600 navbar-burger"
+              class="text-green-700 navbar-burger"
               width="51"
               height="51"
-              viewbox="0 0 56 56"
+              viewBox="0 0 56 56"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
