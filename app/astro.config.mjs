@@ -45,7 +45,7 @@ import partytown from "@astrojs/partytown";
 export default defineConfig({
   site: "https://naturessecret.co",
   output: "server",
-  integrations: [tailwind(), react(), preact(), svelte(), astroI18next(), mdx(), robotsTxt(), sitemap(), solidJs(), prefetch(), webmanifest({
+  integrations: [tailwind(), react(), preact(), svelte(), mdx(), robotsTxt(), sitemap(), solidJs(), prefetch(), webmanifest({
     name: 'Natures Secret',
     icon: 'src/images/your-icon.svg',
     short_name: 'App',
