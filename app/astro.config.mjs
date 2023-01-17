@@ -6,7 +6,7 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 
 // https://astro.build/config
-import vercel from "@astrojs/vercel/edge";
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 import preact from "@astrojs/preact";
@@ -47,21 +47,13 @@ export default defineConfig({
   output: "server",
   integrations: [
     tailwind(),
-    react(), preact(),
-    svelte(), mdx(),
-    robotsTxt(),
+    react(),
+    preact(),
+    svelte(),
+    mdx(),
     sitemap(),
     solidJs(),
     prefetch(),
-    webmanifest({
-      name: 'Natures Secret',
-      icon: 'src/images/your-icon.svg',
-      short_name: 'App',
-      description: 'Here is your app description',
-      start_url: '/',
-      theme_color: '#3367D6',
-      background_color: '#3367D6',
-      display: 'standalone'
-    }), purgecss(), partytown()],
+  ],
   adapter: vercel()
 });
