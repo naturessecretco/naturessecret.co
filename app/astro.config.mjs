@@ -54,6 +54,6 @@ export default defineConfig({
     theme_color: '#3367D6',
     background_color: '#3367D6',
     display: 'standalone'
-  }), purgecss(), compress(), partytown()],
+  }), purgecss(), partytown()],
   adapter: vercel()
 });

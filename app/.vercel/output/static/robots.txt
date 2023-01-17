@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://naturessecret.co/sitemap-index.xml
