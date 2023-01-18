@@ -49,11 +49,8 @@ export default defineConfig({
     tailwind(),
     react(),
     preact(),
-    svelte(),
-    mdx(),
-    sitemap(),
-    solidJs(),
-    prefetch(),
+
+
   ],
   adapter: vercel()
 });
