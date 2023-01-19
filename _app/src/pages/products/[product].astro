@@ -1,0 +1,20 @@
+---
+import Application from "@layouts/Application.astro";
+
+import Product from "@views/components/static/Product.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { product: "" } },
+    { params: { product: "clifford" } },
+    { params: { product: "rover" } },
+    { params: { product: "spot" } },
+  ];
+}
+
+const { product } = Astro.params;
+---
+
+<Application>
+  <Product />
+</Application>
