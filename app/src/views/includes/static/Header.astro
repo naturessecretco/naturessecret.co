@@ -3,12 +3,17 @@ import Favicon, {
   Props as FaviconProps,
 } from "@components/static/Favicon.astro";
 
-import Links from "@components/static/Links.astro";
+import Links, { defaultProps as defaultLinks} from "@components/static/Links.astro";
 
 export interface Props {
   links?: any;
   favicon?: FaviconProps;
 }
+
+export const defaultProps = {
+  links: defaultLinks.links
+};
+
 
 const { links, favicon } = Astro.props;
 ---

@@ -10,21 +10,30 @@ export interface Props {
   };
 }
 
+export const defaultProps: Props = {
+  title: "TITLE_NOT_FOUND",
+  pageTitle: "PAGE_TITLE_NOT_FOUND",
+  description: "DESCRIPTION_NOT_FOUND",
+  twitter: {
+    creator: "CREATOR_NOT_FOUND",
+  },
+};
+
 const { title, pageTitle, description, twitter } = Astro.props;
 ---
 
 <head>
   <SEO
-    title={`${pageTitle ?? "PAGE_TITLE_NOT_FOUND"} | ${
-      title ?? "TITLE_NOT_FOUND"
+    title={`${title ?? defaultProps.title} | ${
+      pageTitle ?? defaultProps.pageTitle
     }`}
-    description={`${description ?? "DESCRIPTION_NOT_FOUND"}`}
+    description={`${description ?? defaultProps.description}`}
     twitter={{
-      creator: "@jonasmerlins1",
+      creator: `@${twitter?.creator ?? defaultProps.twitter.creator}`,
     }}
   />
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="30" />
+  <meta http-equiv="refresh" content="5" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link

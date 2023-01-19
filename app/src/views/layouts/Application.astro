@@ -1,7 +1,7 @@
 ---
 import "@libs/globals.css";
-import { PageTransition } from "astro-page-transition"
-import AstroGap from "astro-gap"
+import { PageTransition } from "astro-page-transition";
+import AstroGap from "astro-gap";
 import Meta, { Props as MetaProps } from "@includes/static/Meta.astro";
 import Header from "@includes/static/Header.astro";
 import Footer from "@includes/static/Footer.astro";
@@ -17,13 +17,11 @@ export interface Props {
   <Meta />
   <body>
     <Header />
-        <AstroGap spaces={7} />
-
+    <AstroGap spaces={7} />
     <slot />
-
     <ContactRow />
     <Footer />
     <PostScripts />
-    <PageTransition />
+    <PageTransition speed={500} background={"rgb(0,0,0)"} />
   </body>
 </html>
