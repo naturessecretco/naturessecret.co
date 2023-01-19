@@ -1,6 +1,0 @@
-export { default as meta } from "./meta"
-export { default as images } from "./images"
-export { default as layout } from "./layout"
-export { default as header } from "./header"
-export { default as footer } from "./footer"
-export { default as menu } from "./menu"
