@@ -18,7 +18,7 @@ const { data, layout } = await getPage("home");
 ---
 
 <Application>
-  <Hero />
+  <Hero title={JSON.stringify(data)} />
   <ProductsRow />
   <ProductsRow />
   <Product />
@@ -29,5 +29,3 @@ const { data, layout } = await getPage("home");
   <FeaturedMedia />
   <FeaturedItem />
 </Application>
-
-
