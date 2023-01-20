@@ -1,5 +1,6 @@
 ---
 import "@libs/globals.css";
+
 import { PageTransition } from "astro-page-transition";
 import AstroGap from "astro-gap";
 import Meta, { Props as MetaProps } from "@includes/static/Meta.astro";
@@ -7,14 +8,24 @@ import Header from "@includes/static/Header.astro";
 import Footer from "@includes/static/Footer.astro";
 import ContactRow from "@includes/static/ContactRow.astro";
 import PostScripts from "@views/includes/dynamic/PostScripts.astro";
+
+import type { FooterProps } from "@typings/Footer"
+import type { HeaderProps } from "@typings/Header"
 export interface Props {
   meta?: MetaProps;
+  layout?: {
+    header?: HeaderProps;
+    footer?: FooterProps;
+  }
 }
+
+const { meta, layout } = Astro.props
+
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <Meta />
+  <Meta {...meta} />
   <body>
     <Header />
     <AstroGap spaces={7} />

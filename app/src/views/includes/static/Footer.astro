@@ -1,8 +1,8 @@
 ---
-export interface Props {
-  copyright?: string | string[];
-  impressum?: string;
-}
+
+import type { FooterProps } from "@typings/Footer"
+
+export type Props = FooterProps
 
 const { impressum } = Astro.props
 
@@ -37,7 +37,7 @@ const { impressum } = Astro.props
                     <svg
                       width="9"
                       height="16"
-                      viewbox="0 0 9 16"
+                      viewBox="0 0 9 16"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -56,7 +56,7 @@ const { impressum } = Astro.props
                     <svg
                       width="15"
                       height="13"
-                      viewbox="0 0 15 13"
+                      viewBox="0 0 15 13"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -75,7 +75,7 @@ const { impressum } = Astro.props
                     <svg
                       width="17"
                       height="17"
-                      viewbox="0 0 17 17"
+                      viewBox="0 0 17 17"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >

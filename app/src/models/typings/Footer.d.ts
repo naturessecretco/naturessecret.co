@@ -1,6 +1,3 @@
-import type { NavLink } from "@typings/NavLink"
-import type { Social } from "@typings/Social"
-import type { Favicon } from "@typings/Favicon"
 
 
 
@@ -17,12 +14,12 @@ export type FooterProps = {
         url?: string,
     },
     email?: string
-    socials?: Social[],
+    socials?: any[],
     tag?: {
         message?: string,
         id?: string,
         url?: string,
     },
-    favicon?: Favicon,
-    navLinks?: NavLink[]
+    favicon?: any,
+    navLinks?: any[]
 }

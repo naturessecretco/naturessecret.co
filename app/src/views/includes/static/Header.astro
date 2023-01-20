@@ -10,12 +10,12 @@ export interface Props {
   favicon?: FaviconProps;
 }
 
-export const defaultProps = {
+export const defaultProps: Props = {
   links: defaultLinks.links
 };
 
 
-const { links, favicon } = Astro.props;
+const { links, favicon, banner } = Astro.props;
 ---
 
 <div

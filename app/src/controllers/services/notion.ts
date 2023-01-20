@@ -4,11 +4,11 @@ const NotionService = () => {
 
     const serviceObject = {
         api: new Client({
-            auth: process.env.FACADE_API_KEY,
+            auth: import.meta.env.FACADE_API_KEY ?? process.env.FACADE_API_KEY,
         }),
 
         secured: {
-            central_dogma: process.env.CENTRAL_DOGMA_ID,
+            central_dogma: import.meta.env.CENTRAL_DOGMA_ID ?? process.env.CENTRAL_DOGMA_ID,
         },
 
         getCentralDogma: async () => {

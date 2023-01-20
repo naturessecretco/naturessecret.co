@@ -9,6 +9,12 @@ import LogoCloud from "@components/static/LogoCloud.astro";
 import FeaturedItem from "@components/static/FeaturedItem.astro";
 import FeaturedMedia from "@components/static/FeaturedMedia.astro";
 import SubscribeForm from "@components/static/SubscribeForm.astro";
+
+import PageService from "@services/pages";
+
+const { getPage } = PageService();
+
+const { data, layout } = await getPage("home");
 ---
 
 <Application>
@@ -23,3 +29,5 @@ import SubscribeForm from "@components/static/SubscribeForm.astro";
   <FeaturedMedia />
   <FeaturedItem />
 </Application>
+
+
