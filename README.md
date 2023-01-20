@@ -9,17 +9,11 @@
 
 
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)]#screenshots
-
-## 📷Screenshots
+<h2>📷Screenshots</h2>
 
 ![App Screenshot]./docs/screenshot.png
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)]#features
-
-## ✨Features
+<h2>✨Features</h2>
 
 * Gumroad API Integration
 * Notion API Integration
@@ -29,10 +23,7 @@
 * Search Engine Optimization
 * 
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)]#changelog
-
-## ⌚Changelog
+<h2>⌚Changelog</h2>
 
 
 **Version 1.0.1**
@@ -51,33 +42,29 @@
 * App Layout polyfilled. 
 
 ---
+<h2>Installation</h2>
+
+
+```bash
+cd app
+npm run bootstrap 
+```
+
+---
 
 --
-
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)]#feedback
-
-## ➰Feedback
+<h2>➰Feedback</h2>
 
 If you have any feedback, please reach out to us at help@desirable.solutions
 
 ---
+<h2>✒️Authors</h2>
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)]#authors
-
-## ✒️Authors
-
-- [@desirtech](https://www.github.com/desir-tech)
-- [@desirdesigns](https://www.github.com/desir-designs)
 - [@desirablesolutions](https://www.github.com/desirablesolutions)
 
 
 ---
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)]#tech-stack
-
-## ⚙️Tech Stack
+<h2>⚙️Tech Stack</h2>
 
 * React
 * Blackprint UI
@@ -91,10 +78,7 @@ If you have any feedback, please reach out to us at help@desirable.solutions
 
 
     
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/dark.png)]#support
-
-## 🆘Support
+<h2>🆘Support</h2>
 
 For support, email info@naturessecret.co
 

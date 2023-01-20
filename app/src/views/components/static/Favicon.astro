@@ -8,10 +8,10 @@ export interface Props {
 export const defaultProps = {
   image: {
     src: "",
-    alt: "ALT_NOT_FOUND"
+    alt: "ALT_NOT_FOUND",
   },
   url: "#URL_NOT_FOUND",
-}
+};
 
 const { image, url } = Astro.props;
 ---
@@ -20,7 +20,11 @@ const { image, url } = Astro.props;
   <div class="flex flex-wrap items-center">
     <div class="w-auto mr-14">
       <a href={url ?? "/"}>
-        <img src={image?.src ?? "#"} alt={image?.alt ?? "#"} />
+        <img
+          class:list={["h-16 object-fit"]}
+          src={image?.src ?? "#"}
+          alt={image?.alt ?? "#"}
+        />
       </a>
     </div>
   </div>

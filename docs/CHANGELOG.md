@@ -1,5 +1,5 @@
 
-## ⌚Changelog
+<h2>⌚Changelog</h2>
 
 
 **Version 1.0.1**

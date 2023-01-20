@@ -8,12 +8,14 @@ import ForwardArrowSVG from "@components/static/ForwardArrowSVG.astro";
 export interface Props {
   title?: string;
   heading?: string;
+  features?: any[];
   description?: string;
   subHeading?: string;
   banner?: ImageProps;
 }
 
-const { title, banner, heading, subHeading, description } = Astro.props;
+const { title, banner, heading, features, subHeading, description } =
+  Astro.props;
 ---
 
 <section class="pt-16 overflow-hidden">
@@ -85,9 +87,16 @@ const { title, banner, heading, subHeading, description } = Astro.props;
         </p>
 
         <div class="flex flex-wrap -m-3">
+          {
+          features ? 
+          features.map((feature) => (
           <div class="w-auto p-3">
-            <img src="https://picsum.photos/100" alt="" />
+            <img src={feature} alt="" />
           </div>
+          )): 
+          <></>
+          }
+
           <div class="w-auto p-3">
             <img src="https://picsum.photos/100" alt="" />
           </div>
@@ -101,8 +110,8 @@ const { title, banner, heading, subHeading, description } = Astro.props;
       <div class="w-full p-8 md:w-1/2">
         <img
           class="transition duration-1000 ease-in-out transform hover:-translate-y-16"
-          src={banner?.src ?? "https://picsum.photos/500"}
-          alt={banner?.alt ?? "NO_IMAGE_FOUND"}
+          src={banner?.image?.src ?? "https://picsum.photos/500"}
+          alt={banner?.image?.alt ?? "NO_IMAGE_FOUND"}
         />
       </div>
     </div>

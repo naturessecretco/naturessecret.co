@@ -4,7 +4,7 @@ import { faqs, links, meta, products, social_media } from "@db/index"
 const pages = ({ store, pageKey }) => {
 
     const { getProducts } = products(store)
-    const { getBanner, getHero, getPhoneNumber, getBenefits, getEmailAddress, getDisclaimer, getCopyrights, getTag, getCertifications } = meta(store)
+    const { getBanner, getHero, getTitle, getPhoneNumber, getBenefits, getEmailAddress, getDisclaimer, getCopyrights, getTag, getCertifications } = meta(store)
     const { getPageLinks, getFeatured, getHeaderLinks } = links(store)
     const { getFAQs } = faqs(store)
     const { getSocialMedia } = social_media(store)
@@ -17,13 +17,18 @@ const pages = ({ store, pageKey }) => {
             },
             data: {
                 hero: {
+                    title: "Nature's Secret",
                     socials: getSocialMedia(),
-                    covers: getProducts().map((product) => (product?.advertisements)).flat(),
-                    features: {
+                    features: getProducts().map((product) => (product?.advertisements)).flat(),
+                    covers: {
                         heading: 'Check out these quick links to wellness!',
                         links: getFeatured()
                     },
-                    backgroundCover: getHero()?.covers[0].url ?? null
+                    banner: {
+                        image: {
+                            src: getHero()?.covers[0].url ?? null
+                        }
+                    }
                 },
                 grid: {
                     title: 'Your Benefits from SuperFoods',
@@ -36,16 +41,18 @@ const pages = ({ store, pageKey }) => {
                     })),
 
                 },
-                featured: {
-                    title: 'Featured Products.',
-                    features: getProducts().map((product) => ({
-                        ...product,
-                        cover: {
-                            url: product.covers[0]?.url,
-                            alt: product.covers[0]?.name
-                        }
-                    })),
+                productsRow: {
+                    bestSellers: {
+                        title: 'Best Sellers.',
+                        features: getProducts().map((product) => ({
+                            ...product,
+                            cover: {
+                                src: product.covers[0]?.url,
+                                alt: product.covers[0]?.name
+                            }
+                        })),
 
+                    },
                 },
                 logoCloud: {
                     title: 'Certified Quality for Wellness.',
@@ -205,19 +212,20 @@ const pages = ({ store, pageKey }) => {
                 links: getHeaderLinks(),
                 favicon: {
                     image: {
-                        url: '/assets/images/logo.png',
+                        src: '/assets/images/logo.png',
                     },
                     url: ''
                 }
             },
 
-            metaData: pageData[pageKey].metaData,
+
         }),
+        metaData: pageData[pageKey].metaData,
         data: pageData[pageKey ? pageKey : "home"].data,
         pages: pageData[pageKey ? pageKey : "home"]?.pages ?? null,
     }
 
-    return { ...pageObject }
+    return pageObject
 
 }
 

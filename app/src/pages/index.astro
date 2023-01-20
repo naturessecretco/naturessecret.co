@@ -17,10 +17,10 @@ const { getPage } = PageService();
 const { data, layout } = await getPage("home");
 ---
 
-<Application>
-  <Hero title={JSON.stringify(data)} />
-  <ProductsRow />
-  <ProductsRow />
+<Application layout={layout}>
+  <Hero {...data.hero} />
+  <ProductsRow {...data.productsRow.bestSellers} />
+  <ProductsRow {...data.productsRow.bestSellers} />
   <Product />
   <ContentGrid />
   <ContentGrid />

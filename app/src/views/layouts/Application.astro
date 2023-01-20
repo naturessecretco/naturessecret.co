@@ -9,29 +9,28 @@ import Footer from "@includes/static/Footer.astro";
 import ContactRow from "@includes/static/ContactRow.astro";
 import PostScripts from "@views/includes/dynamic/PostScripts.astro";
 
-import type { FooterProps } from "@typings/Footer"
-import type { HeaderProps } from "@typings/Header"
+import type { FooterProps } from "@typings/Footer";
+import type { HeaderProps } from "@typings/Header";
 export interface Props {
-  meta?: MetaProps;
   layout?: {
     header?: HeaderProps;
     footer?: FooterProps;
-  }
+    meta?: MetaProps;
+  };
 }
 
-const { meta, layout } = Astro.props
-
+const { layout } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <Meta {...meta} />
+  <Meta {...layout.metaData} />
   <body>
-    <Header />
+    <Header {...layout.header} />
     <AstroGap spaces={7} />
     <slot />
     <ContactRow />
-    <Footer />
+    <Footer {...layout.footer} />
     <PostScripts />
     <PageTransition speed={500} background={"rgb(0,0,0)"} />
   </body>

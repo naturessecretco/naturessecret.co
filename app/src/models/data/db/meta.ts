@@ -10,6 +10,7 @@ const meta = (store: any[]) => {
         getCertifications: () => {
             return databaseObject.getMeta().filter((meta) => meta?.types?.includes('🏷Certification'))
         },
+        getTitle: () => { },
         getTag: () => {
             return databaseObject.getMeta().find((meta) => meta?.types?.includes('🏷️Tag')) ?? null
         },

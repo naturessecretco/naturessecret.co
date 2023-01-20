@@ -1,7 +1,5 @@
-## ✒️Authors
+<h2>✒️Authors</h2>
 
-- [@desirtech](https://www.github.com/desir-tech)
-- [@desirdesigns](https://www.github.com/desir-designs)
 - [@desirablesolutions](https://www.github.com/desirablesolutions)
 
 

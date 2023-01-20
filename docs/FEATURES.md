@@ -1,4 +1,4 @@
-## ✨Features
+<h2>✨Features</h2>
 
 * Gumroad API Integration
 * Notion API Integration
