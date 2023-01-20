@@ -44,7 +44,7 @@ const pages = ({ store, pageKey }) => {
                 productsRow: {
                     bestSellers: {
                         title: 'Best Sellers.',
-                        features: getProducts().map((product) => ({
+                        products: getProducts().map((product) => ({
                             ...product,
                             cover: {
                                 src: product.covers[0]?.url,

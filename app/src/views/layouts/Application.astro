@@ -15,22 +15,32 @@ export interface Props {
   layout?: {
     header?: HeaderProps;
     footer?: FooterProps;
-    meta?: MetaProps;
+    metaData?: MetaProps;
   };
 }
+
+export const defaultProps: Props = {
+  layout: {
+    header: {},
+    footer: {},
+    metaData: {
+      title: "Nature's Secret",
+    },
+  },
+};
 
 const { layout } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <Meta {...layout.metaData} />
+  <Meta {...layout.metaData ?? defaultProps.layout.metaData} />
   <body>
-    <Header {...layout.header} />
+    <Header {...layout.header ?? defaultProps.layout.header} />
     <AstroGap spaces={7} />
     <slot />
     <ContactRow />
-    <Footer {...layout.footer} />
+    <Footer {...layout.footer ?? defaultProps.layout.footer} />
     <PostScripts />
     <PageTransition speed={500} background={"rgb(0,0,0)"} />
   </body>

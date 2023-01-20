@@ -1,18 +1,27 @@
 ---
+import type { ImageProps } from "@typings/ImageProps";
+
 export interface Props {
   id?: string;
   price?: number | string;
   description?: string;
-  image?: string;
+  cover?: ImageProps;
   name?: string;
   actionName?: string;
 }
 
 export const defaultProps = {
-  
-}
+  id: "ID_NOT_FOUND",
+  name: "NAME_NOT_FOUND",
+  price: "PRICE_NOT_FOUND",
+  description: "DESCRIPTION_NOT_FOUND",
+  cover: {
+    src: "IMAGE_NOT_FOUND",
+    alt: "IMAGE_NOT_FOUND",
+  },
+};
 
-const { id, price, description, image } = Astro.props;
+const { id, price, description, cover, name } = Astro.props;
 ---
 
 <button
@@ -20,11 +29,11 @@ const { id, price, description, image } = Astro.props;
     "snipcart-add-item",
     "inline-block px-8 py-4 font-sans_serif font-bold text-black uppercase transition duration-200 bg-green-600 rounded-md hover:bg-green-400 font-heading",
   ]}
-  data-item-id="starry-night"
-  data-item-price="29.99"
-  data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
-  data-item-image="/assets/images/starry-night.jpg"
-  data-item-name="Seamoss Gummies"
+  data-item-id={id ?? defaultProps.id}
+  data-item-price={price ?? defaultProps.price}
+  data-item-description={description ?? defaultProps.description}
+  data-item-image={cover.src ?? defaultProps.cover.src}
+  data-item-name={name ?? defaultProps.name}
 >
   Add to cart
 </button>
