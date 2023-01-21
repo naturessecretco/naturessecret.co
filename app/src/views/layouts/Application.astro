@@ -3,14 +3,16 @@ import "@libs/globals.css";
 
 import { PageTransition } from "astro-page-transition";
 import AstroGap from "astro-gap";
-import Meta, { Props as MetaProps } from "@includes/static/Meta.astro";
+import Meta rom "@includes/static/Meta.astro";
 import Header from "@includes/static/Header.astro";
 import Footer from "@includes/static/Footer.astro";
 import ContactRow from "@includes/static/ContactRow.astro";
-import PostScripts from "@views/includes/dynamic/PostScripts.astro";
+import PostScripts from "@includes/dynamic/PostScripts.astro";
+import Menu from "@includes/dynamic/Menu.svelte";
+import type { Props as MetaProps } from "@includes/static/Meta.astro"
+import type { Props as HeaderProps } from "@includes/static/Header.astro"
+import type { Props as FooterProps } from "@includes/static/Footer.astro"
 
-import type { FooterProps } from "@typings/Footer";
-import type { HeaderProps } from "@typings/Header";
 export interface Props {
   layout?: {
     header?: HeaderProps;
@@ -19,7 +21,8 @@ export interface Props {
   };
 }
 
-export const defaultProps: Props = {
+export const defaultProps = {
+  background: "rgb(0,0,0)",
   layout: {
     header: {},
     footer: {},
@@ -37,11 +40,11 @@ const { layout } = Astro.props;
   <Meta {...layout.metaData ?? defaultProps.layout.metaData} />
   <body>
     <Header {...layout.header ?? defaultProps.layout.header} />
-    <AstroGap spaces={7} />
+    <AstroGap spaces={5} />
     <slot />
     <ContactRow />
     <Footer {...layout.footer ?? defaultProps.layout.footer} />
     <PostScripts />
-    <PageTransition speed={500} background={"rgb(0,0,0)"} />
+    <PageTransition speed={500} background={defaultProps.background} />
   </body>
 </html>

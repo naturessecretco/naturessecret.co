@@ -1,11 +1,18 @@
 ---
 export interface Props {
+  title?: string;
+  description?: string;
   phoneNumber?: string;
   emailAddress?: string;
   mailingAddress?: string;
 }
 
-const { phoneNumber } = Astro.props;
+export const defaultProps: Props = {
+  title: "TITLE_NOT_FOUND",
+  description: "DESCRIPTION_NOT_FOUND"
+};
+
+const { phoneNumber, title, description } = Astro.props;
 ---
 
 <section class="relative pt-24 overflow-hidden pb-36">
@@ -18,13 +25,12 @@ const { phoneNumber } = Astro.props;
     <h2
       class="mb-5 text-6xl font-bold leading-none text-center md:text-8xl xl:text-10xl font-heading tracking-px-n"
     >
-      Get connected
+      {title ?? defaultProps.title}
     </h2>
     <p
       class="mx-auto mb-20 text-lg font-medium leading-normal text-center text-gray-600 md:max-w-lg"
     >
-      Lorem ipsum dolor sit amet, to the con adipiscing. Volutpat tempor to the
-      condimentum vitae vel purus.
+      {description ?? defaultProps.description}
     </p>
     <div class="flex flex-wrap -m-3">
       <div class="w-full p-3 md:w-1/3">

@@ -2,13 +2,21 @@
 
 import type { FooterProps } from "@typings/Footer"
 
-export type Props = FooterProps
+export interface Props {
+  impressum?: string;
+  copyright?: string;
+}
 
-const { impressum } = Astro.props
+const { impressum, copyright } = Astro.props
+
+export const defaultProps = {
+  impressum: "IMPRESSUM_NOT_FOUND",
+  copyright: "COPYRIGHT_NOT_FOUND"
+}
 
 ---
 
-<section class="relative pt-24 overflow-hidden backdrop-blur-md">
+<footer class="relative pt-24 overflow-hidden backdrop-blur-md">
   <img
     class="absolute bottom-0 h-full transform -translate-x-1/2 left-1/2"
     src="flaro-assets/images/footers/gradient.svg"
@@ -189,4 +197,4 @@ const { impressum } = Astro.props
       Copyright &copy; 2022 Flaro. All Rights Reserved
     </p>
   </div>
-</section>
+</footer>

@@ -1,6 +1,6 @@
 #snipcart {
 
-    --color-default: rgba(255, 255, 255, 0.81);
+    --color-default: rgb(255, 255, 255);
     --color-alt: hsl(0, 0%, 100%);
     --color-icon: hsl(200, 90%, 40%);
     --color-success: hsl(144, 50%, 55%);
@@ -95,12 +95,12 @@
         Background colors
     ----------------- */
     --bgColor-default: var(--color-primary);
-    --bgColor-alt: hsl(210, 10%, 9%);
+    --bgColor-alt: hsl(0, 0%, 100%);
     --bgColor-success: hsl(144, 76%, 43%);
     --bgColor-error: hsl(6, 91%, 44%);
     --bgColor-info: hsl(210, 55%, 15%);
 
-    --bgColor-modal: hsl(142, 56%, 26%);
+    --bgColor-modal: hsl(40, 99%, 64%);
     --bgColor-modalVeil: hsla(210, 10%, 7%, .75);
 
     --bgColor-link: none;

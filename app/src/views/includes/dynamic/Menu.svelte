@@ -1,3 +1,8 @@
+<script>
+
+</script>
+
+
 <div
 class="fixed top-0 bottom-0 left-0 z-50 hidden w-4/6 navbar-menu sm:max-w-xs"
 >
