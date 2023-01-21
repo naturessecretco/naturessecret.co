@@ -1,6 +1,13 @@
 ---
 import Application from "@layouts/Application.astro";
-m
+import ItemsSearch from "@components/static/ItemsSearch.astro";
+import PageService from "@services/pages";
+
+const { getPage } = PageService();
+
+const { data, layout } = await getPage("products");
 ---
 
-<Application>defaultProps</Application>
+<Application layout={layout}>
+  <ItemsSearch />
+</Application>

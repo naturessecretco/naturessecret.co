@@ -14,8 +14,15 @@ export interface Props {
   banner?: ImageProps;
 }
 
-const { title, banner, heading, features, subHeading, description } =
-  Astro.props;
+export const defaultProps = {
+  title: "",
+  heading: "",
+  subHeading: "",
+  features: [],
+
+}
+
+const { title, banner, heading, features, subHeading, description } = Astro.props;
 ---
 
 <section class="pt-16 overflow-hidden">
@@ -34,7 +41,7 @@ const { title, banner, heading, features, subHeading, description } =
         </div>
         <h1
           class:list={[
-            "mb-6 font-serif text-10xl font-bold leading-none md:text-8xl lg:text-10xl text-shadow shadow-black font-heading md:max-w-xl",
+            "mb-6 font-serif text-9xl font-bold leading-none text-shadow shadow-black font-heading"
           ]}
         >
           {title ?? "TITLE_NOT_FOUND"}
@@ -110,7 +117,9 @@ const { title, banner, heading, features, subHeading, description } =
       <!--God I Miss HTML Comments -->
       <div class="w-full p-8 md:w-1/2 cursor-pointer">
         <img
-          class="transition duration-1000 ease-in-out transform hover:-translate-y-16"
+          class:list={[
+            "transition duration-1000 ease-in-out transform hover:-translate-y-16"
+          ]}
           src={banner?.image?.src ?? "https://picsum.photos/500"}
           alt={banner?.image?.alt ?? "NO_IMAGE_FOUND"}
         />

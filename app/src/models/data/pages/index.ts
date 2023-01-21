@@ -226,7 +226,7 @@ const pages = ({ store, pageKey }) => {
                     image: {
                         src: '/assets/images/logo.png',
                     },
-                    url: ''
+                    url: '/'
                 }
             },
 
