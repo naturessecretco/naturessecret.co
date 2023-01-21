@@ -1,5 +1,17 @@
 ---
 import Application from "@layouts/Application.astro";
+
+import PageService from "@services/pages";
+
+const { getPage } = PageService();
+
+const { pages } = getPage("products");
+
+export const getStaticProps = () => {
+  return pages.map((page) => ({
+    params: page.id,
+  }));
+};
 ---
 
 <Application>defaultProps</Application>

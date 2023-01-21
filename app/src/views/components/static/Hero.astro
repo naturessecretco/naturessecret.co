@@ -34,7 +34,7 @@ const { title, banner, heading, features, subHeading, description } =
         </div>
         <h1
           class:list={[
-            "mb-6 font-serif text-8xl font-bold leading-none md:text-8xl lg:text-10xl font-heading md:max-w-xl",
+            "mb-6 font-serif text-10xl font-bold leading-none md:text-8xl lg:text-10xl text-shadow shadow-black font-heading md:max-w-xl",
           ]}
         >
           {title ?? "TITLE_NOT_FOUND"}
@@ -42,7 +42,12 @@ const { title, banner, heading, features, subHeading, description } =
         <p class="text-lg font-medium text-gray-900 mb-11 md:max-w-md">
           {subHeading ?? "SUB_HEADING_NOT_FOUND"}
         </p>
+
+
+
         <div class="flex flex-wrap -m-2.5 mb-20">
+
+
           <div class="w-full md:w-auto p-2.5">
             <div class="block">
               <button
@@ -51,6 +56,8 @@ const { title, banner, heading, features, subHeading, description } =
               >
             </div>
           </div>
+
+
           <div class="w-full md:w-auto p-2.5">
             <div class="block">
               <button
@@ -97,17 +104,11 @@ const { title, banner, heading, features, subHeading, description } =
           <></>
           }
 
-          <div class="w-auto p-3">
-            <img src="https://picsum.photos/100" alt="" />
-          </div>
-          <div class="w-auto p-3">
-            <img src="https://picsum.photos/100" alt="" />
-          </div>
         </div>
       </div>
 
       <!--God I Miss HTML Comments -->
-      <div class="w-full p-8 md:w-1/2">
+      <div class="w-full p-8 md:w-1/2 cursor-pointer">
         <img
           class="transition duration-1000 ease-in-out transform hover:-translate-y-16"
           src={banner?.image?.src ?? "https://picsum.photos/500"}

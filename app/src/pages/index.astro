@@ -21,9 +21,9 @@ const { data, layout } = await getPage("home");
   <Hero {...data.hero} />
   <ProductsRow {...data.productsRow.bestSellers} />
   <ProductsRow {...data.productsRow.bestSellers} />
-  <Product />
-  <ContentGrid />
-  <ContentGrid />
+  <Product {...data.product} />
+  <ContentGrid {...data.contentGrid.benefits} />
+  <ContentGrid {...data.contentGrid.benefits} />
   <SubscribeForm />
   <LogoCloud />
   <FeaturedMedia />

@@ -1,7 +1,7 @@
 #snipcart {
 
-    --color-default: rgb(255, 255, 255);
-    --color-alt: hsl(0, 0%, 100%);
+    --color-default: rgb(0, 0, 0);
+    --color-alt: hsl(0, 74%, 6%);
     --color-icon: hsl(200, 90%, 40%);
     --color-success: hsl(144, 50%, 55%);
     --color-error: hsl(6, 55%, 60%);
@@ -11,7 +11,7 @@
     --color-link-active: var(--color-link);
     --color-link-focus: var(--color-link);
 
-    --color-input: var(--color-default);
+    --color-input: white;
     --color-input-hover: var(--color-input);
     --color-input-focus: var(--color-input);
     --color-input-checked: var(--color-input);
@@ -108,7 +108,7 @@
     --bgColor-link-active: none;
     --bgColor-link-focus: hsl(210, 55%, 10%);
 
-    --bgColor-input: hsl(210, 10%, 10%);
+    --bgColor-input: hsl(0, 2%, 33%);
     --bgColor-input-hover: var(--bgColor-input);
     --bgColor-input-focus: var(--bgColor-input);
     --bgColor-input-checked: var(--borderColor-input-hover);

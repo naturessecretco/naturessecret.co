@@ -1,19 +1,28 @@
 ---
-
-import type { FooterProps } from "@typings/Footer"
+import type { FooterProps } from "@typings/Footer";
 
 export interface Props {
   impressum?: string;
   copyright?: string;
+  favicon?: {
+    image: {
+      src?: string;
+      alt?: string;
+    };
+  };
 }
 
-const { impressum, copyright } = Astro.props
+const { impressum, copyright, favicon } = Astro.props;
 
 export const defaultProps = {
   impressum: "IMPRESSUM_NOT_FOUND",
-  copyright: "COPYRIGHT_NOT_FOUND"
-}
-
+  copyright: "COPYRIGHT_NOT_FOUND",
+  favicon: {
+    image: {
+      src: "IMAGE_NOT_FOUND",
+    },
+  },
+};
 ---
 
 <footer class="relative pt-24 overflow-hidden backdrop-blur-md">
@@ -28,13 +37,16 @@ export const defaultProps = {
         <div class="w-full p-8 sm:w-1/2 lg:w-6/12">
           <div class="lg:max-w-sm">
             <a class="inline-block mb-8" href="#">
-              <img src="flaro-assets/logos/flaro-logo-light.svg" alt="" />
+              <img
+                class:list={["h-24"]}
+                src={favicon?.image.src ?? defaultProps.favicon.image}
+                alt=""
+              />
             </a>
             <p
-              class="mb-20 font-medium leading-relaxed text-gray-400 md:max-w-xs"
+              class="mb-20 font-medium leading-relaxed text-gray-800 md:max-w-xs"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
-              interdum facilisis odio scelerisque vel neque.
+              {impressum ?? defaultProps.impressum}
             </p>
             <div class="flex flex-wrap -m-1.5">
               <div class="w-auto p-1.5">
@@ -107,22 +119,26 @@ export const defaultProps = {
             <li class="mb-5">
               <a
                 class="font-medium leading-relaxed text-white hover:text-gray-200"
-                href="#">Services</a>
+                href="#">Services</a
+              >
             </li>
             <li class="mb-5">
               <a
                 class="font-medium leading-relaxed text-white hover:text-gray-200"
-                href="#">About Us</a>
+                href="#">About Us</a
+              >
             </li>
             <li class="mb-5">
               <a
                 class="font-medium leading-relaxed text-white hover:text-gray-200"
-                href="#">News &amp; Stories</a>
+                href="#">News &amp; Stories</a
+              >
             </li>
             <li>
               <a
                 class="font-medium leading-relaxed text-white hover:text-gray-200"
-                href="#">Roadmap</a>
+                href="#">Roadmap</a
+              >
             </li>
           </ul>
         </div>
@@ -136,27 +152,32 @@ export const defaultProps = {
             <li class="mb-5">
               <a
                 class="font-medium leading-relaxed text-white hover:text-gray-200"
-                href="#">Our Journeys</a>
+                href="#">Our Journeys</a
+              >
             </li>
             <li class="mb-5">
               <a
                 class="font-medium leading-relaxed text-white hover:text-gray-200"
-                href="#">Pricing Plans</a>
+                href="#">Pricing Plans</a
+              >
             </li>
             <li class="mb-5">
               <a
                 class="font-medium leading-relaxed text-white hover:text-gray-200"
-                href="#">Roadmap</a>
+                href="#">Roadmap</a
+              >
             </li>
             <li class="mb-5">
               <a
                 class="font-medium leading-relaxed text-white hover:text-gray-200"
-                href="#">Terms &amp; Conditions</a>
+                href="#">Terms &amp; Conditions</a
+              >
             </li>
             <li>
               <a
                 class="font-medium leading-relaxed text-white hover:text-gray-200"
-                href="#">Privacy Policy</a>
+                href="#">Privacy Policy</a
+              >
             </li>
           </ul>
         </div>
@@ -170,31 +191,35 @@ export const defaultProps = {
             <li class="mb-5">
               <a
                 class="font-medium leading-relaxed text-white hover:text-gray-200"
-                href="#">About Us</a>
+                href="#">About Us</a
+              >
             </li>
             <li class="mb-5">
               <a
                 class="font-medium leading-relaxed text-white hover:text-gray-200"
-                href="#">Jobs</a>
+                href="#">Jobs</a
+              >
             </li>
             <li class="mb-5">
               <a
                 class="font-medium leading-relaxed text-white hover:text-gray-200"
-                href="#">Press</a>
+                href="#">Press</a
+              >
             </li>
             <li>
               <a
                 class="font-medium leading-relaxed text-white hover:text-gray-200"
-                href="#">Contact Us</a>
+                href="#">Contact Us</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </div>
     <p
-      class="py-5 text-sm font-medium leading-normal text-center text-gray-300"
+      class="py-5 text-md font-sans_serif font-medium leading-normal text-center text-black"
     >
-      Copyright &copy; 2022 Flaro. All Rights Reserved
+      {copyright ?? defaultProps.copyright}
     </p>
   </div>
 </footer>

@@ -3,21 +3,21 @@ import "@libs/globals.css";
 
 import { PageTransition } from "astro-page-transition";
 import AstroGap from "astro-gap";
-import Meta rom "@includes/static/Meta.astro";
+import Meta from "@includes/static/Meta.astro";
 import Header from "@includes/static/Header.astro";
 import Footer from "@includes/static/Footer.astro";
 import ContactRow from "@includes/static/ContactRow.astro";
 import PostScripts from "@includes/dynamic/PostScripts.astro";
 import Menu from "@includes/dynamic/Menu.svelte";
-import type { Props as MetaProps } from "@includes/static/Meta.astro"
-import type { Props as HeaderProps } from "@includes/static/Header.astro"
-import type { Props as FooterProps } from "@includes/static/Footer.astro"
+import type { Props as MetaProps } from "@includes/static/Meta.astro";
+import type { Props as HeaderProps } from "@includes/static/Header.astro";
+import type { Props as FooterProps } from "@includes/static/Footer.astro";
 
 export interface Props {
   layout?: {
-    header?: HeaderProps;
-    footer?: FooterProps;
-    metaData?: MetaProps;
+    header?: any;
+    footer?: any;
+    metaData?: any
   };
 }
 
@@ -27,7 +27,7 @@ export const defaultProps = {
     header: {},
     footer: {},
     metaData: {
-      title: "Nature's Secret",
+      title: "TITLE_NOT_FOUND",
     },
   },
 };
@@ -37,7 +37,7 @@ const { layout } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-  <Meta {...layout.metaData ?? defaultProps.layout.metaData} />
+  <Meta {...layout?.metaData ?? defaultProps.layout.metaData} />
   <body>
     <Header {...layout.header ?? defaultProps.layout.header} />
     <AstroGap spaces={5} />

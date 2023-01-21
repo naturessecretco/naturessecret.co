@@ -10,14 +10,16 @@ const pages = ({ store, pageKey }) => {
     const { getSocialMedia } = social_media(store)
     const { title } = metaConfig({})
 
-    const pageData = {
+    const _data = {
         home: {
             metaData: {
                 pageTitle: 'Home'
             },
             data: {
                 hero: {
-                    title: "Nature's Secret",
+                    title: "Welcome to Nature's Secret",
+                    heading: "New Wildcrafted Seamoss!",
+                    subHeading: "Home to nature's best kept secrets",
                     socials: getSocialMedia(),
                     features: getProducts().map((product) => (product?.advertisements)).flat(),
                     covers: {
@@ -30,22 +32,26 @@ const pages = ({ store, pageKey }) => {
                         }
                     }
                 },
-                grid: {
-                    title: 'Your Benefits from SuperFoods',
-                    items: getBenefits().map((benefit) => ({
-                        ...benefit,
-                        cover: {
-                            url: benefit?.covers[0]?.url ?? null,
-                        },
-                        title: benefit?.name,
-                    })),
+                contentGrid: {
+                    benefits: {
+                        title: 'Your Benefits from SuperFoods',
+                        items: getBenefits().map((benefit) => ({
+                            ...benefit,
+                            cover: {
+                                url: benefit?.covers[0]?.url ?? null,
+                            },
+                            title: benefit?.name,
+                        })),
 
+                    }
                 },
                 productsRow: {
                     bestSellers: {
                         title: 'Best Sellers.',
                         products: getProducts().map((product) => ({
                             ...product,
+                            title: product.name,
+                            marketValue: product.value,
                             cover: {
                                 src: product.covers[0]?.url,
                                 alt: product.covers[0]?.name
@@ -65,12 +71,18 @@ const pages = ({ store, pageKey }) => {
                         name: certification?.name ?? null
                     }))
                 },
-                product: getProducts()[0],
+                product: {
+                    title: getProducts()[0].name,
+                    description: getProducts()[0].description,
+                    cover: {
+                        src: getProducts()[3].covers[0].url
+                    }
+                },
                 mediaRow: {
                     title: 'Best Sellers',
                     media: getProducts().map((product) => ({
                         cover: {
-                            url: product.covers[0]?.url,
+                            src: product.covers[0]?.url,
                             alt: product.covers[0]?.name
                         },
                         url: product?.url,
@@ -160,10 +172,11 @@ const pages = ({ store, pageKey }) => {
     }
 
 
-    const pageObject = {
+    const _object = {
         id: `${title}-${pageKey}`,
         version: Date.now(),
         layout: layout({
+            metaData: _data[pageKey].metaData,
 
             menu: {
                 navLinks: getPageLinks()
@@ -196,11 +209,10 @@ const pages = ({ store, pageKey }) => {
                 email: getEmailAddress().email,
 
                 favicon: {
+                    url: "/",
                     image: {
-                        url: '/assets/images/logo.png',
-                        alt: 'natures-secret-logo'
-                    },
-                    url: '/'
+                        src: '/assets/images/logo.png',
+                    }
                 }
             },
 
@@ -220,12 +232,12 @@ const pages = ({ store, pageKey }) => {
 
 
         }),
-        metaData: pageData[pageKey].metaData,
-        data: pageData[pageKey ? pageKey : "home"].data,
-        pages: pageData[pageKey ? pageKey : "home"]?.pages ?? null,
+
+        data: _data[pageKey ? pageKey : "home"].data,
+        pages: _data[pageKey ? pageKey : "home"]?.pages ?? null,
     }
 
-    return pageObject
+    return _object
 
 }
 

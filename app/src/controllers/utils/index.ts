@@ -81,4 +81,11 @@ const utils = () => {
     return { ...utilsObject }
 }
 
+
+export const formatters = {
+    toUSD: new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    })
+}
 export default utils
