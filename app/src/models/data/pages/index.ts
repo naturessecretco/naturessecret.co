@@ -76,7 +76,7 @@ const pages = ({ store, pageKey }) => {
                     title: getProducts()[0].name,
                     description: getProducts()[0].description,
                     cover: {
-                        src: getProducts()[3].covers[0].url
+                        src: getProducts()[0].covers[0].url
                     }
                 },
                 featuredMedia: {},

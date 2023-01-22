@@ -75,7 +75,7 @@ const { title, price, description, cover } = Astro.props;
                     >
                       <img
                         class="img-fluid w-full h-full object-cover border-2 border-black rounded-md"
-                        src="shopal-assets/product-details/product-detail-small1.png"
+                        src={cover?.src}
                         alt=""
                       />
                     </div>
@@ -91,7 +91,7 @@ const { title, price, description, cover } = Astro.props;
                     >
                       <img
                         class="img-fluid w-full h-full object-cover border-2 border-black rounded-md"
-                        src="shopal-assets/product-details/product-detail-small2.png"
+                        src={cover?.src}
                         alt=""
                       />
                     </div>
@@ -107,7 +107,7 @@ const { title, price, description, cover } = Astro.props;
                     >
                       <img
                         class="img-fluid w-full h-full object-cover border-2 border-black rounded-md"
-                        src="shopal-assets/product-details/product-detail-small3.png"
+                        src={cover?.src}
                         alt=""
                       />
                     </div>
@@ -123,7 +123,7 @@ const { title, price, description, cover } = Astro.props;
                     >
                       <img
                         class="img-fluid w-full h-full object-cover border-2 border-black rounded-md"
-                        src="shopal-assets/product-details/product-detail-small4.png"
+                        src={cover?.src}
                         alt=""
                       />
                     </div>
@@ -133,18 +133,14 @@ const { title, price, description, cover } = Astro.props;
             </div>
             <div class="w-full xs:w-4/6 md:w-3/4 px-4">
               <a
-                class="relative group block h-112 xs:h-full max-h-150 w-full bg-blueGray-900 rounded-md"
+                class="relative group block h-112 xs:h-full max-h-150 w-full rounded-md"
                 href="#"
               >
-                <div
-                  class="absolute top-0 left-0 w-full h-full transform -translate-y-1 -translate-x-1 group-hover:translate-y-0 group-hover:translate-x-0 transition duration-300"
-                >
-                  <img
-                    class="img-fluid w-full h-full object-cover border-2 border-black rounded-md"
-                    src={cover?.src}
-                    alt=""
-                  />
-                </div>
+              <img
+              class="img-fluid w-full h-full object-cover border-2 border-black rounded-md"
+              src={cover?.src}
+              alt=""
+            />
               </a>
             </div>
           </div>
