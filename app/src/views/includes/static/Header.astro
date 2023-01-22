@@ -32,13 +32,12 @@ const { links, favicon, banner } = Astro.props;
     <div class="w-auto">
       <div class="flex flex-wrap items-center">
         <Links links={links} />
-
-        <div class="hidden w-auto lg:block snipcart-customer-signin">
-          <div class="inline-block snipcart-customer-signin">
-            <button
-              class="w-full snipcart-customer-signin px-5 py-3 font-semibold text-white transition duration-200 ease-in-out bg-green-700 border border-gray-200 rounded-xl focus:ring focus:ring-green-300 hover:bg-green-700"
-              type="button">🛒Cart</button
-            >
+      
+        <div class="hidden w-auto lg:block snipcart-customer-signin snipcart-checkout">
+          <div
+            class="w-full cursor-pointer snipcart-customer-signin px-5 py-3 font-semibold text-white transition duration-200 ease-in-out bg-green-700 border border-gray-200 rounded-xl focus:ring focus:ring-green-300 hover:bg-green-700"
+          >
+            🛒Cart
           </div>
         </div>
         <div class="w-auto ml-2">

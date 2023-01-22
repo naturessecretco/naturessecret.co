@@ -1,3 +1,24 @@
+---
+
+export type CallToAction = {
+  text?: string,
+  action?: Function
+}
+export interface Props {
+  title?: string;
+  heading?: string;
+}
+
+export const defaultProps: Props = {
+  title: "[@props]: TITLE_NOT_FOUND",
+  heading: "[@heading]:HEADING_NOT_FOUND",
+};
+
+
+const { title, heading } = Astro.props;
+
+---
+
 <section class="relative overflow-hidden">
   <img
     class="absolute right-0 z-10 hidden w-40 transform -translate-y-1/2 md:block top-1/2 2xl:mr-32 lg:w-52 xl:w-auto img-fluid"
@@ -17,11 +38,11 @@
         alt=""
       />
       <div class="mx-auto text-center sm:max-w-sm lg:max-w-lg xl:max-w-xl">
-        <h3 class="mb-6 text-3xl font-black md:text-4xl">
-          Sign-up for our Newsletter
+        <h3 class="mb-6 text-6xl font-black md:text-4xl">
+          {title ?? defaultProps.title}
         </h3>
-        <p class="mb-6 text-base font-bold md:text-lg">
-          Receive our latest updates about our products and promotions.
+        <p class="mb-6 text-2xl font-bold md:text-lg">
+          {heading ?? defaultProps.heading}
         </p>
         <div class="flex flex-wrap items-center justify-center -mx-3">
           <div class="w-full px-3 mb-3 lg:w-2/3 lg:mb-0">

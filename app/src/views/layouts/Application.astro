@@ -17,7 +17,7 @@ export interface Props {
   layout?: {
     header?: any;
     footer?: any;
-    metaData?: any
+    metaData?: any;
   };
 }
 
@@ -45,6 +45,7 @@ const { layout } = Astro.props;
     <ContactRow />
     <Footer {...layout.footer ?? defaultProps.layout.footer} />
     <PostScripts />
+    <Menu client:idle />
     <PageTransition speed={500} background={defaultProps.background} />
   </body>
 </html>

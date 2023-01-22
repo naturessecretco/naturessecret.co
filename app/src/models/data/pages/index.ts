@@ -62,9 +62,10 @@ const pages = ({ store, pageKey }) => {
                 },
                 logoCloud: {
                     title: 'Certified Quality for Wellness.',
+                    heading: 'Certificaitons',
                     logos: getCertifications().map((certification) => ({
                         image: {
-                            url: certification?.covers[0]?.url ?? null,
+                            src: certification?.covers[0]?.url ?? null,
                             alt: certification?.covers[0]?.name ?? null
                         },
                         url: '#',
@@ -78,6 +79,7 @@ const pages = ({ store, pageKey }) => {
                         src: getProducts()[3].covers[0].url
                     }
                 },
+                featuredMedia: {},
                 mediaRow: {
                     title: 'Best Sellers',
                     media: getProducts().map((product) => ({
@@ -92,7 +94,10 @@ const pages = ({ store, pageKey }) => {
                 },
                 summary: {
                     title: 'Frequently Asked Questions',
-                    content: getFAQs()
+                    details: getFAQs().map((faq) => ({
+                        name: faq.name,
+                        description: faq.description,
+                    }))
                 }
             },
 
@@ -112,6 +117,7 @@ const pages = ({ store, pageKey }) => {
 
             }
         },
+        about:{},
         products: {
             metaData: {
                 pageTitle: 'Products'
@@ -177,7 +183,6 @@ const pages = ({ store, pageKey }) => {
         version: Date.now(),
         layout: layout({
             metaData: _data[pageKey].metaData,
-
             menu: {
                 navLinks: getPageLinks()
             },

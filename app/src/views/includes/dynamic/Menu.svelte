@@ -1,13 +1,17 @@
 <script>
+import { useMenu } from "@hooks/useMenu"
+
+const show = false
 
 </script>
 
 
+{#if show}
 <div
-class="fixed top-0 bottom-0 left-0 z-50 hidden w-4/6 navbar-menu sm:max-w-xs"
+class="fixed hidd top-0 bottom-0 left-0 z-50 w-4/6 navbar-menu sm:max-w-xs"
 >
 <div class="fixed inset-0 bg-gray-800 navbar-backdrop opacity-80"></div>
-<nav class="relative z-10 h-full pt-8 overflow-y-auto bg-white px-9">
+<nav class="relative z-10 h-full pt-8 overflow-y-auto bg-yellow-400 bg-opacity-75 backdrop-blur-sm px-9">
   <div class="flex flex-wrap justify-between h-full">
     <div class="w-full">
       <div class="flex items-center justify-between -m-2">
@@ -68,4 +72,5 @@ class="fixed top-0 bottom-0 left-0 z-50 hidden w-4/6 navbar-menu sm:max-w-xs"
     </div>
   </div>
 </nav>
-</div>
+</div> 
+{/if}

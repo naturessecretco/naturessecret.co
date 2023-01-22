@@ -70,8 +70,8 @@ const FacadeService = () => {
                     const { URL, Name, Description, Status, Types } = data.properties
 
                     return {
-                        question: title(Name),
-                        answer: rich_text(Description),
+                        name: title(Name),
+                        description: rich_text(Description),
                         status: status(Status),
                         url: url(URL),
                         types: multi_select(Types),

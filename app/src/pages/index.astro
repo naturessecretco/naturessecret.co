@@ -9,7 +9,7 @@ import LogoCloud from "@components/static/LogoCloud.astro";
 import FeaturedItem from "@components/static/FeaturedItem.astro";
 import FeaturedMedia from "@components/static/FeaturedMedia.astro";
 import SubscribeForm from "@components/static/SubscribeForm.astro";
-
+import Summary from "@components/static/Summary.astro";
 import PageService from "@services/pages";
 
 const { getPage } = PageService();
@@ -20,12 +20,13 @@ const { data, layout } = await getPage("home");
 <Application layout={layout}>
   <Hero {...data.hero} />
   <ProductsRow {...data.productsRow.bestSellers} />
-  <ProductsRow {...data.productsRow.bestSellers} />
+  <ProductsRow {...data.productsRow.newReleases} />
   <Product {...data.product} />
   <ContentGrid {...data.contentGrid.benefits} />
-  <ContentGrid {...data.contentGrid.benefits} />
-  <SubscribeForm />
-  <LogoCloud />
-  <FeaturedMedia />
-  <FeaturedItem />
+  <ContentGrid {...data.contentGrid.ingredients} />
+  <SubscribeForm {...data.subscribeForm} />
+  <LogoCloud {...data.logoCloud} />
+  <FeaturedMedia {...data.featuredMedia} />
+  <FeaturedItem {...data.featuredItem} />
+  <Summary {...data.summary} />
 </Application>
