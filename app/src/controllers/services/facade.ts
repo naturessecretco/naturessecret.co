@@ -1,7 +1,7 @@
-import utils from "@utils/index"
+import { notion } from "@utils/index"
 
 
-const { files, url, email, phone, formula, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = utils().notion
+const { files, url, email, phone, formula, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = notion()
 
 const FacadeService = () => {
 
@@ -70,8 +70,8 @@ const FacadeService = () => {
                     const { URL, Name, Description, Status, Types } = data.properties
 
                     return {
-                        name: title(Name),
-                        description: rich_text(Description),
+                        question: title(Name),
+                        answer: rich_text(Description),
                         status: status(Status),
                         url: url(URL),
                         types: multi_select(Types),

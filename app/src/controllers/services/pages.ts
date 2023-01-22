@@ -21,7 +21,7 @@ const PageService = () => {
                 pages: dataPages
             }
 
-            return { ...pageObject }
+            return pageObject
 
         },
 
@@ -30,8 +30,6 @@ const PageService = () => {
     return serviceObject
 
 }
-
-
 
 
 export default PageService

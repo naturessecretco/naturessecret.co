@@ -4,7 +4,7 @@ import { faqs, links, meta, products, social_media } from "@db/index"
 const pages = ({ store, pageKey }) => {
 
     const { getProducts } = products(store)
-    const { getBanner, getHero, getTitle, getPhoneNumber, getBenefits, getEmailAddress, getDisclaimer, getCopyrights, getTag, getCertifications } = meta(store)
+    const { getBanner, getHero, getPhoneNumber, getBenefits, getEmailAddress, getDisclaimer, getCopyrights, getTag, getCertifications } = meta(store)
     const { getPageLinks, getFeatured, getHeaderLinks } = links(store)
     const { getFAQs } = faqs(store)
     const { getSocialMedia } = social_media(store)
