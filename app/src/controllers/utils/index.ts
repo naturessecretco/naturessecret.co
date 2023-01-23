@@ -100,6 +100,26 @@ export const collections = () => {
                     })) ?? null
             }
         },
+        extractCentralDogmaKeys: ({ data }) => {
+
+
+            const { files, url, email, phone, formula, icon, rich_text } = notion()
+            const { title, multi_select, number, status, select, isDatabase, getProperties } = notion()
+
+            const { Facebook, Media, Price, Value, Name, URL, Types, Status } = getProperties(data)
+
+            return {
+                name: title(Name),
+                media: files(Media),
+                value: number(Value),
+                price: formula(Price),
+                status: status(Status),
+                url: url(URL),
+                facebook: url(Facebook),
+                types: multi_select(Types)
+            }
+
+        },
 
         createDatabase: ({ name, data, shape, predicate }: CreateDatabaseProps) => {
 
@@ -114,6 +134,8 @@ export const collections = () => {
                     })
             }
         }
+
+
     }
     return utilsObject
 }

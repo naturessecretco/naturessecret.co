@@ -1,23 +1,24 @@
 ---
 import AddToCart from "@components/static/AddToCart.astro";
 
-export interface Product {
+export interface Props {
   cover?: {
     src?: string;
     alt?: string;
   };
-  title?: string;
+  name?: string;
   description?: string;
   price?:  number;
   discount?: string;
   marketValue?: string;
   subTitle?: string;
 }
+
 export const defaultProps = {
-  title: "TITLE_NOT_FOUND",
+  name: "TITLE_NOT_FOUND",
 };
 
-const { title, price, description, cover } = Astro.props;
+const { name, price, description, cover } = Astro.props;
 ---
 
 <section class="py-20">
@@ -57,7 +58,7 @@ const { title, price, description, cover } = Astro.props;
           </svg>
         </span>
         <a class="inline-block text-sm font-bold text-green-500" href="#"
-          >{title ?? defaultProps.title}</a
+          >{name ?? defaultProps.name}</a
         >
       </div>
       <div class="flex flex-wrap -mx-4">
@@ -152,7 +153,7 @@ const { title, price, description, cover } = Astro.props;
               >Label</span
             >
             <h2 class="mb-1 font-serif text-4xl font-black">
-              {title ?? defaultProps.title}
+              {name ?? defaultProps.name}
             </h2>
             <span class="block mb-4 text-2xl font-black text-green-500"
               >$535,50</span

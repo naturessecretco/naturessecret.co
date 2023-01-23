@@ -27,7 +27,6 @@ export const notion = () => {
             photo: "🖼️Photo",
             messages: "📩Messages",
             faq: "❓FAQ",
-     
             title: "📛Title",
             video: "📺Video",
             partner: "🫱🏿‍🫲🏿Partner",
@@ -40,22 +39,28 @@ export const notion = () => {
             banner: "🪧Banner",
             cta: "🔔Call to Action"
         },
-        
+
         products: {
             name: "🛍️Product",
             shape: (data) => {
-                const { Facebook, Media, Price, Name, Covers, URL, Types, Status } = getProperties(data)
 
-                return {
-                    name: title(Name),
-                    media: files(Media),
-                    price: number(Price),
-                    covers: files(Covers),
-                    status: status(Status),
-                    url: url(URL),
-                    facebook: url(Facebook),
-                    types: multi_select(Types)
+                const extractCentralDogmaKeys = ({ data }) => {
+                    const { Facebook, Media, Price, Value, Name, URL, Types, Status } = getProperties(data)
+
+                    return {
+                        name: title(Name),
+                        media: files(Media),
+                        value: number(Value),
+                        price: formula(Price),
+                        status: status(Status),
+                        url: url(URL),
+                        facebook: url(Facebook),
+                        types: multi_select(Types)
+                    }
+
                 }
+
+                return extractCentralDogmaKeys({ data })
             },
 
             predicate: (data) => {
@@ -67,14 +72,14 @@ export const notion = () => {
         forms: {
             name: "📜Forms",
             shape: (data) => {
-                const { Facebook, Name, Covers, URL, Types, Status } = getProperties(data)
+                const { Facebook, Name, Media, URL, Types, Status } = getProperties(data)
 
                 const { icon: Icon } = data
 
                 return {
                     name: title(Name),
                     icon: icon(Icon),
-                    covers: files(Covers),
+                    media: files(Media),
                     status: status(Status),
                     url: url(URL),
                     facebook: url(Facebook),
@@ -109,12 +114,11 @@ export const notion = () => {
             name: "📷Media",
             shape: (data) => {
 
-                const { Facebook, Name, Media, Covers, Types, Status } = getProperties(data)
+                const { Facebook, Name, Media, Types, Status } = getProperties(data)
 
                 return {
                     name: title(Name),
                     media: files(Media),
-                    covers: files(Covers),
                     status: status(Status),
                     facebook: url(Facebook),
                     types: multi_select(Types)
@@ -125,20 +129,19 @@ export const notion = () => {
                 return isDatabase(name, data)
             }
         },
-      
+
         meta: {
             name: "📐Meta",
             shape: (data: any) => {
 
-                const { URL, Youtube, Title, Name, Covers, Types, Files, Values, Description, Status, Phone, Email } = data.properties
+                const { URL, Youtube, Name, Media, Types, Files, Values, Description, Status, Phone, Email } = data.properties
 
                 return {
                     url: url(URL),
-                    title: select(Title),
                     name: title(Name),
                     description: rich_text(Description),
                     status: status(Status),
-                    covers: files(Covers),
+                    media: files(Media),
                     phone: phone(Phone),
                     email: email(Email),
                     youtube: url(Youtube),

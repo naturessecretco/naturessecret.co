@@ -23,13 +23,9 @@ const pages = ({ store, pageKey }) => {
                     subHeading: "Home to nature's best kept secrets",
                     socials: getSocialMedia(),
                     features: getProducts().map((product) => (product?.advertisements)).flat(),
-                    covers: {
-                        heading: 'Check out these quick links to wellness!',
-                        links: getFeatauredLinks()
-                    },
                     banner: {
                         image: {
-                            src: getHero()?.covers[0].url ?? null
+                            src: getHero()?.media[0]?.url ?? null
                         }
                     }
                 },
@@ -39,7 +35,7 @@ const pages = ({ store, pageKey }) => {
                         items: getBenefits().map((benefit) => ({
                             ...benefit,
                             cover: {
-                                url: benefit?.covers[0]?.url ?? null,
+                                url: benefit?.media[0]?.url ?? null,
                             },
                             title: benefit?.name,
                         })),
@@ -51,13 +47,12 @@ const pages = ({ store, pageKey }) => {
                         title: 'Best Sellers.',
                         products: getProducts().map((product) => ({
                             ...product,
-                            title: product.name,
-                            marketValue: product.value,
+                            price: product.price,
+                            id: product.id,
                             cover: {
-                                src: product.covers[0]?.url,
-                                alt: product.covers[0]?.name
+                                src: product.media[0].url
                             }
-                        })),
+                        }))
 
                     },
                 },
@@ -66,8 +61,8 @@ const pages = ({ store, pageKey }) => {
                     heading: 'Certificaitons',
                     logos: getCertifications().map((certification) => ({
                         image: {
-                            src: certification?.covers[0]?.url ?? null,
-                            alt: certification?.covers[0]?.name ?? null
+                            src: certification?.media[0]?.url ?? null,
+                            alt: certification?.media[0]?.name ?? null
                         },
                         url: '#',
                         name: certification?.name ?? null
@@ -81,8 +76,8 @@ const pages = ({ store, pageKey }) => {
                     title: 'Best Sellers',
                     media: getProducts().map((product) => ({
                         cover: {
-                            src: product.covers[0]?.url,
-                            alt: product.covers[0]?.name
+                            src: product.media[0]?.url,
+                            alt: product.media[0]?.name
                         },
                         url: product?.url,
                         title: product?.name,
@@ -135,7 +130,7 @@ const pages = ({ store, pageKey }) => {
                 data: getProducts().map((product) => ({
                     id: product?.id ?? null,
                     name: product?.name ?? null,
-                    covers: product?.covers,
+                    media: product?.media,
                     order: {
                         heading: 'Order Now',
                     },
@@ -155,7 +150,7 @@ const pages = ({ store, pageKey }) => {
                         order: {
                             url: product.gumroad
                         },
-                        cover: product.covers[0],
+                        cover: product.media[0],
                         discount: product.discount,
                         ...product
 
@@ -171,7 +166,7 @@ const pages = ({ store, pageKey }) => {
                     items: getBenefits().map((benefit) => ({
                         ...benefit,
                         cover: {
-                            url: benefit?.covers[0]?.url ?? null,
+                            url: benefit?.media[0]?.url ?? null,
                         },
                         title: benefit?.name,
                     })),
