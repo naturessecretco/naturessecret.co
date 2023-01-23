@@ -11,6 +11,14 @@ const products = (store: NotionPageObjectType): DatabaseObjectType => {
 
     const dbObject = {
 
+        getFeaturedProducts: () => {
+            return queryDatabase({
+                keys: [variants.featured],
+                db: dbObject.db.data,
+                batch: true
+            })
+        },
+
         getProducts: () => {
             return dbObject.db.data
         },

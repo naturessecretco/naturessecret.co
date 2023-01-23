@@ -1,20 +1,23 @@
 import { default as headerConfig } from "@configs/header";
 import { default as footerConfig } from "@configs/footer"
 import { default as menuConfig } from "@configs/menu"
-import type { LayoutProps } from "@typings/Layout"
+import type { LayoutProps } from "@models/typings/Layout";
 
-const layout = ({ header, footer, metaData, menu }: LayoutProps) => {
 
-    const defaultObject: LayoutProps = {
+const layout = ({ header, footer, metaData, menu, contactRow }: LayoutProps) => {
+
+    const defaultObject = {
         header: headerConfig({}),
         footer: footerConfig({}),
         menu: menuConfig({}),
+        contactRow: [],
         metaData: {}
     }
 
-    const layoutObject: LayoutProps = {
+    const layoutObject = {
         header: header ?? defaultObject?.header,
         footer: footer ?? defaultObject?.footer,
+        contactRow: contactRow ?? defaultObject?.contactRow,
         metaData: metaData ?? defaultObject?.metaData,
         menu: menu ?? defaultObject?.menu
     }

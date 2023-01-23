@@ -16,19 +16,22 @@ import type { Props as FooterProps } from "@includes/static/Footer.astro";
 export interface Props {
   layout?: {
     header?: any;
+    contactRow?: any;
     footer?: any;
     metaData?: any;
+    transition?: string;
   };
 }
 
 export const defaultProps = {
-  background: "rgba(0,0,0, 0.01)",
   layout: {
     header: {},
     footer: {},
+    contactRow: {},
     metaData: {
       title: "TITLE_NOT_FOUND",
     },
+    transition: "rgba(0,0,0, 0.01)",
   },
 };
 
@@ -42,10 +45,10 @@ const { layout } = Astro.props;
     <Header {...layout.header ?? defaultProps.layout.header} />
     <AstroGap spaces={5} />
     <slot />
-    <ContactRow />
+    <ContactRow {...layout.contactRow} />
     <Footer {...layout.footer ?? defaultProps.layout.footer} />
     <PostScripts />
     <Menu client:idle />
-    <PageTransition speed={100} background={defaultProps.background} />
+    <PageTransition speed={100} background={defaultProps.layout.transition} />
   </body>
 </html>

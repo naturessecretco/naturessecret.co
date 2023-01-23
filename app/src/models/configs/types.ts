@@ -1,10 +1,13 @@
 import { notion as notionUtilities } from "@utils/index"
+import { collections as collectionsUtilities } from "@utils/index"
 
 export const notion = () => {
 
     const { files, url, email, phone, formula, icon, rich_text } = notionUtilities()
 
     const { title, multi_select, number, status, select, isDatabase, getProperties } = notionUtilities()
+
+    const { extractCentralDogmaKeys } = collectionsUtilities()
 
     const typesObject = {
 
@@ -43,23 +46,6 @@ export const notion = () => {
         products: {
             name: "🛍️Product",
             shape: (data) => {
-
-                const extractCentralDogmaKeys = ({ data }) => {
-                    const { Facebook, Media, Price, Value, Name, URL, Types, Status } = getProperties(data)
-
-                    return {
-                        name: title(Name),
-                        media: files(Media),
-                        value: number(Value),
-                        price: formula(Price),
-                        status: status(Status),
-                        url: url(URL),
-                        facebook: url(Facebook),
-                        types: multi_select(Types)
-                    }
-
-                }
-
                 return extractCentralDogmaKeys({ data })
             },
 

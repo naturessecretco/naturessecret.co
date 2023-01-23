@@ -3,7 +3,7 @@ import { faqs, links, meta, products, social_media } from "@db/index"
 
 const pages = ({ store, pageKey }) => {
 
-    const { getProducts } = products(store)
+    const { getProducts, getFeaturedProducts } = products(store)
     const { getPageLinks, getFeatauredLinks } = links(store)
     const { getTagLine, getCertifications, getDisclaimer, getCopyright } = meta(store)
     const { getBanner, getHero, getPhoneNumber, getBenefits, getEmailAddress } = meta(store)
@@ -68,9 +68,13 @@ const pages = ({ store, pageKey }) => {
                         name: certification?.name ?? null
                     }))
                 },
-                product: {
-
-                },
+                product: getFeaturedProducts().map((product) => ({
+                    ...product,
+                    cover: {
+                        src: product.media[0].url,
+                        alt: product.name
+                    }
+                }))[0],
                 featuredMedia: {},
                 mediaRow: {
                     title: 'Best Sellers',
@@ -139,7 +143,7 @@ const pages = ({ store, pageKey }) => {
             },
             data: {
 
-                itemsSearch: {
+                productsSearch: {
                     title: 'Our Products',
                     items: getProducts().map((product) => ({
                         id: product.id,
@@ -150,7 +154,10 @@ const pages = ({ store, pageKey }) => {
                         order: {
                             url: product.gumroad
                         },
-                        cover: product.media[0],
+                        cover: {
+                            src: product.media[0].url,
+                            alt: product.name
+                        },
                         discount: product.discount,
                         ...product
 
@@ -188,6 +195,11 @@ const pages = ({ store, pageKey }) => {
             footer: {
                 tagLine: getTagLine().description,
                 copyright: getCopyright().description
+            },
+
+            contactRow: {
+
+                email: ""
             },
 
             header: {

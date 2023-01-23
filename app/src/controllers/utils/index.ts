@@ -106,12 +106,14 @@ export const collections = () => {
             const { files, url, email, phone, formula, icon, rich_text } = notion()
             const { title, multi_select, number, status, select, isDatabase, getProperties } = notion()
 
-            const { Facebook, Media, Price, Value, Name, URL, Types, Status } = getProperties(data)
+            const { Facebook, Media, Discount, Price, Value, Name, URL, Types, Status, Description } = getProperties(data)
 
             return {
                 name: title(Name),
                 media: files(Media),
+                discount: number(Discount),
                 value: number(Value),
+                description: rich_text(Description),
                 price: formula(Price),
                 status: status(Status),
                 url: url(URL),
@@ -161,6 +163,10 @@ export const formatters = () => {
 
             return formatter.format(value)
 
+        },
+
+        toPercent: (value) => {
+            return `${(value * 100).toFixed(2)}%`;
         }
     }
 

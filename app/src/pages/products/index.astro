@@ -1,6 +1,6 @@
 ---
 import Application from "@layouts/Application.astro";
-import ItemsSearch from "@components/static/ItemsSearch/index.astro";
+import ProductsSearch from "@components/static/ProductsSearch/index.astro";
 import PageService from "@services/pages";
 
 const { getPage } = PageService();
@@ -9,5 +9,5 @@ const { data, layout } = await getPage("products");
 ---
 
 <Application layout={layout}>
-  <ItemsSearch {...data.itemsSearch} />
+  <ProductsSearch {...data.productsSearch} />
 </Application>
