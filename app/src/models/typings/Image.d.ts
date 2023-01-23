@@ -5,4 +5,4 @@ export type ImageProps = {
     class?: string,
     alt?: string,
 
-} & HTMLImageElement
+} 

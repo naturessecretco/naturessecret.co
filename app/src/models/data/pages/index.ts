@@ -5,8 +5,8 @@ const pages = ({ store, pageKey }) => {
 
     const { getProducts } = products(store)
     const { getPageLinks, getFeatauredLinks } = links(store)
-    const { getTag, getCertifications } = meta(store)
-    const { getBanner, getHero, getPhoneNumber, getBenefits, getEmailAddress, getDisclaimer, getCopyright } = meta(store)
+    const { getTagLine, getCertifications, getDisclaimer, getCopyright } = meta(store)
+    const { getBanner, getHero, getPhoneNumber, getBenefits, getEmailAddress } = meta(store)
     const { getFAQs } = faqs(store)
     const { getSocialMedia } = social_media(store)
     const { title } = metaConfig({})
@@ -99,7 +99,7 @@ const pages = ({ store, pageKey }) => {
             },
 
         },
-        mission: {
+        resources: {
             metaData: {
                 pageTitle: 'Mission'
             },
@@ -114,7 +114,14 @@ const pages = ({ store, pageKey }) => {
 
             }
         },
-        about: {},
+        about: {
+            metaData: {
+                pageTitle: "About"
+            },
+            data: {
+
+            }
+        },
         products: {
             metaData: {
                 pageTitle: 'Products'
@@ -172,6 +179,8 @@ const pages = ({ store, pageKey }) => {
                 }
             }
         },
+        ingredients: {},
+        blog: {}
     }
 
 
@@ -180,13 +189,22 @@ const pages = ({ store, pageKey }) => {
         version: Date.now(),
         layout: layout({
             metaData: _data[pageKey].metaData,
-           
+
+            footer: {
+                tagLine: getTagLine().description,
+                copyright: getCopyright().description
+            },
+
             header: {
-           
-                links: getFeatauredLinks(),
+
+                links: getPageLinks().map((link) => ({
+                    url: link.url,
+                    name: link.name
+                })),
                 favicon: {
                     image: {
                         src: '/assets/images/logo.png',
+                        alt: ""
                     },
                     url: '/'
                 }

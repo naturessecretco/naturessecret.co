@@ -41,11 +41,12 @@ const { title, banner, heading, features, subHeading, description } = Astro.prop
         </div>
         <h1
           class:list={[
-            "mb-6 font-serif text-9xl  transition-all duration-500 ease-in-out text-wrap font-bold leading-none text-shadow-xl shadow-black font-heading"
-          ]}
-        >
-          {title ?? "TITLE_NOT_FOUND"}
+            "mb-6 font-serif font-bold leading-none transition-all duration-500 ease-in-out text-9xl md:text-7xl max-w-3/4 text-wrap text-shadow-xl shadow-black font-heading"
+          ]}>
+                    {title ?? "TITLE_NOT_FOUND"}
+
         </h1>
+     
         <p class="text-2xl font-medium text-gray-900 mb-11 md:max-w-md">
           {subHeading ?? "SUB_HEADING_NOT_FOUND"}
         </p>
@@ -114,7 +115,7 @@ const { title, banner, heading, features, subHeading, description } = Astro.prop
       </div>
 
       <!--@element Hero::Features -->
-      <div class="w-full h-full m-0 p-8 md:w-1/2 cursor-pointer">
+      <div class="w-full h-full p-8 m-0 cursor-pointer md:w-1/2">
         <img
           class:list={[
             "transition w-full object-fit min-h-64 scale-150 h-full duration-1000 ease-in-out transform hover:-translate-y-16"

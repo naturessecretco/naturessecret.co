@@ -8,7 +8,7 @@ export interface Product {
   };
   title?: string;
   description?: string;
-  price?: string | number;
+  price?:  number;
   discount?: string;
   marketValue?: string;
   subTitle?: string;
@@ -22,9 +22,9 @@ const { title, price, description, cover } = Astro.props;
 
 <section class="py-20">
   <div class="container px-4 mx-auto">
-    <div class="max-w-lg lg:max-w-6xl mx-auto">
-      <div class="flex flex-wrap h-16 mb-10 py-4 items-center">
-        <a class="inline-block text-sm text-black font-bold" href="#"
+    <div class="max-w-lg mx-auto lg:max-w-6xl">
+      <div class="flex flex-wrap items-center h-16 py-4 mb-10">
+        <a class="inline-block text-sm font-bold text-black" href="#"
           >Homepage</a
         >
         <span class="mx-3">
@@ -40,7 +40,7 @@ const { title, price, description, cover } = Astro.props;
               fill="black"></path>
           </svg>
         </span>
-        <a class="inline-block text-sm text-black font-bold" href="#"
+        <a class="inline-block text-sm font-bold text-black" href="#"
           >Catalogue</a
         >
         <span class="mx-3">
@@ -56,73 +56,73 @@ const { title, price, description, cover } = Astro.props;
               fill="black"></path>
           </svg>
         </span>
-        <a class="inline-block text-sm text-green-500 font-bold" href="#"
+        <a class="inline-block text-sm font-bold text-green-500" href="#"
           >{title ?? defaultProps.title}</a
         >
       </div>
       <div class="flex flex-wrap -mx-4">
-        <div class="w-full lg:w-3/5 px-4 mb-14 lg:mb-0">
+        <div class="w-full px-4 lg:w-3/5 mb-14 lg:mb-0">
           <div class="flex flex-wrap h-full -mx-4">
-            <div class="w-full xs:w-2/6 md:w-1/4 px-4 mb-7 xs:mb-0">
+            <div class="w-full px-4 xs:w-2/6 md:w-1/4 mb-7 xs:mb-0">
               <div class="flex flex-wrap -mx-4 -mb-7">
-                <div class="w-1/2 xs:w-full px-4 mb-7">
+                <div class="w-1/2 px-4 xs:w-full mb-7">
                   <a
-                    class="relative group block h-24 lg:h-32 w-full bg-blueGray-900 rounded-md"
+                    class="relative block w-full h-24 rounded-md group lg:h-32 bg-blueGray-900"
                     href="#"
                   >
                     <div
-                      class="absolute top-0 left-0 w-full h-full transform -translate-y-1 -translate-x-1 group-hover:translate-y-0 group-hover:translate-x-0 transition duration-300"
+                      class="absolute top-0 left-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 group-hover:translate-y-0 group-hover:translate-x-0"
                     >
                       <img
-                        class="img-fluid w-full h-full object-cover border-2 border-black rounded-md"
+                        class="object-cover w-full h-full border-2 border-black rounded-md img-fluid"
                         src={cover?.src}
                         alt=""
                       />
                     </div>
                   </a>
                 </div>
-                <div class="w-1/2 xs:w-full px-4 mb-7">
+                <div class="w-1/2 px-4 xs:w-full mb-7">
                   <a
-                    class="relative group block h-24 lg:h-32 w-full bg-blueGray-900 rounded-md"
+                    class="relative block w-full h-24 rounded-md group lg:h-32 bg-blueGray-900"
                     href="#"
                   >
                     <div
-                      class="absolute top-0 left-0 w-full h-full transform -translate-y-1 -translate-x-1 group-hover:translate-y-0 group-hover:translate-x-0 transition duration-300"
+                      class="absolute top-0 left-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 group-hover:translate-y-0 group-hover:translate-x-0"
                     >
                       <img
-                        class="img-fluid w-full h-full object-cover border-2 border-black rounded-md"
+                        class="object-cover w-full h-full border-2 border-black rounded-md img-fluid"
                         src={cover?.src}
                         alt=""
                       />
                     </div>
                   </a>
                 </div>
-                <div class="w-1/2 xs:w-full px-4 mb-7">
+                <div class="w-1/2 px-4 xs:w-full mb-7">
                   <a
-                    class="relative group block h-24 lg:h-32 w-full bg-blueGray-900 rounded-md"
+                    class="relative block w-full h-24 rounded-md group lg:h-32 bg-blueGray-900"
                     href="#"
                   >
                     <div
-                      class="absolute top-0 left-0 w-full h-full transform -translate-y-1 -translate-x-1 group-hover:translate-y-0 group-hover:translate-x-0 transition duration-300"
+                      class="absolute top-0 left-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 group-hover:translate-y-0 group-hover:translate-x-0"
                     >
                       <img
-                        class="img-fluid w-full h-full object-cover border-2 border-black rounded-md"
+                        class="object-cover w-full h-full border-2 border-black rounded-md img-fluid"
                         src={cover?.src}
                         alt=""
                       />
                     </div>
                   </a>
                 </div>
-                <div class="w-1/2 xs:w-full px-4 mb-7">
+                <div class="w-1/2 px-4 xs:w-full mb-7">
                   <a
-                    class="relative group block h-24 lg:h-32 w-full bg-blueGray-900 rounded-md"
+                    class="relative block w-full h-24 rounded-md group lg:h-32 bg-blueGray-900"
                     href="#"
                   >
                     <div
-                      class="absolute top-0 left-0 w-full h-full transform -translate-y-1 -translate-x-1 group-hover:translate-y-0 group-hover:translate-x-0 transition duration-300"
+                      class="absolute top-0 left-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 group-hover:translate-y-0 group-hover:translate-x-0"
                     >
                       <img
-                        class="img-fluid w-full h-full object-cover border-2 border-black rounded-md"
+                        class="object-cover w-full h-full border-2 border-black rounded-md img-fluid"
                         src={cover?.src}
                         alt=""
                       />
@@ -131,13 +131,13 @@ const { title, price, description, cover } = Astro.props;
                 </div>
               </div>
             </div>
-            <div class="w-full xs:w-4/6 md:w-3/4 px-4">
+            <div class="w-full px-4 xs:w-4/6 md:w-3/4">
               <a
-                class="relative group block h-112 xs:h-full max-h-150 w-full rounded-md"
+                class="relative block w-full rounded-md group h-112 xs:h-full max-h-150"
                 href="#"
               >
               <img
-              class="img-fluid w-full h-full object-cover border-2 border-black rounded-md"
+              class="object-cover w-full h-full border-2 border-black rounded-md img-fluid"
               src={cover?.src}
               alt=""
             />
@@ -145,45 +145,45 @@ const { title, price, description, cover } = Astro.props;
             </div>
           </div>
         </div>
-        <div class="w-full lg:w-2/5 px-4">
+        <div class="w-full px-4 lg:w-2/5">
           <div class="max-w-lg mx-auto">
             <span
-              class="inline-flex h-8 mb-4 px-1 items-center justify-center text-sm font-black text-white uppercase bg-indigo-500 border-2 border-black rounded-md shadow-sm"
+              class="inline-flex items-center justify-center h-8 px-1 mb-4 text-sm font-black text-white uppercase bg-indigo-500 border-2 border-black rounded-md shadow-sm"
               >Label</span
             >
-            <h2 class="text-4xl font-black mb-1 font-serif">
+            <h2 class="mb-1 font-serif text-4xl font-black">
               {title ?? defaultProps.title}
             </h2>
-            <span class="block text-2xl font-black text-green-500 mb-4"
+            <span class="block mb-4 text-2xl font-black text-green-500"
               >$535,50</span
             >
-            <p class="font-medium mb-6">
+            <p class="mb-6 font-medium">
               {description ?? defaultProps.description}
             </p>
             <div class="flex flex-wrap mb-6">
-              <div class="w-full sm:w-auto mb-4 sm:mb-0 sm:mr-4">
-                <span class="block text-sm font-black mb-2">Amount</span>
+              <div class="w-full mb-4 sm:w-auto sm:mb-0 sm:mr-4">
+                <span class="block mb-2 text-sm font-black">Amount</span>
                 <div
-                  class="flex h-12 w-24 px-2 items-center justify-between border-2 border-black rounded-md"
+                  class="flex items-center justify-between w-24 h-12 px-2 border-2 border-black rounded-md"
                 >
                   <button
                     class="flex w-3.5 h-3.5 px-px items-center justify-center bg-black hover:bg-indigo-500 rounded transition duration-100"
                   >
-                    <div class="h-px mx-px w-full bg-white"></div>
+                    <div class="w-full h-px mx-px bg-white"></div>
                   </button>
                   <input
-                    class="w-10 text-center text-sm font-bold placeholder-black text-black outline-none"
+                    class="w-10 text-sm font-bold text-center text-black placeholder-black outline-none"
                     type="number"
                     placeholder="2"
                   />
                   <button
                     class="relative flex w-3.5 h-3.5 px-px py-px items-center justify-center bg-black hover:bg-indigo-500 rounded transition duration-100"
                   >
-                    <div class="relative h-full w-full py-px">
-                      <div class="absolute top-1/2 left-0 h-px w-full bg-white">
+                    <div class="relative w-full h-full py-px">
+                      <div class="absolute left-0 w-full h-px bg-white top-1/2">
                       </div>
                       <div
-                        class="inline-block max-w-max mx-auto h-full bg-white"
+                        class="inline-block h-full mx-auto bg-white max-w-max"
                       >
                         <div class="inline-block px-px"></div>
                       </div>
@@ -192,12 +192,12 @@ const { title, price, description, cover } = Astro.props;
                 </div>
               </div>
               <div class="w-full sm:w-auto">
-                <span class="block text-sm font-black mb-2">Size</span>
+                <span class="block mb-2 text-sm font-black">Size</span>
                 <div
-                  class="group relative h-12 w-32 border-2 border-black rounded-md overflow-hidden"
+                  class="relative w-32 h-12 overflow-hidden border-2 border-black rounded-md group"
                 >
                   <select
-                    class="w-full h-full px-4 text-sm font-bold appearance-none outline-none"
+                    class="w-full h-full px-4 text-sm font-bold outline-none appearance-none"
                     name=""
                     id=""
                   >
@@ -206,7 +206,7 @@ const { title, price, description, cover } = Astro.props;
                     <option value="1">Large</option>
                   </select>
                   <span
-                    class="absolute top-1/2 right-0 mr-3 transform -translate-y-1/2 text-black group-hover:text-indigo-500"
+                    class="absolute right-0 mr-3 text-black transform -translate-y-1/2 top-1/2 group-hover:text-indigo-500"
                   >
                     <svg
                       width="10"
@@ -224,14 +224,14 @@ const { title, price, description, cover } = Astro.props;
               </div>
             </div>
             <a
-              class="group relative inline-block mb-4 h-12 w-full bg-blueGray-900 rounded-md"
+              class="relative inline-block w-full h-12 mb-4 rounded-md group bg-blueGray-900"
               href="#"
             >
               <div
-                class="absolute top-0 left-0 transform -translate-y-1 -translate-x-1 w-full h-full group-hover:translate-y-0 group-hover:translate-x-0 transition duration-300"
+                class="absolute top-0 left-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 group-hover:translate-y-0 group-hover:translate-x-0"
               >
                 <div
-                  class="flex h-full w-full items-center justify-center bg-green-600 border-2 border-black rounded-md"
+                  class="flex items-center justify-center w-full h-full bg-green-600 border-2 border-black rounded-md"
                 >
                   <span class="text-base font-black text-black"
                     >Add to Cart</span
@@ -240,7 +240,7 @@ const { title, price, description, cover } = Astro.props;
               </div>
             </a>
             <a
-              class="inline-flex w-full items-center justify-center mb-5 text-black hover:text-indigo-500 transition duration-200"
+              class="inline-flex items-center justify-center w-full mb-5 text-black transition duration-200 hover:text-indigo-500"
               href="#"
             >
               <svg
@@ -258,7 +258,7 @@ const { title, price, description, cover } = Astro.props;
             </a>
             <div class="border-2 border-black rounded-md">
               <button
-                class="group flex flex-wrap w-full px-6 py-5 text-left border-b-2 border-black items-center justify-between"
+                class="flex flex-wrap items-center justify-between w-full px-6 py-5 text-left border-b-2 border-black group"
               >
                 <span class="text-sm font-black">Description</span>
                 <svg
@@ -283,7 +283,7 @@ const { title, price, description, cover } = Astro.props;
                 </div>
               </button>
               <button
-                class="group flex flex-wrap w-full px-6 py-5 text-left border-b-2 border-black items-center justify-between"
+                class="flex flex-wrap items-center justify-between w-full px-6 py-5 text-left border-b-2 border-black group"
               >
                 <span class="text-sm font-black">Specification</span>
                 <svg
@@ -308,7 +308,7 @@ const { title, price, description, cover } = Astro.props;
                 </div>
               </button>
               <button
-                class="group flex flex-wrap w-full px-6 py-5 text-left items-center justify-between"
+                class="flex flex-wrap items-center justify-between w-full px-6 py-5 text-left group"
               >
                 <span class="text-sm font-black">Shipping &amp; Returns</span>
                 <svg

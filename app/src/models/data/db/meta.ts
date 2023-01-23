@@ -17,7 +17,7 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
                 batch: true
             })
         },
-        getTagline: () => {
+        getTagLine: () => {
             return queryDatabase({
                 keys: [variants.tag_line],
                 db: dbObject.db.data,
@@ -26,7 +26,7 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
         },
         getHero: () => {
             return queryDatabase({
-                keys: [variants.tag_line],
+                keys: [variants.hero],
                 db: dbObject.db.data,
                 batch: false
             })

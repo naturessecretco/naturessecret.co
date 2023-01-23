@@ -1,7 +1,7 @@
 import type { FooterProps } from "@typings/Footer"
 import images from "@configs/images"
 
-const footer = ({ favicon, socials, navLinks, copyright, phone, email }: FooterProps) => {
+const footer = ({ favicon, socials, navLinks, copyright, tagLine, phone, email }: FooterProps) => {
 
     const logoImage = images().find((image) => image.id === "logo")
 
@@ -12,6 +12,7 @@ const footer = ({ favicon, socials, navLinks, copyright, phone, email }: FooterP
         },
         socials: [],
         navLinks: [],
+        tagLine: "[@service]: TAGLINE_NOT_FOUND",
         copyright: "[{text: 'All Rights Reserved.'}]",
         phone: '888-888-8888',
         email: 'test@email'
@@ -21,6 +22,7 @@ const footer = ({ favicon, socials, navLinks, copyright, phone, email }: FooterP
     const footerObject: FooterProps = {
         favicon: favicon ?? defaultObject?.favicon,
         socials: socials ?? defaultObject?.socials,
+        tagLine: tagLine ?? defaultObject?.tagLine,
         navLinks: navLinks ?? defaultObject?.navLinks,
         copyright: copyright ?? defaultObject?.copyright,
         phone: phone ?? defaultObject?.phone,

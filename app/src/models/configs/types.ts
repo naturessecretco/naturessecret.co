@@ -12,25 +12,27 @@ export const notion = () => {
             heading: "🪦Heading",
             team_member: "🕴🏿Team Member",
             search: "🔎Search",
-            tag_line: "Tag Line",
+            tag_line: "🏷️Tag Line",
             featured: "⭐Featured",
-            links: "📎Links",
-            certifications: "🏷Certifications",
+            hero: "🖼️Hero",
+            links: "📎Link",
+            certifications: "🏷Certification",
             benefits: "🙏🏿Benefit",
             phone_number: "☎️Phone Number",
             disclaimer: "⚠️Disclaimer",
             pillar: "💜Pillar",
+            page: "📄Page",
             team: "🅰️Team",
             favicon: "🖼️Favicon",
             photo: "🖼️Photo",
             messages: "📩Messages",
-            faqs: "❓FAQ",
-            memberships: "🧑🏿‍🧑🏿‍🧒🏿Memberships",
+            faq: "❓FAQ",
+     
             title: "📛Title",
             video: "📺Video",
-            partners: "🫱🏿‍🫲🏿Partners",
+            partner: "🫱🏿‍🫲🏿Partner",
             founder: "🪨Founder",
-            copyright: "📜Copyright",
+            copyright: "©️Copyright",
             artivism: "🎨Artivism",
             email: "📧Email",
             event: "📅Event",
@@ -40,7 +42,7 @@ export const notion = () => {
         },
         
         products: {
-            name: "🛍️Products",
+            name: "🛍️Product",
             shape: (data) => {
                 const { Facebook, Media, Price, Name, Covers, URL, Types, Status } = getProperties(data)
 
@@ -152,7 +154,7 @@ export const notion = () => {
         },
 
         faqs: {
-            name: "❓FAQs",
+            name: "❓FAQ",
             shape: (data: any) => {
 
                 const { icon: Icon, properties: { URL, Name, Description, Status, Types } } = data

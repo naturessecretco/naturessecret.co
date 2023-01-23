@@ -4,8 +4,8 @@ import "@libs/globals.css";
 import { PageTransition } from "astro-page-transition";
 import AstroGap from "astro-gap";
 import Meta from "@includes/static/Meta.astro";
-import Header from "@includes/static/Header.astro";
-import Footer from "@includes/static/Footer.astro";
+import Header from "@includes/static/Header/index.astro";
+import Footer from "@includes/static/Footer/index.astro";
 import ContactRow from "@includes/static/ContactRow.astro";
 import PostScripts from "@includes/dynamic/PostScripts.astro";
 import Menu from "@includes/dynamic/Menu.svelte";
@@ -22,7 +22,7 @@ export interface Props {
 }
 
 export const defaultProps = {
-  background: "rgb(0,0,0)",
+  background: "rgba(0,0,0, 0.1)",
   layout: {
     header: {},
     footer: {},
@@ -46,6 +46,6 @@ const { layout } = Astro.props;
     <Footer {...layout.footer ?? defaultProps.layout.footer} />
     <PostScripts />
     <Menu client:idle />
-    <PageTransition speed={500} background={defaultProps.background} />
+    <PageTransition speed={100} background={defaultProps.background} />
   </body>
 </html>

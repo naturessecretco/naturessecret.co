@@ -1,13 +1,14 @@
 ---
 import Application from "@layouts/Application.astro";
-import ItemsSearch from "@components/static/ItemsSearch/index.astro";
 import PageService from "@services/pages";
+import Post from "@components/static/Post/index.astro"
 
 const { getPage } = PageService();
 
-const { data, layout } = await getPage("products");
+const { data, layout } = await getPage("resources");
 ---
 
 <Application layout={layout}>
-  <ItemsSearch {...data.itemsSearch} />
+
+<Post/>
 </Application>

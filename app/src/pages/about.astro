@@ -1,5 +1,13 @@
 ---
 import Application from "@layouts/Application.astro";
+import PageService from "@services/pages";
+import Post from "@components/static/Post/index.astro"
+const { getPage } = PageService();
+
+const { data, layout } = await getPage("about");
 ---
 
-<Application>defaultProps</Application>
+<Application layout={layout}>
+
+<Post/>
+</Application>
