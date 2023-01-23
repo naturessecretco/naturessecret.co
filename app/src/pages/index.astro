@@ -19,8 +19,7 @@ const { data, layout } = await getPage("home");
 ---
 
 <Application layout={layout}>
-  <!--
-    <Hero {...data.hero} />
+  <Hero {...data.hero} />
   <ProductsRow {...data.productsRow.bestSellers} />
   <ProductsRow {...data.productsRow.bestSellers} />
   <Product {...data.product} />
@@ -31,5 +30,4 @@ const { data, layout } = await getPage("home");
   <FeaturedMedia {...data.featuredMedia} />
   <FeaturedItem {...data.featuredItem} />
   <Summary {...data.summary} />
- -->
 </Application>

@@ -1,19 +1,13 @@
 ---
-import type { FooterProps } from "@typings/Footer";
-
+import type { FaviconProps } from "@typings/favicon";
 export interface Props {
   impressum?: string;
   copyright?: string;
   tagline?: string;
-  favicon?: {
-    image: {
-      src?: string;
-      alt?: string;
-    };
-  };
+  favicon?: FaviconProps;
 }
 
-const { impressum, copyright, favicon } = Astro.props;
+const { impressum, copyright, favicon, tagline } = Astro.props;
 
 export const defaultProps = {
   impressum: "IMPRESSUM_NOT_FOUND",
@@ -225,9 +219,9 @@ export const defaultProps = {
     </p>
 
     <p
-    class="py-5 text-sm font-medium leading-normal text-center text-black font-sans_serif"
-  >
-    {tagline ?? defaultProps.tagline}
-  </p>
+      class="py-5 text-sm font-medium leading-normal text-center text-black font-sans_serif"
+    >
+      {tagline ?? defaultProps.tagline}
+    </p>
   </div>
 </footer>
