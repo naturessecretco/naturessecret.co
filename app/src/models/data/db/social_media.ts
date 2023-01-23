@@ -1,26 +1,30 @@
 import FacadeService from "@services/facade"
+import { collections } from "@utils/index"
+import type { NotionPageObjectType } from "@typings/Notion"
+import type { DatabaseObjectType } from "@typings/Data"
 
-const social_media = (store: any[]) => {
+const socialMedia = (store: NotionPageObjectType): DatabaseObjectType => {
 
-    const { social_media } = FacadeService().types
+    const { variants, social_media } = FacadeService().types.notion
 
-    const databaseObject = {
-        id: 'SOCIAL_MEDIA_DATABASE',
-        version: Date.now(),
-        getSocialMedia:  () => {
-            return store.filter((data) => {
-                return (
-                    social_media.predicate(data)
-                )
-            }).map((data) => {
-                return (
-                    social_media.shape(data)
-                )
-            }).sort()
-        }
+    const { createDatabase, queryDatabase } = collections()
+
+    const dbObject = {
+
+        getSocialMedia: () => {
+            return dbObject.db.data
+        },
+
+        db: createDatabase({
+            id: social_media.name,
+            predicate: social_media.predicate,
+            shape: social_media.shape,
+            data: store
+        })
     }
-    return { ...databaseObject }
+
+    return { ...dbObject }
 }
 
-export default social_media
+export default socialMedia
 

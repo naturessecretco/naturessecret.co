@@ -101,10 +101,10 @@ export const collections = () => {
             }
         },
 
-        createDatabase: ({ id, data, shape, predicate }: CreateDatabaseProps) => {
+        createDatabase: ({ name, data, shape, predicate }: CreateDatabaseProps) => {
 
             return {
-                id,
+                name,
                 data: data.
                     filter((element) => {
                         return predicate(element)

@@ -11,7 +11,7 @@ export type QueryDatabaseProps = {
 
 
 export type CreateDatabaseProps = {
-    id?: string,
+    name?: string,
     predicate?: Function,
     shape?: Function,
     data?: any

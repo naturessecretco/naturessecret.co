@@ -1,7 +1,10 @@
 import { notion as notionUtilities } from "@utils/index"
 
 export const notion = () => {
-    const { files, url, email, phone, formula, icon, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = notionUtilities()
+
+    const { files, url, email, phone, formula, icon, rich_text } = notionUtilities()
+
+    const { title, multi_select, number, status, select, isDatabase, getProperties } = notionUtilities()
 
     const typesObject = {
 
@@ -9,6 +12,13 @@ export const notion = () => {
             heading: "🪦Heading",
             team_member: "🕴🏿Team Member",
             search: "🔎Search",
+            tag_line: "Tag Line",
+            featured: "⭐Featured",
+            links: "📎Links",
+            certifications: "🏷Certifications",
+            benefits: "🙏🏿Benefit",
+            phone_number: "☎️Phone Number",
+            disclaimer: "⚠️Disclaimer",
             pillar: "💜Pillar",
             team: "🅰️Team",
             favicon: "🖼️Favicon",
@@ -28,22 +38,16 @@ export const notion = () => {
             banner: "🪧Banner",
             cta: "🔔Call to Action"
         },
-
-        estore: {
-            name: "Store",
-            shape: (data) => { },
-            predicate: (data) => { }
-        },
-
-
-        partners: {
-            name: "🫱🏿‍🫲🏿Partners",
+        
+        products: {
+            name: "🛍️Products",
             shape: (data) => {
-                const { Facebook, Media, Name, Covers, URL, Types, Status } = getProperties(data)
+                const { Facebook, Media, Price, Name, Covers, URL, Types, Status } = getProperties(data)
 
                 return {
                     name: title(Name),
                     media: files(Media),
+                    price: number(Price),
                     covers: files(Covers),
                     status: status(Status),
                     url: url(URL),
@@ -51,8 +55,9 @@ export const notion = () => {
                     types: multi_select(Types)
                 }
             },
+
             predicate: (data) => {
-                const { name } = typesObject.partners
+                const { name } = typesObject.products
                 return isDatabase(name, data)
             }
         },
@@ -62,7 +67,7 @@ export const notion = () => {
             shape: (data) => {
                 const { Facebook, Name, Covers, URL, Types, Status } = getProperties(data)
 
-                const { icon: Icon  } = data
+                const { icon: Icon } = data
 
                 return {
                     name: title(Name),
@@ -78,6 +83,7 @@ export const notion = () => {
                 return isDatabase(typesObject.forms?.name, data)
             }
         },
+
         events: {
             name: "🗓️Events",
             shape: (data) => {
@@ -96,7 +102,6 @@ export const notion = () => {
                 return isDatabase(name, data)
             }
         },
-
 
         media: {
             name: "📷Media",
@@ -118,52 +123,7 @@ export const notion = () => {
                 return isDatabase(name, data)
             }
         },
-        memberships: {
-            name: "👥Memberships",
-            shape: (data) => {
-                const { Facebook, Actions, Name, Description, Values, Price, Covers, Types, Status } = getProperties(data)
-
-                return {
-                    name: title(Name),
-                    description: rich_text(Description),
-                    actions: multi_select(Actions),
-                    price: number(Price),
-                    values: multi_select(Values),
-                    covers: files(Covers),
-                    status: status(Status),
-                    facebook: url(Facebook),
-                    types: multi_select(Types)
-                }
-            },
-            predicate: (data) => {
-                const { name } = typesObject.memberships
-                return isDatabase(name, data)
-            }
-        },
-        team: {
-            name: "🅰️Team",
-            shape: (data: any) => {
-
-                const { Facebook, Name, Media, Values, Types, Status } = getProperties(data)
-
-                return {
-                    name: title(Name),
-                    values: multi_select(Values),
-                    types: multi_select(Types),
-                    media: files(Media),
-                    status: status(Status),
-                    facebook: url(Facebook),
-                }
-            },
-
-            predicate: (data: any) => {
-
-                const { name } = typesObject.team
-
-                return isDatabase(name, data)
-
-            }
-        },
+      
         meta: {
             name: "📐Meta",
             shape: (data: any) => {
@@ -190,6 +150,7 @@ export const notion = () => {
                 return isDatabase(name, data)
             }
         },
+
         faqs: {
             name: "❓FAQs",
             shape: (data: any) => {
@@ -210,6 +171,7 @@ export const notion = () => {
                 return isDatabase(name, data)
             }
         },
+
         links: {
             name: "📎Links",
             shape: (data: any) => {
@@ -249,6 +211,6 @@ export const notion = () => {
         }
     }
 
-    return { ...typesObject }
+    return typesObject
 
 }

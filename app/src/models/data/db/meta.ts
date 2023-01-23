@@ -1,56 +1,91 @@
 import FacadeService from "@services/facade"
+import { collections } from "@utils/index"
+import type { NotionPageObjectType } from "@typings/Notion"
+import type { DatabaseObjectType } from "@typings/Data"
 
-const meta = (store: any[]) => {
+const meta = (store: NotionPageObjectType): DatabaseObjectType => {
 
-    const { meta } = FacadeService().types
+    const { meta, variants } = FacadeService().types.notion
 
-    const databaseObject = {
-        id: 'META_DATABASE_ID',
-        version: Date.now(),
+    const { createDatabase, queryDatabase } = collections()
+
+    const dbObject = {
         getCertifications: () => {
-            return databaseObject.getMeta().filter((meta) => meta?.types?.includes('🏷Certification'))
+            return queryDatabase({
+                keys: [variants.certifications],
+                db: dbObject.db.data,
+                batch: true
+            })
         },
-        getTag: () => {
-            return databaseObject.getMeta().find((meta) => meta?.types?.includes('🏷️Tag')) ?? null
+        getTagline: () => {
+            return queryDatabase({
+                keys: [variants.tag_line],
+                db: dbObject.db.data,
+                batch: false
+            })
         },
         getHero: () => {
-            return databaseObject.getMeta()?.find((meta) => meta?.types?.includes('🖼️Hero')) ?? null
+            return queryDatabase({
+                keys: [variants.tag_line],
+                db: dbObject.db.data,
+                batch: false
+            })
         },
         getBenefits: () => {
-            return databaseObject.getMeta().filter((meta) => meta?.types?.includes('🙏🏿Benefit')) ?? null
+            return queryDatabase({
+                keys: [variants.benefits],
+                db: dbObject.db.data,
+                batch: true
+            })
         },
         getPhoneNumber: () => {
-            return databaseObject.getMeta().find((meta) => meta?.types?.includes('☎️Phone Number')) ?? null
+            return queryDatabase({
+                keys: [variants.phone_number],
+                db: dbObject.db.data,
+                batch: false
+            })
         },
         getEmailAddress: () => {
-            return databaseObject.getMeta().find((meta) => meta?.types?.includes('✉️Email Address')) ?? null
+            return queryDatabase({
+                keys: [variants.email],
+                db: dbObject.db.data,
+                batch: false
+            })
         },
-        getCopyrights: () => {
-            return databaseObject.getMeta().find((meta) => meta?.types?.includes('©️Copyright')) ?? null
+        getCopyright: () => {
+            return queryDatabase({
+                keys: [variants.copyright],
+                db: dbObject.db.data,
+                batch: false
+            })
         },
+
         getDisclaimer: () => {
-            return databaseObject.getMeta().find((meta) => meta?.types?.includes('⚠️Disclaimer')) ?? null
+            return queryDatabase({
+                keys: [variants.disclaimer],
+                db: dbObject.db.data,
+                batch: false
+            })
         },
         getBanner: () => {
-            return databaseObject.getMeta().find((meta) => meta?.types?.includes('🪧Banner')) ?? null
+            return queryDatabase({
+                keys: [variants.banner],
+                db: dbObject.db.data,
+                batch: false
+            })
         },
+
         getMeta: () => {
-            return (store.filter((data) => {
-                return (
-                    meta.predicate(data)
-                )
-            })).map((data) => {
-                return (
-                    meta.shape(data)
-                )
-            }).sort()
+            return dbObject.db.data
+        },
 
-        }
-
+        db: createDatabase({ ...meta, data: store })
     }
-
-    return { ...databaseObject }
+    
+    return dbObject
 }
 
+
 export default meta
+
 

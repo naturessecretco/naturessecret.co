@@ -9,5 +9,5 @@ const { data, layout } = await getPage("products");
 ---
 
 <Application layout={layout}>
-  <ItemsSearch />
+  <ItemsSearch {...data.itemsSearch} />
 </Application>

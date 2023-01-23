@@ -9,7 +9,7 @@ export type CopyrightProps = {
 }
 
 export type FooterProps = {
-    copyrights?: CopyrightProps[],
+    copyright?: string,
     phone?: string,
     message?: {
         text?: string,
@@ -23,6 +23,11 @@ export type FooterProps = {
         id?: string,
         url?: string,
     },
-    favicon?: Favicon,
+    favicon?: {
+        image?: {
+            src?: string
+        },
+        url?: string
+    },
     navLinks?: NavLink[]
 }

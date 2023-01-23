@@ -8,7 +8,7 @@ const header = ({ favicon, links, banner }: HeaderProps) => {
 
     const defaultObject: HeaderProps = {
         favicon: {
-            image: logoImage,
+            image: { src: logoImage },
             url: "/"
         },
 

@@ -1,29 +1,24 @@
 import FacadeService from "@services/facade"
-import type { ProductProps } from "@models/typings/Product"
+import { collections } from "@utils/index"
+import type { NotionPageObjectType } from "@typings/Notion"
+import type { DatabaseObjectType } from "@typings/Data"
 
-const products = (store: any[]) => {
+const products = (store: NotionPageObjectType): DatabaseObjectType => {
 
-    const { products } = FacadeService().types
+    const { variants, products } = FacadeService().types.notion
 
-    const databaseObject = {
-        id: 'PRODUCTS_DATABASE_ID',
-        version: Date.now(),
-        getProducts:  () => {
-            return store.filter((data) => {
-                return (
-                    products.predicate(data)
-                )
-            }).map((data) => {
-                return (
-                    products.shape(data)
-                )
-            }).sort()
+    const { createDatabase, queryDatabase } = collections()
 
-        }
+    const dbObject = {
 
+        getProducts: () => {
+            return dbObject.db.data
+        },
+
+        db: createDatabase({ ...products, data: store })
     }
 
-    return { ...databaseObject }
+    return dbObject
 }
 
 export default products

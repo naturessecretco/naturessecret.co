@@ -4,8 +4,9 @@ import { faqs, links, meta, products, social_media } from "@db/index"
 const pages = ({ store, pageKey }) => {
 
     const { getProducts } = products(store)
-    const { getBanner, getHero, getPhoneNumber, getBenefits, getEmailAddress, getDisclaimer, getCopyrights, getTag, getCertifications } = meta(store)
-    const { getPageLinks, getFeatured, getHeaderLinks } = links(store)
+    const { getPageLinks, getFeatauredLinks } = links(store)
+    const { getTag, getCertifications } = meta(store)
+    const { getBanner, getHero, getPhoneNumber, getBenefits, getEmailAddress, getDisclaimer, getCopyright } = meta(store)
     const { getFAQs } = faqs(store)
     const { getSocialMedia } = social_media(store)
     const { title } = metaConfig({})
@@ -24,7 +25,7 @@ const pages = ({ store, pageKey }) => {
                     features: getProducts().map((product) => (product?.advertisements)).flat(),
                     covers: {
                         heading: 'Check out these quick links to wellness!',
-                        links: getFeatured()
+                        links: getFeatauredLinks()
                     },
                     banner: {
                         image: {
@@ -73,11 +74,7 @@ const pages = ({ store, pageKey }) => {
                     }))
                 },
                 product: {
-                    title: getProducts()[0].name,
-                    description: getProducts()[0].description,
-                    cover: {
-                        src: getProducts()[0].covers[0].url
-                    }
+
                 },
                 featuredMedia: {},
                 mediaRow: {
@@ -117,7 +114,7 @@ const pages = ({ store, pageKey }) => {
 
             }
         },
-        about:{},
+        about: {},
         products: {
             metaData: {
                 pageTitle: 'Products'
@@ -140,7 +137,7 @@ const pages = ({ store, pageKey }) => {
             },
             data: {
 
-                productsSearch: {
+                itemsSearch: {
                     title: 'Our Products',
                     items: getProducts().map((product) => ({
                         id: product.id,
@@ -183,50 +180,10 @@ const pages = ({ store, pageKey }) => {
         version: Date.now(),
         layout: layout({
             metaData: _data[pageKey].metaData,
-            menu: {
-                navLinks: getPageLinks()
-            },
-
-            footer: {
-                socials: getSocialMedia().map((social) => ({
-                    url: social?.url
-                })),
-
-                navLinks: getPageLinks().map((link) => ({
-                    url: link?.url,
-                    name: link?.name
-                })),
-
-                copyrights: getCopyrights().values.map((copyright) => ({
-                    text: copyright,
-                })),
-
-                tag: {
-                    message: getTag()?.values[0],
-                    url: getTag()?.url
-                },
-                message: {
-                    text: getDisclaimer().description,
-                    url: getDisclaimer().url,
-                },
-
-                phone: getPhoneNumber().phone,
-                email: getEmailAddress().email,
-
-                favicon: {
-                    url: "/",
-                    image: {
-                        src: '/assets/images/logo.png',
-                    }
-                }
-            },
-
+           
             header: {
-                banner: {
-                    message: getBanner().title,
-                    url: getBanner().url,
-                },
-                links: getHeaderLinks(),
+           
+                links: getFeatauredLinks(),
                 favicon: {
                     image: {
                         src: '/assets/images/logo.png',
