@@ -10,6 +10,6 @@ import solidJs from "@astrojs/solid-js";
 export default defineConfig({
   site: "https://naturessecret.co",
   integrations: [tailwind(), svelte(), solidJs()],
-  output: "server",
+  output: "static",
   adapter: vercel()
 });
