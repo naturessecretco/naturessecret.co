@@ -1,14 +1,10 @@
 import type { FaviconProps } from "@typings/Favicon"
 
 
-
-export type CopyrightProps = {
-    text?: string,
-}
-
 export type FooterProps = {
     copyright?: string,
     phone?: string,
+    impressum?: string,
     tagLine?: string,
     message?: {
         text?: string,
@@ -24,5 +20,5 @@ export type FooterProps = {
     },
     favicon?: FaviconProps,
 
-    navLinks?: any[]
+    links?: any
 }

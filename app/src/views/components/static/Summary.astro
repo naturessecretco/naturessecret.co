@@ -33,7 +33,7 @@ const { title, heading, description, details } = Astro.props;
             >
           </div>
           <h1
-            class="text-5xl font-semibold text-white xs:text-7xl md:text-8xl font-heading mb-18"
+            class="font-serif text-5xl font-semibold text-black hover:cursor-pointer xs:text-7xl text-shadow-md shadow-white md:text-8xl font-heading mb-18"
           >
             {title ?? defaultProps.title}
           </h1>
@@ -120,7 +120,7 @@ const { title, heading, description, details } = Astro.props;
                   <div class="absolute top-0 left-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 group-hover:translate-y-0 group-hover:translate-x-0">
                     <div class="flex items-center justify-center w-full h-full bg-blue-500 border-2 border-white rounded">
                       <span class="text-base font-semibold uppercase">
-                        DETAIL_NOT_FOUND  
+                        DETAIL_NOT_FOUND
                       </span>
                     </div>
                   </div>

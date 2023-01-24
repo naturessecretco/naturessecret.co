@@ -4,34 +4,27 @@ import "@libs/globals.css";
 import { PageTransition } from "astro-page-transition";
 import AstroGap from "astro-gap";
 import Meta from "@includes/static/Meta.astro";
-import Header from "@includes/static/Header/index.astro";
+import Header from "@includes/dynamic/Header/index.svelte";
 import Footer from "@includes/static/Footer/index.astro";
-import ContactRow from "@includes/static/ContactRow.astro";
+import Contacts from "@includes/static/Contacts/index.astro";
 import PostScripts from "@includes/dynamic/PostScripts.astro";
 import Menu from "@includes/dynamic/Menu.svelte";
 import type { Props as MetaProps } from "@includes/static/Meta.astro";
 import type { Props as HeaderProps } from "@includes/static/Header.astro";
 import type { Props as FooterProps } from "@includes/static/Footer.astro";
+import type { PageLayoutProps } from "@typings/Page";
 
-export interface Props {
-  layout?: {
-    header?: any;
-    contactRow?: any;
-    footer?: any;
-    metaData?: any;
-    transition?: string;
-  };
-}
+export interface Props extends PageLayoutProps {}
 
 export const defaultProps = {
   layout: {
     header: {},
     footer: {},
-    contactRow: {},
+    contacts: {},
     metaData: {
-      title: "TITLE_NOT_FOUND",
+      title: "[@props]: TITLE_NOT_FOUND",
     },
-    transition: "rgba(0,0,0, 0.01)",
+    transition: "rgba(0,0,0,0.01)",
   },
 };
 
@@ -42,10 +35,9 @@ const { layout } = Astro.props;
 <html lang="en">
   <Meta {...layout?.metaData ?? defaultProps.layout.metaData} />
   <body>
-    <Header {...layout.header ?? defaultProps.layout.header} />
     <AstroGap spaces={5} />
     <slot />
-    <ContactRow {...layout.contactRow} />
+    <Contacts {...layout.contacts} />
     <Footer {...layout.footer ?? defaultProps.layout.footer} />
     <PostScripts />
     <Menu client:idle />

@@ -4,7 +4,7 @@ import type { HeaderProps } from "@typings/Header"
 export type LayoutProps = {
     header?: HeaderProps,
     footer?: FooterProps
-    contactRow?: any,
+    contacts:{},
     menu?: any,
     metaData?: any
 }

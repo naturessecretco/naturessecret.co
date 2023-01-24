@@ -11,7 +11,7 @@ export interface Props {
 }
 
 export const defaultProps: Props = {
-  title: "TITLE_NOT_FOUND",
+  title: "Nature's Secret",
   pageTitle: "PAGE_TITLE_NOT_FOUND",
   description: "DESCRIPTION_NOT_FOUND",
   twitter: {
@@ -24,8 +24,8 @@ const { title, pageTitle, description, twitter } = Astro.props;
 
 <head>
   <SEO
-    title={`${title ?? defaultProps.title} | ${
-      pageTitle ?? defaultProps.pageTitle
+    title={`${pageTitle ?? defaultProps.pageTitle} | ${
+      title ?? defaultProps.title
     }`}
     description={`${description ?? defaultProps.description}`}
     twitter={{

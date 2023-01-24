@@ -24,6 +24,13 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
                 batch: false
             })
         },
+        getFavicon: () => {
+            return queryDatabase({
+                keys: [variants.favicon],
+                db: dbObject.db.data,
+                batch: false
+            })
+        },
         getHero: () => {
             return queryDatabase({
                 keys: [variants.hero],
@@ -67,6 +74,14 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
                 batch: false
             })
         },
+
+        getImpressum: () => {
+            return queryDatabase({
+                keys: [variants.impressum],
+                db: dbObject.db.data,
+                batch: false
+            })
+        },
         getBanner: () => {
             return queryDatabase({
                 keys: [variants.banner],
@@ -81,7 +96,7 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
 
         db: createDatabase({ ...meta, data: store })
     }
-    
+
     return dbObject
 }
 

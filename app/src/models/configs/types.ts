@@ -17,6 +17,7 @@ export const notion = () => {
             search: "🔎Search",
             tag_line: "🏷️Tag Line",
             featured: "⭐Featured",
+
             hero: "🖼️Hero",
             links: "📎Link",
             certifications: "🏷Certification",

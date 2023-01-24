@@ -5,8 +5,8 @@ const pages = ({ store, pageKey }) => {
 
     const { getProducts, getFeaturedProducts } = products(store)
     const { getPageLinks, getFeatauredLinks } = links(store)
-    const { getTagLine, getCertifications, getDisclaimer, getCopyright } = meta(store)
-    const { getBanner, getHero, getPhoneNumber, getBenefits, getEmailAddress } = meta(store)
+    const { getTagLine, getCertifications, getDisclaimer, getCopyright, getFavicon } = meta(store)
+    const { getBanner, getHero, getImpressum, getPhoneNumber, getBenefits, getEmailAddress } = meta(store)
     const { getFAQs } = faqs(store)
     const { getSocialMedia } = social_media(store)
     const { title } = metaConfig({})
@@ -194,12 +194,37 @@ const pages = ({ store, pageKey }) => {
 
             footer: {
                 tagLine: getTagLine().description,
-                copyright: getCopyright().description
+                copyright: getCopyright().description,
+                impressum: getImpressum().description,
+                favicon: {
+                    image: {
+                        src: getFavicon()?.media[0]?.url,
+                        alt: "Nature's Secret"
+                    },
+                    url: '/'
+                },
+                links: {
+                    primary: {
+                        title: "Products",
+                        links: [
+                            {
+                                name: "products"
+                            }
+                        ]
+                    },
+                    secondary: {
+                        title: "Resources"
+
+                    },
+                    tertiary: {
+                        title: "Information"
+                    }
+                }
             },
 
-            contactRow: {
+            contacts: {
+                title: "Get in Touch",
 
-                email: ""
             },
 
             header: {
@@ -210,8 +235,8 @@ const pages = ({ store, pageKey }) => {
                 })),
                 favicon: {
                     image: {
-                        src: '/assets/images/logo.png',
-                        alt: ""
+                        src: getFavicon()?.media[0]?.url,
+                        alt: "Nature's Secret"
                     },
                     url: '/'
                 }

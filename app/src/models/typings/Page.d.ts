@@ -1,10 +1,3 @@
-import type { NextPage } from 'next'
-
-
-export interface IPage extends NextPage {
-    pageData?: any
-
-}
 
 export type PagesDBProps = {
     id?: string,
@@ -12,4 +5,14 @@ export type PagesDBProps = {
     layout?: any,
     dependencies?: any,
     pages?: any
+}
+
+export interface PageLayoutProps {
+    layout?: {
+        header?: any;
+        contactRow?: any;
+        footer?: any;
+        metaData?: any;
+        transition?: string;
+    };
 }

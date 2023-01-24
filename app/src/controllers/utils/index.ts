@@ -6,6 +6,9 @@ export const notion = () => {
 
     const utilsObject = {
 
+        read_media: () => {},
+        read_description: () => {},
+
         isDatabase: (key, data) => {
             return data?.properties?.Database?.select?.name === key
         },
