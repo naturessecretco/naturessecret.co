@@ -206,14 +206,15 @@ const pages = ({ store, pageKey }) => {
                 links: {
                     primary: {
                         title: "Products",
-                        links: [
-                            {
-                                name: "products"
-                            }
-                        ]
+                        links: getProducts().map((product) => ({
+                            ...product
+                        }))
                     },
                     secondary: {
-                        title: "Resources"
+                        title: "Pages",
+                        links: getPageLinks().map((link) => ({
+                            ...link
+                        }))
 
                     },
                     tertiary: {

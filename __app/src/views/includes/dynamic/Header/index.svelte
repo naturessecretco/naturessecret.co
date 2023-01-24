@@ -1,34 +1,11 @@
 <script>
-  import useMenu from "@hooks/useMenu";
-  import Links from "@includes/dynamic/Header/Links.svelte";
-  import Favicon from "@includes/dynamic/Header/Favicon.svelte";
 
-  const { toggleMenu } = useMenu();
-
-  export let header = {
-    links: [
-        {
-            name: "",
-            url: ""
-        }
-    ],
-    favicon: {
-        image: {
-
-        },
-        url: ""
-    },
-  };
 </script>
 
 <header class="container fixed z-20 w-full mx-auto overflow-hidden">
   <div class="flex items-center justify-between px-4 py-5">
-    <Favicon/>
-
     <div class="w-auto">
       <div class="flex flex-wrap items-center">
-        <Links  />
-
         <div
           class="hidden w-auto lg:block snipcart-customer-signin snipcart-checkout"
         >
@@ -38,7 +15,7 @@
             🛒Cart
           </div>
         </div>
-        <div on:click={() => toggleMenu()} class="w-auto ml-2">
+        <div class="w-auto ml-2">
           <a href="#">
             <svg
               class="text-green-700 navbar-burger"

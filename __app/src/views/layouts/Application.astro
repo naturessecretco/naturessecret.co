@@ -36,6 +36,9 @@ const { layout } = Astro.props;
   <Meta {...layout?.metaData ?? defaultProps.layout.metaData} />
   <body>
     <AstroGap spaces={5} />
+
+    <Header client:load />
+
     <slot />
     <Contacts {...layout.contacts} />
     <Footer {...layout.footer ?? defaultProps.layout.footer} />

@@ -48,8 +48,6 @@
       "@utils/*": [
         "controllers/utils/*"
       ]
-    },
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js"
+    }
   }
 }
