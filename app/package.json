@@ -11,6 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/tailwind": "^3.0.0",
     "@notionhq/client": "^2.2.3",
     "astro": "^2.0.0",
     "astro-page-transition": "^0.5.6",
