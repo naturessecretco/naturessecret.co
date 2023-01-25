@@ -16,7 +16,7 @@ export default function Header({ favicon, links }) {
         <Favicon {...favicon} />
         <div class="w-auto">
           <div class="flex flex-wrap items-center">
-            <Links {...links} />
+            <Links links={links} />
             <div class="hidden w-auto lg:block snipcart-customer-signin snipcart-checkout">
               <div class="w-full px-5 py-3 font-semibold text-white transition duration-200 ease-in-out bg-green-700 bg-opacity-25 border border-gray-200 cursor-pointer snipcart-customer-signin rounded-xl focus:ring focus:ring-green-300 hover:bg-green-700">
                 🛒Cart
