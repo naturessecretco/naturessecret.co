@@ -36,12 +36,12 @@ const { layout } = Astro.props;
   <Meta {...layout?.metaData ?? defaultProps.layout.metaData} />
   <body>
     <AstroGap spaces={10} />
-    <Header client:load {...layout.header ?? defaultProps.layout.header} />
+    <Header {...layout.header ?? defaultProps.layout.header} />
     <slot />
     <Contacts {...layout.contacts} />
     <Footer {...layout.footer ?? defaultProps.layout.footer} />
     <PostScripts />
     <PageTransition speed={300} background={defaultProps.layout.transition} />
-    <Menu client:idle />
+    <Menu />
   </body>
 </html>

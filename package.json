@@ -8,7 +8,8 @@
   },
   "scripts": {
     "readme:g": "npx @appnest/readme generate",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "app:dev": "cd app && npm run dev",
+    "admin:dev": "cd app && npm run storybook"
   },
   "repository": {
     "type": "git",
