@@ -51,11 +51,11 @@ const { products, title, price, marketValue } = Astro.props;
           products.map((product) => (
             <div
               class:list={[
-                "hover:bg-opacity-50 hover:border-2 hover:border-white hover:animate-pulse hover:backdrop-blur-none hover:scale-90 ease-in-out box-shadow-lg duration-500 cursor-pointer",
-                "w-full px-3 mb-16 pb-4 lg:w-1/3 lg:mb-0 bg-slate-200 bg-opacity-25 backdrop-blur-sm  border-1 border-white rounded-lg",
+                "ease-in-out hover:animate-pulse hover:-translate-y-4 scale-90 shadow-xl bg-yellow-500  bg-opacity-50 duration-500 cursor-pointer",
+                "w-full px-2 mb-14 pb-4 lg:w-1/3 lg:mb-0  hover:bg-opacity-10 backdrop-blur-sm rounded-lg",
               ]}
             >
-              <a class="block mb-10 " href="">
+              <a class="block mb-10 " href={product?.url ?? "#"}>
                 <div class="relative">
                   <span class="absolute bottom-0 left-0 px-2 py-1 mb-6 ml-6 text-sm font-bold text-white border-2 border-green-500 rounded-full font-heading">
                     {toPercent(product?.discount) ?? ""}

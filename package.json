@@ -1,6 +1,6 @@
 {
   "name": "naturessecret.co",
-  "version": "0.1.0",
+  "version": "1.2.0",
   "description": "[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/) | ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/naturessecretco/naturessecret.co?color=green&label=activity&logo=github&logoColor=yellow&style=plastic) | ![Website](https://img.shields.io/website?down_color=red&down_message=fuck%21&label=status&logo=git&logoColor=yellow&up_message=systems%20online&url=https%3A%2F%2Fnaturessecret.co) ww",
   "main": "index.js",
   "directories": {
@@ -22,7 +22,7 @@
     "astro"
   ],
   "author": "Desirable Solutions",
-  "license": "MIT",
+  "license": "AGLv3",
   "bugs": {
     "url": "https://github.com/naturessecretco/naturessecret.co/issues"
   },

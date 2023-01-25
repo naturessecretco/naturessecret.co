@@ -1,0 +1,15 @@
+---
+import Application from "@layouts/Application.astro";
+import Product from "@components/static/Product/index.astro";
+import PageService from "@services/pages";
+
+const { getPage } = PageService();
+
+const { pages } = await getPage("products");
+
+const { data, layout } = pages[0];
+---
+
+<Application layout={layout}>
+  <Product {...pages.product} />
+</Application>
