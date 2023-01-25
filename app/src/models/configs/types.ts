@@ -49,10 +49,8 @@ export const notion = () => {
             shape: (data) => {
                 return extractCentralDogmaKeys({ data })
             },
-
             predicate: (data) => {
-                const { name } = typesObject.products
-                return isDatabase(name, data)
+                return isDatabase(typesObject.products.name, data)
             }
         },
 

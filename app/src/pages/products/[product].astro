@@ -1,15 +1,32 @@
 ---
 import Application from "@layouts/Application.astro";
-import Product from "@components/static/Product/index.astro";
+import Product from "@components/static/Product.astro";
+import Post from "@components/static/Post/index.astro";
 import PageService from "@services/pages";
 
 const { getPage } = PageService();
 
-const { pages } = await getPage("products");
+const { pages, layout } = await getPage("products");
 
-const { data, layout } = pages[0];
+export function getStaticPaths() {
+  return pages.map((page) => ({
+    params: {
+      product: page.id,
+    },
+    props: {
+      ...page,
+    },
+  }));
+}
+
+const { product } = Astro.params;
+
+const productLayout = { ...layout };
+
+const data = pages.find((page) => page.id == "wildcrafted-seamoss");
 ---
 
-<Application layout={layout}>
-  <Product {...pages.product} />
+<Application layout={productLayout}>
+  <Product subTitle={JSON.stringify(data)} />
+  <Post />
 </Application>

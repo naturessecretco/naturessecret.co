@@ -137,22 +137,22 @@ const pages = ({ store, pageKey }) => {
             metaData: {
                 pageTitle: 'Products'
             },
-            pages: {
-                paths: getProducts().map((product) => ({
-                    params: {
-                        id: product.id
-                    }
-                })),
-                data: getProducts().map((product) => ({
-                    id: product?.id ?? null,
-                    name: product?.name ?? null,
-                    media: product?.media,
-                    order: {
-                        heading: 'Order Now',
+            pages: getProducts().map((product) => ({
+                id: product.id,
+                metaData: {
+                    pageTitle: product.name,
+                    description: product.description
+                },
+                data: {
+
+                    post: {
+                        ...product
                     },
-                    ...product
-                }))
-            },
+                    product: {
+                        ...product
+                    }
+                }
+            })),
             data: {
 
                 productsSearch: {
