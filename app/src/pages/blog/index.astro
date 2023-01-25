@@ -1,0 +1,11 @@
+---
+import Application from "@layouts/Application.astro";
+
+import PageService from "@services/pages";
+
+const { getPage } = PageService();
+
+const { data, layout } = await getPage("blog");
+---
+
+<Application layout={layout} />
