@@ -4,6 +4,7 @@ import "@libs/globals.css";
 import { PageTransition } from "astro-page-transition";
 import AstroGap from "astro-gap";
 import Meta from "@includes/static/Meta.astro";
+import Menu from "@includes/dynamic/Menu/index.tsx";
 import Header from "@includes/dynamic/Header/index.tsx";
 import Footer from "@includes/static/Footer/index.astro";
 import Contacts from "@includes/static/Contacts/index.astro";
@@ -35,11 +36,12 @@ const { layout } = Astro.props;
   <Meta {...layout?.metaData ?? defaultProps.layout.metaData} />
   <body>
     <AstroGap spaces={10} />
-    <Header />
+    <Header {...layout.header ?? defaultProps.layout.header} client:load />
     <slot />
     <Contacts {...layout.contacts} />
     <Footer {...layout.footer ?? defaultProps.layout.footer} />
     <PostScripts />
     <PageTransition speed={100} background={defaultProps.layout.transition} />
+    <Menu client:idle />
   </body>
 </html>

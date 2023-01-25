@@ -1,36 +1,38 @@
-import { atom } from "nanostores"
+import { atom, action } from "nanostores"
 
 
 export const menuState = atom({
     isOpen: false
 })
 
-
 export function useMenu() {
 
-    const toggleMenu = () => {
+    const toggleMenu = action(menuState, "toggleMenu", () => {
         menuState.set({
             isOpen: !menuState.get().isOpen
         });
+        console.log(menuState.get())
 
-    };
+    });
 
-    const closeMenu = () => {
+    const openMenu = action(menuState, "toggleMenu", () => {
         menuState.set({
-            isOpen: false
+            isOpen: !menuState.get().isOpen
         });
+        console.log(menuState.get())
 
-    };
+    });
 
-    const openMenu = () => {
+    const closeMenu = action(menuState, "toggleMenu", () => {
         menuState.set({
-            isOpen: true
+            isOpen: !menuState.get().isOpen
         });
+        console.log(menuState.get())
 
-    };
+    });
 
-    const isOpen = menuState.get().isOpen;
+    const isOpen = action(menuState, "isOpen", () => menuState.get().isOpen)
 
-    return { toggleMenu, closeMenu, openMenu, isOpen }
+    return { toggleMenu, closeMenu, openMenu, menuState, isOpen }
 
 }
