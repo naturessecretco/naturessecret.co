@@ -5,7 +5,7 @@ const pages = ({ store, pageKey }) => {
 
     const { getProducts, getFeaturedProducts } = products(store)
     const { getPageLinks, getFeatauredLinks } = links(store)
-    const { getTagLine, getCertifications, getDisclaimer, getCopyright, getFavicon } = meta(store)
+    const { getTagLine, getCertifications, getDisclaimer, getIngredients, getCopyright, getFavicon } = meta(store)
     const { getBanner, getHero, getImpressum, getPhoneNumber, getBenefits, getEmailAddress } = meta(store)
     const { getFAQs } = faqs(store)
     const { getSocialMedia } = social_media(store)
@@ -33,6 +33,18 @@ const pages = ({ store, pageKey }) => {
                     benefits: {
                         title: 'Your Benefits from SuperFoods',
                         items: getBenefits().map((benefit) => ({
+                            ...benefit,
+                            cover: {
+                                url: benefit?.media[0]?.url ?? null,
+                            },
+                            title: benefit?.name,
+                        })),
+
+                    },
+
+                    ingredients: {
+                        title: 'Our Natural Ingredients',
+                        items: getIngredients().map((benefit) => ({
                             ...benefit,
                             cover: {
                                 url: benefit?.media[0]?.url ?? null,

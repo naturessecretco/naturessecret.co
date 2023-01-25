@@ -11,7 +11,7 @@ export default function Header({ favicon, links }) {
 
 
   return (
-    <header class="container sticky z-20 w-full mx-auto overflow-hidden backdrop-blur-sm shadow-white shadow-sm">
+    <header class="container sticky z-20 w-full mx-auto overflow-hidden backdrop-blur-sm">
       <div class="flex items-center justify-between px-4 py-5">
         <Favicon {...favicon} />
         <div class="w-auto">

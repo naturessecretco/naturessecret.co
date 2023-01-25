@@ -45,6 +45,13 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
                 batch: true
             })
         },
+        getIngredients: () => {
+            return queryDatabase({
+                keys: [variants.ingredient],
+                db: dbObject.db.data,
+                batch: true
+            })
+        },
         getPhoneNumber: () => {
             return queryDatabase({
                 keys: [variants.phone_number],
