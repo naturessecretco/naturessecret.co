@@ -1,0 +1,75 @@
+---
+
+export type CallToAction = {
+  text?: string,
+  action?: Function
+}
+export interface Props {
+  title?: string;
+  heading?: string;
+}
+
+export const defaultProps: Props = {
+  title: "[@props]: TITLE_NOT_FOUND",
+  heading: "[@heading]:HEADING_NOT_FOUND",
+};
+
+
+const { title, heading } = Astro.props;
+
+---
+
+<section class="relative overflow-hidden">
+  <img
+    class="absolute right-0 z-10 hidden w-40 transform -translate-y-1/2 md:block top-1/2 2xl:mr-32 lg:w-52 xl:w-auto img-fluid"
+    src="shopal-assets/background/orange-waves-large.svg"
+    alt=""
+  />
+  <img
+    class="absolute bottom-0 left-0 hidden mb-10 ml-6 lg:block img-fluid"
+    src="shopal-assets/background/dots-blue-vertical.svg"
+    alt=""
+  />
+  <div class="container px-4 mx-auto">
+    <div class="relative max-w-6xl px-4 py-24 mx-auto md:py-32">
+      <img
+        class="absolute top-0 left-0 hidden h-full transform -translate-x-1/2 sm:block img-fluid"
+        src="shopal-assets/background/green-lines.svg"
+        alt=""
+      />
+      <div class="mx-auto text-center sm:max-w-sm lg:max-w-lg xl:max-w-xl">
+        <h2 class="mb-6 font-serif font-black text-9xl md:text-4xl">
+          {title ?? defaultProps.title}
+        </h2>
+        <p class="mb-6 text-2xl font-bold md:text-lg">
+          {heading ?? defaultProps.heading}
+        </p>
+        <div class="flex flex-wrap items-center justify-center -mx-3">
+          <div class="w-full px-3 mb-3 lg:w-2/3 lg:mb-0">
+            <input
+              class="w-full h-full px-5 py-3 font-bold text-black placeholder-black border-2 border-black rounded-md focus:outline-indigo"
+              type="text"
+              placeholder="Search now..."
+            />
+          </div>
+          <div class="w-full px-3 lg:w-auto">
+            <a
+              class="relative inline-block w-full h-12 -mb-2 rounded-md group lg:w-32 bg-blueGray-900"
+              href="#"
+            >
+              <div
+                class="absolute top-0 left-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 group-hover:translate-y-0 group-hover:translate-x-0"
+              >
+                <div
+                  class="flex items-center justify-center w-full h-full bg-green-600 border-2 border-black rounded-md"
+                >
+                  <span class="text-base font-black text-black">Subscribe</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,279 @@
+---
+import AddToCart from "@components/static/AddToCart.astro";
+import type { ImageProps } from "@typings/Image";
+import { formatters } from "@utils/index";
+export interface Props {
+  cover?: ImageProps;
+  name?: string;
+  description?: string;
+  price?: number;
+  discount?: string;
+  marketValue?: string;
+  subTitle?: string;
+}
+
+export const defaultProps = {
+  name: "TITLE_NOT_FOUND",
+};
+
+const { toUSD } = formatters();
+
+const product = Astro.props;
+
+const { name, price, description, cover } = Astro.props;
+---
+
+<section class="py-20">
+  <div class="container px-4 mx-auto">
+    <div class="max-w-lg mx-auto lg:max-w-6xl">
+      <div class="flex flex-wrap items-center h-16 py-4 mb-10">
+        <a class="inline-block text-sm font-bold text-black" href="#"
+          >Homepage</a
+        >
+        <span class="mx-3">
+          <svg
+            width="6"
+            height="10"
+            viewbox="0 0 6 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.453338 1.05338L0.453338 5.20671L0.453339 8.94671C0.453339 9.58671 1.22667 9.90671 1.68001 9.45338L5.13334 6.00005C5.68667 5.44671 5.68667 4.54671 5.13334 3.99338L3.82 2.68005L1.68001 0.540046C1.22667 0.093379 0.453338 0.41338 0.453338 1.05338Z"
+              fill="black"></path>
+          </svg>
+        </span>
+        <a class="inline-block text-sm font-bold text-black" href="#"
+          >Catalogue</a
+        >
+        <span class="mx-3">
+          <svg
+            width="6"
+            height="10"
+            viewbox="0 0 6 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.453338 1.05338L0.453338 5.20671L0.453339 8.94671C0.453339 9.58671 1.22667 9.90671 1.68001 9.45338L5.13334 6.00005C5.68667 5.44671 5.68667 4.54671 5.13334 3.99338L3.82 2.68005L1.68001 0.540046C1.22667 0.093379 0.453338 0.41338 0.453338 1.05338Z"
+              fill="black"></path>
+          </svg>
+        </span>
+        <a class="inline-block text-sm font-bold text-green-500" href="#"
+          >{name ?? defaultProps.name}</a
+        >
+      </div>
+      <div class="flex flex-wrap -mx-4">
+        <div class="w-full px-4 lg:w-3/5 mb-14 lg:mb-0">
+          <div class="flex flex-wrap h-full -mx-4">
+            <div class="w-full px-4 xs:w-2/6 md:w-1/4 mb-7 xs:mb-0">
+              <div class="flex flex-wrap -mx-4 -mb-7">
+                <div class="w-1/2 px-4 xs:w-full mb-7">
+                  <a
+                    class="relative block w-full h-24 rounded-md group lg:h-32 bg-blueGray-900"
+                    href="#"
+                  >
+                    <div
+                      class="absolute top-0 left-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 group-hover:translate-y-0 group-hover:translate-x-0"
+                    >
+                      <img
+                        class="object-cover w-full h-full border-2 border-black rounded-md img-fluid"
+                        src={cover?.src}
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                </div>
+                <div class="w-1/2 px-4 xs:w-full mb-7">
+                  <a
+                    class="relative block w-full h-24 rounded-md group lg:h-32 bg-blueGray-900"
+                    href="#"
+                  >
+                    <div
+                      class="absolute top-0 left-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 group-hover:translate-y-0 group-hover:translate-x-0"
+                    >
+                      <img
+                        class="object-cover w-full h-full border-2 border-black rounded-md img-fluid"
+                        src={cover?.src}
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                </div>
+                <div class="w-1/2 px-4 xs:w-full mb-7">
+                  <a
+                    class="relative block w-full h-24 rounded-md group lg:h-32 bg-blueGray-900"
+                    href="#"
+                  >
+                    <div
+                      class="absolute top-0 left-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 group-hover:translate-y-0 group-hover:translate-x-0"
+                    >
+                      <img
+                        class="object-cover w-full h-full border-2 border-black rounded-md img-fluid"
+                        src={cover?.src}
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                </div>
+                <div class="w-1/2 px-4 xs:w-full mb-7">
+                  <a
+                    class="relative block w-full h-24 rounded-md group lg:h-32 bg-blueGray-900"
+                    href="#"
+                  >
+                    <div
+                      class="absolute top-0 left-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 group-hover:translate-y-0 group-hover:translate-x-0"
+                    >
+                      <img
+                        class="object-cover w-full h-full border-2 border-black rounded-md img-fluid"
+                        src={cover?.src}
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="w-full px-4 xs:w-4/6 md:w-3/4">
+              <a
+                class="relative block w-full rounded-md group h-112 xs:h-full max-h-150"
+                href="#"
+              >
+                <img
+                  class="object-cover w-full h-full border-2 border-black rounded-md img-fluid"
+                  src={cover?.src}
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full px-4 lg:w-2/5">
+          <div class="max-w-lg mx-auto">
+            <span
+              class="inline-flex items-center justify-center h-8 px-1 mb-4 text-sm font-black text-white uppercase bg-indigo-500 border-2 border-black rounded-md shadow-sm"
+              >Label</span
+            >
+            <h2 class="mb-1 font-serif text-4xl font-black">
+              {name ?? defaultProps.name}
+            </h2>
+            <span class="block mb-4 text-2xl font-black text-green-500"
+              >{toUSD(price) ?? defaultProps.price}</span
+            >
+            <p class="mb-6 font-medium">
+              {description ?? defaultProps.description}
+            </p>
+
+            <a
+              class="relative inline-block w-full h-12 mb-4 rounded-md group bg-blueGray-900"
+              href="#"
+            >
+              <div
+                class="absolute top-0 left-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 group-hover:translate-y-0 group-hover:translate-x-0"
+              >
+                <AddToCart
+                  sx="flex items-center justify-center w-full h-full bg-green-600 border-2 border-black rounded-md"
+                  {...product}
+                />
+              </div>
+              <a
+                class="inline-flex items-center justify-center w-full mb-5 text-black transition duration-200 hover:text-indigo-500"
+                href="#"
+              >
+                <svg
+                  width="20"
+                  height="18"
+                  viewbox="0 0 20 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.44 0.0999756C12.63 0.0999756 11.01 0.979976 10 2.32998C8.99 0.979976 7.37 0.0999756 5.56 0.0999756C2.49 0.0999756 0 2.59998 0 5.68998C0 6.87998 0.19 7.97998 0.52 8.99998C2.1 14 6.97 16.99 9.38 17.81C9.72 17.93 10.28 17.93 10.62 17.81C13.03 16.99 17.9 14 19.48 8.99998C19.81 7.97998 20 6.87998 20 5.68998C20 2.59998 17.51 0.0999756 14.44 0.0999756Z"
+                    fill="currentColor"></path>
+                </svg>
+                <span class="ml-2 text-sm font-black">Add to Wishlist</span>
+              </a>
+              <div class="border-2 border-black rounded-md">
+                <button
+                  class="flex flex-wrap items-center justify-between w-full px-6 py-5 text-left border-b-2 border-black group"
+                >
+                  <span class="text-sm font-black">Description</span>
+                  <svg
+                    width="10"
+                    height="6"
+                    viewbox="0 0 10 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.94674 0.453369H4.79341H1.05341C0.41341 0.453369 0.0934098 1.2267 0.546743 1.68004L4.00008 5.13337C4.55341 5.6867 5.45341 5.6867 6.00674 5.13337L7.32008 3.82004L9.46008 1.68004C9.90674 1.2267 9.58674 0.453369 8.94674 0.453369Z"
+                      fill="black"></path>
+                  </svg>
+                  <div class="hidden mt-4 group-hover:block">
+                    <p class="text-xs font-bold">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the
+                      industry&apos;s standard dummy text ever since the 1500s,
+                      when an unknown printer took a galley of type and
+                      scrambled it to make a type specimen book.
+                    </p>
+                  </div>
+                </button>
+                <button
+                  class="flex flex-wrap items-center justify-between w-full px-6 py-5 text-left border-b-2 border-black group"
+                >
+                  <span class="text-sm font-black">Specification</span>
+                  <svg
+                    width="10"
+                    height="6"
+                    viewbox="0 0 10 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.94674 0.453369H4.79341H1.05341C0.41341 0.453369 0.0934098 1.2267 0.546743 1.68004L4.00008 5.13337C4.55341 5.6867 5.45341 5.6867 6.00674 5.13337L7.32008 3.82004L9.46008 1.68004C9.90674 1.2267 9.58674 0.453369 8.94674 0.453369Z"
+                      fill="black"></path>
+                  </svg>
+                  <div class="hidden mt-4 group-hover:block">
+                    <p class="text-xs font-bold">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the
+                      industry&apos;s standard dummy text ever since the 1500s,
+                      when an unknown printer took a galley of type and
+                      scrambled it to make a type specimen book.
+                    </p>
+                  </div>
+                </button>
+                <button
+                  class="flex flex-wrap items-center justify-between w-full px-6 py-5 text-left group"
+                >
+                  <span class="text-sm font-black">Shipping &amp; Returns</span>
+                  <svg
+                    width="10"
+                    height="6"
+                    viewbox="0 0 10 6"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.94674 0.453369H4.79341H1.05341C0.41341 0.453369 0.0934098 1.2267 0.546743 1.68004L4.00008 5.13337C4.55341 5.6867 5.45341 5.6867 6.00674 5.13337L7.32008 3.82004L9.46008 1.68004C9.90674 1.2267 9.58674 0.453369 8.94674 0.453369Z"
+                      fill="black"></path>
+                  </svg>
+                  <div class="hidden mt-4 group-hover:block">
+                    <p class="text-xs font-bold">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the
+                      industry&apos;s standard dummy text ever since the 1500s,
+                      when an unknown printer took a galley of type and
+                      scrambled it to make a type specimen book.
+                    </p>
+                  </div>
+                </button>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,7 +1,7 @@
 {
-  "name": "@example/basics",
+  "name": "naturessecret",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -14,8 +14,15 @@
     "@astrojs/solid-js": "^2.0.0",
     "@astrojs/tailwind": "^3.0.0",
     "@astrojs/vercel": "^3.0.0",
-    "astro": "^2.0.0",
+    "@notionhq/client": "^2.2.3",
+    "astro": "^1.0.0",
+    "astro-gap": "^1.0.3",
+    "astro-page-transition": "^0.5.6",
+    "astro-seo": "^0.7.0",
+    "nanostores": "^0.7.1",
+    "sass": "^1.57.1",
     "solid-js": "^1.6.9",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "tailwindcss-textshadow": "^2.1.3"
   }
 }

@@ -1,0 +1,67 @@
+---
+import type { FaviconProps } from "@typings/favicon";
+import Socials from "@includes/static/Footer/Socials.astro";
+import Legal from "@includes/static/Footer/Legal.astro";
+import type { Props as SocialProps } from "@includes/static/Footer/Socials.astro";
+import Links from "@includes/static/Footer/Links.astro";
+import type { Props as LinkProps } from "@includes/static/Footer/Links.astro";
+export interface Props {
+  impressum?: string;
+  copyright?: string;
+  tagLine?: string;
+  links?: {
+    primary: LinkProps;
+    secondary: LinkProps;
+    tertiary: LinkProps;
+  };
+  favicon?: FaviconProps;
+}
+
+export const defaultProps = {
+  impressum: "[@props]:IMPRESSUM_NOT_FOUND",
+  links: {
+    primary: {},
+    secondary: {},
+    tertiary: {},
+  },
+  copyright: "[@props]:COPYRIGHT_NOT_FOUND",
+  tagLine: "[@props]: TAGLINE_NOT_FOUND",
+  favicon: {
+    image: {
+      src: "[@props]:IMAGE_NOT_FOUND",
+    },
+  },
+};
+
+const { impressum, copyright, favicon, tagLine, links } = Astro.props;
+---
+
+<footer class="relative pt-24 overflow-hidden backdrop-blur-md">
+  <div class="container relative z-10 px-4 mx-auto">
+    <div class="pb-24 border-b border-gray-900">
+      <div class="flex flex-wrap -m-8">
+        <div class="w-full p-8 sm:w-1/2 lg:w-6/12">
+          <div class="lg:max-w-sm">
+            <a class="inline-block mb-8" href="#">
+              <img
+                class:list={["h-24"]}
+                src={favicon?.image.src ?? defaultProps.favicon.image}
+                alt=""
+              />
+            </a>
+            <p
+              class="mb-20 font-medium leading-relaxed text-gray-800 md:max-w-xs"
+            >
+              {impressum ?? defaultProps.impressum}
+            </p>
+            <Socials />
+          </div>
+        </div>
+        <Links {...links?.primary ?? defaultProps.links.primary} />
+        <Links {...links?.secondary ?? defaultProps.links.primary} />
+        <Links {...links?.tertiary ?? defaultProps.links.primary} />
+      </div>
+    </div>
+    <Legal copyright={copyright} tagLine={tagLine} />
+  </div>
+</footer>

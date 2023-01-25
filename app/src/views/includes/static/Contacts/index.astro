@@ -1,0 +1,36 @@
+---
+import Header from "@includes/static/Contacts/Header.astro";
+import MailingAddress from "@includes/static/Contacts/MailingAddress.astro";
+import PhoneNumber from "@includes/static/Contacts/PhoneNumber.astro";
+import EmaillAddress from "@includes/static/Contacts/EmailAddress.astro";
+
+import type { Props as MailingAddressProps } from "@includes/static/Contacts/Address.astro";
+import type { Props as PhoneNumberProps } from "@includes/static/Contacts/PhoneNumber.astro";
+import type { Props as EmaillAddressProps } from "@includes/static/Contacts/EmaillAddress.astro";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  phoneNumber?: PhoneNumberProps;
+  emailAddress?: EmaillAddressProps;
+  mailingAddress?: MailingAddressProps;
+}
+
+export const defaultProps: Props = {
+  title: "TITLE_NOT_FOUND",
+  description: "DESCRIPTION_NOT_FOUND",
+};
+
+const { phoneNumber, title, description } = Astro.props;
+---
+
+<section class="relative pt-24 overflow-hidden pb-36">
+  <div class="container relative z-10 px-4 mx-auto">
+    <Header title={title} description={description} />
+    <div class:list={["flex flex-wrap gap-2 items-center justify-center"]}>
+      <EmaillAddress />
+      <MailingAddress />
+      <PhoneNumber />
+    </div>
+  </div>
+</section>

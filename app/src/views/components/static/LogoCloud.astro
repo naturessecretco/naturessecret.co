@@ -1,0 +1,58 @@
+---
+import type { ImageProps } from "@typings/Image";
+
+export type LogoProps = {
+  image?: ImageProps;
+  url?: string;
+};
+
+export interface Props {
+  title?: string;
+  heading?: string;
+  logos?: LogoProps[];
+}
+
+export const defaultProps = {
+  title: "LOGOCLOUD_INTERFACE",
+  heading: "[@props]: HEADING_NOT_FOUND",
+};
+
+const { title, heading, logos } = Astro.props;
+---
+
+<section class="py-20">
+  <div class="container px-4 mx-auto">
+    <div class="max-w-3xl mb-20">
+      <span class="text-lg font-bold text-blue-500"
+        >{heading ?? defaultProps.heading}</span
+      >
+      <h2 class="mt-8 text-6xl font-bold font-heading">
+        {title ?? defaultProps.title}
+      </h2>
+    </div>
+
+    <div class="flex flex-wrap justify-center -m-4">
+      {
+        logos ? (
+          logos.map((logo) => (
+            <div class="w-1/2 p-4 md:w-1/3 lg:w-1/5">
+              <div class="flex items-center bg-yellow-400 bg-opacity-50 shadow-xl cursor-pointer hover:-translate-y-4 duration-500 ease-in-out justify-center w-40 h-40 mx-auto border rounded-full 2xl:w-48 2xl:h-48 border-gray-50">
+                <img class="h-64" src={logo.image.src} alt="" />
+              </div>
+            </div>
+          ))
+        ) : (
+          <div class="w-1/2 p-4 md:w-1/3 lg:w-1/5">
+            <div class="flex items-center justify-center w-40 h-40 mx-auto border rounded-full 2xl:w-48 2xl:h-48 border-gray-50">
+              <img
+                class="h-16"
+                src="zospace-assets/logos/spotify-box-light.svg"
+                alt=""
+              />
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>
