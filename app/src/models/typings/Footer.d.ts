@@ -5,6 +5,7 @@ export type FooterProps = {
     copyright?: string,
     phone?: string,
     impressum?: string,
+    disclaimer?: string,
     tagLine?: string,
     message?: {
         text?: string,

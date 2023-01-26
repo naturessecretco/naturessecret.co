@@ -8,12 +8,10 @@
             fill: green;
             stroke-dasharray: 1;
             stroke-dashoffset: 2;
-            opacity: 0.3;
+            opacity: 0.50;
           }
   
-         
           @keyframes pulse {
-            
             from {
               stroke-dasharray: 1000;
               stroke-dashoffset: 200;

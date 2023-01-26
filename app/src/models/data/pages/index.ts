@@ -243,6 +243,7 @@ const pages = ({ store, pageKey }) => {
                 tagLine: getTagLine().description,
                 copyright: getCopyright().description,
                 impressum: getImpressum().description,
+                disclaimer: getDisclaimer().description,
                 favicon: {
                     image: {
                         src: getFavicon()?.media[0]?.url,

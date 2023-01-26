@@ -2,25 +2,29 @@
 
 export interface Props { 
   copyright?: string;
+  disclaimer?: string;
   tagLine?: string;
 }
-
-const { copyright, tagLine } = Astro.props;
 
 export const defaultProps = {
   copyright: "",
   tagLine: "",
+  disclaimer: ""
 };
+
+
+const { copyright, tagLine, disclaimer } = Astro.props;
+
 ---
 
-<p
-  class="py-5 font-medium leading-normal text-center text-black text-md font-sans_serif"
->
+<p class="py-5 font-serif font-medium leading-normal text-center text-black text-md">
   {copyright ?? defaultProps.copyright}
 </p>
 
-<p
-  class="py-5 text-sm font-medium leading-normal text-center text-black font-sans_serif"
->
+<p class="py-5 text-sm font-medium leading-normal text-center text-black font-sans_serif">
   {tagLine ?? defaultProps.tagLine}
+</p>
+
+<p class="py-2 text-sm font-medium leading-normal text-center text-gray-800 font-sans_serif">
+  {disclaimer ?? defaultProps.disclaimer}
 </p>

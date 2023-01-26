@@ -24,6 +24,10 @@ export const defaultProps = {
     secondary: {},
     tertiary: {},
   },
+  legal: {
+    copyright: "[@props]:COPYRIGHT_NOT_FOUND",
+    tagLine: "[@props]: TAGLINE_NOT_FOUND",
+  },
   copyright: "[@props]:COPYRIGHT_NOT_FOUND",
   tagLine: "[@props]: TAGLINE_NOT_FOUND",
   favicon: {
@@ -34,7 +38,7 @@ export const defaultProps = {
   },
 };
 
-const { impressum, copyright, favicon, tagLine, links } = Astro.props;
+const { impressum, copyright, favicon, disclaimer, tagLine, links } = Astro.props;
 ---
 
 <footer class="relative pt-24 overflow-hidden backdrop-blur-md">
@@ -66,6 +70,6 @@ const { impressum, copyright, favicon, tagLine, links } = Astro.props;
         <Links {...links?.tertiary ?? defaultProps.links.primary} />
       </div>
     </div>
-    <Legal copyright={copyright} tagLine={tagLine} />
+    <Legal copyright={copyright} disclaimer={disclaimer} tagLine={tagLine} />
   </div>
 </footer>

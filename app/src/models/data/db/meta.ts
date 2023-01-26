@@ -11,6 +11,15 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
 
     const dbObject = {
 
+        getDisclaimer: () => {
+
+            return queryDatabase({
+                keys: [variants.disclaimer],
+                db: dbObject.db.data,
+                batch: false
+            })
+        },
+
         getContactHeading: () => {
             return queryDatabase({
                 keys: [variants.heading, variants.contact],
@@ -18,6 +27,7 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
                 batch: false
             })
         },
+
         getCertifications: () => {
             return queryDatabase({
                 keys: [variants.certifications],
@@ -77,14 +87,6 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
         getCopyright: () => {
             return queryDatabase({
                 keys: [variants.copyright],
-                db: dbObject.db.data,
-                batch: false
-            })
-        },
-
-        getDisclaimer: () => {
-            return queryDatabase({
-                keys: [variants.disclaimer],
                 db: dbObject.db.data,
                 batch: false
             })

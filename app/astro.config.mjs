@@ -11,8 +11,11 @@ import solidJs from "@astrojs/solid-js";
 import image from "@astrojs/image";
 
 // https://astro.build/config
+import prefetch from "@astrojs/prefetch";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), solidJs(), image()],
+  integrations: [tailwind(), solidJs(), image(), prefetch()],
   output: "server",
   adapter: vercel({
     includeFiles: ['./dist/**/*.js']
