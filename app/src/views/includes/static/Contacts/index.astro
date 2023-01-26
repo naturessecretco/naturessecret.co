@@ -21,16 +21,17 @@ export const defaultProps: Props = {
   description: "DESCRIPTION_NOT_FOUND",
 };
 
-const { phoneNumber, title, description } = Astro.props;
+const { phoneNumber, title, description, emailAddress, mailingAddress } =
+  Astro.props;
 ---
 
 <section class="relative pt-24 overflow-hidden pb-36">
   <div class="container relative z-10 px-4 mx-auto">
     <Header title={title} description={description} />
     <div class:list={["flex flex-wrap gap-2 items-center justify-center"]}>
-      <EmaillAddress />
-      <MailingAddress />
-      <PhoneNumber />
+      <EmaillAddress {...emailAddress} />
+      <MailingAddress {...mailingAddress} />
+      <PhoneNumber {...phoneNumber} />
     </div>
   </div>
 </section>

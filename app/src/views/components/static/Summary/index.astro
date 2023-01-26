@@ -1,0 +1,135 @@
+---
+export interface Props {
+  title?: string;
+  heading?: string;
+  description?: string;
+  details?: any[];
+}
+
+export type DetailProps = {
+  name?: string;
+  description?: string;
+};
+export const defaultProps = {
+  title: "[@props]: TITLE_NOT_FOUND",
+  heading: "[@props]: HEADING_NOT_FOUND",
+  description: "[@props]: DESCRIPTION_NOT_FOUND",
+};
+
+const { title, heading, description, details } = Astro.props;
+---
+
+<section class="py-20 md:py-40">
+  <div class="container px-4 mx-auto">
+    <div class="flex flex-wrap -mx-4">
+      <div class="w-full px-4 mb-20 lg:w-1/3 lg:mb-0">
+        <div class="sm:max-w-sm">
+          <div
+            class="inline-flex items-center px-5 py-2 mb-8 bg-yellow-500 bg-opacity-50 rounded-full shadow-md"
+          >
+            <span class="block w-2 h-2 mr-2 bg-green-500 rounded-full"></span>
+            <span class="text-sm font-medium text-gray-800 uppercase"
+              >{heading ?? defaultProps.heading}</span
+            >
+          </div>
+          <h1
+            class="font-serif text-5xl font-semibold text-black hover:cursor-pointer xs:text-7xl text-shadow-sm shadow-black md:text-8xl font-heading mb-18"
+          >
+            {title ?? defaultProps.title}
+          </h1>
+          <p class="mb-20 text-2xl text-gray-200">
+            {description ?? defaultProps.description}
+          </p>
+          <img
+            class="w-full max-w-md h-142 rounded-4xl"
+            src="suncealand-assets/images/laptop-on-table-photo.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="w-full px-4 lg:w-2/3">
+        <div class="lg:max-w-lg xl:max-w-3xl lg:ml-auto lg:pt-52">
+          {
+            details ? (
+              details.map((detail) => (
+                <button class="block w-full pb-5 mb-6 text-left border-b border-gray-600 group">
+                  <div class="flex items-start justify-between">
+                    <div class="max-w-lg pr-4">
+                      <h4 class="text-4xl font-serif font-medium text-black">
+                        {detail?.name ?? "DETAIL_NOT_FOUND"}
+                      </h4>
+                      <p class="hidden mt-5 text-lg text-green-900 group-hover:block">
+                        {detail?.description ?? "DETAIL_NOT_FOUND"}
+                      </p>
+                    </div>
+                    <div class="flex items-center justify-center flex-shrink-0 bg-green-800 bg-opacity-75 backdrop-blur-sm  rounded-full group-hover:hidden w-14 h-14">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewbox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <>
+                          <rect
+                            x="16"
+                            y="7"
+                            width="2"
+                            height="16"
+                            rx="1"
+                            transform="rotate(90 16 7)"
+                            fill="white"
+                          />
+                          <rect
+                            x="7"
+                            width="2"
+                            height="16"
+                            rx="1"
+                            fill="white"
+                          />
+                        </>
+                      </svg>
+                    </div>
+                    <div class="items-center justify-center flex-shrink-0 hidden bg-gray-800 rounded-full group-hover:flex w-14 h-14">
+                      <svg
+                        width="16"
+                        height="2"
+                        viewbox="0 0 16 2"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          x="16"
+                          width="2"
+                          height="16"
+                          rx="1"
+                          transform="rotate(90 16 0)"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              ))
+            ) : (
+              <>
+                <a
+                  class="relative inline-block w-full h-16 bg-white rounded group sm:w-40"
+                  href="#"
+                >
+                  <div class="absolute top-0 left-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 group-hover:translate-y-0 group-hover:translate-x-0">
+                    <div class="flex items-center justify-center w-full h-full bg-blue-500 border-2 border-white rounded">
+                      <span class="text-base font-semibold uppercase">
+                        DETAIL_NOT_FOUND
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

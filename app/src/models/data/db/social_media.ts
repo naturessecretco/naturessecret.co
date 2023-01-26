@@ -16,7 +16,6 @@ const socialMedia = (store: NotionPageObjectType): DatabaseObjectType => {
         },
 
         db: createDatabase({
-            id: social_media.name,
             predicate: social_media.predicate,
             shape: social_media.shape,
             data: store

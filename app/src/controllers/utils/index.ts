@@ -6,11 +6,11 @@ export const notion = () => {
 
     const utilsObject = {
 
-        read_media: () => {},
-        read_description: () => {},
+        read_media: () => { },
+        read_description: () => { },
 
         isDatabase: (key, data) => {
-            return data?.properties?.Database?.select?.name === key
+            return data?.properties?.Database?.select?.name === key ?? ""
         },
         getProperties: (data) => {
             return { ...data?.properties } ?? null
@@ -57,7 +57,7 @@ export const notion = () => {
                 return "NOT_FOUND"
             }
         },
-        title: (data) => {
+        title: (data): string => {
             return data?.title[0]?.plain_text ?? "[Network]: TITLE_NOT_FOUND"
         },
         files: (data) => {
@@ -109,13 +109,14 @@ export const collections = () => {
             const { files, url, email, phone, formula, icon, rich_text } = notion()
             const { title, multi_select, number, status, select, isDatabase, getProperties } = notion()
 
-            const { Facebook, Media, Discount, Price, Value, Name, URL, Types, Status, Description } = getProperties(data)
+            const { Facebook, Media, Discount, Email, Phone, Price, Value, Name, URL, Types, Status, Description } = getProperties(data)
 
             return {
                 name: title(Name),
                 media: files(Media),
                 discount: number(Discount),
                 value: number(Value),
+                email: email(Email),
                 description: rich_text(Description),
                 price: formula(Price),
                 status: status(Status),

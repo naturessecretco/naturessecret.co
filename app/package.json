@@ -1,7 +1,7 @@
 {
   "name": "naturessecret",
   "type": "module",
-  "version": "0.1.1",
+  "version": "1.1.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -13,17 +13,22 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@astrojs/image": "^0.13.0",
     "@astrojs/solid-js": "^2.0.0",
     "@astrojs/tailwind": "^3.0.0",
     "@astrojs/vercel": "^3.0.0",
     "@nanostores/solid": "^0.3.2",
     "@notionhq/client": "^2.2.3",
-    "astro": "^1.0.0",
+    "@storybook/addons": "^6.5.15",
+    "@storybook/theming": "^6.5.15",
+    "add": "^2.0.6",
+    "astro": "^2.0.1",
     "astro-gap": "^1.0.3",
     "astro-page-transition": "^0.5.6",
     "astro-seo": "^0.7.0",
     "nanostores": "^0.7.1",
     "sass": "^1.57.1",
+    "sharp": "^0.31.3",
     "solid-js": "^1.6.9",
     "tailwindcss": "^3.2.4",
     "tailwindcss-textshadow": "^2.1.3"

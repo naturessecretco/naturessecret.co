@@ -3,111 +3,88 @@ import { collections as collectionsUtilities } from "@utils/index"
 
 export const notion = () => {
 
-    const { files, url, email, phone, formula, icon, rich_text } = notionUtilities()
 
-    const { title, multi_select, number, status, select, isDatabase, getProperties } = notionUtilities()
+    const { isDatabase } = notionUtilities()
 
     const { extractCentralDogmaKeys } = collectionsUtilities()
 
+
+    const variants = {
+        heading: "#️⃣Heading",
+        team_member: "🕴🏿Team Member",
+        search: "🔎Search",
+        tag_line: "🏷️Tag Line",
+        featured: "⭐Featured",
+        ingredient: "🔪Ingredient",
+        hero: "🖼️Hero",
+        links: "📎Link",
+        certifications: "🏷Certification",
+        benefits: "🙏🏿Benefit",
+        phone_number: "☎️Phone Number",
+        contact: "📞Contact",
+        disclaimer: "⚠️Disclaimer",
+        pillar: "💜Pillar",
+        page: "📄Page",
+        team: "🅰️Team",
+        favicon: "🖼️Favicon",
+        photo: "🖼️Photo",
+        messages: "📩Messages",
+        faq: "❓FAQ",
+        title: "📛Title",
+        video: "📺Video",
+        partner: "🫱🏿‍🫲🏿Partner",
+        meta: "📐Meta",
+        founder: "🪨Founder",
+        copyright: "©️Copyright",
+        artivism: "🎨Artivism",
+        email: "📧Email",
+        event: "📅Event",
+        social_media: "📱Social Media",
+        impressum: "✒️Impressum",
+        banner: "🪧Banner",
+        cta: "🔔Call to Action",
+        events: "🗓️Events",
+        products: "🛍️Products",
+        forms: "📜Forms"
+    }
+
+
     const typesObject = {
 
-        variants: {
-            heading: "🪦Heading",
-            team_member: "🕴🏿Team Member",
-            search: "🔎Search",
-            tag_line: "🏷️Tag Line",
-            featured: "⭐Featured",
-            ingredient: "🔪Ingredient",
-            hero: "🖼️Hero",
-            links: "📎Link",
-            certifications: "🏷Certification",
-            benefits: "🙏🏿Benefit",
-            phone_number: "☎️Phone Number",
-            disclaimer: "⚠️Disclaimer",
-            pillar: "💜Pillar",
-            page: "📄Page",
-            team: "🅰️Team",
-            favicon: "🖼️Favicon",
-            photo: "🖼️Photo",
-            messages: "📩Messages",
-            faq: "❓FAQ",
-            title: "📛Title",
-            video: "📺Video",
-            partner: "🫱🏿‍🫲🏿Partner",
-            founder: "🪨Founder",
-            copyright: "©️Copyright",
-            artivism: "🎨Artivism",
-            email: "📧Email",
-            event: "📅Event",
-            impressum: "✒️Impressum",
-            banner: "🪧Banner",
-            cta: "🔔Call to Action"
-        },
-
         products: {
-            name: "🛍️Product",
+            name: variants.products,
             shape: (data) => {
                 return extractCentralDogmaKeys({ data })
             },
             predicate: (data) => {
-                return isDatabase(typesObject.products.name, data)
+                return isDatabase(variants.products, data)
             }
         },
 
         forms: {
-            name: "📜Forms",
+            name: variants.forms,
             shape: (data) => {
-                const { Facebook, Name, Media, URL, Types, Status } = getProperties(data)
-
-                const { icon: Icon } = data
-
-                return {
-                    name: title(Name),
-                    icon: icon(Icon),
-                    media: files(Media),
-                    status: status(Status),
-                    url: url(URL),
-                    facebook: url(Facebook),
-                    types: multi_select(Types)
-                }
+                return extractCentralDogmaKeys({ data })
             },
             predicate: (data) => {
-                return isDatabase(typesObject.forms?.name, data)
+                return isDatabase(variants.forms, data)
             }
         },
 
         events: {
-            name: "🗓️Events",
+            name: variants.events,
             shape: (data) => {
-                const { Facebook, Name, Media, Types, Status } = getProperties(data)
-
-                return {
-                    name: title(Name),
-                    media: files(Media),
-                    status: status(Status),
-                    facebook: url(Facebook),
-                    types: multi_select(Types)
-                }
+                return extractCentralDogmaKeys({ data })
             },
             predicate: (data) => {
-                const { name } = typesObject.events
-                return isDatabase(name, data)
+                return isDatabase(variants.events, data)
             }
         },
 
         media: {
             name: "📷Media",
             shape: (data) => {
-
-                const { Facebook, Name, Media, Types, Status } = getProperties(data)
-
-                return {
-                    name: title(Name),
-                    media: files(Media),
-                    status: status(Status),
-                    facebook: url(Facebook),
-                    types: multi_select(Types)
-                }
+                return extractCentralDogmaKeys({ data })
             },
             predicate: (data) => {
                 const { name } = typesObject.media
@@ -118,22 +95,7 @@ export const notion = () => {
         meta: {
             name: "📐Meta",
             shape: (data: any) => {
-
-                const { URL, Youtube, Name, Media, Types, Files, Values, Description, Status, Phone, Email } = data.properties
-
-                return {
-                    url: url(URL),
-                    name: title(Name),
-                    description: rich_text(Description),
-                    status: status(Status),
-                    media: files(Media),
-                    phone: phone(Phone),
-                    email: email(Email),
-                    youtube: url(Youtube),
-                    files: files(Files),
-                    types: multi_select(Types),
-                    values: multi_select(Values),
-                }
+                return extractCentralDogmaKeys({ data })
             },
             predicate: (data: any) => {
                 const { name } = typesObject.meta
@@ -144,17 +106,7 @@ export const notion = () => {
         faqs: {
             name: "❓FAQ",
             shape: (data: any) => {
-
-                const { icon: Icon, properties: { URL, Name, Description, Status, Types } } = data
-
-                return {
-                    name: title(Name),
-                    icon: icon(Icon),
-                    description: rich_text(Description),
-                    status: status(Status),
-                    url: url(URL),
-                    types: multi_select(Types),
-                }
+                return extractCentralDogmaKeys({ data })
             },
             predicate: (data: any) => {
                 const { name } = typesObject.faqs
@@ -165,42 +117,25 @@ export const notion = () => {
         links: {
             name: "📎Links",
             shape: (data: any) => {
+                return extractCentralDogmaKeys({ data })
 
-                const { properties: { URL, Name, Types }, icon: Icon } = data
-
-                return {
-                    url: url(URL),
-                    icon: icon(Icon),
-                    name: title(Name),
-                    types: multi_select(Types),
-                }
             },
             predicate: (data: any) => {
-                const { name } = typesObject.links
-                return isDatabase(name, data) ?? null
+                return isDatabase(typesObject.links.name, data) ?? null
             }
         },
 
         social_media: {
             name: "📱Social Media",
             shape: (data: any) => {
-
-                const { URL, Name, Types, Status } = data?.properties
-
-                return {
-                    url: url(URL),
-                    name: title(Name),
-                    types: multi_select(Types),
-                    status: status(Status),
-                }
+                return extractCentralDogmaKeys({ data })
             },
             predicate: (data: any) => {
-                const { name } = typesObject.social_media
-                return isDatabase(name, data)
+                return isDatabase(typesObject.social_media.name, data)
             }
         }
     }
 
-    return typesObject
+    return { ...typesObject, variants }
 
 }

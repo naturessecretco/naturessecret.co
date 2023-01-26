@@ -30,6 +30,7 @@ export const defaultProps = {
     image: {
       src: "[@props]:IMAGE_NOT_FOUND",
     },
+    url: "",
   },
 };
 
@@ -42,7 +43,10 @@ const { impressum, copyright, favicon, tagLine, links } = Astro.props;
       <div class="flex flex-wrap -m-8">
         <div class="w-full p-8 sm:w-1/2 lg:w-6/12">
           <div class="lg:max-w-sm">
-            <a class="inline-block mb-8" href="#">
+            <a
+              class="inline-block mb-8"
+              href={favicon?.url ?? defaultProps.favicon.url}
+            >
               <img
                 class:list={["h-24"]}
                 src={favicon?.image.src ?? defaultProps.favicon.image}

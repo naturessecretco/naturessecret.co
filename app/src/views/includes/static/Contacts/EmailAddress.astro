@@ -1,4 +1,5 @@
 ---
+import EmailIcon from "@components/static/EmailIcon/index.astro";
 export interface Props {
   emailAddress?: {
     primary?: string;
@@ -25,20 +26,7 @@ const { emailAddress, title } = Astro.props;
         <div
           class="absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"
         >
-          <svg
-            width="32"
-            height="33"
-            viewbox="0 0 32 33"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4 11.1666L14.5208 18.1805C15.4165 18.7776 16.5835 18.7776 17.4792 18.1805L28 11.1666M6.66667 25.8333H25.3333C26.8061 25.8333 28 24.6394 28 23.1666V9.83329C28 8.36053 26.8061 7.16663 25.3333 7.16663H6.66667C5.19391 7.16663 4 8.36053 4 9.83329V23.1666C4 24.6394 5.19391 25.8333 6.66667 25.8333Z"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"></path>
-          </svg>
+          <EmailIcon />
         </div>
       </div>
       <h3 class="mb-3 text-xl font-bold leading-snug font-heading">

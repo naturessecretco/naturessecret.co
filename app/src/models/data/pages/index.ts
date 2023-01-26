@@ -5,7 +5,8 @@ const pages = ({ store, pageKey }) => {
 
     const { getProducts, getFeaturedProducts } = products(store)
     const { getPageLinks, getFeatauredLinks } = links(store)
-    const { getTagLine, getCertifications, getDisclaimer, getIngredients, getCopyright, getFavicon } = meta(store)
+    const { getTagLine, getCertifications, getDisclaimer } = meta(store)
+    const { getIngredients, getCopyright, getContactHeading, getFavicon } = meta(store)
     const { getBanner, getHero, getImpressum, getPhoneNumber, getBenefits, getEmailAddress } = meta(store)
     const { getFAQs } = faqs(store)
     const { getSocialMedia } = social_media(store)
@@ -17,6 +18,14 @@ const pages = ({ store, pageKey }) => {
                 pageTitle: 'Home'
             },
             data: {
+
+                featuredItem: {
+                    title: "Frantz Desir"
+                },
+
+                subscribeForm: {
+                    title: "Follow our Newletter for Updates!"
+                },
                 hero: {
                     title: "Welcome to Nature's Secret",
                     heading: "New Wildcrafted Seamoss!",
@@ -193,12 +202,38 @@ const pages = ({ store, pageKey }) => {
                 }
             }
         },
-        ingredients: {},
-        blog: {}
+        ingredients: {
+            metaData: {
+                pageTitle: "Ingredients",
+            },
+            data: {
+                contentGrid: {
+                    ingredients: {
+                        title: 'Our Natural Ingredients',
+                        items: getIngredients().map((benefit) => ({
+                            ...benefit,
+                            cover: {
+                                url: benefit?.media[0]?.url ?? null,
+                            },
+                            title: benefit?.name,
+                        })),
+
+                    }
+                }
+            }
+        },
+        blog: {
+            metaData: {
+                pageTitle: "Blog"
+            },
+            data: {
+
+            },
+            pages: []
+        }
     }
 
-
-    const _object = {
+    const _page = {
         id: `${title}-${pageKey}`,
         version: Date.now(),
         layout: layout({
@@ -236,16 +271,37 @@ const pages = ({ store, pageKey }) => {
             },
 
             contacts: {
-                title: "Get in Touch",
-
+                title: getContactHeading()?.name,
+                description: getContactHeading()?.description,
+                mailingAddress: {
+                    title: "Mailing Address",
+                    mailingAddress: {
+                        primary: "info@example.com",
+                        secondary: "admin@example.com"
+                    }
+                },
+                emailAddress: {
+                    title: "Email Address",
+                    emailAddress: {
+                        primary: "info@example.com",
+                        secondary: "admin@example.com"
+                    }
+                },
+                phoneNumber: {
+                    title: "Phone Number",
+                    phoneNumber: {
+                        primary: "info@example.com",
+                        secondary: "admin@example.com"
+                    }
+                }
             },
 
             header: {
-
                 links: getPageLinks().map((link) => ({
                     url: link.url,
                     name: link.name
                 })),
+
                 favicon: {
                     image: {
                         src: getFavicon()?.media[0]?.url,
@@ -255,14 +311,13 @@ const pages = ({ store, pageKey }) => {
                 }
             },
 
-
         }),
 
-        data: _data[pageKey ? pageKey : "home"].data,
+        data: _data[pageKey ? pageKey : "home"]?.data ?? null,
         pages: _data[pageKey ? pageKey : "home"]?.pages ?? null,
     }
 
-    return _object
+    return _page
 
 }
 

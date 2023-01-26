@@ -10,6 +10,14 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
     const { createDatabase, queryDatabase } = collections()
 
     const dbObject = {
+
+        getContactHeading: () => {
+            return queryDatabase({
+                keys: [variants.heading, variants.contact],
+                db: dbObject.db.data,
+                batch: false
+            })
+        },
         getCertifications: () => {
             return queryDatabase({
                 keys: [variants.certifications],

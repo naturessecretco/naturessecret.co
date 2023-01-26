@@ -1,15 +1,15 @@
 ---
 import Application from "@layouts/Application.astro";
 
-import Hero from "@components/static/Hero.astro";
+import Hero from "@components/static/Hero/index.astro";
 import ProductsRow from "@components/static/ProductsRow.astro";
 import ContentGrid from "@components/static/ContentGrid.astro";
 import Product from "@components/static/Product.astro";
 import LogoCloud from "@components/static/LogoCloud.astro";
-import FeaturedItem from "@components/static/FeaturedItem.astro";
-import FeaturedMedia from "@components/static/FeaturedMedia.astro";
-import SubscribeForm from "@components/static/SubscribeForm.astro";
-import Summary from "@components/static/Summary.astro";
+import FeaturedItem from "@components/static/FeaturedItem/index.astro";
+import FeaturedMedia from "@components/static/FeaturedMedia/index.astro";
+import SubscribeForm from "@components/static/SubscribeForm/index.astro";
+import Summary from "@components/static/Summary/index.astro";
 
 import PageService from "@services/pages";
 
@@ -18,7 +18,7 @@ const { getPage } = PageService();
 const { data, layout } = await getPage("home");
 ---
 
-<Application layout={layout}>
+<Application client:load layout={layout}>
   <Hero {...data.hero} />
   <ProductsRow {...data.productsRow.bestSellers} />
   <ProductsRow {...data.productsRow.bestSellers} />
