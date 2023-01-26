@@ -14,9 +14,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "include": [
-      "src"
-    ],
     "paths": {
       "@views/*": [
         "views/*"

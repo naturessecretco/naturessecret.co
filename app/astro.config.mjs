@@ -17,7 +17,5 @@ import prefetch from "@astrojs/prefetch";
 export default defineConfig({
   integrations: [tailwind(), solidJs(), image(), prefetch()],
   output: "server",
-  adapter: vercel({
-    includeFiles: ['./dist/**/*.js']
-  })
+  adapter: vercel()
 });
