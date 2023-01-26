@@ -16,6 +16,6 @@ import prefetch from "@astrojs/prefetch";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), solidJs(), image(), prefetch()],
-  output: "server",
+  output: "static",
   adapter: vercel()
 });
