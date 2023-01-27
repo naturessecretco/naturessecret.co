@@ -5,13 +5,13 @@ import PageService from "@services/pages";
 
 const { getPage } = PageService();
 
-const { layout } = await getPage("products");
+const { layout } = await getPage("ingredients");
 
 export async function getStaticPaths() {
 
   const { getPage } = PageService();
 
-  const { pages } = await getPage("products");
+  const { pages } = await getPage("ingredients");
 
   return pages?.map((page) => ({
     params: {
@@ -25,11 +25,12 @@ export async function getStaticPaths() {
 
 const { product } = Astro.params;
 
-const { id, data, metaData } = Astro.props;
-
-const pageLayout = {...layout, metaData}
+const { id, ...rest } = Astro.props;
 ---
 
-<Application layout={pageLayout}>
-  <Product {...data.product}/>
+<Application layout={layout}>
+  <Product {...rest}/>
+  <h1>
+    {JSON.stringify(rest)}
+  </h1>
 </Application>

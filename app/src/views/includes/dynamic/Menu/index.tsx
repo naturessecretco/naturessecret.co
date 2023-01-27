@@ -15,22 +15,22 @@ export default function Menu(props: MenuProps) {
     <>
       {
         menu().isOpen && <div
-          class="fixed top-0 bottom-0 left-0 z-50 w-4/6 hidd navbar-menu sm:max-w-xs"
+          className="fixed top-0 bottom-0 left-0 z-50 w-4/6 hidd navbar-menu sm:max-w-xs"
         >
-          <div class="fixed inset-0 bg-black navbar-backdrop opacity-30" />
+          <div className="fixed inset-0 bg-black navbar-backdrop opacity-30" />
           <nav
-            class="relative z-10 h-full pt-8 overflow-y-auto bg-yellow-400 bg-opacity-75 backdrop-blur-sm px-9"
+            className="relative z-10 h-full pt-8 overflow-y-auto bg-yellow-400 bg-opacity-75 backdrop-blur-sm px-9"
           >
-            <div class="flex flex-wrap justify-between h-full">
-              <div class="w-full">
-                <div class="flex items-center justify-between -m-2">
-                  <div class="w-auto p-2">
-                    <a class="inline-block" href="#">
+            <div className="flex flex-wrap justify-between h-full">
+              <div className="w-full">
+                <div className="flex items-center justify-between -m-2">
+                  <div className="w-auto p-2">
+                    <a className="inline-block" href="#">
                       <img src="flaro-assets/logos/flaro-logo-black.svg" alt="" />
                     </a>
                   </div>
-                  <div class="w-auto p-2">
-                    <a onClick={() => closeMenu()} class="navbar-burger" href="#">
+                  <div className="w-auto p-2">
+                    <a onClick={() => closeMenu()} className="navbar-burger" href="#close">
                       <svg
                         width="24"
                         height="24"
@@ -50,28 +50,28 @@ export default function Menu(props: MenuProps) {
                   </div>
                 </div>
               </div>
-              <div class="flex flex-col justify-center w-full py-16">
+              <div className="flex flex-col justify-center w-full py-16">
                 <ul>
-                  <li class="mb-12">
-                    <a class="font-medium hover:text-gray-700" href="#">Features</a>
+                  <li className="mb-12">
+                    <a className="font-medium hover:text-gray-700" href="#">Features</a>
                   </li>
-                  <li class="mb-12">
-                    <a class="font-medium hover:text-gray-700" href="#">Solutions</a>
+                  <li className="mb-12">
+                    <a className="font-medium hover:text-gray-700" href="#">Solutions</a>
                   </li>
-                  <li class="mb-12">
-                    <a class="font-medium hover:text-gray-700" href="#">Resources</a>
+                  <li className="mb-12">
+                    <a className="font-medium hover:text-gray-700" href="#">Resources</a>
                   </li>
                   <li>
-                    <a class="font-medium hover:text-gray-700" href="#">Pricing</a>
+                    <a className="font-medium hover:text-gray-700" href="#">Pricing</a>
                   </li>
                 </ul>
               </div>
-              <div class="flex flex-col justify-end w-full pb-8">
-                <div class="flex flex-wrap">
-                  <div class="w-full">
-                    <div class="block">
+              <div className="flex flex-col justify-end w-full pb-8">
+                <div className="flex flex-wrap">
+                  <div className="w-full">
+                    <div className="block">
                       <button
-                        class="w-full px-5 py-3 font-semibold text-white transition duration-200 ease-in-out bg-green-600 border border-indigo-700 rounded-xl focus:ring focus:ring-indigo-300 hover:bg-indigo-700"
+                        className="w-full px-5 py-3 font-semibold text-white transition duration-200 ease-in-out bg-green-600 border border-indigo-700 rounded-xl focus:ring focus:ring-indigo-300 hover:bg-indigo-700"
                         type="button">Try 14 Days Free Trial</button
                       >
                     </div>

@@ -117,10 +117,6 @@ const pages = ({ store, pageKey }) => {
                     }))
                 }
             },
-            pages: getProducts().map((product) => ({
-                ...product
-            })) ?? [{ id: 'wildcrafted-seamoss' }]
-
         },
         resources: {
             metaData: {
@@ -150,8 +146,20 @@ const pages = ({ store, pageKey }) => {
                 pageTitle: 'Products'
             },
             pages: getProducts().map((product) => ({
-                ...product
-            })) ?? [{ id: 'wildcrafted-seamoss' }],
+                id: product.id,
+                metaData: {
+                    pageTitle: product.name,
+                    description: product.description
+                },
+                data: {
+                    product: {
+                        cover: {
+                            src: product.media[0].url
+                        },
+                        ...product
+                    }
+                }
+            })),
             data: {
 
                 productsSearch: {
@@ -178,6 +186,10 @@ const pages = ({ store, pageKey }) => {
             }
         },
         benefits: {
+            pages: getBenefits(),
+            metaData: {
+                pageTitle: "Benefits"
+            },
             data: {
                 grid: {
                     title: 'Your Benefits from SuperFoods',
@@ -228,7 +240,6 @@ const pages = ({ store, pageKey }) => {
         version: Date.now(),
         layout: layout({
             metaData: _data[pageKey].metaData,
-
             footer: {
                 tagLine: getTagLine().description,
                 copyright: getCopyright().description,

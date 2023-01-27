@@ -20,9 +20,9 @@ export default function Header({ favicon, links }) {
               🛒Cart
             </div>
           </div>
-          <div className="w-auto ml-2">
+          <div  onClick={() => toggleMenu()}   className="w-auto ml-2">
             <a onClick={() => toggleMenu()} 
-            href="#">
+            href="#menu">
               <svg
                 className="text-green-700 navbar-burger"
                 width={51}
