@@ -19,6 +19,13 @@ const links = (store: NotionPageObjectType): DatabaseObjectType => {
             })
         },
 
+        getInformationLinks: () => {
+            return queryDatabase({
+                keys: [variants.information],
+                db: dbObject.db.data,
+                batch: true
+            })
+        },
         getFeatauredLinks: () => {
             return queryDatabase({
                 keys: [variants.links],

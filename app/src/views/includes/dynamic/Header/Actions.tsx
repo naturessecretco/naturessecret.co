@@ -1,9 +1,9 @@
 export default function Actions({ actions }) {
     return (
-        <div class="w-auto ml-2">
+        <div className="w-auto ml-2">
             <a href="#">
                 <svg
-                    class="text-green-700 navbar-burger"
+                    className="text-green-700 navbar-burger"
                     width={51}
                     height={51}
                     viewBox="0 0 56 56"

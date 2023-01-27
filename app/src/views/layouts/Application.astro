@@ -3,14 +3,16 @@ import "@libs/globals.css";
 
 import { PageTransition } from "astro-page-transition";
 import AstroGap from "astro-gap";
-import Meta from "@includes/static/Meta.astro";
+import Meta from "@includes/static/Meta/index.astro";
 import Menu from "@includes/dynamic/Menu/index";
 import Header from "@includes/dynamic/Header/index";
 import Footer from "@includes/static/Footer/index.astro";
 import Contacts from "@includes/static/Contacts/index.astro";
 import PostScripts from "@includes/dynamic/PostScripts.astro";
+
 import type { Props as MetaProps } from "@includes/static/Meta.astro";
 import type { Props as HeaderProps } from "@includes/static/Header.astro";
+
 import type { Props as FooterProps } from "@includes/static/Footer.astro";
 import type { PageLayoutProps } from "@typings/Page";
 
@@ -41,7 +43,7 @@ const { layout } = Astro.props;
     <Contacts {...layout.contacts} />
     <Footer {...layout.footer ?? defaultProps.layout.footer} />
     <PostScripts />
-    <PageTransition speed={300} background={defaultProps.layout.transition} />
+    <PageTransition speed={400} background={defaultProps.layout.transition} />
     <Menu client:idle />
   </body>
 </html>

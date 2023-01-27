@@ -3,9 +3,7 @@ import { collections as collectionsUtilities } from "@utils/index"
 
 export const notion = () => {
 
-
     const { isDatabase } = notionUtilities()
-
     const { extractCentralDogmaKeys } = collectionsUtilities()
 
 
@@ -17,12 +15,13 @@ export const notion = () => {
         featured: "⭐Featured",
         ingredient: "🔪Ingredient",
         hero: "🖼️Hero",
-        links: "📎Link",
+        links: "📎Links",
         certifications: "🏷Certification",
         benefits: "🙏🏿Benefit",
         phone_number: "☎️Phone Number",
         contact: "📞Contact",
         disclaimer: "⚠️Disclaimer",
+        information: "ℹ️Information",
         pillar: "💜Pillar",
         page: "📄Page",
         team: "🅰️Team",
@@ -115,13 +114,12 @@ export const notion = () => {
         },
 
         links: {
-            name: "📎Links",
+            name: variants.links,
             shape: (data: any) => {
                 return extractCentralDogmaKeys({ data })
-
             },
-            predicate: (data: any) => {
-                return isDatabase(typesObject.links.name, data) ?? null
+            predicate: (data: any): boolean | string => {
+                return isDatabase(typesObject.links.name, data)
             }
         },
 

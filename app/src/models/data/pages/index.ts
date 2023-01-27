@@ -4,7 +4,7 @@ import { faqs, links, meta, products, social_media } from "@db/index"
 const pages = ({ store, pageKey }) => {
 
     const { getProducts, getFeaturedProducts } = products(store)
-    const { getPageLinks, getFeatauredLinks } = links(store)
+    const { getPageLinks, getFeatauredLinks, getInformationLinks } = links(store)
     const { getTagLine, getCertifications, getDisclaimer } = meta(store)
     const { getIngredients, getCopyright, getContactHeading, getFavicon } = meta(store)
     const { getBanner, getHero, getImpressum, getPhoneNumber, getBenefits, getEmailAddress } = meta(store)
@@ -153,7 +153,6 @@ const pages = ({ store, pageKey }) => {
                     description: product.description
                 },
                 data: {
-
                     post: {
                         ...product
                     },
@@ -161,7 +160,7 @@ const pages = ({ store, pageKey }) => {
                         ...product
                     }
                 }
-            })),
+            })) as [],
             data: {
 
                 productsSearch: {
@@ -266,7 +265,10 @@ const pages = ({ store, pageKey }) => {
 
                     },
                     tertiary: {
-                        title: "Information"
+                        title: "Information",
+                        links: getInformationLinks().map((link) => ({
+                            ...link
+                        }))
                     }
                 }
             },
@@ -315,7 +317,7 @@ const pages = ({ store, pageKey }) => {
         }),
 
         data: _data[pageKey ? pageKey : "home"]?.data ?? null,
-        pages: _data[pageKey ? pageKey : "home"]?.pages ?? null,
+        pages: _data[pageKey ? pageKey : "home"]?.pages ?? [],
     }
 
     return _page

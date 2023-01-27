@@ -14,7 +14,12 @@ import image from "@astrojs/image";
 import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
+import react from "@astrojs/react";
+
+// https://astro.build/config
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), solidJs(), image(), prefetch()],
-  output: "static",
+  integrations: [tailwind(), solidJs(), image(), prefetch(), react()],
+  output: "static"
 });

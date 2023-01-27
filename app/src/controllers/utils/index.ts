@@ -113,6 +113,7 @@ export const collections = () => {
 
             return {
                 name: title(Name),
+                id: title(Name).replace(/\s+/g, '-').toLowerCase(),
                 media: files(Media),
                 discount: number(Discount),
                 value: number(Value),
