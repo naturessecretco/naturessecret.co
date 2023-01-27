@@ -9,6 +9,7 @@ import Header from "@includes/dynamic/Header/index";
 import Footer from "@includes/static/Footer/index.astro";
 import Contacts from "@includes/static/Contacts/index.astro";
 import PostScripts from "@includes/dynamic/PostScripts.astro";
+import { Spa } from "astro-spa";
 
 import type { Props as MetaProps } from "@includes/static/Meta.astro";
 import type { Props as HeaderProps } from "@includes/static/Header.astro";
@@ -45,5 +46,6 @@ const { layout } = Astro.props;
     <PostScripts />
     <PageTransition speed={400} background={defaultProps.layout.transition} />
     <Menu client:idle />
+    <Spa/>
   </body>
 </html>
