@@ -36,9 +36,9 @@ const { layout } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <Meta {...layout?.metaData ?? defaultProps.layout.metaData} />
-  <body>
-    <AstroGap spaces={7} />
+  <body class:list={["pt-10"]}>
     <Header client:idle {...layout.header ?? defaultProps.layout.header} />
+    <AstroGap spaces={10} />
     <slot />
     <Contacts {...layout.contacts} />
     <Footer {...layout.footer ?? defaultProps.layout.footer} />

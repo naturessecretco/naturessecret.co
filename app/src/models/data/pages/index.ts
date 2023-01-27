@@ -119,7 +119,7 @@ const pages = ({ store, pageKey }) => {
             },
             pages: getProducts().map((product) => ({
                 ...product
-            })) ?? [{ id: 'wildcrafted-seamoss'}]
+            })) ?? [{ id: 'wildcrafted-seamoss' }]
 
         },
         resources: {
@@ -150,20 +150,8 @@ const pages = ({ store, pageKey }) => {
                 pageTitle: 'Products'
             },
             pages: getProducts().map((product) => ({
-                id: product.id,
-                metaData: {
-                    pageTitle: product.name,
-                    description: product.description
-                },
-                data: {
-                    post: {
-                        ...product
-                    },
-                    product: {
-                        ...product
-                    }
-                }
-            })) as [],
+                ...product
+            })) ?? [{ id: 'wildcrafted-seamoss' }],
             data: {
 
                 productsSearch: {

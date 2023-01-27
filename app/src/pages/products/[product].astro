@@ -1,35 +1,36 @@
 ---
 import Application from "@layouts/Application.astro";
-
+import Product from "@components/static/Product.astro"
 import PageService from "@services/pages";
 
 const { getPage } = PageService();
 
-const { layout } = await getPage("home");
+const { layout } = await getPage("products");
 
 export async function getStaticPaths() {
 
   const { getPage } = PageService();
 
-  const { pages, data } = await getPage("home");
+  const { pages } = await getPage("products");
 
   return pages?.map((page) => ({
     params: {
       product: page.id,
     },
     props: {
-      data,
+      ...page
     },
   }));
 }
 
 const { product } = Astro.params;
 
-const { data } = Astro.props;
+const { id } = Astro.props;
 ---
 
 <Application layout={layout}>
+  <Product />
   <h1>
-    {JSON.stringify(data)}
+    {JSON.stringify(id)}
   </h1>
 </Application>

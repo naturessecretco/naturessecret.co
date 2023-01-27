@@ -9,7 +9,7 @@ export default function Header({ favicon, links }) {
 
   return (
 
-    <header className="container fixed z-20 w-full mx-auto overflow-hidden backdrop-blur-sm">
+    <header className="container fixed top-0 z-50 w-full mx-auto overflow-hidden backdrop-blur-sm">
     <div className="flex items-center justify-between px-4 py-5">
       <Favicon {...favicon} />
       <div className="w-auto">
