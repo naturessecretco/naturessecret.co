@@ -12,6 +12,6 @@ const { data, layout } = await getPage("ingredients");
 ---
 
 <Application layout={layout}>
-  <Post />
   <ContentGrid {...data.contentGrid.ingredients} />
+  <Post />
 </Application>

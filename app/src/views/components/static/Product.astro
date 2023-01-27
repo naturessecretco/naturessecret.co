@@ -191,13 +191,13 @@ const { name, price, description, cover } = Astro.props;
                     d="M14.44 0.0999756C12.63 0.0999756 11.01 0.979976 10 2.32998C8.99 0.979976 7.37 0.0999756 5.56 0.0999756C2.49 0.0999756 0 2.59998 0 5.68998C0 6.87998 0.19 7.97998 0.52 8.99998C2.1 14 6.97 16.99 9.38 17.81C9.72 17.93 10.28 17.93 10.62 17.81C13.03 16.99 17.9 14 19.48 8.99998C19.81 7.97998 20 6.87998 20 5.68998C20 2.59998 17.51 0.0999756 14.44 0.0999756Z"
                     fill="currentColor"></path>
                 </svg>
-                <span class="ml-2 text-sm font-black">Add to Wishlist</span>
+                <span class="ml-2 text-sm font-black">Share</span>
               </a>
               <div class="border-2 border-black rounded-md">
                 <button
                   class="flex flex-wrap items-center justify-between w-full px-6 py-5 text-left border-b-2 border-black group"
                 >
-                  <span class="text-sm font-black">Description</span>
+                  <span class="text-md font-serif shadow-black text-shadow-lg text-black">Description</span>
                   <svg
                     width="10"
                     height="6"
@@ -211,11 +211,7 @@ const { name, price, description, cover } = Astro.props;
                   </svg>
                   <div class="hidden mt-4 group-hover:block">
                     <p class="text-xs font-bold">
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the
-                      industry&apos;s standard dummy text ever since the 1500s,
-                      when an unknown printer took a galley of type and
-                      scrambled it to make a type specimen book.
+                      {description ?? defaultProps.description}
                     </p>
                   </div>
                 </button>
@@ -247,7 +243,10 @@ const { name, price, description, cover } = Astro.props;
                 <button
                   class="flex flex-wrap items-center justify-between w-full px-6 py-5 text-left group"
                 >
-                  <span class="text-sm font-black">Shipping &amp; Returns</span>
+                  <span
+                    class="text-md font-serif font-thin shadow-black text-shadow-md text-black"
+                    >Shipping &amp; Returns</span
+                  >
                   <svg
                     width="10"
                     height="6"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 473.1 500.5">
+<svg id="Layer_2" class="flutter" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 473.1 500.5">
   <defs>
     <style type="text/css">
       <![CDATA[
@@ -8,13 +8,13 @@
             fill: green;
             stroke-dasharray: 1;
             stroke-dashoffset: 2;
-            opacity: 0.50;
+            opacity: 0.40;
           }
   
           @keyframes pulse {
             from {
  
-              opacity: 0.5;
+              opacity: 0.45;
               
             to {
     

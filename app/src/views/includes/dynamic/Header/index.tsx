@@ -9,7 +9,7 @@ export default function Header({ favicon, links }) {
 
   return (
 
-    <header className="container fixed top-0 z-50 w-full mx-auto overflow-hidden backdrop-blur-sm">
+    <header className="container fixed top-0 z-20 w-full mx-auto overflow-hidden backdrop-blur-sm">
     <div className="flex items-center justify-between px-4 py-5">
       <Favicon {...favicon} />
       <div className="w-auto">
@@ -24,7 +24,7 @@ export default function Header({ favicon, links }) {
             <a onClick={() => toggleMenu()} 
             href="#menu">
               <svg
-                className="text-green-700 navbar-burger"
+                className="text-green-700 bg-opacity-40 shadow-2xl navbar-burger"
                 width={51}
                 height={51}
                 viewBox="0 0 56 56"

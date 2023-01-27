@@ -1,13 +1,16 @@
 ---
 import Application from "@layouts/Application.astro";
 import PageService from "@services/pages";
-import Post from "@components/static/Post/index.astro"
+
+import Post from "@components/static/Post/index.astro";
+import ContentGrid from "@components/static/ContentGrid.astro";
+
 const { getPage } = PageService();
 
 const { data, layout } = await getPage("benefits");
 ---
 
 <Application layout={layout}>
-
-<Post/>
+  <ContentGrid {...data.contentGrid} />
+  <Post />
 </Application>

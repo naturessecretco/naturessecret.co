@@ -191,7 +191,7 @@ const pages = ({ store, pageKey }) => {
                 pageTitle: "Benefits"
             },
             data: {
-                grid: {
+                contentGrid: {
                     title: 'Your Benefits from SuperFoods',
                     items: getBenefits().map((benefit) => ({
                         ...benefit,
