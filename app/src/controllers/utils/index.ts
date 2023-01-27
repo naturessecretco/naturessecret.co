@@ -109,10 +109,11 @@ export const collections = () => {
             const { files, url, email, phone, formula, icon, rich_text } = notion()
             const { title, multi_select, number, status, select, isDatabase, getProperties } = notion()
 
-            const { Facebook, Media, Discount, Email, Phone, Price, Value, Name, URL, Types, Status, Description } = getProperties(data)
+            const { Facebook, Media, Discount, ID, Email, Phone, Price, Value, Name, URL, Types, Status, Description } = getProperties(data)
 
             return {
                 name: title(Name),
+                uuid: formula(ID),
                 id: title(Name).replace(/\s+/g, '-').toLowerCase(),
                 media: files(Media),
                 discount: number(Discount),

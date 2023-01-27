@@ -117,6 +117,9 @@ const pages = ({ store, pageKey }) => {
                     }))
                 }
             },
+            pages: getProducts().map((product) => ({
+                ...product
+            })) ?? [{ id: 'wildcrafted-seamoss'}]
 
         },
         resources: {
