@@ -30,6 +30,7 @@ const pages = ({ store, pageKey }) => {
                     title: "Welcome to Nature's Secret",
                     heading: "New Wildcrafted Seamoss!",
                     subHeading: "Home to nature's best kept secrets",
+                    description: "We strive to bring natural, healthy food to the masses, to help people lead healthier lives.",
                     socials: getSocialMedia(),
                     features: getProducts().map((product) => (product?.advertisements)).flat(),
                     banner: {

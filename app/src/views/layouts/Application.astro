@@ -10,7 +10,7 @@ import Footer from "@includes/static/Footer/index.astro";
 import Contacts from "@includes/static/Contacts/index.astro";
 import PostScripts from "@includes/dynamic/PostScripts.astro";
 import { Spa } from "astro-spa";
-
+import Banner from "@includes/static/Banner/index.astro";
 import type { Props as MetaProps } from "@includes/static/Meta.astro";
 import type { Props as HeaderProps } from "@includes/static/Header.astro";
 
@@ -37,7 +37,8 @@ const { layout } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <Meta {...layout?.metaData ?? defaultProps.layout.metaData} />
-  <body class:list={["pt-10"]}>
+  <body class:list={["pt-24"]}>
+    <Banner />
     <Header client:idle {...layout.header ?? defaultProps.layout.header} />
     <AstroGap spaces={10} />
     <slot />

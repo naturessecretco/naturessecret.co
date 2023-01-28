@@ -10,6 +10,13 @@ export default function Header({ favicon, links }) {
   return (
 
     <header className="container fixed top-0 z-20 w-full mx-auto overflow-hidden backdrop-blur-md">
+      <div className="py-1 relative top-0 w-full text-center font-serif text-white bg-green-700 bg-opacity-25 text-sm border-opacity-10 border-b border-gray-100">
+        <p className="font-medium text-darkBlueGray-300 leading-10">
+          <span>Hello, you are new here.</span>
+          <span className="text-darkBlueGray-900">Get 20% off card!</span>
+        </p>
+      </div>
+
       <div className="flex items-center justify-between px-4 py-5">
         <Favicon {...favicon} />
         <div className="w-auto">
