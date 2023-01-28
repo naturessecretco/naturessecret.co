@@ -11,15 +11,16 @@ export const defaultProps = {
   }))]
 }
 
+const heading = ""
 export default function Links({ links }: ILink) {
 
   return (
-    <div class="hidden w-auto lg:block">
-      <ul class="flex items-center mr-16">
+    <div className="hidden w-auto lg:block">
+      <ul className="flex items-center mr-16">
         {
           links.map((link) => (
             <li
-              class="font-medium rounded-md hover:shadow-2xl mr-9 hover:text-gray-700"
+              className="font-thin font-serif uppercase underline-offset-4 shadow-black text-shadow-md rounded-md hover:shadow-2xl mr-9 hover:text-gray-700"
             >
               <a href={link?.url}>{link?.name}</a>
             </li>

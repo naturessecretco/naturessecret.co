@@ -46,6 +46,11 @@ const { layout } = Astro.props;
     <PostScripts />
     <PageTransition speed={400} background={defaultProps.layout.transition} />
     <Menu client:idle />
-    <Spa/>
+    <Spa
+      colors={{
+        foreground: "#fcc631",
+        background: "#000000",
+      }}
+    />
   </body>
 </html>
