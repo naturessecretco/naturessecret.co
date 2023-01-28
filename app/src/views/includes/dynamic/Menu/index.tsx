@@ -1,5 +1,5 @@
 import { useMenu } from "@hooks/useMenu"
-import { useStore } from '@nanostores/solid';
+import { useStore } from '@nanostores/react';
 
 export interface MenuProps {
   links?: any[]
@@ -7,14 +7,14 @@ export interface MenuProps {
 
 export default function Menu(props: MenuProps) {
 
-  const { menuState, closeMenu } = useMenu()
+  const { menuState, closeMenu, isOpen} = useMenu()
 
   const menu = useStore(menuState)
 
   return (
     <>
       {
-        menu().isOpen && <div
+        isOpen() && <div
           className="fixed top-0 bottom-0 left-0 z-50 w-4/6 hidd navbar-menu sm:max-w-xs"
         >
           <div className="fixed inset-0 bg-black navbar-backdrop opacity-30" />

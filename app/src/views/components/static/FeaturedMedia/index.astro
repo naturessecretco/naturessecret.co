@@ -1,7 +1,12 @@
 ---
+export type MediaProps = {
+  name?: string;
+  image?: ImageProps;
+};
 export interface Props {
   title?: string;
   heading?: string;
+  media?: MediaProps[];
 }
 
 export const defaultProps = {
@@ -9,13 +14,13 @@ export const defaultProps = {
   heading: "[@props]:HEADING_NOT_FOUND",
 };
 
-const { title, heading } = Astro.props;
+const { title, heading, media } = Astro.props;
 ---
 
 <section class="pt-24 overflow-hidden pb-36">
   <div class="container px-4 mx-auto">
     <h2
-      class="mb-5 text-6xl font-bold leading-none text-center md:text-8xl xl:text-10xl font-heading tracking-px-n"
+      class="mb-5 text-7xl font-serif font-thin leading-none text-center font-heading tracking-px-n"
     >
       {title ?? defaultProps.title}
     </h2>

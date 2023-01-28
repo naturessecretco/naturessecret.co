@@ -17,7 +17,7 @@ export function useMenu() {
 
     const openMenu = action(menuState, "toggleMenu", () => {
         menuState.set({
-            isOpen: !menuState.get().isOpen
+            isOpen: true
         });
         console.log(menuState.get())
 
@@ -25,7 +25,7 @@ export function useMenu() {
 
     const closeMenu = action(menuState, "toggleMenu", () => {
         menuState.set({
-            isOpen: !menuState.get().isOpen
+            isOpen: false
         });
         console.log(menuState.get())
 

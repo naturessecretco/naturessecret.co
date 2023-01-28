@@ -96,7 +96,10 @@ const pages = ({ store, pageKey }) => {
                         alt: product.name
                     }
                 }))[0],
-                featuredMedia: {},
+                featuredMedia: {
+                    title: "Our Outlets & Partners",
+                    media: []
+                },
                 mediaRow: {
                     title: 'Best Sellers',
                     media: getProducts().map((product) => ({
