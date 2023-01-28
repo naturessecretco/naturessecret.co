@@ -3,14 +3,14 @@ import logo from "./logo.png"
 
 
 export default create({
-  base: 'dark',
+  base: 'light',
   brandTitle: 'Nature\'s Secret',
   brandUrl: 'https://naturessecret.co',
   brandImage: logo,
   brandTarget: '_self',
   colorPrimary: 'yellow',
   colorSecondary: 'green',
-  appBg: 'black',
+  appBg: 'white',
   appContentBg: 'black',
   appBorderColor: 'white',
   appBorderRadius: 12,

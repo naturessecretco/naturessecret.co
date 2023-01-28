@@ -20,9 +20,13 @@ export const defaultProps = {
 const { mailingAddress, title } = Astro.props;
 ---
 
-<div class:list={["flex cursor-pointer border flex-wrap -m-3"]}>
+<div
+  class:list={[
+    "flex cursor-pointer backdrop-blur-md cursor-pointer rounded-lg border flex-wrap m-3",
+  ]}
+>
   <div class="w-full p-3 md:w-1/3">
-    <div class="w-full h-full text-center rounded-lg p-11 bg-opacity-90">
+    <div class="w-full h-full text-center p-11 bg-opacity-90">
       <div
         class="relative w-16 h-16 mx-auto mb-6 bg-white border rounded-full border-blueGray-200"
       >
@@ -32,7 +36,10 @@ const { mailingAddress, title } = Astro.props;
           <LocationIcon />
         </div>
       </div>
-      <h3 class="mb-3 text-xl font-bold leading-snug font-heading">
+      <h3
+        class="mb-3 text-white text-4xl whitespace-nowrap w-full font-thin font-serif font-heading"
+        "
+      >
         {title ?? defaultProps.title}
       </h3>
       <p class="font-medium leading-relaxed">

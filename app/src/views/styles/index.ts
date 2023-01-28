@@ -1,44 +1,19 @@
 import { twMerge } from 'tailwind-merge'
 
-export function headings({ type, sx }) {
-    const _template = (overrides) => twMerge(`${overrides} font-serif size-7xl`)
+export function createStylizer({ template, types }) {
 
-    const types = {
-        primary: _template(sx),
-        secondary: _template(sx),
-        tertiary: _template(sx)
-    }
-
-    return types[type] ?? null
-}
-
-
-export function containers({ type, sx }) {
-    const _template = (overrides) => twMerge(`${overrides} font-serif size-7xl`)
-
-    const types = {
-        primary: _template(sx),
-        secondary: _template(sx),
-        tertiary: _template(sx)
-    }
-
-    return types[type] ?? null
-}
-
-
-export function globals({ type, sx }) {
-    const _template = (overrides) => twMerge(`${overrides} font-serif size-7xl`)
-
-    const types = {
-        primary: _template(sx),
-        secondary: _template(sx),
-        tertiary: _template(sx)
-    }
-
-    return types[type] ?? null
+    return twMerge(template(types))
 }
 
 
 
 
-const heroTitleSx = headings({ type: 'primary', sx: "uppercase" })
+
+export const headings = createStylizer({
+    template: (str) => `${str} font-serif`,
+    types: {
+        primary: {
+            
+        }
+    }
+})

@@ -19,7 +19,7 @@ export const defaultProps = {
 const { phoneNumber, title } = Astro.props;
 ---
 
-<div class:list={["flex border flex-wrap -m-3"]}>
+<div class:list={["flex border flex-wrap  rounded-lg backdrop-blur-md m-3"]}>
   <div class="w-full p-3 md:w-1/3">
     <div class="w-full h-full text-center rounded-lg p-11 bg-opacity-90">
       <div class="relative w-full mx-auto mb-6 rounded-full">
@@ -30,7 +30,7 @@ const { phoneNumber, title } = Astro.props;
         </div>
       </div>
       <h3
-        class="mb-3 text-xl font-serif w-full font-bold leading-snug font-heading"
+        class="mb-3 text-white text-4xl whitespace-nowrap w-full font-thin font-serif font-heading""
       >
         {title ?? defaultProps.title}
       </h3>

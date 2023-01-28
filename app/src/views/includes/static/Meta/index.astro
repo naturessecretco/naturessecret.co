@@ -3,6 +3,7 @@ export interface Props {
   title?: string;
   pageTitle?: string;
   url?: string;
+  copyright?: string;
   extend?: any;
   description?: string;
   twitter?: {
@@ -13,14 +14,15 @@ export interface Props {
 export const defaultProps = {
   title: "Natures Secret",
   url: "https://natureseccret.co",
-  pageTitle: "PAGE_TITLE_NOT_FOUND",
+  pageTitle: "[@props]: PAGE_TITLE_NOT_FOUND",
+  copyright: "[@props]: COPYRIGHT_NOT_FOUND",
   description: "DESCRIPTION_NOT_FOUND",
   twitter: {
     creator: "CREATOR_NOT_FOUND",
   },
 };
 
-const { title, pageTitle, description, twitter } = Astro.props;
+const { title, pageTitle, description, url, twitter, copyright } = Astro.props;
 ---
 
 <head>
@@ -31,20 +33,20 @@ const { title, pageTitle, description, twitter } = Astro.props;
   <meta name="keywords" content="your, tags" />
   <meta name="description" content="150 words" />
   <meta name="subject" content="your website's subject" />
-  <meta name="copyright" content="company name" />
+  <meta name="copyright" content={title ?? defaultProps.title} />
   <meta name="language" content="ES" />
   <meta name="robots" content="index,follow" />
-  <meta name="revised" content="Sunday, July 18th, 2010, 5:15 pm" />
+  <meta name="revised" content={Date.now()} />
   <meta name="abstract" content="" />
   <meta name="topic" content="" />
   <meta name="summary" content="" />
   <meta name="Classification" content="Business" />
   <meta name="author" content="name, email@hotmail.com" />
   <meta name="designer" content="" />
-  <meta name="copyright" content="" />
+  <meta name="copyright" content={copyright ?? defaultProps.copyright} />
   <meta name="reply-to" content="email@hotmail.com" />
   <meta name="owner" content="" />
-  <meta name="url" content="http://www.websiteaddrress.com" />
+  <meta name="url" content={url ?? defaultProps.url} />
   <meta name="identifier-URL" content="http://www.websiteaddress.com" />
   <meta name="directory" content="submission" />
   <meta name="category" content="" />
@@ -66,22 +68,18 @@ const { title, pageTitle, description, twitter } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="yellow" />
   <meta name="format-detection" content="telephone=no" />
-  <meta
-    name="viewport"
-    content="width = 320, initial-scale = 2.3, user-scalable = no"
-  />
   <meta name="viewport" content="width = device-width" />
   <meta name="viewport" content="initial-scale = 1.0" />
-  <meta name="og:title" content="The Rock" />
+  <meta name="og:title" content={title ?? defaultProps.title} />
   <meta name="og:type" content="movie" />
   <meta name="og:url" content="http://www.imdb.com/title/tt0117500/" />
   <meta name="og:image" content="http://ia.media-imdb.com/rock.jpg" />
-  <meta name="og:site_name" content="IMDb" />
+  <meta name="og:site_name" content={title ?? defaultProps.title} />
   <meta
     name="og:description"
-    content="A group of U.S. Marines, under command of..."
+    content={description ?? defaultProps.description}
   />
 
   <meta name="fb:page_id" content="43929265776" />
@@ -93,9 +91,9 @@ const { title, pageTitle, description, twitter } = Astro.props;
   <meta name="og:latitude" content="37.416343" />
   <meta name="og:longitude" content="-122.153013" />
   <meta name="og:street-address" content="1601 S California Ave" />
-  <meta name="og:locality" content="Palo Alto" />
-  <meta name="og:region" content="CA" />
-  <meta name="og:postal-code" content="94304" />
+  <meta name="og:locality" content="Orlando" />
+  <meta name="og:region" content="FL" />
+  <meta name="og:postal-code" content="32817" />
   <meta name="og:country-name" content="USA" />
 
   <meta property="og:type" content="game.achievement" />
@@ -135,7 +133,7 @@ const { title, pageTitle, description, twitter } = Astro.props;
   <link
     rel="me"
     type="text/html"
-    href="http://google.com/profiles/thenextweb"
+    href="http://google.com/profiles/naturessecret"
   />
   <link rel="shortlink" href="http://blog.unto.net/?p=353" />
   <link rel="archives" title="May 2003" href="http://blog.unto.net/2003/05/" />
@@ -167,13 +165,13 @@ const { title, pageTitle, description, twitter } = Astro.props;
     type="application/atom+xml"
     href="http://www.syfyportal.com/atomFeed.php?page=3"
   />
-  <link rel="first" href="http://www.syfyportal.com/atomFeed.php" />
+  <link rel="first" href={url ?? defaultProps.url} />
   <link rel="next" href="http://www.syfyportal.com/atomFeed.php?page=4" />
   <link rel="previous" href="http://www.syfyportal.com/atomFeed.php?page=2" />
   <link rel="last" href="http://www.syfyportal.com/atomFeed.php?page=147" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  <meta name="format-detection" content="telephone=no" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="yellow" />
+  <meta name="format-detection" content="telephone=yes" />
   <meta name="viewport" content="initial-scale = 1.0" />
   <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
   <link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />
@@ -183,10 +181,7 @@ const { title, pageTitle, description, twitter } = Astro.props;
   <link rel="apple-touch-icon" type="image/png" href="/apple-touch-icon.png" />
 
   <link rel="shortlink" href="http://smallbiztrends.com/?p=43625" />
-  <link
-    rel="canonical"
-    href="http://smallbiztrends.com/2010/06/9-things-to-do-before-entering-social-media.html"
-  />
+  <link rel="canonical" href={url ?? defaultProps.url} />
   <link
     rel="EditURI"
     type="application/rsd+xml"
@@ -200,14 +195,14 @@ const { title, pageTitle, description, twitter } = Astro.props;
     type="text/css"
     rel="stylesheet"
   />
-  <meta
-    name="msapplication-starturl"
-    content="http://blog.reybango.com/about/"
-  />
+  <meta name="msapplication-starturl" content={url ?? defaultProps.url} />
   <meta name="msapplication-window" content="width=800;height=600" />
   <meta name="msapplication-navbutton-color" content="red" />
-  <meta name="application-name" content="Rey Bango Front-end Developer" />
-  <meta name="msapplication-tooltip" content="Launch Rey Bango's Blog" />
+  <meta name="application-name" content={title ?? defaultProps.title} />
+  <meta
+    name="msapplication-tooltip"
+    content={description ?? defaultProps.description}
+  />
   <meta
     name="msapplication-task"
     content="name=About;action-uri=/about/;icon-uri=/images/about.ico"
@@ -234,7 +229,6 @@ const { title, pageTitle, description, twitter } = Astro.props;
   <meta property="og:audio:artist" content="Amazing Band" />
   <meta property="og:audio:album" content="Amazing Album" />
   <meta property="og:audio:type" content="application/mp3" />
-  <meta name="viewport" content="initial-scale = 2.3, user-scalable = no" />
   <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
   <link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />
   <link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" />

@@ -19,9 +19,11 @@ export const defaultProps = {
 const { emailAddress, title } = Astro.props;
 ---
 
-<div class:list={["flex flex-wrap border -m-3"]}>
+<div
+  class:list={["flex backdrop-blur-md cursor-pointer rounded-lg flex-wrap border m-3"]}
+>
   <div class="w-full p-3 md:w-1/3">
-    <div class="w-full h-full p-10 text-center text-white rounded-lg">
+    <div class="w-full h-full p-10 text-center text-white">
       <div class="relative w-16 h-16 mx-auto mb-6 rounded-full">
         <div
           class="absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2"
@@ -29,7 +31,9 @@ const { emailAddress, title } = Astro.props;
           <EmailIcon />
         </div>
       </div>
-      <h3 class="mb-3 text-4xl whitespace-nowrap w-full font-thin font-serif font-heading">
+      <h3
+        class="mb-3 text-4xl whitespace-nowrap w-full font-thin font-serif font-heading"
+      >
         {title ?? defaultProps.title}
       </h3>
       <p class="font-medium leading-relaxed">

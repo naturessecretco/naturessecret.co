@@ -1,0 +1,63 @@
+---
+export type VideoProps = {
+  type?: string;
+  src?: string;
+  height?: string;
+  width?: string;
+};
+
+export type LocationProps = {
+  latitude?: string;
+  longitude?: string;
+  streetAddress?: string;
+  locality?: string;
+  region?: string;
+  postcalCode?: string;
+  type?: string;
+};
+
+export interface Props {
+  email?: string;
+  phoneNumber?: string;
+  type?: string;
+  faxNumber?: string;
+  locations?: LocationProps[];
+  videos?: VideoProps[];
+}
+
+export const defaultProps = {
+  email: "[@props]: EMAIL_NOT_FOUND",
+  phoneNumber: "[@props]: PHONE_NUMBER_NOT_FOUND",
+};
+const { email, phoneNumber, faxNumber, locations, videos } = Astro.props;
+---
+
+<meta name="og:email" content={email ?? defaultProps.email} />
+<meta name="og:phone_number" content="650-123-4567" />
+<meta name="og:fax_number" content="+1-415-123-4567" />
+
+{
+  locations &&
+    locations.map((loc) => (
+      <>
+        <meta name="og:latitude" content="37.416343" />
+        <meta name="og:longitude" content="-122.153013" />
+        <meta name="og:street-address" content="1601 S California Ave" />
+        <meta name="og:locality" content="Orlando" />
+        <meta name="og:region" content="FL" />
+        <meta name="og:postal-code" content="32817" />
+        <meta name="og:country-name" content="USA" />
+      </>
+    ))
+}
+
+<meta property="og:type" content={type ?? defaultProps.type} />
+
+<meta property="og:video" content="http://example.com/awesome.swf" />
+<meta property="og:video:height" content="640" />
+<meta property="og:video:width" content="385" />
+<meta property="og:video:type" content="application/x-shockwave-flash" />
+<meta property="og:video" content="http://example.com/html5.mp4" />
+<meta property="og:video:type" content="video/mp4" />
+<meta property="og:video" content="http://example.com/fallback.vid" />
+<meta property="og:video:type" content="text/html" />
