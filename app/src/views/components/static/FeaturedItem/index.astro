@@ -21,7 +21,8 @@ const { title, heading, description } = Astro.props;
         >
           <img
             class="transition duration-1000 ease-in-out transform hover:scale-105"
-            src="flaro-assets/images/team/bg3.png"
+            loading="lazy"
+            src="/assets/images/doctor.jpg"
             alt=""
           />
           <div class="absolute bottom-0 left-0 w-full px-16 pb-10">
@@ -105,7 +106,7 @@ const { title, heading, description } = Astro.props;
             {heading ?? defaultProps.heading}
           </p>
           <h2
-            class="mb-8 text-6xl font-bold font-serif leading-none md:text-8xl xl:text-10xl font-heading tracking-px-n"
+            class="mb-8 text-7xl font-thin shadow-black text-shadow-lg font-serif leading-none font-heading"
           >
             {title ?? defaultProps.title}
           </h2>

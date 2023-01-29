@@ -38,6 +38,8 @@ export const notion = () => {
         artivism: "🎨Artivism",
         email: "📧Email",
         event: "📅Event",
+        business: "💼Business",
+        support: "🆘Support",
         social_media: "📱Social Media",
         impressum: "✒️Impressum",
         banner: "🪧Banner",

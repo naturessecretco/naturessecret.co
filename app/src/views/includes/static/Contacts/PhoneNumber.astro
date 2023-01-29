@@ -34,10 +34,10 @@ const { phoneNumber, title } = Astro.props;
       >
         {title ?? defaultProps.title}
       </h3>
-      <p class="font-medium leading-relaxed">
+      <p class="font-thin whitespace-nowrap w-full leading-relaxed">
         {phoneNumber?.primary ?? defaultProps.phoneNumber.primary}
       </p>
-      <p class="font-medium leading-relaxed">
+      <p class="font-thin whitespace-nowrap w-full leading-relaxed">
         {phoneNumber?.secondary ?? defaultProps.phoneNumber.secondary}
       </p>
     </div>

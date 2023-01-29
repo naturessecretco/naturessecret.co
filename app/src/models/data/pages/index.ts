@@ -21,6 +21,7 @@ const pages = ({ store, pageKey }) => {
 
                 featuredItem: {
                     title: "Frantz Desir",
+                    heading: "CEO",
                     description: "M.D. Frantz Desir opened his discount-driven health food store with a vision to make healthy living accessible to everyone. Our store is committed to offering our customers the best selection of health food items and supplements, so they can make informed decisions about what they put into their bodies. We strive to provide our customers with the highest quality of natural products at a fraction of the cost, so they can feel confident in their choices while still saving money. Our knowledgeable team is always available to answer your questions and provide guidance, so that our customers have the best experience possible when shopping with us"
                 },
 
@@ -116,6 +117,7 @@ const pages = ({ store, pageKey }) => {
                 },
                 summary: {
                     title: 'Frequently Asked Questions',
+                    description: "What do you need to know?",
                     details: getFAQs().map((faq) => ({
                         name: faq.name,
                         description: faq.description,
@@ -284,7 +286,7 @@ const pages = ({ store, pageKey }) => {
                 title: getContactHeading()?.name,
                 description: getContactHeading()?.description,
                 mailingAddress: {
-                    title: "Mailing Address",
+                    title: "Locations",
                     mailingAddress: {
                         primary: "Orlando, FL",
                         secondary: "Atlanta, GA"

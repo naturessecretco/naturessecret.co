@@ -13,7 +13,7 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
 
         getBusinessPhoneNumber: () => {
             return queryDatabase({
-                keys: [variants.phone_number],
+                keys: [variants.phone_number, variants.business],
                 db: dbObject.db.data,
                 batch: false
             })
@@ -21,7 +21,7 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
 
         getSupportPhoneNumber: () => {
             return queryDatabase({
-                keys: [variants.phone_number],
+                keys: [variants.phone_number, variants.support],
                 db: dbObject.db.data,
                 batch: false
             })

@@ -42,10 +42,10 @@ const { mailingAddress, title } = Astro.props;
       >
         {title ?? defaultProps.title}
       </h3>
-      <p class="font-medium leading-relaxed">
+      <p class="font-thin leading-relaxed whitespace-nowrap w-full">
         {mailingAddress?.primary ?? defaultProps.mailingAddress.primary}
       </p>
-      <p class="font-medium leading-relaxed">
+      <p class="font-thin whitespace-nowrap w-full leading-relaxed">
         {mailingAddress?.secondary ?? defaultProps.mailingAddress.secondary}
       </p>
     </div>
