@@ -23,6 +23,7 @@ export const defaultProps = {
   layout: {
     header: {},
     footer: {},
+    menu: {},
     contacts: {},
     metaData: {
       title: "[@props]: TITLE_NOT_FOUND",
@@ -44,7 +45,6 @@ const { layout } = Astro.props;
     <Footer {...layout.footer ?? defaultProps.layout.footer} />
     <PostScripts />
     <PageTransition speed={200} background={defaultProps.layout.transition} />
-    <Menu client:idle />
-    <Spa />
+    <Menu {...layout.menu ?? defaultProps.layout.menu} client:idle />
   </body>
 </html>

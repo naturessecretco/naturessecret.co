@@ -305,6 +305,9 @@ const pages = ({ store, pageKey }) => {
                 }
             },
 
+            menu: {
+                links: getPageLinks()
+            },
             header: {
                 message: {
                     text: getBanner()?.name,

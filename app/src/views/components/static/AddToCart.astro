@@ -36,6 +36,8 @@ const { id, price, description, cover, name, text, sx } = Astro.props;
       sx ??
       "inline-block px-8 py-4 font-sans_serif font-bold text-black uppercase transition duration-200 bg-green-600 rounded-md hover:bg-green-400 font-heading"}`
   ]}
+  data-item-shippable={"true"}
+  data-item-weight={'12oz'}
   data-item-id={`${id ?? defaultProps.id}`}
   data-item-price={`${price ?? defaultProps.price}`}
   data-item-description={`${description ?? defaultProps.description}`}
