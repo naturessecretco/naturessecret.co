@@ -306,6 +306,10 @@ const pages = ({ store, pageKey }) => {
             },
 
             header: {
+                message: {
+                    text: getBanner()?.name,
+                    url: getBanner()?.url
+                },
                 links: getPageLinks().map((link) => ({
                     url: link.url,
                     name: link.name
