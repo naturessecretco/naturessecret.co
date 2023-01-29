@@ -32,12 +32,18 @@ const { title, pageTitle, description, url, twitter, copyright } = Astro.props;
   <meta name="theme-color" content="#fcc631" />
   <meta name="keywords" content="your, tags" />
   <meta name="description" content="150 words" />
-  <meta name="subject" content="your website's subject" />
+  <meta name="subject" content={title ?? defaultProps.title}/>
   <meta name="copyright" content={title ?? defaultProps.title} />
-  <meta name="language" content="ES" />
+  <meta name="language" content="EN" />
   <meta name="robots" content="index,follow" />
   <meta name="revised" content={Date.now()} />
   <meta name="abstract" content="" />
+  <link rel="“preconnect”" href="“https://app.snipcart.com”" />
+  <link rel="“preconnect”" href="“https://cdn.snipcart.com”" />
+  <link
+    rel="“stylesheet”"
+    href="“https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css”"
+  />
   <meta name="topic" content="" />
   <meta name="summary" content="" />
   <meta name="Classification" content="Business" />
@@ -58,7 +64,7 @@ const { title, pageTitle, description, url, twitter, copyright } = Astro.props;
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Cache-Control" content="no-cache" />
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="1200" />
+  <meta http-equiv="refresh" content="200" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -81,7 +87,7 @@ const { title, pageTitle, description, url, twitter, copyright } = Astro.props;
     content={description ?? defaultProps.description}
   />
 
-  <meta name="fb:page_id" content="43929265776" />
+  <meta name="fb:page_id" content="" />
 
   <meta name="og:email" content="me@example.com" />
   <meta name="og:phone_number" content="650-123-4567" />
@@ -136,7 +142,6 @@ const { title, pageTitle, description, url, twitter, copyright } = Astro.props;
   />
   <link rel="shortlink" href="http://blog.unto.net/?p=353" />
   <link rel="archives" title="May 2003" href="http://blog.unto.net/2003/05/" />
-  <link rel="index" title="DeWitt Clinton" href="http://blog.unto.net/" />
   <link
     rel="start"
     title="Pattern Recognition 1"
@@ -172,13 +177,16 @@ const { title, pageTitle, description, url, twitter, copyright } = Astro.props;
   <meta name="apple-mobile-web-app-status-bar-style" content="#fcc631" />
   <meta name="format-detection" content="telephone=yes" />
   <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />
+  <link rel="android-chrome shortcut" sizes="72x72" href="/assets/icons/72x72.png" />
+  <link rel="android-chrome icon" sizes="72x72" href="/assets/icons/72x72.png" />
+
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/72x72.png" />
   <link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" />
   <link rel="apple-touch-startup-image" href="/startup.png" />
 
   <link rel="apple-touch-icon" type="image/png" href="/apple-touch-icon.png" />
 
-  <link rel="shortlink" href="http://smallbiztrends.com/?p=43625" />
+  <link rel="shortlink" href={url ?? defaultProps.url} />
   <link rel="canonical" href={url ?? defaultProps.url} />
   <link
     rel="EditURI"
@@ -195,7 +203,7 @@ const { title, pageTitle, description, url, twitter, copyright } = Astro.props;
   />
   <meta name="msapplication-starturl" content={url ?? defaultProps.url} />
   <meta name="msapplication-window" content="width=800;height=600" />
-  <meta name="msapplication-navbutton-color" content="red" />
+  <meta name="msapplication-navbutton-color" content="yellow" />
   <meta name="application-name" content={title ?? defaultProps.title} />
   <meta
     name="msapplication-tooltip"
