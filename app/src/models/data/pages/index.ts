@@ -5,7 +5,7 @@ const pages = ({ store, pageKey }) => {
 
     const { getProducts, getFeaturedProducts } = products(store)
     const { getPageLinks, getFeatauredLinks, getInformationLinks } = links(store)
-    const { getTagLine, getCertifications, getDisclaimer } = meta(store)
+    const { getTagLine, getSupportPhoneNumber, getBusinessPhoneNumber, getCertifications, getDisclaimer } = meta(store)
     const { getIngredients, getCopyright, getContactHeading, getFavicon } = meta(store)
     const { getBanner, getHero, getImpressum, getPhoneNumber, getBenefits, getEmailAddress } = meta(store)
     const { getFAQs } = faqs(store)
@@ -20,7 +20,8 @@ const pages = ({ store, pageKey }) => {
             data: {
 
                 featuredItem: {
-                    title: "Frantz Desir"
+                    title: "Frantz Desir",
+                    description: "M.D. Frantz Desir opened his discount-driven health food store with a vision to make healthy living accessible to everyone. Our store is committed to offering our customers the best selection of health food items and supplements, so they can make informed decisions about what they put into their bodies. We strive to provide our customers with the highest quality of natural products at a fraction of the cost, so they can feel confident in their choices while still saving money. Our knowledgeable team is always available to answer your questions and provide guidance, so that our customers have the best experience possible when shopping with us"
                 },
 
                 subscribeForm: {
@@ -285,22 +286,22 @@ const pages = ({ store, pageKey }) => {
                 mailingAddress: {
                     title: "Mailing Address",
                     mailingAddress: {
-                        primary: "info@example.com",
-                        secondary: "admin@example.com"
+                        primary: "Orlando, FL",
+                        secondary: "Atlanta, GA"
                     }
                 },
                 emailAddress: {
                     title: "Email Address",
                     emailAddress: {
-                        primary: "info@example.com",
-                        secondary: "admin@example.com"
+                        primary: "info@naturessecret.co",
+                        secondary: "thenaturessecretcompany@gmail.com"
                     }
                 },
                 phoneNumber: {
                     title: "Phone Number",
                     phoneNumber: {
-                        primary: "info@example.com",
-                        secondary: "admin@example.com"
+                        primary: "770-978-8181",
+                        secondary: "678-978-8181",
                     }
                 }
             },

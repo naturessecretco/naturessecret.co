@@ -9,7 +9,7 @@ export const defaultProps: Props = {
   heading: "HEADING_NOT_FOUND",
 };
 
-const { title, heading } = Astro.props;
+const { title, heading, description } = Astro.props;
 ---
 
 <section class="overflow-hidden py-36 bg-blueGray-50">
@@ -110,9 +110,7 @@ const { title, heading } = Astro.props;
             {title ?? defaultProps.title}
           </h2>
           <p class="text-lg font-medium text-gray-900 mb-7">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-            sint. Velit officia consequat duis enim velit mollit. Exercitation
-            veniam consequat.
+            {description ?? defaultProps.description}
           </p>
           <p class="font-medium text-gray-600">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit velit

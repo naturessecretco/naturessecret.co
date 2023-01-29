@@ -11,8 +11,23 @@ const meta = (store: NotionPageObjectType): DatabaseObjectType => {
 
     const dbObject = {
 
-        getDisclaimer: () => {
+        getBusinessPhoneNumber: () => {
+            return queryDatabase({
+                keys: [variants.phone_number],
+                db: dbObject.db.data,
+                batch: false
+            })
+        },
 
+        getSupportPhoneNumber: () => {
+            return queryDatabase({
+                keys: [variants.phone_number],
+                db: dbObject.db.data,
+                batch: false
+            })
+        },
+
+        getDisclaimer: () => {
             return queryDatabase({
                 keys: [variants.disclaimer],
                 db: dbObject.db.data,
