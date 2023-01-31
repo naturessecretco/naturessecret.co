@@ -7,7 +7,6 @@ import vercel from "@astrojs/vercel/serverless";
 // https://astro.build/config
 import solidJs from "@astrojs/solid-js";
 
-
 // https://astro.build/config
 import prefetch from "@astrojs/prefetch";
 
@@ -16,7 +15,6 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), solidJs(), prefetch(), react()],
-  adapter: vercel(),
-  output: "server"
+  integrations: [tailwind(), prefetch(), react()],
+  output: "static"
 });
