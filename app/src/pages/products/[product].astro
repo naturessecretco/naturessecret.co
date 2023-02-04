@@ -5,27 +5,12 @@ import PageService from "@services/pages";
 
 const { getPage } = PageService();
 
-const { layout } = await getPage("products");
-
-export async function getStaticPaths() {
-
-  const { getPage } = PageService();
-
-  const { pages } = await getPage("products");
-
-  return pages?.map((page) => ({
-    params: {
-      product: page.id,
-    },
-    props: {
-      ...page
-    },
-  }));
-}
+const { layout, pages } = await getPage("products");
 
 const { product } = Astro.params;
 
-const { id, data, metaData } = Astro.props;
+
+const { data, metaData  } = pages.find((page) => page.id === product)
 
 const pageLayout = {...layout, metaData}
 ---
