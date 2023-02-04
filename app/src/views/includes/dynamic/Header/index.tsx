@@ -9,7 +9,7 @@ export default function Header({ favicon, links, message }) {
 
   return (
 
-    <header className="container fixed top-0 z-20 w-full mx-auto overflow-hidden backdrop-blur-md">
+    <header className="container fixed top-0 z-20 w-full min-w-full m-0 overflow-hidden backdrop-blur-md">
       <Banner message={message} />
       <div className="flex items-center justify-between px-4 py-5">
         <Favicon {...favicon} />

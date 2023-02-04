@@ -20,7 +20,7 @@ export default function Links({ links }: ILink) {
         {
           links.map((link) => (
             <li
-              className="font-thin hover:px-5 hover:py-2 hover:bg-opacity-25 rounded-2xl hover:bg-yellow-500 font-serif uppercase underline-offset-4 shadow-black text-shadow-sm  mr-9 hover:text-gray-800"
+              className="font-thin px-5 py-2 hover:bg-opacity-50 hover:border-1 hover:border-white rounded-2xl hover:bg-yellow-500 font-serif uppercase underline-offset-4 shadow-black text-shadow-sm  mr-9 hover:text-gray-800"
             >
               <a href={link?.url}>{link?.name}</a>
             </li>
