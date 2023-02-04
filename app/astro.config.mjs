@@ -16,5 +16,6 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), prefetch(), react()],
-  output: "static"
+  output: "server",
+  adapter: vercel()
 });
