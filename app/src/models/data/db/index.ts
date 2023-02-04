@@ -5,6 +5,17 @@ export { default as links } from "./links"
 export { default as social_media } from "./social_media"
 
 
-export function init(store) {
+export const Database = class BlackprintDatabase {
+    getLinks() { }
+    getMedia() { }
+    getSocialMedia() { }
+    getFAQS() { }
+    getMeta() { }
+}
 
+const DB = new Database
+
+const component = {
+
+    prop: DB.getLinks()
 }
