@@ -9,7 +9,6 @@ const { layout, pages } = await getPage("products");
 
 const { product } = Astro.params;
 
-
 const { data, metaData  } = pages.find((page) => page.id === product)
 
 const pageLayout = {...layout, metaData}
